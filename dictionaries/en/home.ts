@@ -1,41 +1,42 @@
 import type { HomeDict } from "@/lib/i18n/types";
 
+/** English home page copy. Same shape as dictionaries/es/home.ts. */
 export const home: HomeDict = {
   meta: {
     title: "Home",
-    seoTitle: "Tarida MC · What it does, where it does it",
+    seoTitle: "Tarida MC · Property purchase and rentals in Castelldefels",
     description:
-      "Home meta description: the value proposition in one sentence and a call to action.",
+      "A family business in Castelldefels with forty years in the sector. We buy properties directly from their owners and let industrial units and homes.",
   },
   hero: {
-    eyebrow: "What we do",
-    title: "Home headline that says what the business offers",
+    eyebrow: "Castelldefels · Family business",
+    titleTop: "Property",
+    titleBottom: "with judgement",
     intro:
-      "Two or three sentences that explain the value proposition, who it is for and what makes it different. Replace with the client's copy.",
-    ctaPrimary: "Get in touch",
-    ctaSecondary: "See services",
+      "Forty years buying and letting property. We study every property with care and answer with clarity.",
+    ctaPrimary: "Sell your property",
+    ctaSecondary: "Properties to let",
+    imageAlt: "Contemporary Mediterranean villa at sunset",
   },
-  services: {
-    eyebrow: "Services",
-    title: "What we offer",
-    intro: "One sentence introducing the service catalogue.",
+  manifesto: {
+    eyebrow: "Who we are",
+    text: "We are a family business in Castelldefels. For forty years we have bought and let property by one rule: *integrity, honesty and transparency* in every transaction.",
+    signature: "Ramon Seva",
+    role: "Head of Tarida MC",
+    cta: "About us",
   },
-  about: {
-    eyebrow: "About",
-    title: "Who we are",
-    body: [
-      "A paragraph about the business: who is behind it, since when and what it stands for.",
-      "A second paragraph about how the team works or what sets it apart.",
-    ],
-    cta: "Meet us",
+  lines: {
+    eyebrow: "What we do",
+    title: "Two ways\nto *work with you*",
+    purchaseKicker: "For owners",
+    purchaseTitle: "We buy\n*your property*",
+    rentalKicker: "For businesses and individuals",
+    rentalTitle: "Units and homes\n*to let*",
   },
-  faq: {
-    eyebrow: "Questions",
-    title: "Frequently asked questions",
-  },
-  contact: {
-    title: "Shall we talk?",
-    body: "Tell us what you need and we will answer within 24 hours.",
-    cta: "Contact us",
+  process: {
+    eyebrow: "How we buy",
+    title: "A process that is\n*clear and direct*",
+    intro:
+      "When you offer us a property, you know at every moment where the transaction stands.",
   },
 };

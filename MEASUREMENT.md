@@ -24,12 +24,22 @@ What is wired, what the consoles hold and what is pending. Filled by the
   `data-placement` from the nearest ancestor.
 - `components/site/contact-form.tsx`: `generate_lead` on a successful send.
 
+Placements in use (`data-placement`): `header`, `home-hero`, `home-services`,
+`home-process`, `home-catalogue`, `service-purchase`, `service-rental`,
+`catalogue`, `closing`, `contact-page`, `footer`, `bubble`. A catalogue card's
+enquiry is a `whatsapp` (or `form`, while there is no number) CTA with
+`service=rental`.
+
 Events: `cta_click`, `contact_click`, `generate_lead`. Parameters that need a
 GA4 custom dimension: `placement`, `method`, `service`, `form`, `site_language`.
 
 ## Pending
 
 - Everything: the container does not exist yet.
+- Decide whether catalogue enquiries need the listing reference as a
+  parameter (`property_ref`). If yes: add it to `contact_click` in
+  `lib/analytics.ts` + a `data-property` attribute on the card, and create the
+  GA4 custom dimension BEFORE launch (dimensions do not backfill).
 
 ## Done
 

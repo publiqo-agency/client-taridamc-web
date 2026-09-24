@@ -1,29 +1,32 @@
 /**
- * Shared class strings. Composition helpers for the layout rhythm, so every
- * page frames and spaces the same way without a wrapper component.
- *
- * Keep this file small: it is CLIENT-SKIN (docs/SKELETON.md) and grows with
- * the design. What must survive a redesign is the pattern — named constants
- * instead of repeated utility soup — not these values.
+ * Shared class strings. CLIENT-SKIN: the layout rhythm and type voices of
+ * this site. The form (CORE) borrows CARD and pillClass, so both stay generic
+ * enough to wrap it.
  */
 
-/** Page frame: max width + side gutters. */
-export const FRAME = "mx-auto w-full max-w-7xl px-5 md:px-8";
+/** Page width. Wide on purpose: the design breathes on large screens. */
+export const FRAME = "mx-auto w-full max-w-[1680px] px-5 md:px-10 xl:px-14";
+export const FRAME_NARROW = "mx-auto w-full max-w-3xl px-5 md:px-10";
 
-/** Narrow frame for long-form reading (legal pages, articles). */
-export const FRAME_NARROW = "mx-auto w-full max-w-3xl px-5 md:px-8";
+export const SECTION = "py-24 md:py-36";
 
-/** Vertical rhythm of a section. */
-export const SECTION = "py-16 md:py-24";
+/** A plate. Square corners and a hairline: no shadows, no radii. */
+export const CARD = "relative border border-line bg-surface";
 
-/** Card surface. */
-export const CARD = "relative rounded-3xl border border-line bg-surface";
+/** Display serif (Instrument Serif), the voice of the big statements. */
+export const DISPLAY = "font-display font-normal leading-[0.95] tracking-[-0.015em]";
 
-/** Display voice: section headlines. */
-export const DISPLAY = "font-display font-extrabold leading-[0.95] tracking-[-0.01em]";
+/** Same serif for smaller headings, a little looser. */
+export const DISPLAY_QUIET = "font-display font-normal leading-[1.05] tracking-[-0.01em]";
 
-/** Same voice, quieter: headlines that are a sentence, not a hit. */
-export const DISPLAY_QUIET = "font-display font-semibold leading-[1.05] tracking-[-0.01em]";
+/** Huge thin grotesk (Inter Tight 200/300), the Velora voice. */
+export const DISPLAY_SANS = "font-sans font-extralight leading-[0.86] tracking-[-0.055em]";
 
-/** Easing shared by every hover translate. */
-export const EASE_OUT = "ease-[cubic-bezier(0.22,1,0.36,1)]";
+/** The italic accent phrase inside a headline. */
+export const ITALIC = "font-display italic font-normal";
+
+/** Section index, e.g. "(01)". */
+export const INDEX = "label tnum text-ink-soft";
+
+export const EASE_OUT = "ease-[cubic-bezier(0.16,1,0.3,1)]";
+export const EASE_CURTAIN = "ease-[cubic-bezier(0.76,0,0.24,1)]";

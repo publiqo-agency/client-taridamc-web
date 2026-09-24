@@ -1,7 +1,7 @@
 import type { ServiceId } from "@/lib/services";
 import type { common } from "@/dictionaries/es/common";
 import type { home } from "@/dictionaries/es/home";
-import type { about, faq } from "@/dictionaries/es/pages";
+import type { about } from "@/dictionaries/es/pages";
 import type { contact } from "@/dictionaries/es/contact";
 import type { legal } from "@/dictionaries/es/legal";
 
@@ -24,7 +24,6 @@ import type { legal } from "@/dictionaries/es/legal";
 export type CommonDict = typeof common;
 export type HomeDict = typeof home;
 export type AboutDict = typeof about;
-export type FaqDict = typeof faq;
 export type ContactDict = typeof contact;
 export type LegalDict = typeof legal;
 
@@ -77,7 +76,6 @@ export type Dictionary = {
   home: HomeDict;
   services: ServicesDict;
   about: AboutDict;
-  faq: FaqDict;
   contact: ContactDict;
   legal: LegalDict;
 };

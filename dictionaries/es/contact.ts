@@ -1,16 +1,18 @@
 export const contact = {
   meta: {
     title: "Contacto",
-    description: "Cuéntenos qué necesita y le respondemos en menos de 24 horas.",
+    description:
+      "Contacte con Tarida MC en Castelldefels: proponga un inmueble para su compra o consulte naves y viviendas en alquiler.",
   },
   hero: {
     eyebrow: "Contacto",
-    title: "Cuéntenos qué necesita",
-    intro: "Rellene el formulario o escríbanos por WhatsApp. Respondemos en menos de 24 horas laborables.",
+    title: "Hablemos de\n*su inmueble*",
+    intro:
+      "Cuéntenos qué necesita: vender una propiedad o alquilar una nave o una vivienda. Le responderemos personalmente.",
   },
   aside: {
     title: "¿Prefiere hablar directamente?",
-    body: "El WhatsApp es la vía más rápida. Si prefiere email o teléfono, están abajo.",
+    body: "WhatsApp es la vía más rápida. Si prefiere el correo o el teléfono, los encontrará aquí.",
     whatsappCta: "Abrir WhatsApp",
   },
   form: {
@@ -20,7 +22,7 @@ export const contact = {
     service: "Qué le interesa",
     otherOption: "Otra consulta",
     message: "Mensaje",
-    messagePlaceholder: "Cuéntenos qué necesita, para cuándo y cualquier detalle útil.",
+    messagePlaceholder: "Tipo de inmueble, ubicación, superficie y cualquier detalle útil.",
     consent: "He leído y acepto la",
     consentLink: "política de privacidad",
     submit: "Enviar",
@@ -28,7 +30,7 @@ export const contact = {
     genericError: "No hemos podido enviar el mensaje. Inténtelo de nuevo o escríbanos por WhatsApp.",
     success: {
       title: "Mensaje enviado",
-      body: "Gracias. Le respondemos en menos de 24 horas laborables.",
+      body: "Gracias. Le responderemos personalmente lo antes posible.",
     },
     fieldErrors: {
       name: "Escriba su nombre.",

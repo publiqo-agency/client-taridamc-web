@@ -1,11 +1,13 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
-import { FRAME } from "@/lib/styles";
+import { DISPLAY, FRAME } from "@/lib/styles";
 import { MAILTO_HREF, ORG, SAME_AS, TEL_HREF, hasEmail, hasPhone, hasPostalAddress } from "@/lib/seo";
-import { Logo } from "./logo";
 import { LocaleSwitcher } from "./locale-switcher";
 import { ConsentReopenButton } from "./consent-banner";
 import { PendingData } from "./pending";
+import { LocalTime } from "./local-time";
+import { COORDS, PLACE } from "./coords";
+import { Chars } from "./motion/split";
 
 type LinkItem = { href: string; label: string };
 
@@ -18,6 +20,7 @@ type Props = {
     contactTitle: string;
     followTitle: string;
     localeAria: string;
+    localTime: string;
     cookieSettings: string;
     rights: string;
     credit: string;
@@ -25,30 +28,32 @@ type Props = {
 };
 
 /**
- * Footer. A dark band (`band-dark`), so every token inverts. Contact data
- * comes from lib/site.ts and only renders when it exists: no `tel:` link to
- * an empty number. The consent reopen button is here because withdrawing
- * consent must be one click away on every page.
+ * Footer: an espresso band. Link columns on the plan grid, the local time in
+ * Castelldefels, and the name set across the full width, rising letter by
+ * letter as the page ends. Contact data only renders when it exists
+ * (lib/site.ts); the consent reopen button is one click away on every page.
  */
 export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
   const year = new Date().getFullYear();
   const hasContact = hasPhone() || hasEmail() || hasPostalAddress();
+  const linkClass = "link-line text-ink/85 transition-colors hover:text-ink";
 
   return (
-    <footer data-placement="footer" className="band-dark bg-stock text-ink">
-      <div className={`${FRAME} grid gap-12 py-16 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:py-20`}>
-        <div>
-          <Logo className="h-9" />
-          <p className="mt-5 max-w-sm text-ink-soft">{copy.tagline}</p>
+    <footer data-placement="footer" className="band-dark grain relative overflow-hidden bg-stock text-ink">
+      <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-14 pt-24 pb-16 md:pt-32`}>
+        <div className="col-span-12 lg:col-span-5">
+          <p className={`${DISPLAY} max-w-md text-[clamp(1.9rem,2.8vw,2.75rem)] leading-[1.1]`} data-m="fade">
+            {copy.tagline}
+          </p>
         </div>
 
-        {columns.map((column) => (
-          <div key={column.title}>
+        {columns.map((column, i) => (
+          <div key={column.title} className="col-span-6 md:col-span-4 lg:col-span-2" data-m="fade" data-delay={String(0.08 * (i + 1))}>
             <p className="label text-ink-soft">{column.title}</p>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-5 space-y-2.5">
               {column.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="font-semibold hover:text-ink-soft">
+                  <Link href={link.href} className={linkClass}>
                     {link.label}
                   </Link>
                 </li>
@@ -57,19 +62,19 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
           </div>
         ))}
 
-        <div>
+        <div className="col-span-12 md:col-span-4 lg:col-span-3" data-m="fade" data-delay="0.24">
           <p className="label text-ink-soft">{copy.contactTitle}</p>
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-5 space-y-2.5">
             {hasPhone() && (
               <li>
-                <a href={TEL_HREF} data-cta="call" className="font-semibold hover:text-ink-soft">
+                <a href={TEL_HREF} data-cta="call" className={linkClass}>
                   {ORG.telephoneDisplay || ORG.telephone}
                 </a>
               </li>
             )}
             {hasEmail() && (
               <li>
-                <a href={MAILTO_HREF} data-cta="email" className="font-semibold hover:text-ink-soft">
+                <a href={MAILTO_HREF} data-cta="email" className={linkClass}>
                   {ORG.email}
                 </a>
               </li>
@@ -87,11 +92,11 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
           </ul>
           {SAME_AS.length > 0 && (
             <>
-              <p className="label mt-8 text-ink-soft">{copy.followTitle}</p>
-              <ul className="mt-4 space-y-2">
+              <p className="label mt-10 text-ink-soft">{copy.followTitle}</p>
+              <ul className="mt-5 space-y-2.5">
                 {SAME_AS.map((href) => (
                   <li key={href}>
-                    <a href={href} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-ink-soft">
+                    <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
                       {new URL(href).hostname.replace(/^www\./, "")}
                     </a>
                   </li>
@@ -99,11 +104,28 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
               </ul>
             </>
           )}
+          <p className="label tnum mt-10 text-ink-soft">
+            {PLACE} · {COORDS}
+            <br />
+            {copy.localTime} <LocalTime className="text-ink" />
+          </p>
         </div>
       </div>
 
-      <div className={`${FRAME} flex flex-col gap-4 border-t border-line py-6 text-sm text-ink-soft md:flex-row md:items-center md:justify-between`}>
-        <div className="space-y-1">
+      <div className="relative">
+        <span aria-hidden data-m="draw-x" className="absolute inset-x-0 top-0 block h-px bg-line" />
+        <p
+          aria-hidden
+          data-m="chars"
+          data-stagger="0.05"
+          className={`${DISPLAY} pointer-events-none -mb-[0.19em] pt-6 text-center text-[21.5vw] leading-[0.95] whitespace-nowrap select-none`}
+        >
+          <Chars text={ORG.name} />
+        </p>
+      </div>
+
+      <div className={`${FRAME} relative flex flex-col gap-4 border-t border-line py-6 text-sm text-ink-soft md:flex-row md:items-center md:justify-between`}>
+        <div className="flex flex-wrap gap-x-6 gap-y-1">
           <p>
             © {year} {ORG.legalName || ORG.name}. {copy.rights}
           </p>
@@ -112,18 +134,18 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
               vary `credit` per client so footers do not repeat verbatim. */}
           <p>
             {copy.credit}{" "}
-            <a href="https://publiqo.es" target="_blank" rel="noopener noreferrer" className="hover:text-ink">
+            <a href="https://publiqo.es" target="_blank" rel="noopener noreferrer" className="link-line hover:text-ink">
               Publiqo
             </a>
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
           {legalLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-ink">
+            <Link key={link.href} href={link.href} className="link-line hover:text-ink">
               {link.label}
             </Link>
           ))}
-          <ConsentReopenButton label={copy.cookieSettings} className="hover:text-ink" />
+          <ConsentReopenButton label={copy.cookieSettings} className="link-line hover:text-ink" />
           <LocaleSwitcher current={locale} aria={copy.localeAria} />
         </div>
       </div>

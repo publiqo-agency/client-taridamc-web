@@ -1,41 +1,42 @@
 import type { HomeDict } from "@/lib/i18n/types";
 
+/** French copy for the home page. Same shape as dictionaries/es/home.ts. */
 export const home: HomeDict = {
   meta: {
     title: "Accueil",
-    seoTitle: "Tarida MC · Ce qu'elle fait, où elle le fait",
+    seoTitle: "Tarida MC · Achat et location de biens immobiliers à Castelldefels",
     description:
-      "Meta description de l'accueil : la proposition de valeur en une phrase et un appel à l'action.",
+      "Entreprise familiale de Castelldefels forte de quarante ans d’expérience. Nous achetons des biens directement à leurs propriétaires et louons des locaux industriels et des logements.",
   },
   hero: {
-    eyebrow: "Ce que nous faisons",
-    title: "Titre d'accueil qui dit ce que propose l'entreprise",
+    eyebrow: "Castelldefels · Entreprise familiale",
+    titleTop: "L’immobilier",
+    titleBottom: "avec discernement",
     intro:
-      "Deux ou trois phrases qui expliquent la proposition de valeur, à qui elle s'adresse et ce qui la distingue. À remplacer par le texte du client.",
-    ctaPrimary: "Contactez-nous",
-    ctaSecondary: "Voir les services",
+      "Quarante ans à acheter et louer des biens. Nous étudions chaque bien sans précipitation et répondons avec clarté.",
+    ctaPrimary: "Vendre votre bien",
+    ctaSecondary: "Biens à louer",
+    imageAlt: "Villa méditerranéenne contemporaine au coucher du soleil",
   },
-  services: {
-    eyebrow: "Services",
-    title: "Ce que nous proposons",
-    intro: "Une phrase qui présente le catalogue de services.",
+  manifesto: {
+    eyebrow: "Qui sommes-nous",
+    text: "Nous sommes une entreprise familiale de Castelldefels. Depuis quarante ans, nous achetons et louons des biens immobiliers selon une même règle : *sérieux, honnêteté et transparence* à chaque opération.",
+    signature: "Ramon Seva",
+    role: "À la tête de Tarida MC",
+    cta: "Mieux nous connaître",
   },
-  about: {
-    eyebrow: "À propos",
-    title: "Qui sommes-nous",
-    body: [
-      "Un paragraphe sur l'entreprise : qui est derrière, depuis quand et ce qu'elle défend.",
-      "Un second paragraphe sur la façon de travailler ou ce qui distingue l'équipe.",
-    ],
-    cta: "Faites notre connaissance",
+  lines: {
+    eyebrow: "Ce que nous faisons",
+    title: "Deux façons\nde *travailler avec vous*",
+    purchaseKicker: "Pour les propriétaires",
+    purchaseTitle: "Nous achetons\n*votre bien*",
+    rentalKicker: "Pour les entreprises et les particuliers",
+    rentalTitle: "Entrepôts et logements\n*à louer*",
   },
-  faq: {
-    eyebrow: "Questions",
-    title: "Questions fréquentes",
-  },
-  contact: {
-    title: "On en discute ?",
-    body: "Dites-nous ce dont vous avez besoin et nous vous répondrons en moins de 24 heures.",
-    cta: "Nous contacter",
+  process: {
+    eyebrow: "Comment nous achetons",
+    title: "Un processus\n*clair et direct*",
+    intro:
+      "Lorsque vous nous proposez un bien, vous savez à tout moment où en est l’opération.",
   },
 };

@@ -32,8 +32,8 @@ export const SITE = {
   address: {
     street: "",
     postalCode: "",
-    city: "",
-    region: "",
+    city: "Castelldefels",
+    region: "Barcelona",
     /** ISO 3166-1 alpha-2. */
     country: "ES",
   },

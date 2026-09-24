@@ -1,47 +1,43 @@
 export const about = {
   meta: {
     title: "Nosotros",
-    description: "Meta description de la página de nosotros.",
+    description:
+      "Tarida MC es una empresa familiar de Castelldefels con cuarenta años en el sector inmobiliario, dirigida por Ramon Seva.",
   },
   hero: {
     eyebrow: "Nosotros",
-    title: "Quiénes somos y por qué hacemos esto",
-    intro: "Una o dos frases que presentan al equipo o al negocio.",
+    title: "Una empresa familiar,\n*cuarenta años después*",
+    intro:
+      "Compramos y alquilamos inmuebles en Castelldefels con la misma forma de trabajar de siempre: seriedad, honestidad y transparencia.",
+    imageAlt: "Interior mediterráneo sereno con grandes ventanales",
   },
   sections: [
     {
       heading: "Nuestra historia",
-      body: ["Un párrafo sobre el origen del negocio.", "Otro sobre dónde está hoy."],
+      body: [
+        "Tarida MC es una empresa familiar dedicada a los inmuebles. Cuatro décadas después, seguimos siendo una empresa pequeña, y eso nos permite conocer de cerca cada propiedad y a cada cliente.",
+        "Hoy compramos inmuebles a propietarios que desean vender y alquilamos naves industriales y viviendas de nuestra propia cartera.",
+      ],
     },
     {
       heading: "Cómo trabajamos",
-      body: ["Un párrafo sobre la forma de trabajar y lo que el cliente puede esperar."],
+      body: [
+        "Estudiamos cada operación con calma y respondemos con claridad, sea cual sea la respuesta. La seriedad, la honestidad y la transparencia no son un eslogan: son la manera en que siempre hemos trabajado.",
+      ],
     },
   ],
-};
-
-export const faq = {
-  meta: {
-    title: "Preguntas frecuentes",
-    description: "Respuestas a las dudas más habituales antes de contactar.",
+  storyImageAlt: "Muro encalado y contraventanas de madera bajo la luz mediterránea",
+  leader: {
+    eyebrow: "Al frente",
+    name: "Ramon Seva",
+    role: "Al frente de Tarida MC",
+    body: "En una empresa familiar, quien le atiende es quien conoce cada inmueble.",
   },
-  hero: {
-    eyebrow: "Dudas",
-    title: "Preguntas frecuentes",
-    intro: "Lo que más nos preguntan, respondido en corto.",
+  place: {
+    eyebrow: "Castelldefels",
+    title: "Nuestro *lugar*",
+    body: "Trabajamos desde Castelldefels, entre el mar y el macizo del Garraf. Conocemos su mercado inmobiliario porque llevamos cuarenta años formando parte de él.",
+    imageAlt: "Costa mediterránea con pinos al atardecer",
+    sea: "Mar Mediterráneo",
   },
-  items: [
-    {
-      question: "¿Una pregunta habitual?",
-      answer: "Una respuesta breve y directa. El texto de aquí es exactamente el que se emite en el FAQPage del JSON-LD.",
-    },
-    {
-      question: "¿Otra pregunta habitual?",
-      answer: "Otra respuesta breve.",
-    },
-    {
-      question: "¿Cómo se pide presupuesto?",
-      answer: "Por el formulario de contacto o por WhatsApp. Respondemos en menos de 24 horas laborables.",
-    },
-  ],
 };
