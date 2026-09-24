@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DISPLAY, DISPLAY_SANS, FRAME, ITALIC, SECTION } from "@/lib/styles";
+import { DISPLAY, DISPLAY_SANS, FRAME, ACCENT, SECTION } from "@/lib/styles";
 import { Words } from "./motion/split";
 import { Arrow } from "./pill-button";
 
@@ -51,13 +51,13 @@ export function Manifesto({ index, eyebrow, text, years, yearsLabel, yearsCaptio
                 {years}
               </span>
               <span className="pb-[0.4em]">
-                <span className={`${ITALIC} block text-[clamp(2rem,3.4vw,3.5rem)] leading-none`}>{yearsLabel}</span>
+                <span className={`${ACCENT} block text-[clamp(2rem,3.4vw,3.5rem)] leading-none`}>{yearsLabel}</span>
                 <span className="label mt-3 block text-ink-soft">{yearsCaption}</span>
               </span>
             </p>
           </div>
           <div className="col-span-12 md:col-span-3" data-m="fade" data-delay="0.2">
-            <p className={`${ITALIC} text-3xl`}>{signature}</p>
+            <p className={`${ACCENT} text-3xl`}>{signature}</p>
             <p className="label mt-2 text-ink-soft">{role}</p>
             {cta && (
               <Link href={cta.href} className="group mt-8 inline-flex items-center gap-3 text-sm font-medium">

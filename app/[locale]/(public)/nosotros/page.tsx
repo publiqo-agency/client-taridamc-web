@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/i18n/metadata";
 import { localeHref, routePaths } from "@/lib/routes";
 import { routeBreadcrumb } from "@/lib/schema";
 import { proposalFormHref } from "@/lib/whatsapp";
-import { DISPLAY, DISPLAY_QUIET, DISPLAY_SANS, FRAME, ITALIC, SECTION } from "@/lib/styles";
+import { DISPLAY, DISPLAY_QUIET, DISPLAY_SANS, FRAME, ACCENT, SECTION } from "@/lib/styles";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageTransition } from "@/components/site/page-transition";
 import { PageHero } from "@/components/site/page-hero";
@@ -85,7 +85,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
                 40
               </span>
               <span className="pb-[0.4em]">
-                <span className={`${ITALIC} block text-[clamp(1.75rem,2.8vw,3rem)] leading-none`}>{common.brand.yearsLabel}</span>
+                <span className={`${ACCENT} block text-[clamp(1.75rem,2.8vw,3rem)] leading-none`}>{common.brand.yearsLabel}</span>
                 <span className="label mt-3 block text-ink-soft">{common.brand.yearsCaption}</span>
               </span>
             </p>
@@ -100,7 +100,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
             <span className="label text-ink-soft">{about.leader.eyebrow}</span>
           </div>
           <div className="col-span-12 md:col-span-9">
-            <p className={`${ITALIC} text-[clamp(4rem,11vw,12rem)] leading-[0.9]`} data-m="lines">
+            <p className={`${ACCENT} text-[clamp(4rem,11vw,12rem)] leading-[0.9]`} data-m="lines">
               <Lines text={about.leader.name} />
             </p>
             <div className="mt-12 grid gap-8 border-t border-line pt-8 md:grid-cols-2">

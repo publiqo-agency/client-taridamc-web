@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ITALIC } from "@/lib/styles";
+import { ACCENT } from "@/lib/styles";
 import { Logo } from "../logo";
 import { INTRO_KEY } from "./init-script";
 import { SCROLL_UNLOCK_EVENT } from "./motion-root";
@@ -114,7 +114,7 @@ export function Intro({ years, yearsLabel, place, coords }: Props) {
           <span data-intro-count className="font-sans text-6xl font-extralight tracking-[-0.04em] tnum md:text-8xl">
             00
           </span>
-          <span data-intro-meta className={`${ITALIC} pb-2 text-2xl text-ink-soft opacity-0 md:pb-3 md:text-3xl`}>
+          <span data-intro-meta className={`${ACCENT} pb-2 text-2xl text-ink-soft opacity-0 md:pb-3 md:text-3xl`}>
             {yearsLabel}
           </span>
         </div>

@@ -27,7 +27,7 @@ const sans = Montserrat({
 const display = Instrument_Serif({
   subsets: ["latin", "latin-ext"],
   weight: "400",
-  style: ["normal", "italic"],
+  style: ["normal"],
   variable: "--font-display-family",
 });
 
