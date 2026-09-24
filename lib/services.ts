@@ -11,7 +11,7 @@ import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n/config";
  * different type, not an optional field here — an optional `price?` ends up
  * being filled.
  */
-export const SERVICE_IDS = ["rental", "purchase"] as const;
+export const SERVICE_IDS = ["purchase", "rental"] as const;
 
 export type ServiceId = (typeof SERVICE_IDS)[number];
 

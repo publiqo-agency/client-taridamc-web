@@ -1,13 +1,12 @@
 import Link from "next/link";
-import { EASE_OUT } from "@/lib/styles";
 
 /**
- * The system's pill button. One line of text and fixed padding: across
- * languages, "Contact" and "Kontakta oss" keep the same height.
+ * The system's button. Square corners and one line of text: the plan-drawing
+ * vocabulary of the site has no pills. (The name stays for the CORE form,
+ * which imports `pillClass` to clone the geometry onto its submit button.)
  *
- * `pillClass()` and `pillIconClass` are exported for what cannot be this
- * component (it renders Link/<a>): the form submit is a <button> and clones
- * the geometry from here instead of reinventing it.
+ * `seed` makes the button grow from a square the first time it is seen
+ * (motion engine, data-m="seed").
  */
 
 export type PillTone = "ink" | "accent" | "outline" | "white" | "whatsapp" | "whatsapp-outline";
@@ -15,38 +14,48 @@ export type PillTone = "ink" | "accent" | "outline" | "white" | "whatsapp" | "wh
 const TONE: Record<PillTone, string> = {
   ink: "bg-ink text-stock hover:bg-ink-2",
   accent: "bg-accent text-accent-ink hover:bg-accent-2",
-  outline: "border border-ink/15 text-ink hover:border-ink/45",
-  /* bg-surface, not bg-stock: on the page background "white" must be a real
-     plate, not blend in. */
+  outline: "border border-ink/30 text-ink hover:border-ink hover:bg-ink hover:text-stock",
   white: "bg-surface text-ink hover:bg-stock-2",
-  whatsapp: "bg-whatsapp text-white hover:brightness-95",
-  "whatsapp-outline": "border border-whatsapp text-whatsapp hover:bg-whatsapp/10",
+  whatsapp: "bg-ink text-stock hover:bg-ink-2",
+  "whatsapp-outline": "border border-ink/30 text-ink hover:border-ink hover:bg-ink hover:text-stock",
 };
 
 export const pillClass = (tone: PillTone = "ink", extra = "") =>
   [
-    "group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3",
-    "text-sm font-semibold transition-colors",
+    "group inline-flex h-12 items-center justify-center gap-3 px-6",
+    "text-[0.8125rem] font-medium tracking-[0.02em] whitespace-nowrap",
+    "transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
     TONE[tone],
     extra,
   ]
     .filter(Boolean)
     .join(" ");
 
-/** The pill's icon: nudges half a step on hover, nothing more. */
-export const pillIconClass = `transition-transform duration-300 ${EASE_OUT} group-hover:translate-x-0.5`;
+/** The button's icon slot. */
+export const pillIconClass = "arrow-swap";
+
+/** Arrow that slides out and is replaced by its twin on hover. */
+export function Arrow({ glyph = "→" }: { glyph?: React.ReactNode }) {
+  return (
+    <span aria-hidden className="arrow-swap">
+      <span>{glyph}</span>
+      <span>{glyph}</span>
+    </span>
+  );
+}
 
 type Props = {
   href: string;
   children: React.ReactNode;
   tone?: PillTone;
-  /** Trailing glyph. A diagonal arrow marks "leaves the site". */
   icon?: React.ReactNode;
   className?: string;
   external?: boolean;
   /** Analytics tag, read by <AnalyticsListener>. */
   cta?: string;
   service?: string;
+  seed?: boolean;
+  delay?: number;
 };
 
 export function PillButton({
@@ -58,13 +67,13 @@ export function PillButton({
   external = false,
   cta,
   service,
+  seed = false,
+  delay,
 }: Props) {
   const content = (
     <>
       <span>{children}</span>
-      <span aria-hidden className={pillIconClass}>
-        {icon}
-      </span>
+      <Arrow glyph={icon} />
     </>
   );
 
@@ -72,6 +81,8 @@ export function PillButton({
     className: pillClass(tone, className),
     ...(cta ? { "data-cta": cta } : {}),
     ...(service ? { "data-service": service } : {}),
+    ...(seed ? { "data-m": "seed" } : {}),
+    ...(seed && delay ? { "data-delay": String(delay) } : {}),
   };
 
   if (external) {
