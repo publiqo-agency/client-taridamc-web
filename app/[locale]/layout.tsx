@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Inter_Tight } from "next/font/google";
+import { Instrument_Serif, Montserrat } from "next/font/google";
 import { LOCALES, HTML_LANG, OG_LOCALE, toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { IS_INDEXABLE, ORG, OG_IMAGE, SITE_URL } from "@/lib/seo";
@@ -17,7 +17,9 @@ import "../globals.css";
  * Fonts. CLIENT-SKIN: swap the families, keep the two CSS variables that
  * globals.css maps to --font-display / --font-sans.
  */
-const sans = Inter_Tight({
+/* Montserrat is the logo's typeface: labels in tracked capitals echo its
+   "REAL ESTATE" line, and the thin weights carry the big sans headlines. */
+const sans = Montserrat({
   subsets: ["latin", "latin-ext"],
   weight: "variable",
   variable: "--font-sans-family",
@@ -37,7 +39,7 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 export const viewport: Viewport = {
-  themeColor: "#211a15",
+  themeColor: "#0a2438",
   colorScheme: "light",
 };
 

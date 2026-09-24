@@ -53,7 +53,7 @@ export function PageHero({ eyebrow, title, intro, image, transitionName, compact
       {photo && (
         <div
           aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,18,14,0.55)_0%,rgba(24,18,14,0.15)_35%,rgba(24,18,14,0.35)_60%,rgba(24,18,14,0.88)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,26,42,0.55)_0%,rgba(6,26,42,0.15)_35%,rgba(6,26,42,0.35)_60%,rgba(6,26,42,0.88)_100%)]"
         />
       )}
 

@@ -34,9 +34,9 @@ if (!SRC) {
 }
 
 /** Output colours: the tokens in app/globals.css. Keep in sync. */
-const INK_ON_LIGHT = "#111827"; // :root --ink
-const INK_ON_DARK = "#ffffff"; // .band-dark --ink
-const ICON_BG = "#111827"; // icon tile background
+const INK_ON_LIGHT = "#07588c"; // :root --ink
+const INK_ON_DARK = "#f3f1ea"; // .band-dark --ink
+const ICON_BG = "#07588c"; // icon tile background
 
 const OUT_LOGO = "public/logo";
 mkdirSync(OUT_LOGO, { recursive: true });

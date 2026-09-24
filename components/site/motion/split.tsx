@@ -23,8 +23,11 @@ function segments(text: string) {
     );
 }
 
+/** Accent phrases wear the logo's blue (a lighter sea blue inside dark bands). */
+const EM = "text-accent";
+
 /** Renders *italic* accents without any splitting. */
-export function Rich({ text, emClassName = "" }: { text: string; emClassName?: string }) {
+export function Rich({ text, emClassName = EM }: { text: string; emClassName?: string }) {
   return (
     <>
       {segments(text).map((s, i) =>
@@ -47,7 +50,7 @@ export function Rich({ text, emClassName = "" }: { text: string; emClassName?: s
 export function Lines({
   text,
   lineClassName = "",
-  emClassName = "",
+  emClassName = EM,
 }: {
   text: string;
   lineClassName?: string;
@@ -89,7 +92,7 @@ export function Chars({ text, className = "" }: { text: string; className?: stri
  * Word spans for the scroll-lit manifesto. Words stay in the accessibility
  * tree (they ARE the paragraph); only their opacity is animated.
  */
-export function Words({ text, emClassName = "" }: { text: string; emClassName?: string }) {
+export function Words({ text, emClassName = EM }: { text: string; emClassName?: string }) {
   return (
     <>
       {segments(text).flatMap((s, si) =>
