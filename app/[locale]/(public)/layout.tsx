@@ -3,7 +3,6 @@ import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { LEGAL_KEYS, localeHref, overlayPathsFor, serviceHref } from "@/lib/routes";
 import { SERVICE_IDS } from "@/lib/services";
 import { GTM_ID } from "@/lib/analytics";
-import { ORG } from "@/lib/seo";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { WhatsAppBubble } from "@/components/site/whatsapp";
@@ -60,7 +59,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
 
   return (
     <>
-      <Intro wordmark={ORG.name} years={40} yearsLabel={brand.yearsLabel} place={PLACE} coords={COORDS} />
+      <Intro years={40} yearsLabel={brand.yearsLabel} place={PLACE} coords={COORDS} />
 
       <SiteHeader
         locale={locale}

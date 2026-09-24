@@ -43,47 +43,57 @@
 }
 
 /*
-  "Serene Mediterranean": bone paper, espresso ink, one clay accent used
-  sparingly (CTAs, hovers, the odd italic). Photos carry the colour; the UI
-  stays in warm neutrals.
+  "Serene Mediterranean", tuned to the Tarida MC logo: salt-white paper,
+  deep-navy ink, the logo's sea blue as the one accent (CTAs, hovers, the
+  odd italic, the logo itself). Photos carry the rest of the colour.
 */
 :root {
   color-scheme: light;
-  --accent: #a65e3a; /* clay */
-  --accent-2: #8c4b2c;
-  --accent-ink: #fbf8f4;
+  --accent: #07588c; /* the logo's blue */
+  --accent-2: #054a76;
+  --accent-ink: #ffffff;
+  --logo: #07588c;
 
-  --ink: #2b211a; /* espresso: primary text and dark panels */
-  --ink-2: #4a3f2e; /* olive-brown: hover of ink buttons */
-  --ink-soft: #6f6555; /* secondary text, AA on stock at body size */
-  --stock: #f5efe8; /* bone: page background */
-  --stock-2: #ece3d7; /* cream: alternate panel */
-  --surface: #fbf8f4; /* plates / cards */
-  --line: #ddd2c3; /* hairlines */
+  --ink: #0e2436; /* deep navy: primary text and dark panels */
+  --ink-2: #1c3b55; /* hover of ink buttons */
+  --ink-soft: #586676; /* secondary text, AA on stock at body size */
+  --stock: #f4f2ec; /* salt white: page background */
+  --stock-2: #e9e6dd; /* sand: alternate panel */
+  --surface: #fbfaf7; /* plates / cards */
+  --line: #d8d5cb; /* hairlines */
 }
 
-/* Dark band: hero, footer, espresso panels. Paint the panel with `bg-stock`,
-   NEVER `bg-ink`: inside the band "ink" is the colour of INK (light) and
-   "stock" the colour of PAPER (dark). */
+/* Dark band: deep sea. Hero, footer, dark panels. Paint the panel with
+   `bg-stock`, NEVER `bg-ink`: inside the band "ink" is the colour of INK
+   (light) and "stock" the colour of PAPER (dark). The accent lightens so
+   it still reads on the navy. */
 .band-dark {
-  --ink: #f4ede4;
-  --ink-2: #e6dccd;
-  --ink-soft: #b3a591;
-  --stock: #211a15;
-  --stock-2: #2b231c;
-  --surface: #30271f;
-  --line: #43382d;
+  --ink: #f3f1ea;
+  --ink-2: #dce4ea;
+  --ink-soft: #9fb1c1;
+  --stock: #0a2438;
+  --stock-2: #0e2f48;
+  --surface: #133853;
+  --line: #264a66;
+  --accent: #8dbde2;
+  --accent-2: #b2d3ec;
+  --accent-ink: #0a2438;
+  --logo: #f3f1ea;
 }
 
 /* Light card INSIDE a dark band. KEEP IN SYNC with :root. */
 .band-light {
-  --ink: #2b211a;
-  --ink-2: #4a3f2e;
-  --ink-soft: #6f6555;
-  --stock: #f5efe8;
-  --stock-2: #ece3d7;
-  --surface: #fbf8f4;
-  --line: #ddd2c3;
+  --ink: #0e2436;
+  --ink-2: #1c3b55;
+  --ink-soft: #586676;
+  --stock: #f4f2ec;
+  --stock-2: #e9e6dd;
+  --surface: #fbfaf7;
+  --line: #d8d5cb;
+  --accent: #07588c;
+  --accent-2: #054a76;
+  --accent-ink: #ffffff;
+  --logo: #07588c;
 }
 
 /* The bridge. See invariant 2 above. */
@@ -109,9 +119,8 @@
   body {
     @apply bg-stock text-ink antialiased;
     font-family: var(--font-sans);
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    font-feature-settings: "ss01", "cv11";
+    font-size: 1rem;
+    line-height: 1.7;
   }
   h1,
   h2,
@@ -133,8 +142,8 @@
 /* Small caps label: the "architect's plan" annotation voice. */
 @utility label {
   font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   line-height: 1.4;
 }
@@ -406,6 +415,10 @@ html.lenis body {
   [data-motion="on"] [data-m="chars"] .mask-inline > span {
     transform: translate3d(0, 115%, 0);
   }
+  [data-motion="on"] [data-m="logo"] :is([data-logo-wave], [data-logo-glyph], [data-logo-sub]),
+  [data-intro="on"] .intro :is([data-logo-wave], [data-logo-glyph], [data-logo-sub]) {
+    opacity: 0;
+  }
   [data-motion="on"] [data-m="fade"] {
     opacity: 0;
     transform: translate3d(0, 1.5rem, 0);
@@ -496,9 +509,7 @@ html.lenis body {
 [data-intro="on"] body {
   overflow: hidden;
 }
-.intro .mask-inline > span {
-  transform: translate3d(0, 115%, 0);
-}
+
 
 /*
   Page transitions: React <ViewTransition> (App Router navigations are

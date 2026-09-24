@@ -69,7 +69,7 @@ export function ServiceStack({ items, cursor }: { items: StackItem[]; cursor: st
                 </div>
               </div>
             </div>
-            <div data-stack-shade aria-hidden className="pointer-events-none absolute inset-0 z-[3] bg-[#120e0b] opacity-0" />
+            <div data-stack-shade aria-hidden className="pointer-events-none absolute inset-0 z-[3] bg-[#051726] opacity-0" />
           </div>
         </article>
       ))}

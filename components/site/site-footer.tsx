@@ -7,7 +7,7 @@ import { ConsentReopenButton } from "./consent-banner";
 import { PendingData } from "./pending";
 import { LocalTime } from "./local-time";
 import { COORDS, PLACE } from "./coords";
-import { Chars } from "./motion/split";
+import { Logo } from "./logo";
 
 type LinkItem = { href: string; label: string };
 
@@ -114,14 +114,9 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
 
       <div className="relative">
         <span aria-hidden data-m="draw-x" className="absolute inset-x-0 top-0 block h-px bg-line" />
-        <p
-          aria-hidden
-          data-m="chars"
-          data-stagger="0.05"
-          className={`${DISPLAY} pointer-events-none -mb-[0.19em] pt-6 text-center text-[21.5vw] leading-[0.95] whitespace-nowrap select-none`}
-        >
-          <Chars text={ORG.name} />
-        </p>
+        <div className={`${FRAME} pt-16 pb-12 md:pt-24 md:pb-16`}>
+          <Logo variant="compact" animate decorative className="h-auto w-full" />
+        </div>
       </div>
 
       <div className={`${FRAME} relative flex flex-col gap-4 border-t border-line py-6 text-sm text-ink-soft md:flex-row md:items-center md:justify-between`}>

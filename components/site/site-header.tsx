@@ -121,8 +121,8 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
         </a>
 
         <div className={`${FRAME} grid h-20 grid-cols-[1fr_auto] items-center gap-6 lg:grid-cols-[1fr_auto_1fr]`}>
-          <Link href={`/${locale}`} className="justify-self-start" aria-label="Tarida MC">
-            <Logo />
+          <Link href={`/${locale}`} className="justify-self-start">
+            <Logo className="h-9 md:h-10" />
           </Link>
 
           <nav aria-label={copy.mainNavAria} className="hidden items-center gap-9 lg:flex">

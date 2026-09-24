@@ -19,8 +19,8 @@ export const DISPLAY = "font-display font-normal leading-[0.95] tracking-[-0.015
 /** Same serif for smaller headings, a little looser. */
 export const DISPLAY_QUIET = "font-display font-normal leading-[1.05] tracking-[-0.01em]";
 
-/** Huge thin grotesk (Inter Tight 200/300), the Velora voice. */
-export const DISPLAY_SANS = "font-sans font-extralight leading-[0.86] tracking-[-0.055em]";
+/** Huge thin geometric sans (Montserrat 200, the logo's family), the Velora voice. */
+export const DISPLAY_SANS = "font-sans font-extralight leading-[0.86] tracking-[-0.06em]";
 
 /** The italic accent phrase inside a headline. */
 export const ITALIC = "font-display italic font-normal";

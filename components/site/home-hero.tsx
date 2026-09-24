@@ -39,7 +39,7 @@ export function HomeHero({ eyebrow, titleTop, titleBottom, intro, image, scroll,
         )}
         <div
           aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,18,14,0.5)_0%,rgba(24,18,14,0.08)_32%,rgba(24,18,14,0.12)_58%,rgba(24,18,14,0.82)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,26,42,0.5)_0%,rgba(6,26,42,0.08)_32%,rgba(6,26,42,0.12)_58%,rgba(6,26,42,0.82)_100%)]"
         />
       </div>
 
@@ -53,7 +53,10 @@ export function HomeHero({ eyebrow, titleTop, titleBottom, intro, image, scroll,
 
         <h1 className="relative -mx-[0.04em] select-none">
           <span
-            className={`${DISPLAY_SANS} block text-[clamp(4.25rem,17.5vw,20rem)]`}
+            className={`${DISPLAY_SANS} block`}
+            // Sized by length so the word always spans the frame without
+            // overflowing: "Inmuebles" and "L’immobilier" both land edge to edge.
+            style={{ fontSize: `min(${(86 / (Array.from(titleTop).length * 0.56)).toFixed(2)}vw, 20rem)` }}
             data-m="drift"
             data-x="-7"
             data-opacity="0.2"

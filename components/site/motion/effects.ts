@@ -80,6 +80,28 @@ function onEnter(el: Element, build: () => gsap.core.Animation, start = "top 88%
   return () => {};
 }
 
+/**
+ * The logo draws itself: each wave wipes in from the left, then the letters
+ * of TARIDA MC rise through their line, then REAL ESTATE. SVG transforms are
+ * in viewBox units (the letters are ~72 units tall), and the hidden state in
+ * CSS is only opacity, because a CSS transform on an SVG element would beat
+ * the transform attribute GSAP writes.
+ */
+export function logoTimeline(el: Element, delay = 0) {
+  const tl = gsap.timeline({ delay });
+  const waves = el.querySelectorAll("[data-logo-wave]");
+  const glyphs = el.querySelectorAll("[data-logo-glyph]");
+  const sub = el.querySelectorAll("[data-logo-sub]");
+  tl.fromTo(
+    waves,
+    { opacity: 1, clipPath: "inset(0% 100% 0% 0%)" },
+    { clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: CURTAIN, stagger: 0.14 },
+  )
+    .fromTo(glyphs, { opacity: 1, y: 90 }, { y: 0, duration: 1.1, ease: EXPO, stagger: 0.045 }, 0.35)
+    .fromTo(sub, { opacity: 1, y: 48 }, { y: 0, duration: 0.9, ease: EXPO, stagger: 0.03 }, 0.75);
+  return tl;
+}
+
 /** Mounts every effect found in the document. Returns the cleanup. */
 export function mount(): () => void {
   const disposers: (() => void)[] = [];
@@ -113,6 +135,10 @@ export function mount(): () => void {
           ),
         ),
       );
+    });
+
+    all('[data-m="logo"]').forEach((el) => {
+      disposers.push(onEnter(el, () => logoTimeline(el, delayOf(el))));
     });
 
     all('[data-m="fade"]').forEach((el) => {
