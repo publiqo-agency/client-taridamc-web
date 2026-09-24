@@ -15,8 +15,8 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
     description: dict.common.meta.description,
     start_url: "/",
     display: "browser",
-    background_color: "#f9fafb",
-    theme_color: "#111827",
+    background_color: "#f5efe8",
+    theme_color: "#211a15",
     icons: [
       { src: "/logo/logo-192.png", sizes: "192x192", type: "image/png" },
       { src: "/logo/logo-512.png", sizes: "512x512", type: "image/png" },
