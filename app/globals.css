@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/*
+  Design tokens. The VALUES are CLIENT-SKIN and get rewritten per client; the
+  MECHANICS (indirection + bridge + bands) are CORE and stay.
+
+  Three invariants, each learned from a real failure:
+
+  1. Every colour token points at an intermediate variable (--ink, --stock…),
+     never at a literal. With a literal, Lightning CSS bakes the opacity
+     variants (bg-ink/40, text-ink/70) to the light value at build time and
+     .band-dark breaks silently: dark band, dark text.
+
+  2. The bridge (--color-ink: var(--ink)) is declared on `*, ::before,
+     ::after`, not only on :root. var() inside a custom property resolves
+     where it is DECLARED; if the bridge lived only on :root, overriding
+     --ink inside .band-dark would never reach --color-ink.
+
+  3. Whoever rewrites the palette rewrites ALL SEVEN tokens in each band.
+     Leaving one out mixes it with the parent context, and the bug shows up
+     in the state nobody checks while laying out (a hover inside a band).
+*/
+@theme {
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  /* Text colour ON an accent surface. */
+  --color-accent-ink: var(--accent-ink);
+  --color-whatsapp: #25d366; /* WhatsApp brand green — chips and icons only */
+
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-soft: var(--ink-soft);
+  --color-stock: var(--stock);
+  --color-stock-2: var(--stock-2);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+
+  --font-display: var(--font-display-family), system-ui, sans-serif;
+  --font-sans: var(--font-sans-family), system-ui, sans-serif;
+}
+
+/* Light palette: the page. Neutral placeholder values — replace per client. */
+:root {
+  color-scheme: light;
+  --accent: #2563eb;
+  --accent-2: #1d4ed8;
+  --accent-ink: #ffffff;
+
+  --ink: #111827; /* primary text and dark panels */
+  --ink-2: #1f2937; /* hover of ink buttons */
+  --ink-soft: #6b7280; /* secondary text */
+  --stock: #f9fafb; /* page background */
+  --stock-2: #f3f4f6; /* alternate panel */
+  --surface: #ffffff; /* plates / cards */
+  --line: #e5e7eb; /* hairlines */
+}
+
+/*
+  Dark band: hero, footer, dark panels. Already a dark surface with light
+  text, so it rewrites all seven tokens and nothing inside needs to know
+  where it is. Paint the panel with `bg-stock`, NEVER `bg-ink`: inside the
+  band "ink" is the colour of INK (light) and "stock" the colour of PAPER
+  (dark).
+*/
+.band-dark {
+  --ink: #ffffff;
+  --ink-2: #e5e7eb;
+  --ink-soft: #9ca3af;
+  --stock: #111827;
+  --stock-2: #1f2937;
+  --surface: #1f2937;
+  --line: #374151;
+}
+
+/* Light card INSIDE a dark band. KEEP IN SYNC with :root. */
+.band-light {
+  --ink: #111827;
+  --ink-2: #1f2937;
+  --ink-soft: #6b7280;
+  --stock: #f9fafb;
+  --stock-2: #f3f4f6;
+  --surface: #ffffff;
+  --line: #e5e7eb;
+}
+
+/* The bridge. See invariant 2 above. */
+*,
+::before,
+::after {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-soft: var(--ink-soft);
+  --color-stock: var(--stock);
+  --color-stock-2: var(--stock-2);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-ink: var(--accent-ink);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-stock text-ink antialiased;
+    font-family: var(--font-sans);
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 30%, transparent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Eyebrow / small caps label. */
+@utility label {
+  @apply text-xs font-semibold tracking-[0.14em] uppercase;
+}
+
+/*
+  Reveal on scroll. Only hides anything when JS has said it is present
+  (data-reveal="on", set by REVEAL_INIT_SCRIPT): without JS the page shows
+  whole. Reduced motion disables the whole system.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal="on"] .reveal {
+    opacity: 0;
+    translate: 0 1.25rem;
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      translate 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @media (min-width: 48rem) {
+    [data-reveal="on"] .reveal-left {
+      translate: -1.5rem 0;
+    }
+    [data-reveal="on"] .reveal-right {
+      translate: 1.5rem 0;
+    }
+  }
+  [data-reveal="on"] .reveal.is-in {
+    opacity: 1;
+    translate: 0 0;
+  }
+  .reveal-d1 { transition-delay: 90ms; }
+  .reveal-d2 { transition-delay: 180ms; }
+  .reveal-d3 { transition-delay: 270ms; }
+  .reveal-d4 { transition-delay: 360ms; }
+}
