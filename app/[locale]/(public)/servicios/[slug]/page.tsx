@@ -9,7 +9,7 @@ import { SERVICE_IDS, SERVICE_IMAGES, canonicalServiceSlug, serviceFromCanonical
 import { catalogue, PROPERTY_TYPES } from "@/lib/properties";
 import { proposalFormHref } from "@/lib/whatsapp";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
-import { DISPLAY, DISPLAY_QUIET, DISPLAY_SANS, FRAME, ITALIC, SECTION } from "@/lib/styles";
+import { DISPLAY, DISPLAY_QUIET, DISPLAY_SANS, FRAME, ACCENT, SECTION } from "@/lib/styles";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageTransition } from "@/components/site/page-transition";
 import { PageHero } from "@/components/site/page-hero";
@@ -157,14 +157,14 @@ export default async function ServicePage(props: Props) {
                     40
                   </span>
                   <span className="pb-[0.4em]">
-                    <span className={`${ITALIC} block text-[clamp(2rem,3.4vw,3.5rem)] leading-none`}>{common.brand.yearsLabel}</span>
+                    <span className={`${ACCENT} block text-[clamp(2rem,3.4vw,3.5rem)] leading-none`}>{common.brand.yearsLabel}</span>
                     <span className="label mt-3 block text-ink-soft">{common.brand.yearsCaption}</span>
                   </span>
                 </p>
                 <div className="col-span-12 md:col-span-5" data-m="fade" data-delay="0.15">
                   <p className="label text-ink-soft">{common.brand.family}</p>
                   <p className={`${DISPLAY_QUIET} mt-4 text-3xl`}>{dict.about.leader.body}</p>
-                  <p className={`${ITALIC} mt-8 text-2xl`}>{dict.about.leader.name}</p>
+                  <p className={`${ACCENT} mt-8 text-2xl`}>{dict.about.leader.name}</p>
                   <p className="label mt-1 text-ink-soft">{dict.about.leader.role}</p>
                 </div>
               </div>

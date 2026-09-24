@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { DISPLAY_SANS, FRAME, ITALIC } from "@/lib/styles";
+import { DISPLAY_SANS, FRAME, ACCENT } from "@/lib/styles";
 import { hasPublicImage } from "@/lib/images";
 import { Chars } from "./motion/split";
 import { COORDS } from "./coords";
@@ -19,7 +19,7 @@ type Props = {
  * The home opener. The photo starts as a small window between the two words
  * of the headline and grows to full bleed (the "growing window", after the
  * OrnaVillas reference); the thin grotesk word rises letter by letter, the
- * serif italic answers from the right, and on scroll the two halves drift
+ * thin accent phrase answers from the right, and on scroll the two halves drift
  * apart while the photo sinks with parallax.
  */
 export function HomeHero({ eyebrow, titleTop, titleBottom, intro, image, scroll, children }: Props) {
@@ -66,7 +66,7 @@ export function HomeHero({ eyebrow, titleTop, titleBottom, intro, image, scroll,
             </span>
           </span>
           <span
-            className={`${ITALIC} -mt-[0.06em] block text-right text-[clamp(3.25rem,12vw,14rem)] leading-[0.9] tracking-[-0.02em]`}
+            className={`${ACCENT} -mt-[0.06em] block text-right text-[clamp(3.25rem,12vw,14rem)] leading-[0.9]`}
             data-m="drift"
             data-x="7"
             data-opacity="0.2"

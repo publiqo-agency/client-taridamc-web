@@ -1,4 +1,4 @@
-import { ITALIC } from "@/lib/styles";
+import { ACCENT } from "@/lib/styles";
 
 type Value = { title: string; body: string };
 
@@ -32,7 +32,7 @@ export function ValuesGrid({ items }: { items: Value[] }) {
               {String(i + 1).padStart(2, "0")}
             </span>
             <div>
-              <p className={`${ITALIC} text-[clamp(3rem,5vw,5.25rem)] leading-none`}>{item.title}</p>
+              <p className={`${ACCENT} text-[clamp(3rem,5vw,5.25rem)] leading-none`}>{item.title}</p>
               <p className="mt-6 max-w-xs text-ink-soft transition-colors duration-500 group-hover:text-stock/75">{item.body}</p>
             </div>
           </div>

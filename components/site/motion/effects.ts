@@ -339,40 +339,29 @@ export function mount(): () => void {
     all('[data-m="hscroll"]').forEach((section) => {
       const track = section.querySelector<HTMLElement>("[data-track]");
       if (!track) return;
+      // Only the rail pins; the heading above it scrolls past normally.
+      const pinned = section.querySelector<HTMLElement>("[data-pin]") ?? section;
       const progress = section.querySelector<HTMLElement>("[data-progress]");
       const current = section.querySelector<HTMLElement>("[data-current]");
-      const cards = Array.from(track.children) as HTMLElement[];
+      const cards = Array.from(track.children).filter((c) => !c.hasAttribute("aria-hidden"));
 
       mm.add("(min-width: 1024px) and (pointer: fine)", () => {
         const distance = () => Math.max(0, track.scrollWidth - track.clientWidth);
-        const tween = gsap.to(track, {
+        gsap.to(track, {
           x: () => -distance(),
           ease: "none",
           scrollTrigger: {
-            trigger: section,
+            trigger: pinned,
             start: "top top",
             end: () => `+=${distance()}`,
             pin: true,
-            scrub: 0.9,
+            scrub: 0.6,
             invalidateOnRefresh: true,
             onUpdate: (self) => {
               if (progress) progress.style.transform = `scaleX(${self.progress})`;
               if (current) current.textContent = pad(Math.min(cards.length, Math.floor(self.progress * cards.length) + 1), 2);
             },
           },
-        });
-        cards.forEach((card) => {
-          const depth = num(card.dataset.depth, 0);
-          if (!depth) return;
-          gsap.fromTo(
-            card,
-            { y: depth },
-            {
-              y: -depth,
-              ease: "none",
-              scrollTrigger: { trigger: card, containerAnimation: tween, start: "left right", end: "right left", scrub: true },
-            },
-          );
         });
       });
     });

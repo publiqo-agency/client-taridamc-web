@@ -7,7 +7,7 @@ import { COORDS } from "./coords";
 
 type Props = {
   eyebrow?: string;
-  /** Supports "\n" line breaks and *italic* accents. */
+  /** Supports "\n" line breaks and *accent* phrases. */
   title: string;
   intro?: string;
   image?: { src: string; alt: string };

@@ -22,8 +22,11 @@ export const DISPLAY_QUIET = "font-display font-normal leading-[1.05] tracking-[
 /** Huge thin geometric sans (Montserrat 200, the logo's family), the Velora voice. */
 export const DISPLAY_SANS = "font-sans font-extralight leading-[0.86] tracking-[-0.06em]";
 
-/** The italic accent phrase inside a headline. */
-export const ITALIC = "font-display italic font-normal";
+/**
+ * The accent phrase inside a headline: the hero's thin Montserrat (the
+ * logo's family), upright. Italics are kept out of the site on purpose.
+ */
+export const ACCENT = "font-sans font-extralight not-italic tracking-[-0.045em]";
 
 /** Section index, e.g. "(01)". */
 export const INDEX = "label tnum text-ink-soft";

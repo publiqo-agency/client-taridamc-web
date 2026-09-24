@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { ITALIC } from "@/lib/styles";
+import { ACCENT } from "@/lib/styles";
 
 /**
  * Server-side text splitting for the motion engine. The markup is split
@@ -8,7 +8,7 @@ import { ITALIC } from "@/lib/styles";
  * one sentence.
  *
  * Copy conventions (dictionaries): "\n" is a line break the design relies
- * on, and *asterisks* mark the italic serif accent phrase.
+ * on, and *asterisks* mark the accent phrase (thin sans, brand blue).
  */
 
 /** "*a* b" → [{text:"a", em:true}, {text:" b", em:false}] */
@@ -26,13 +26,13 @@ function segments(text: string) {
 /** Accent phrases wear the logo's blue (a lighter sea blue inside dark bands). */
 const EM = "text-accent";
 
-/** Renders *italic* accents without any splitting. */
+/** Renders *accent* phrases without any splitting. */
 export function Rich({ text, emClassName = EM }: { text: string; emClassName?: string }) {
   return (
     <>
       {segments(text).map((s, i) =>
         s.em ? (
-          <em key={i} className={`${ITALIC} ${emClassName}`}>
+          <em key={i} className={`${ACCENT} ${emClassName}`}>
             {s.text}
           </em>
         ) : (
@@ -103,7 +103,7 @@ export function Words({ text, emClassName = EM }: { text: string; emClassName?: 
             /^\s+$/.test(word) ? (
               <Fragment key={`${si}-${wi}`}>{word}</Fragment>
             ) : (
-              <span key={`${si}-${wi}`} className={s.em ? `w ${ITALIC} ${emClassName}` : "w"}>
+              <span key={`${si}-${wi}`} className={s.em ? `w ${ACCENT} ${emClassName}` : "w"}>
                 {word}
               </span>
             ),
