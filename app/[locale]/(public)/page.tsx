@@ -3,15 +3,20 @@ import { toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { pageMetadata } from "@/lib/i18n/metadata";
 import { localeHref, routePaths, serviceHref } from "@/lib/routes";
-import { SERVICE_IDS, SERVICE_IMAGES } from "@/lib/services";
-import { faqSchema } from "@/lib/schema";
-import { reveal } from "@/lib/motion";
+import { SERVICE_IMAGES } from "@/lib/services";
+import { catalogue } from "@/lib/properties";
+import { proposalFormHref } from "@/lib/whatsapp";
 import { FRAME, SECTION } from "@/lib/styles";
-import { JsonLd } from "@/components/seo/json-ld";
-import { PageHero } from "@/components/site/page-hero";
+import { PageTransition } from "@/components/site/page-transition";
+import { HomeHero } from "@/components/site/home-hero";
+import { Manifesto } from "@/components/site/manifesto";
 import { SectionHeader } from "@/components/site/section-header";
-import { ServiceCard } from "@/components/site/service-card";
-import { FaqList } from "@/components/site/faq-list";
+import { ServiceStack } from "@/components/site/service-stack";
+import { ProcessGrid } from "@/components/site/process-grid";
+import { PropertyRail } from "@/components/site/property-rail";
+import { CatalogueEmpty } from "@/components/site/catalogue-empty";
+import { ValuesGrid } from "@/components/site/values-grid";
+import { ClosingBand } from "@/components/site/closing-band";
 import { PillButton } from "@/components/site/pill-button";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 
@@ -28,85 +33,153 @@ export async function generateMetadata(props: PageProps<"/[locale]">): Promise<M
   });
 }
 
+const HERO_IMAGE = "/hero/home.webp";
+const CLOSING_IMAGE = "/cta/sell.webp";
+
 export default async function HomePage(props: PageProps<"/[locale]">) {
   const { locale: raw } = await props.params;
   const locale = toLocale(raw);
   const dict = await getDictionary(locale);
-  const { home, services, faq, common } = dict;
-  // The home shows the first three questions; the FAQ page has them all.
-  const faqItems = faq.items.slice(0, 3);
+  const { home, common, services } = dict;
+
+  const sellHref = serviceHref(locale, "purchase");
+  const rentHref = serviceHref(locale, "rental");
+  const contactHref = localeHref(locale, "contact");
+  const { items: listings, sample } = catalogue();
 
   return (
-    <>
-      <PageHero
-        eyebrow={home.hero.eyebrow}
-        title={home.hero.title}
-        intro={home.hero.intro}
-        image={{ src: "/hero/home.webp", alt: "" }}
-      >
-        <div data-placement="hero" className="flex flex-wrap gap-3">
-          <PillButton href={localeHref(locale, "contact")} tone="accent" cta="form">
+    <PageTransition>
+      <div data-placement="home-hero">
+        <HomeHero
+          eyebrow={home.hero.eyebrow}
+          titleTop={home.hero.titleTop}
+          titleBottom={home.hero.titleBottom}
+          intro={home.hero.intro}
+          image={{ src: HERO_IMAGE, alt: home.hero.imageAlt }}
+          scroll={common.cta.scroll}
+        >
+          <PillButton href={sellHref} tone="white" seed delay={1}>
             {home.hero.ctaPrimary}
           </PillButton>
-          <PillButton href={localeHref(locale, "services")} tone="white">
+          <PillButton href={rentHref} tone="outline" seed delay={1.1}>
             {home.hero.ctaSecondary}
           </PillButton>
-        </div>
-      </PageHero>
+        </HomeHero>
+      </div>
 
-      <section className={`${FRAME} ${SECTION}`}>
-        <SectionHeader eyebrow={home.services.eyebrow} title={home.services.title} intro={home.services.intro} />
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {SERVICE_IDS.map((id, i) => (
-            <ServiceCard
-              key={id}
-              href={serviceHref(locale, id)}
-              title={services.items[id].shortTitle}
-              teaser={services.items[id].teaser}
-              image={{ src: SERVICE_IMAGES[id], alt: services.items[id].imageAlt }}
-              cta={common.cta.learnMore}
-              className={reveal("up", i)}
+      <Manifesto
+        index="01"
+        eyebrow={home.manifesto.eyebrow}
+        text={home.manifesto.text}
+        years={40}
+        yearsLabel={common.brand.yearsLabel}
+        yearsCaption={common.brand.yearsCaption}
+        signature={home.manifesto.signature}
+        role={home.manifesto.role}
+        cta={{ href: localeHref(locale, "about"), label: home.manifesto.cta }}
+      />
+
+      <section className="pb-16 md:pb-24">
+        <SectionHeader index="02" eyebrow={home.lines.eyebrow} title={home.lines.title} className={FRAME} />
+      </section>
+      <ServiceStack
+        cursor={common.catalogue.view}
+        items={[
+          {
+            id: "purchase",
+            index: "01",
+            kicker: home.lines.purchaseKicker,
+            title: home.lines.purchaseTitle,
+            body: services.items.purchase.teaser,
+            href: sellHref,
+            cta: common.cta.learnMore,
+            image: { src: SERVICE_IMAGES.purchase, alt: services.items.purchase.imageAlt },
+            tone: "light",
+          },
+          {
+            id: "rental",
+            index: "02",
+            kicker: home.lines.rentalKicker,
+            title: home.lines.rentalTitle,
+            body: services.items.rental.teaser,
+            href: rentHref,
+            cta: common.cta.learnMore,
+            image: { src: SERVICE_IMAGES.rental, alt: services.items.rental.imageAlt },
+            tone: "dark",
+          },
+        ]}
+      />
+
+      <section data-placement="home-process" className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
+        <div className={FRAME}>
+          <SectionHeader index="03" eyebrow={home.process.eyebrow} title={home.process.title} intro={home.process.intro} />
+          <div className="mt-20 md:mt-28">
+            <ProcessGrid steps={services.items.purchase.sections} />
+          </div>
+          <div className="mt-14 flex flex-wrap gap-3">
+            <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" seed>
+              {services.items.purchase.cta}
+            </PillButton>
+            <WhatsAppCta
+              label={common.cta.whatsapp}
+              message={services.items.purchase.whatsappMessage}
+              service="purchase"
+              tone="outline"
             />
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-stock-2">
-        <div className={`${FRAME} ${SECTION} grid gap-10 md:grid-cols-2`}>
-          <SectionHeader eyebrow={home.about.eyebrow} title={home.about.title} />
-          <div className={reveal("right")}>
-            {home.about.body.map((paragraph) => (
-              <p key={paragraph} className="mt-4 text-lg text-ink-soft first:mt-0">
-                {paragraph}
-              </p>
-            ))}
-            <PillButton href={localeHref(locale, "about")} tone="outline" className="mt-8">
-              {home.about.cta}
-            </PillButton>
           </div>
         </div>
       </section>
 
-      <section className={`${FRAME} ${SECTION}`}>
-        <SectionHeader eyebrow={home.faq.eyebrow} title={home.faq.title} />
-        <FaqList items={faqItems} className="mt-10" />
-        <JsonLd data={faqSchema(faqItems)} />
-      </section>
-
-      <section className="band-dark bg-stock text-ink">
-        <div data-placement="contact-band" className={`${FRAME} ${SECTION} flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between`}>
-          <div>
-            <h2 className="font-display text-3xl font-bold">{home.contact.title}</h2>
-            <p className="mt-3 max-w-xl text-ink-soft">{home.contact.body}</p>
+      {listings.length > 0 ? (
+        <PropertyRail
+          index="04"
+          items={listings}
+          sample={sample}
+          locale={locale}
+          copy={common.catalogue}
+          catalogueHref={rentHref}
+          formHref={proposalFormHref(contactHref, "rental")}
+        />
+      ) : (
+        <section data-placement="home-catalogue" className={SECTION}>
+          <div className={FRAME}>
+            <SectionHeader index="04" eyebrow={common.catalogue.eyebrow} title={common.catalogue.title} intro={common.catalogue.intro} />
+            <div className="mt-16">
+              <CatalogueEmpty title={common.catalogue.empty.title} body={common.catalogue.empty.body}>
+                <PillButton href={proposalFormHref(contactHref, "rental")} cta="form" service="rental">
+                  {common.catalogue.empty.cta}
+                </PillButton>
+              </CatalogueEmpty>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <WhatsAppCta label={common.cta.whatsapp} message={common.whatsapp.messages.general} />
-            <PillButton href={localeHref(locale, "contact")} tone="white" cta="form">
-              {home.contact.cta}
-            </PillButton>
+        </section>
+      )}
+
+      <section className={`${SECTION} bg-stock-2`}>
+        <div className={FRAME}>
+          <SectionHeader index="05" eyebrow={common.values.eyebrow} title={common.values.title} />
+          <div className="mt-20 md:mt-28">
+            <ValuesGrid items={common.values.items} />
           </div>
         </div>
       </section>
-    </>
+
+      <ClosingBand
+        eyebrow={common.closing.eyebrow}
+        title={common.closing.title}
+        body={common.closing.body}
+        image={{ src: CLOSING_IMAGE, alt: common.closing.imageAlt }}
+      >
+        <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" seed>
+          {services.items.purchase.cta}
+        </PillButton>
+        <WhatsAppCta
+          label={common.cta.whatsapp}
+          message={services.items.purchase.whatsappMessage}
+          service="purchase"
+          tone="outline"
+        />
+      </ClosingBand>
+    </PageTransition>
   );
 }

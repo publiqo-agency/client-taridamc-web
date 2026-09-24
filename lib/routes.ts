@@ -20,14 +20,13 @@ import { SERVICE_SLUGS, type ServiceId } from "@/lib/services";
  * so a new route needs nothing there.
  */
 export const ROUTES = {
-  home: { es: "", en: "" },
-  services: { es: "/servicios", en: "/services" },
-  about: { es: "/nosotros", en: "/about-us" },
-  faq: { es: "/preguntas-frecuentes", en: "/faq" },
-  contact: { es: "/contacto", en: "/contact" },
-  legalNotice: { es: "/aviso-legal", en: "/legal-notice" },
-  privacy: { es: "/politica-de-privacidad", en: "/privacy-policy" },
-  cookies: { es: "/politica-de-cookies", en: "/cookie-policy" },
+  home: { es: "", en: "", fr: "", ca: "" },
+  services: { es: "/servicios", en: "/services", fr: "/services", ca: "/serveis" },
+  about: { es: "/nosotros", en: "/about-us", fr: "/qui-sommes-nous", ca: "/qui-som" },
+  contact: { es: "/contacto", en: "/contact", fr: "/contact", ca: "/contacte" },
+  legalNotice: { es: "/aviso-legal", en: "/legal-notice", fr: "/mentions-legales", ca: "/avis-legal" },
+  privacy: { es: "/politica-de-privacidad", en: "/privacy-policy", fr: "/politique-de-confidentialite", ca: "/politica-de-privacitat" },
+  cookies: { es: "/politica-de-cookies", en: "/cookie-policy", fr: "/politique-de-cookies", ca: "/politica-de-galetes" },
 } satisfies Record<string, Record<Locale, string>>;
 
 export type RouteKey = keyof typeof ROUTES;
@@ -41,7 +40,7 @@ export const ROUTE_KEYS = Object.keys(ROUTES) as RouteKey[];
  * app/[locale]/(public)/layout.tsx because it is a client decision (which
  * entries, which order, what goes into the CTA button).
  */
-export const NAV_KEYS = ["services", "about", "faq"] as const satisfies readonly RouteKey[];
+export const NAV_KEYS = ["services", "about"] as const satisfies readonly RouteKey[];
 
 /** Legal pages, which the footer prints in a second row. */
 export const LEGAL_KEYS = ["legalNotice", "privacy", "cookies"] as const satisfies readonly RouteKey[];

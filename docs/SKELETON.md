@@ -59,7 +59,9 @@ What makes two clients not look alike.
 
 - `app/globals.css` — the **values** of the tokens and the fonts
 - `app/[locale]/**` — the pages (their composition, not their data plumbing)
-- `components/site/**` except the ones listed as CORE
+- `components/site/**` except the ones listed as CORE (this client adds the
+  motion engine in `components/site/motion/`: GSAP + Lenis driven by
+  `data-m` attributes, with its starting states in `globals.css`)
 - `app/opengraph-image.tsx`, `emails/contact-notification.tsx` — brand colours
 - `lib/styles.ts` — `FRAME`, `SECTION`, `DISPLAY`…
 

@@ -1,4 +1,4 @@
-# __CLIENT_NAME__ — website
+# Tarida MC — website
 
 Static marketing site. Next 16 (App Router), React 19, Tailwind v4, TypeScript.
 No database, no CMS: content lives in `dictionaries/`, the contact form is a

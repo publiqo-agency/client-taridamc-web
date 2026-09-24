@@ -1,78 +1,79 @@
 import type { ServicesDict } from "@/lib/i18n/types";
 
+/** English services copy. Same shape as dictionaries/es/services.ts. */
 export const services: ServicesDict = {
   meta: {
     title: "Services",
-    seoTitle: "Services · __CLIENT_NAME__",
-    description: "Meta description of the services index.",
+    seoTitle: "Property purchase and rentals in Castelldefels · Tarida MC",
+    description:
+      "We buy properties directly from their owners and let industrial units and homes in Castelldefels.",
   },
   index: {
     eyebrow: "Services",
-    title: "Everything we can do for you",
-    intro: "One sentence introducing the catalogue and who it is for.",
+    title: "Buying and letting,\n*with the same judgement*",
+    intro:
+      "Two activities, one way of working: studying every property carefully and treating every client with candour.",
     allServices: "All services",
   },
   detail: {
-    includesTitle: "What is included",
+    includesTitle: "What we assess",
     faqTitle: "Frequently asked questions",
-    otherServices: "Other services",
+    otherServices: "Other service",
     requestTitle: "Interested?",
-    requestBody: "Tell us what you need and we will prepare a tailored proposal.",
+    requestBody: "Tell us what you need and we will reply to you personally.",
   },
   items: {
-    "service-one": {
-      title: "Service one",
-      shortTitle: "Service one",
-      teaser: "One sentence that sums up the service.",
-      metaDescription: "Meta description of the service one page.",
-      intro: "Intro paragraph: what it is, who it is for and what it solves.",
-      imageAlt: "Description of the service one photo",
-      includes: ["Included item", "Another included item", "A third one"],
+    purchase: {
+      title: "We buy your property",
+      shortTitle: "Sell a property",
+      teaser:
+        "If you own a property and wish to sell it, we study the transaction and, if it is a good fit, we buy it from you.",
+      metaDescription:
+        "Tarida MC buys properties directly from their owners in Castelldefels. We analyse every asset and, if the opportunity fits, present you with a purchase offer.",
+      intro:
+        "We buy properties directly from their owners. We analyse every asset in detail and, when the opportunity matches what we are looking for, we present a purchase offer. With the integrity of a family business with forty years in the sector.",
+      imageAlt: "Façade of a Mediterranean home in warm light",
+      includes: [
+        "Location and surroundings",
+        "Property type and floor area",
+        "Condition",
+        "Land registry and planning status",
+        "Potential of the asset",
+      ],
       sections: [
         {
-          heading: "How we work",
-          body: ["A paragraph about the process.", "Another about the outcome."],
+          heading: "You present the property",
+          body: ["Tell us about your property: type, location, floor area and current situation. Via the form or on WhatsApp."],
+        },
+        {
+          heading: "We analyse the asset",
+          body: ["We study the property and its potential with the experience of forty years in the market."],
+        },
+        {
+          heading: "We give you an answer",
+          body: ["If the opportunity interests us, we present you with a purchase offer. If not, we tell you just as clearly."],
+        },
+        {
+          heading: "We complete the transaction",
+          body: ["We guide you through every step until signing, with complete transparency."],
         },
       ],
-      faq: [
-        { question: "A common question about this service?", answer: "The answer, in one or two sentences." },
-      ],
-      whatsappMessage: "Hi, I am interested in service one.",
-      cta: "Request a proposal",
+      whatsappMessage: "Hello, I would like you to consider purchasing my property.",
+      cta: "Offer my property",
     },
-    "service-two": {
-      title: "Service two",
-      shortTitle: "Service two",
-      teaser: "One sentence that sums up the service.",
-      metaDescription: "Meta description of the service two page.",
-      intro: "Intro paragraph: what it is, who it is for and what it solves.",
-      imageAlt: "Description of the service two photo",
-      includes: ["Included item", "Another included item"],
-      sections: [
-        {
-          heading: "How we work",
-          body: ["A paragraph about the process."],
-        },
-      ],
-      whatsappMessage: "Hi, I am interested in service two.",
-      cta: "Request a proposal",
-    },
-    "service-three": {
-      title: "Service three",
-      shortTitle: "Service three",
-      teaser: "One sentence that sums up the service.",
-      metaDescription: "Meta description of the service three page.",
-      intro: "Intro paragraph: what it is, who it is for and what it solves.",
-      imageAlt: "Description of the service three photo",
-      includes: ["Included item"],
-      sections: [
-        {
-          heading: "How we work",
-          body: ["A paragraph about the process."],
-        },
-      ],
-      whatsappMessage: "Hi, I am interested in service three.",
-      cta: "Request a proposal",
+    rental: {
+      title: "Industrial units and homes to let",
+      shortTitle: "Rent a property",
+      teaser: "Industrial units and homes in Castelldefels, from our own portfolio.",
+      metaDescription:
+        "Industrial units and homes to let in Castelldefels for businesses and individuals. Properties from Tarida MC's own portfolio, dealt with directly.",
+      intro:
+        "We let industrial units and homes in Castelldefels to businesses and individuals. They are properties from our own portfolio: we know them well and you deal with us directly.",
+      imageAlt: "Bright, open-plan industrial unit",
+      includes: [],
+      sections: [],
+      whatsappMessage: "Hello, I would like information about your properties to let.",
+      cta: "Ask about availability",
     },
   },
 };

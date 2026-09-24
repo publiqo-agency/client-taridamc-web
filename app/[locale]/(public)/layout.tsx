@@ -1,19 +1,23 @@
 import { toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
-import { LEGAL_KEYS, NAV_KEYS, localeHref, overlayPathsFor, serviceHref } from "@/lib/routes";
+import { LEGAL_KEYS, localeHref, overlayPathsFor, serviceHref } from "@/lib/routes";
 import { SERVICE_IDS } from "@/lib/services";
 import { GTM_ID } from "@/lib/analytics";
+import { ORG } from "@/lib/seo";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { WhatsAppBubble } from "@/components/site/whatsapp";
 import { ConsentBanner } from "@/components/site/consent-banner";
 import { RevealObserver } from "@/components/site/reveal-observer";
+import { MotionRoot } from "@/components/site/motion/motion-root";
+import { Intro } from "@/components/site/motion/intro";
+import { Cursor } from "@/components/site/motion/cursor";
+import { COORDS, PLACE } from "@/components/site/coords";
 
 /**
  * Public site chrome. All copy is resolved HERE, on the server, and goes
- * down to header and footer as props: both are client components (scroll,
- * drawer) and if they read the dictionary every language would end up in
- * the browser bundle.
+ * down to header, footer and intro as props: they are client components and
+ * if they read the dictionary every language would end up in the bundle.
  *
  * The 404 needs no entry: not-found.tsx hangs from [locale], outside this
  * group, so no header is painted there.
@@ -22,12 +26,27 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
   const { locale: raw } = await props.params;
   const locale = toLocale(raw);
   const dict = await getDictionary(locale);
-  const { nav, cta, whatsapp, footer, localeSwitcher, consent } = dict.common;
+  const { nav, cta, whatsapp, footer, localeSwitcher, consent, brand } = dict.common;
 
+  const homeHref = localeHref(locale, "home");
   const contactHref = localeHref(locale, "contact");
+  const aboutHref = localeHref(locale, "about");
+  const sellHref = serviceHref(locale, "purchase");
+  const rentHref = serviceHref(locale, "rental");
 
-  // The header menu is a client decision: which entries, in which order.
-  const navItems = NAV_KEYS.map((key) => ({ href: localeHref(locale, key), label: nav[key] }));
+  // The header's inline links: the seller lead first, it is what the site
+  // pushes; contact is the button beside them.
+  const navItems = [
+    { href: sellHref, label: nav.sell },
+    { href: rentHref, label: nav.rent },
+    { href: aboutHref, label: nav.about },
+  ];
+
+  const menuItems = [
+    { href: homeHref, label: nav.home },
+    ...navItems,
+    { href: contactHref, label: nav.contact },
+  ];
 
   const serviceLinks = SERVICE_IDS.map((id) => ({
     href: serviceHref(locale, id),
@@ -41,10 +60,13 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
 
   return (
     <>
+      <Intro wordmark={ORG.name} years={40} yearsLabel={brand.yearsLabel} place={PLACE} coords={COORDS} />
+
       <SiteHeader
         locale={locale}
         overlayPaths={overlayPathsFor(locale)}
         nav={navItems}
+        menu={menuItems}
         contactHref={contactHref}
         copy={{
           contact: cta.contact,
@@ -63,7 +85,15 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
       <SiteFooter
         locale={locale}
         columns={[
-          { title: footer.navTitle, links: [...navItems, { href: contactHref, label: nav.contact }] },
+          {
+            title: footer.navTitle,
+            links: [
+              { href: homeHref, label: nav.home },
+              { href: localeHref(locale, "services"), label: nav.services },
+              { href: aboutHref, label: nav.about },
+              { href: contactHref, label: nav.contact },
+            ],
+          },
           { title: footer.servicesTitle, links: serviceLinks },
         ]}
         legalLinks={legalLinks}
@@ -72,6 +102,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
           contactTitle: footer.contactTitle,
           followTitle: footer.followTitle,
           localeAria: localeSwitcher.aria,
+          localTime: footer.localTime,
           cookieSettings: footer.cookieSettings,
           rights: footer.rights,
           credit: footer.credit,
@@ -85,6 +116,8 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
       {GTM_ID && <ConsentBanner labels={consent} policyHref={localeHref(locale, "cookies")} />}
 
       <RevealObserver />
+      <MotionRoot />
+      <Cursor />
     </>
   );
 }

@@ -11,7 +11,7 @@ import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n/config";
  * different type, not an optional field here — an optional `price?` ends up
  * being filled.
  */
-export const SERVICE_IDS = ["service-one", "service-two", "service-three"] as const;
+export const SERVICE_IDS = ["purchase", "rental"] as const;
 
 export type ServiceId = (typeof SERVICE_IDS)[number];
 
@@ -24,16 +24,14 @@ export const isServiceId = (value: string): value is ServiceId =>
  * tolerates it (`toPublic` returns the input when there is no translation).
  */
 export const SERVICE_SLUGS: Record<ServiceId, Record<Locale, string>> = {
-  "service-one": { es: "/servicio-uno", en: "/service-one" },
-  "service-two": { es: "/servicio-dos", en: "/service-two" },
-  "service-three": { es: "/servicio-tres", en: "/service-three" },
+  rental: { es: "/alquiler", en: "/rentals", fr: "/location", ca: "/lloguer" },
+  purchase: { es: "/compra", en: "/we-buy", fr: "/achat", ca: "/compra" },
 };
 
 /** Hero image of each service page, under public/. Missing file → placeholder. */
 export const SERVICE_IMAGES: Record<ServiceId, string> = {
-  "service-one": "/services/service-one/hero.webp",
-  "service-two": "/services/service-two/hero.webp",
-  "service-three": "/services/service-three/hero.webp",
+  rental: "/services/rental/hero.webp",
+  purchase: "/services/purchase/hero.webp",
 };
 
 /**
@@ -42,7 +40,7 @@ export const SERVICE_IMAGES: Record<ServiceId, string> = {
  *
  * Not a preference: it is the only thing that works. The app/ folders are
  * named in the default locale and the proxy rewrites every public URL to
- * them (`/en/services/service-one` → `/en/servicios/servicio-uno`), so the
+ * them (`/en/services/rentals` → `/en/servicios/alquiler`), so the
  * segment that reaches `[slug]` is ALWAYS the canonical one. A
  * `generateStaticParams` that emitted the translated slug would prerender a
  * route the proxy never asks for, and with `dynamicParams = false` that is a

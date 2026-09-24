@@ -11,7 +11,7 @@
  * lib/services.ts, lib/i18n/get-dictionary.ts and dictionaries/<locale>/.
  * The compiler flags the last four; nothing flags this one.
  */
-export const LOCALES = ["es", "en"] as const;
+export const LOCALES = ["es", "en", "fr", "ca"] as const;
 
 export type Locale = (typeof LOCALES)[number];
 
@@ -41,22 +41,30 @@ export const toLocale = (value: string): Locale =>
 export const LOCALE_LABELS: Record<Locale, string> = {
   es: "Español",
   en: "English",
+  fr: "Français",
+  ca: "Català",
 };
 
 /** Short code for the switcher, where the full name does not fit. */
 export const LOCALE_SHORT: Record<Locale, string> = {
   es: "ES",
   en: "EN",
+  fr: "FR",
+  ca: "CA",
 };
 
 /** og:locale wants lang_TERRITORY. */
 export const OG_LOCALE: Record<Locale, string> = {
   es: "es_ES",
   en: "en_GB",
+  fr: "fr_FR",
+  ca: "ca_ES",
 };
 
 /** BCP-47 for <html lang> and the JSON-LD inLanguage. */
 export const HTML_LANG: Record<Locale, string> = {
   es: "es-ES",
   en: "en-GB",
+  fr: "fr-FR",
+  ca: "ca-ES",
 };

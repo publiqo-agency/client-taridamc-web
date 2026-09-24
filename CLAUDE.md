@@ -8,7 +8,7 @@ middleware file is `proxy.ts`, page and layout props are the global
 
 ## What this is
 
-Marketing website for **__CLIENT_NAME__**: static content, a contact form
+Marketing website for **Tarida MC**: static content, a contact form
 (Server Action → Resend) and WhatsApp as the main call to action. No database,
 no CMS. Every page is prerendered at build time.
 
@@ -20,6 +20,15 @@ design, rewritten per client).
 Language: code, comments, docs and commit subjects are in **English**. The
 site's copy lives in `dictionaries/` in the site's languages; that is content,
 not code.
+
+## This client
+
+Tarida MC S.L.: a small family real-estate business in Castelldefels, run by
+Ramon Seva, 40 years in the sector. The site presents them as a buyer of
+properties (sellers are the main lead) and shows the properties they rent
+(industrial units and homes). Tone: serious, elegant, minimalist; the visitor
+is addressed formally (usted / vous / vostè). Languages: es (default), en, fr,
+ca. The brief lives in GoFeed (see `docs/PENDING.md`).
 
 ## Branch flow
 
@@ -79,8 +88,8 @@ reads it on the first release.
 
 | What | Value |
 | --- | --- |
-| GitHub | `publiqo-agency/__REPO__` (default branch `dev`, production `main`) |
-| Vercel project | `__REPO__` on team `publiqo` (`team_OnXsO47WP6pF2CPt7DvL1s6u`), region `fra1`, Node 24 |
-| Production domain | `https://__DOMAIN__` |
+| GitHub | `publiqo-agency/client-taridamc-web` (default branch `dev`, production `main`) |
+| Vercel project | `client-taridamc-web` on team `publiqo` (`team_OnXsO47WP6pF2CPt7DvL1s6u`), region `fra1`, Node 24 |
+| Production domain | `https://www.taridamc.com` |
 | Database | none |
-| Scaffolded from | `publiqo-agency/template-web-static@__TEMPLATE_SHA__` |
+| Scaffolded from | `publiqo-agency/template-web-static@d1fdcc6` |

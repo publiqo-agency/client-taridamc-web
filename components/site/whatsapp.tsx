@@ -1,6 +1,6 @@
 import { whatsappUrl } from "@/lib/whatsapp";
 import { EASE_OUT } from "@/lib/styles";
-import { pillClass, pillIconClass } from "./pill-button";
+import { Arrow, pillClass } from "./pill-button";
 import { PendingData } from "./pending";
 
 /**
@@ -43,7 +43,7 @@ export function WhatsAppBubble({ aria, message }: { aria: string; message: strin
         rel="noopener noreferrer"
         aria-label={aria}
         data-cta="whatsapp"
-        className={`fixed right-5 bottom-5 z-40 grid size-14 place-items-center rounded-full bg-whatsapp text-white shadow-[0_12px_32px_-8px_rgba(37,211,102,0.6)] transition-[translate,box-shadow] duration-300 ${EASE_OUT} hover:-translate-y-1 hover:shadow-[0_18px_40px_-10px_rgba(37,211,102,0.7)] md:right-8 md:bottom-8`}
+        className={`band-dark fixed right-5 bottom-5 z-40 grid size-14 place-items-center rounded-full border border-line bg-stock text-ink transition-[translate,background-color] duration-500 ${EASE_OUT} hover:-translate-y-1 hover:bg-accent md:right-8 md:bottom-8`}
       >
         <WhatsAppIcon className="size-7" />
       </a>
@@ -51,7 +51,7 @@ export function WhatsAppBubble({ aria, message }: { aria: string; message: strin
   );
 }
 
-/** WhatsApp pill. Shares geometry with <PillButton> through pillClass(). */
+/** WhatsApp button. Shares geometry with <PillButton> through pillClass(). */
 export function WhatsAppCta({
   label,
   message,
@@ -61,7 +61,7 @@ export function WhatsAppCta({
 }: {
   label: string;
   message: string;
-  tone?: "whatsapp" | "whatsapp-outline" | "accent";
+  tone?: "whatsapp" | "whatsapp-outline" | "accent" | "white" | "outline";
   service?: string;
   className?: string;
 }) {
@@ -80,9 +80,7 @@ export function WhatsAppCta({
       className={pillClass(tone, className)}
     >
       <span>{label}</span>
-      <span aria-hidden className={pillIconClass}>
-        <WhatsAppIcon className="size-4" />
-      </span>
+      <Arrow glyph={<WhatsAppIcon className="size-4" />} />
     </a>
   );
 }

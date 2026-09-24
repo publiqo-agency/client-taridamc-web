@@ -17,7 +17,6 @@ const ROUTE_WEIGHT: Record<RouteKey, Weight> = {
   home: { priority: 1.0, changeFrequency: "monthly" },
   services: { priority: 0.9, changeFrequency: "monthly" },
   about: { priority: 0.7, changeFrequency: "monthly" },
-  faq: { priority: 0.6, changeFrequency: "monthly" },
   contact: { priority: 0.8, changeFrequency: "monthly" },
   legalNotice: { priority: 0.3, changeFrequency: "yearly" },
   privacy: { priority: 0.3, changeFrequency: "yearly" },

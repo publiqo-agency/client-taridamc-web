@@ -19,11 +19,11 @@ type Props = {
 export function LegalPage({ title, intro, sections, pending, updated }: Props) {
   return (
     <article className={`${FRAME_NARROW} ${SECTION} pt-32 md:pt-40`}>
-      <h1 className={`${DISPLAY} text-3xl md:text-4xl`}>{title}</h1>
+      <h1 className={`${DISPLAY} text-5xl md:text-7xl`}>{title}</h1>
       <p className="mt-6 text-lg text-ink-soft">{intro}</p>
 
       {pending && (
-        <div className="mt-8 rounded-2xl border border-dashed border-line bg-stock-2 p-5">
+        <div className="mt-8 border border-dashed border-line bg-stock-2 p-5">
           <p className="label text-ink-soft">{pending.label}</p>
           <p className="mt-2 text-sm text-ink-soft">{pending.body}</p>
         </div>
@@ -32,7 +32,7 @@ export function LegalPage({ title, intro, sections, pending, updated }: Props) {
       <div className="mt-12 space-y-10">
         {sections.map((section) => (
           <section key={section.heading}>
-            <h2 className="font-display text-lg font-bold">{section.heading}</h2>
+            <h2 className="font-display text-2xl">{section.heading}</h2>
             <div className="mt-3 space-y-3 text-ink-soft">
               {section.body.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>

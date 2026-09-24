@@ -7,7 +7,7 @@ export const alt = SITE.name;
 
 /**
  * Default OG card, language-neutral. At the root of app/ it cascades to every
- * route. CLIENT-SKIN: redraw with the brand once the palette exists.
+ * route. CLIENT-SKIN: espresso plate, bone type, one hairline.
  */
 export default function OgImage() {
   return new ImageResponse(
@@ -19,8 +19,8 @@ export default function OgImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#111827",
-          color: "#ffffff",
+          background: "#211a15",
+          color: "#f4ede4",
           padding: 64,
         }}
       >
@@ -29,20 +29,20 @@ export default function OgImage() {
             fontSize: 22,
             letterSpacing: 5,
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.55)",
+            color: "rgba(244,237,228,0.55)",
           }}
         >
           {SITE.address.city || " "}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 96, fontWeight: 800, lineHeight: 1 }}>{SITE.name}</div>
+          <div style={{ fontSize: 132, fontWeight: 300, lineHeight: 1, letterSpacing: -4 }}>{SITE.name}</div>
           {SITE.claim && (
-            <div style={{ marginTop: 24, fontSize: 36, color: "rgba(255,255,255,0.75)" }}>
+            <div style={{ marginTop: 24, fontSize: 36, color: "rgba(244,237,228,0.75)" }}>
               {SITE.claim}
             </div>
           )}
         </div>
-        <div style={{ display: "flex", height: 14, background: "#2563eb" }} />
+        <div style={{ display: "flex", height: 1, background: "rgba(244,237,228,0.35)" }} />
       </div>
     ),
     size,

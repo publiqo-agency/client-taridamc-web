@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FRAME, DISPLAY } from "@/lib/styles";
+import { FRAME, DISPLAY, DISPLAY_QUIET } from "@/lib/styles";
 import { LOCALES, LOCALE_LABELS } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 
@@ -20,15 +20,15 @@ export default async function NotFound() {
 
   return (
     <div className={`${FRAME} flex min-h-svh flex-col justify-center py-24`}>
-      <p className={`${DISPLAY} text-[clamp(4rem,18vw,12rem)] text-stock-2`}>404</p>
+      <p className={`${DISPLAY} text-[clamp(6rem,24vw,18rem)] leading-[0.8] text-line`}>404</p>
 
-      <ul className="mt-8 space-y-8">
+      <ul className="mt-12 grid gap-10 border-t border-line pt-10 sm:grid-cols-2">
         {LOCALES.map((locale, i) => (
           <li key={locale} lang={locale}>
             <p className="label text-ink-soft">{LOCALE_LABELS[locale]}</p>
-            <h1 className="mt-2 font-display text-xl font-bold">{dicts[i].common.notFound.title}</h1>
+            <h1 className={`${DISPLAY_QUIET} mt-3 text-3xl`}>{dicts[i].common.notFound.title}</h1>
             <p className="mt-2 max-w-xl text-ink-soft">{dicts[i].common.notFound.body}</p>
-            <Link href={`/${locale}`} className="mt-3 inline-block font-semibold underline underline-offset-4 hover:text-ink-soft">
+            <Link href={`/${locale}`} className="link-line mt-4 inline-block text-sm font-medium">
               {dicts[i].common.cta.back}
             </Link>
           </li>
