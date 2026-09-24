@@ -11,14 +11,14 @@
  */
 export const SITE = {
   /** Public brand name, as it appears in titles and the footer. */
-  name: "__CLIENT_NAME__",
+  name: "Tarida MC",
   /** Short form for tight spots (title template, manifest short_name). */
-  shortName: "__CLIENT_NAME__",
+  shortName: "Tarida MC",
   /** One-line brand claim, optional. Empty = not rendered. */
   claim: "",
 
   /** Registered company name and tax id, for the legal pages and JSON-LD. */
-  legalName: "",
+  legalName: "Tarida MC S.L.",
   taxId: "",
 
   /** E.164 digits only, no "+" — what wa.me expects. Empty = no WhatsApp CTAs. */
@@ -38,7 +38,7 @@ export const SITE = {
     country: "ES",
   },
   /** Where the business operates, for `areaServed`. Empty = omitted. */
-  areaServed: "",
+  areaServed: "España",
 
   /** Full profile URLs. Empty ones are filtered out of `sameAs`. */
   social: {

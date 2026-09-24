@@ -2,7 +2,7 @@ import type { CommonDict } from "@/lib/i18n/types";
 
 export const common: CommonDict = {
   meta: {
-    defaultTitle: "__CLIENT_NAME__",
+    defaultTitle: "Tarida MC",
     description:
       "One-sentence description of the business, what it does and for whom. It is the site-wide default meta description.",
   },

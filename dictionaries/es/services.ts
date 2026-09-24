@@ -8,7 +8,7 @@ import type { ServicesDict } from "@/lib/i18n/types";
 export const services: ServicesDict = {
   meta: {
     title: "Servicios",
-    seoTitle: "Servicios · __CLIENT_NAME__",
+    seoTitle: "Servicios · Tarida MC",
     description: "Meta description del índice de servicios.",
   },
   index: {

@@ -4,7 +4,7 @@
  */
 export const common = {
   meta: {
-    defaultTitle: "__CLIENT_NAME__",
+    defaultTitle: "Tarida MC",
     description:
       "Descripción de una frase del negocio, con lo que hace y para quién. Es la meta description por defecto de todo el sitio.",
   },

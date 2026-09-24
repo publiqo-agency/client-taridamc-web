@@ -2,7 +2,7 @@ export const home = {
   meta: {
     title: "Inicio",
     /** Full <title> for the home; the template suffix would repeat the brand. */
-    seoTitle: "__CLIENT_NAME__ · Lo que hace, dónde lo hace",
+    seoTitle: "Tarida MC · Lo que hace, dónde lo hace",
     description:
       "Meta description de la portada: propuesta de valor en una frase y una llamada a la acción.",
   },

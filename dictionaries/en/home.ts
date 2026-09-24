@@ -3,7 +3,7 @@ import type { HomeDict } from "@/lib/i18n/types";
 export const home: HomeDict = {
   meta: {
     title: "Home",
-    seoTitle: "__CLIENT_NAME__ · What it does, where it does it",
+    seoTitle: "Tarida MC · What it does, where it does it",
     description:
       "Home meta description: the value proposition in one sentence and a call to action.",
   },

@@ -8,7 +8,7 @@ middleware file is `proxy.ts`, page and layout props are the global
 
 ## What this is
 
-Marketing website for **__CLIENT_NAME__**: static content, a contact form
+Marketing website for **Tarida MC**: static content, a contact form
 (Server Action → Resend) and WhatsApp as the main call to action. No database,
 no CMS. Every page is prerendered at build time.
 
@@ -79,8 +79,8 @@ reads it on the first release.
 
 | What | Value |
 | --- | --- |
-| GitHub | `publiqo-agency/__REPO__` (default branch `dev`, production `main`) |
-| Vercel project | `__REPO__` on team `publiqo` (`team_OnXsO47WP6pF2CPt7DvL1s6u`), region `fra1`, Node 24 |
-| Production domain | `https://__DOMAIN__` |
+| GitHub | `publiqo-agency/client-taridamc-web` (default branch `dev`, production `main`) |
+| Vercel project | `client-taridamc-web` on team `publiqo` (`team_OnXsO47WP6pF2CPt7DvL1s6u`), region `fra1`, Node 24 |
+| Production domain | `https://www.taridamc.com` |
 | Database | none |
-| Scaffolded from | `publiqo-agency/template-web-static@__TEMPLATE_SHA__` |
+| Scaffolded from | `publiqo-agency/template-web-static@d1fdcc6` |

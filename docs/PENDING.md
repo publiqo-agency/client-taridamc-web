@@ -5,7 +5,7 @@ not done. Keep it current: it is the list Martí reads before every call.
 
 ## Blocks launch
 
-1. **Domain and DNS.** Production domain `__DOMAIN__`; records handed to the
+1. **Domain and DNS.** Production domain `www.taridamc.com`; records handed to the
    client's registrar by the `new-client-project` run. Status: pending.
 2. **Legal data.** Legal name, tax id and registered address → `lib/site.ts`.
    Until then every legal page shows a visible "pending" block.
