@@ -42,8 +42,7 @@ tracked file in this repo.**
 
 `main` is never reached from here. The `dev` → `main` merge is done by Martí by
 PR on GitHub, or through the `release` skill when he asks for a release; this
-project's strategy and deploy targets are recorded in `.claude/release.md` once
-the first release has run. **Client projects have NO `preview` branch.**
+project's strategy and deploy targets are recorded in `.claude/release.md`. **Client projects have NO `preview` branch.**
 
 ## Martí runs the dev server
 
