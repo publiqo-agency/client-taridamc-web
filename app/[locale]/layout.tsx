@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Instrument_Serif, Inter_Tight } from "next/font/google";
 import { LOCALES, HTML_LANG, OG_LOCALE, toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { IS_INDEXABLE, ORG, OG_IMAGE, SITE_URL } from "@/lib/seo";
@@ -10,14 +10,24 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { InlineScript } from "@/components/site/inline-script";
 import { AnalyticsListener } from "@/components/site/analytics-listener";
 import { RootAttributes } from "@/components/site/root-attributes";
+import { MOTION_INIT_SCRIPT } from "@/components/site/motion/init-script";
 import "../globals.css";
 
 /**
  * Fonts. CLIENT-SKIN: swap the families, keep the two CSS variables that
  * globals.css maps to --font-display / --font-sans.
  */
-const sans = Inter({ subsets: ["latin"], variable: "--font-sans-family" });
-const display = Inter({ subsets: ["latin"], variable: "--font-display-family" });
+const sans = Inter_Tight({
+  subsets: ["latin", "latin-ext"],
+  weight: "variable",
+  variable: "--font-sans-family",
+});
+const display = Instrument_Serif({
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-display-family",
+});
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -27,7 +37,7 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 export const viewport: Viewport = {
-  themeColor: "#f9fafb",
+  themeColor: "#211a15",
   colorScheme: "light",
 };
 
@@ -73,6 +83,7 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
             present so the CSS may hide what will animate; the GTM script sets
             the consent defaults BEFORE the container can send anything. */}
         <InlineScript html={REVEAL_INIT_SCRIPT} />
+        <InlineScript html={MOTION_INIT_SCRIPT} />
         {GTM_ID && <InlineScript html={GTM_INIT_SCRIPT} />}
       </head>
       <body className="flex min-h-full flex-col">
