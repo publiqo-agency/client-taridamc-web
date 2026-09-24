@@ -42,7 +42,7 @@ export const legal = {
   },
   privacy: {
     title: "Política de privacidad",
-    intro: "Cómo tratamos los datos personales que nos facilitas a través de este sitio, conforme al RGPD y a la LOPDGDD.",
+    intro: "Cómo tratamos los datos personales que nos facilita a través de este sitio, conforme al RGPD y a la LOPDGDD.",
     sections: [
       {
         heading: "Responsable del tratamiento",
@@ -51,14 +51,14 @@ export const legal = {
       {
         heading: "Qué datos tratamos y para qué",
         body: [
-          "Los datos que envías por el formulario de contacto o por WhatsApp (nombre, email, teléfono y el contenido del mensaje) se usan únicamente para responder a tu solicitud.",
-          "Con tu consentimiento, usamos cookies de medición para conocer el uso del sitio. Ver la política de cookies.",
+          "Los datos que envía por el formulario de contacto o por WhatsApp (nombre, email, teléfono y el contenido del mensaje) se usan únicamente para responder a su solicitud.",
+          "Con su consentimiento, usamos cookies de medición para conocer el uso del sitio. Ver la política de cookies.",
         ],
       },
       {
         heading: "Base legal y conservación",
         body: [
-          "La base legal es tu consentimiento y, en su caso, la ejecución de medidas precontractuales. Los datos de contacto se conservan mientras dure la relación o hasta que solicites su supresión.",
+          "La base legal es su consentimiento y, en su caso, la ejecución de medidas precontractuales. Los datos de contacto se conservan mientras dure la relación o hasta que solicite su supresión.",
         ],
       },
       {
@@ -70,26 +70,26 @@ export const legal = {
       {
         heading: "Tus derechos",
         body: [
-          "Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo al email del pie de página. También puedes reclamar ante la Agencia Española de Protección de Datos.",
+          "Puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo al email del pie de página. También puede reclamar ante la Agencia Española de Protección de Datos.",
         ],
       },
     ],
   },
   cookies: {
     title: "Política de cookies",
-    intro: "Qué cookies y almacenamiento local usa este sitio y cómo puedes decidir sobre ellos.",
+    intro: "Qué cookies y almacenamiento local usa este sitio y cómo puede decidir sobre ellos.",
     sections: [
       {
         heading: "Qué usamos",
         body: [
-          "Almacenamiento técnico: la elección de idioma (cookie «locale») y tu respuesta al aviso de cookies (localStorage). Son necesarios para que el sitio recuerde tus decisiones.",
-          "Medición: con tu consentimiento, Google Tag Manager carga Google Analytics 4 para medir el uso del sitio de forma agregada. Sin consentimiento no se activa ninguna cookie de medición.",
+          "Almacenamiento técnico: la elección de idioma (cookie «locale») y su respuesta al aviso de cookies (localStorage). Son necesarios para que el sitio recuerde sus decisiones.",
+          "Medición: con su consentimiento, Google Tag Manager carga Google Analytics 4 para medir el uso del sitio de forma agregada. Sin consentimiento no se activa ninguna cookie de medición.",
         ],
       },
       {
-        heading: "Cómo cambiar tu decisión",
+        heading: "Cómo cambiar su decisión",
         body: [
-          "Puedes cambiar tu decisión en cualquier momento desde «Preferencias de cookies», en el pie de página, o borrando los datos del sitio en tu navegador.",
+          "Puede cambiar su decisión en cualquier momento desde «Preferencias de cookies», en el pie de página, o borrando los datos del sitio en su navegador.",
         ],
       },
     ],

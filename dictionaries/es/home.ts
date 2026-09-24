@@ -11,7 +11,7 @@ export const home = {
     title: "Titular de portada que dice qué ofrece el negocio",
     intro:
       "Dos o tres frases que explican la propuesta de valor, para quién es y qué la hace distinta. Sustituir por el copy del cliente.",
-    ctaPrimary: "Pide información",
+    ctaPrimary: "Solicite información",
     ctaSecondary: "Ver servicios",
   },
   services: {
@@ -26,7 +26,7 @@ export const home = {
       "Un párrafo sobre el negocio: quién está detrás, desde cuándo y qué defiende.",
       "Un segundo párrafo sobre la forma de trabajar o lo que diferencia al equipo.",
     ],
-    cta: "Conócenos",
+    cta: "Conózcanos",
   },
   faq: {
     eyebrow: "Dudas",
@@ -34,7 +34,7 @@ export const home = {
   },
   contact: {
     title: "¿Hablamos?",
-    body: "Cuéntanos qué necesitas y te respondemos en menos de 24 horas.",
+    body: "Cuéntenos qué necesita y le respondemos en menos de 24 horas.",
     cta: "Contactar",
   },
 };

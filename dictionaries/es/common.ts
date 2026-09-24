@@ -21,7 +21,7 @@ export const common = {
   },
   cta: {
     contact: "Contactar",
-    whatsapp: "Escríbenos por WhatsApp",
+    whatsapp: "Escríbanos por WhatsApp",
     back: "Volver al inicio",
     allServices: "Ver todos los servicios",
     learnMore: "Saber más",
@@ -29,7 +29,7 @@ export const common = {
   whatsapp: {
     aria: "Abrir WhatsApp",
     messages: {
-      general: "Hola, me gustaría recibir más información.",
+      general: "Hola, quisiera recibir más información.",
     },
   },
   footer: {
@@ -51,7 +51,7 @@ export const common = {
   consent: {
     title: "Cookies",
     body:
-      "Usamos cookies de medición para saber cómo se usa la web. No se activa ninguna hasta que aceptes.",
+      "Usamos cookies de medición para saber cómo se usa la web. No se activa ninguna hasta que usted acepte.",
     accept: "Aceptar",
     reject: "Rechazar",
     link: "Más información",

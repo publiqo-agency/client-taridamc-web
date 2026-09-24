@@ -9,6 +9,8 @@ import type { Dictionary } from "./types";
 const loaders: Record<Locale, () => Promise<{ dictionary: Dictionary }>> = {
   es: () => import("@/dictionaries/es"),
   en: () => import("@/dictionaries/en"),
+  fr: () => import("@/dictionaries/fr"),
+  ca: () => import("@/dictionaries/ca"),
 };
 
 export const getDictionary = (locale: Locale): Promise<Dictionary> =>
