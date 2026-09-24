@@ -21,6 +21,15 @@ Language: code, comments, docs and commit subjects are in **English**. The
 site's copy lives in `dictionaries/` in the site's languages; that is content,
 not code.
 
+## This client
+
+Tarida MC S.L.: a small family real-estate business in Castelldefels, run by
+Ramon Seva, 40 years in the sector. The site presents them as a buyer of
+properties (sellers are the main lead) and shows the properties they rent
+(industrial units and homes). Tone: serious, elegant, minimalist; the visitor
+is addressed formally (usted / vous / vostè). Languages: es (default), en, fr,
+ca. The brief lives in GoFeed (see `docs/PENDING.md`).
+
 ## Branch flow
 
 ```text
