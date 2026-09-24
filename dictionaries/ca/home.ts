@@ -1,41 +1,42 @@
+/** Catalan copy for the home page. Same shape as dictionaries/es/home.ts. */
 import type { HomeDict } from "@/lib/i18n/types";
 
 export const home: HomeDict = {
   meta: {
     title: "Inici",
-    seoTitle: "Tarida MC · Què fa, on ho fa",
+    seoTitle: "Tarida MC · Compra i lloguer d'immobles a Castelldefels",
     description:
-      "Meta description de la portada: proposta de valor en una frase i una crida a l'acció.",
+      "Empresa familiar de Castelldefels amb quaranta anys al sector. Comprem immobles als seus propietaris i lloguem naus industrials i habitatges.",
   },
   hero: {
-    eyebrow: "Què fem",
-    title: "Titular de portada que diu què ofereix el negoci",
+    eyebrow: "Castelldefels · Empresa familiar",
+    titleTop: "Immobles",
+    titleBottom: "amb criteri",
     intro:
-      "Dues o tres frases que expliquen la proposta de valor, per a qui és i què la fa diferent. Substituir pel copy del client.",
-    ctaPrimary: "Sol·liciti informació",
-    ctaSecondary: "Veure serveis",
+      "Quaranta anys comprant i llogant propietats. Estudiem cada immoble amb calma i responem amb claredat.",
+    ctaPrimary: "Vendre el seu immoble",
+    ctaSecondary: "Immobles de lloguer",
+    imageAlt: "Vil·la mediterrània contemporània a la posta de sol",
   },
-  services: {
-    eyebrow: "Serveis",
-    title: "El que oferim",
-    intro: "Una frase que presenta el catàleg de serveis.",
+  manifesto: {
+    eyebrow: "Qui som",
+    text: "Som una empresa familiar de Castelldefels. Des de fa quaranta anys comprem i lloguem immobles amb una mateixa regla: *serietat, honestedat i transparència* en cada operació.",
+    signature: "Ramon Seva",
+    role: "Al capdavant de Tarida MC",
+    cta: "Coneixe'ns",
   },
-  about: {
-    eyebrow: "Nosaltres",
-    title: "Qui som",
-    body: [
-      "Un paràgraf sobre el negoci: qui hi ha darrere, des de quan i què defensa.",
-      "Un segon paràgraf sobre la forma de treballar o el que diferencia l'equip.",
-    ],
-    cta: "Conegui'ns",
+  lines: {
+    eyebrow: "Què fem",
+    title: "Dues maneres\nde *treballar amb vostè*",
+    purchaseKicker: "Per a propietaris",
+    purchaseTitle: "Comprem\n*el seu immoble*",
+    rentalKicker: "Per a empreses i particulars",
+    rentalTitle: "Naus i habitatges\n*de lloguer*",
   },
-  faq: {
-    eyebrow: "Dubtes",
-    title: "Preguntes freqüents",
-  },
-  contact: {
-    title: "Parlem?",
-    body: "Digui'ns què necessita i li responem en menys de 24 hores.",
-    cta: "Contactar",
+  process: {
+    eyebrow: "Com comprem",
+    title: "Un procés\n*clar i directe*",
+    intro:
+      "Quan ens proposa un immoble, sap en tot moment en quin punt es troba l'operació.",
   },
 };

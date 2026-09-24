@@ -1,49 +1,46 @@
-import type { AboutDict, FaqDict } from "@/lib/i18n/types";
+/** Catalan copy for the about page. Same shape as dictionaries/es/pages.ts. */
+import type { AboutDict } from "@/lib/i18n/types";
 
 export const about: AboutDict = {
   meta: {
     title: "Nosaltres",
-    description: "Meta description de la pàgina de nosaltres.",
+    description:
+      "Tarida MC és una empresa familiar de Castelldefels amb quaranta anys al sector immobiliari, dirigida per Ramon Seva.",
   },
   hero: {
     eyebrow: "Nosaltres",
-    title: "Qui som i per què fem això",
-    intro: "Una o dues frases que presenten l'equip o el negoci.",
+    title: "Una empresa familiar,\n*quaranta anys després*",
+    intro:
+      "Comprem i lloguem immobles a Castelldefels amb la mateixa manera de treballar de sempre: serietat, honestedat i transparència.",
+    imageAlt: "Interior mediterrani serè amb grans finestrals",
   },
   sections: [
     {
       heading: "La nostra història",
-      body: ["Un paràgraf sobre l'origen del negoci.", "Un altre sobre on és avui."],
+      body: [
+        "Tarida MC és una empresa familiar dedicada als immobles. Quatre dècades després, continuem sent una empresa petita, i això ens permet conèixer de prop cada propietat i cada client.",
+        "Avui comprem immobles a propietaris que volen vendre i lloguem naus industrials i habitatges de la nostra pròpia cartera.",
+      ],
     },
     {
       heading: "Com treballem",
-      body: ["Un paràgraf sobre la forma de treballar i el que el client pot esperar."],
+      body: [
+        "Estudiem cada operació amb calma i responem amb claredat, sigui quina sigui la resposta. La serietat, l'honestedat i la transparència no són un eslògan: són la manera com sempre hem treballat.",
+      ],
     },
   ],
-};
-
-export const faq: FaqDict = {
-  meta: {
-    title: "Preguntes freqüents",
-    description: "Respostes als dubtes més habituals abans de contactar.",
+  storyImageAlt: "Mur emblanquinat i finestrons de fusta sota la llum mediterrània",
+  leader: {
+    eyebrow: "Al capdavant",
+    name: "Ramon Seva",
+    role: "Al capdavant de Tarida MC",
+    body: "En una empresa familiar, qui l'atén és qui coneix cada immoble.",
   },
-  hero: {
-    eyebrow: "Dubtes",
-    title: "Preguntes freqüents",
-    intro: "El que més ens pregunten, respost breument.",
+  place: {
+    eyebrow: "Castelldefels",
+    title: "El nostre *lloc*",
+    body: "Treballem des de Castelldefels, entre el mar i el massís del Garraf. Coneixem el seu mercat immobiliari perquè fa quaranta anys que en formem part.",
+    imageAlt: "Costa mediterrània amb pins a la posta de sol",
+    sea: "Mar Mediterrània",
   },
-  items: [
-    {
-      question: "Una pregunta habitual?",
-      answer: "Una resposta breu i directa. Aquest text és exactament el que s'emet al FAQPage del JSON-LD.",
-    },
-    {
-      question: "Una altra pregunta habitual?",
-      answer: "Una altra resposta breu.",
-    },
-    {
-      question: "Com se sol·licita un pressupost?",
-      answer: "Pel formulari de contacte o per WhatsApp. Responem en menys de 24 hores laborables.",
-    },
-  ],
 };

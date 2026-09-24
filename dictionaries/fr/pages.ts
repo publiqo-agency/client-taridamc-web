@@ -1,49 +1,46 @@
-import type { AboutDict, FaqDict } from "@/lib/i18n/types";
+import type { AboutDict } from "@/lib/i18n/types";
 
+/** French copy for the about page. Same shape as dictionaries/es/pages.ts. */
 export const about: AboutDict = {
   meta: {
     title: "À propos",
-    description: "Meta description de la page à propos.",
+    description:
+      "Tarida MC est une entreprise familiale de Castelldefels forte de quarante ans d’expérience dans l’immobilier, dirigée par Ramon Seva.",
   },
   hero: {
     eyebrow: "À propos",
-    title: "Qui nous sommes et pourquoi nous faisons cela",
-    intro: "Une ou deux phrases qui présentent l'équipe ou l'entreprise.",
+    title: "Une entreprise familiale,\n*quarante ans après*",
+    intro:
+      "Nous achetons et louons des biens immobiliers à Castelldefels avec la même façon de travailler qu’à nos débuts : sérieux, honnêteté et transparence.",
+    imageAlt: "Intérieur méditerranéen serein aux grandes baies vitrées",
   },
   sections: [
     {
       heading: "Notre histoire",
-      body: ["Un paragraphe sur les débuts de l'entreprise.", "Un autre sur où elle se trouve aujourd'hui."],
+      body: [
+        "Tarida MC est une entreprise familiale dédiée à l’immobilier. Quatre décennies plus tard, nous sommes restés une petite structure, ce qui nous permet de connaître de près chaque bien et chaque client.",
+        "Aujourd’hui, nous achetons des biens à des propriétaires qui souhaitent vendre et louons des locaux industriels et des logements issus de notre propre patrimoine.",
+      ],
     },
     {
       heading: "Notre façon de travailler",
-      body: ["Un paragraphe sur la façon de travailler et ce qu'un client peut attendre."],
+      body: [
+        "Nous étudions chaque opération sans précipitation et répondons avec clarté, quelle que soit la réponse. Le sérieux, l’honnêteté et la transparence ne sont pas un slogan : c’est ainsi que nous avons toujours travaillé.",
+      ],
     },
   ],
-};
-
-export const faq: FaqDict = {
-  meta: {
-    title: "Questions fréquentes",
-    description: "Réponses aux questions les plus courantes avant de nous contacter.",
+  storyImageAlt: "Mur blanchi à la chaux et volets en bois sous la lumière méditerranéenne",
+  leader: {
+    eyebrow: "Direction",
+    name: "Ramon Seva",
+    role: "À la tête de Tarida MC",
+    body: "Dans une entreprise familiale, la personne qui vous reçoit est celle qui connaît chaque bien.",
   },
-  hero: {
-    eyebrow: "Questions",
-    title: "Questions fréquentes",
-    intro: "Ce qu'on nous demande le plus souvent, en bref.",
+  place: {
+    eyebrow: "Castelldefels",
+    title: "Notre *territoire*",
+    body: "Nous travaillons depuis Castelldefels, entre la mer et le massif du Garraf. Nous connaissons son marché immobilier, car nous en faisons partie depuis quarante ans.",
+    imageAlt: "Côte méditerranéenne bordée de pins au coucher du soleil",
+    sea: "Mer Méditerranée",
   },
-  items: [
-    {
-      question: "Une question fréquente ?",
-      answer: "Une réponse courte et directe. Ce texte est exactement celui émis dans le FAQPage JSON-LD.",
-    },
-    {
-      question: "Une autre question fréquente ?",
-      answer: "Une autre réponse courte.",
-    },
-    {
-      question: "Comment demander un devis ?",
-      answer: "Via le formulaire de contact ou par WhatsApp. Nous répondons en moins de 24 heures ouvrées.",
-    },
-  ],
 };

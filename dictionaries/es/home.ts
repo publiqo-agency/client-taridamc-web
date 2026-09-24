@@ -1,40 +1,39 @@
 export const home = {
   meta: {
     title: "Inicio",
-    /** Full <title> for the home; the template suffix would repeat the brand. */
-    seoTitle: "Tarida MC · Lo que hace, dónde lo hace",
+    seoTitle: "Tarida MC · Compra y alquiler de inmuebles en Castelldefels",
     description:
-      "Meta description de la portada: propuesta de valor en una frase y una llamada a la acción.",
+      "Empresa familiar de Castelldefels con cuarenta años en el sector. Compramos inmuebles a sus propietarios y alquilamos naves industriales y viviendas.",
   },
   hero: {
-    eyebrow: "Qué hacemos",
-    title: "Titular de portada que dice qué ofrece el negocio",
+    eyebrow: "Castelldefels · Empresa familiar",
+    titleTop: "Inmuebles",
+    titleBottom: "con criterio",
     intro:
-      "Dos o tres frases que explican la propuesta de valor, para quién es y qué la hace distinta. Sustituir por el copy del cliente.",
-    ctaPrimary: "Solicite información",
-    ctaSecondary: "Ver servicios",
+      "Cuarenta años comprando y alquilando propiedades. Estudiamos cada inmueble con calma y respondemos con claridad.",
+    ctaPrimary: "Vender su inmueble",
+    ctaSecondary: "Inmuebles en alquiler",
+    imageAlt: "Villa mediterránea contemporánea al atardecer",
   },
-  services: {
-    eyebrow: "Servicios",
-    title: "Lo que ofrecemos",
-    intro: "Una frase que presenta el catálogo de servicios.",
-  },
-  about: {
-    eyebrow: "Nosotros",
-    title: "Quiénes somos",
-    body: [
-      "Un párrafo sobre el negocio: quién está detrás, desde cuándo y qué defiende.",
-      "Un segundo párrafo sobre la forma de trabajar o lo que diferencia al equipo.",
-    ],
+  manifesto: {
+    eyebrow: "Quiénes somos",
+    text: "Somos una empresa familiar de Castelldefels. Desde hace cuarenta años compramos y alquilamos inmuebles con una misma regla: *seriedad, honestidad y transparencia* en cada operación.",
+    signature: "Ramon Seva",
+    role: "Al frente de Tarida MC",
     cta: "Conózcanos",
   },
-  faq: {
-    eyebrow: "Dudas",
-    title: "Preguntas frecuentes",
+  lines: {
+    eyebrow: "Qué hacemos",
+    title: "Dos maneras\nde *trabajar con usted*",
+    purchaseKicker: "Para propietarios",
+    purchaseTitle: "Compramos\n*su inmueble*",
+    rentalKicker: "Para empresas y particulares",
+    rentalTitle: "Naves y viviendas\n*en alquiler*",
   },
-  contact: {
-    title: "¿Hablamos?",
-    body: "Cuéntenos qué necesita y le respondemos en menos de 24 horas.",
-    cta: "Contactar",
+  process: {
+    eyebrow: "Cómo compramos",
+    title: "Un proceso\n*claro y directo*",
+    intro:
+      "Cuando nos propone un inmueble, sabe en todo momento en qué punto está la operación.",
   },
 };
