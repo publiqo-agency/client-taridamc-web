@@ -28,9 +28,9 @@ type Props = {
 };
 
 /**
- * Footer: an espresso band. Link columns on the plan grid, the local time in
- * Castelldefels, and the name set across the full width, rising letter by
- * letter as the page ends. Contact data only renders when it exists
+ * Footer: a deep-sea band. Link columns on the plan grid, the local time in
+ * Castelldefels, and the logo laid underneath everything across the full
+ * width, faint like a watermark, drawing itself as the page ends. Contact data only renders when it exists
  * (lib/site.ts); the consent reopen button is one click away on every page.
  */
 export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
@@ -40,7 +40,13 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
 
   return (
     <footer data-placement="footer" className="band-dark grain relative overflow-hidden bg-stock text-ink">
-      <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-14 pt-24 pb-16 md:pt-32`}>
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 z-0 opacity-[0.09]">
+        <div className={`${FRAME} translate-y-[12%]`}>
+          <Logo variant="compact" animate decorative className="h-auto w-full" />
+        </div>
+      </div>
+
+      <div className={`${FRAME} relative z-[1] grid grid-cols-12 gap-x-8 gap-y-14 pt-24 pb-[min(18vw,15rem)] md:pt-32`}>
         <div className="col-span-12 lg:col-span-5">
           <p className={`${DISPLAY} max-w-md text-[clamp(1.9rem,2.8vw,2.75rem)] leading-[1.1]`} data-m="fade">
             {copy.tagline}
@@ -112,14 +118,7 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
         </div>
       </div>
 
-      <div className="relative">
-        <span aria-hidden data-m="draw-x" className="absolute inset-x-0 top-0 block h-px bg-line" />
-        <div className={`${FRAME} pt-16 pb-12 md:pt-24 md:pb-16`}>
-          <Logo variant="compact" animate decorative className="h-auto w-full" />
-        </div>
-      </div>
-
-      <div className={`${FRAME} relative flex flex-col gap-4 border-t border-line py-6 text-sm text-ink-soft md:flex-row md:items-center md:justify-between`}>
+      <div className={`${FRAME} relative z-[1] flex flex-col gap-4 border-t border-line py-6 text-sm text-ink-soft md:flex-row md:items-center md:justify-between`}>
         <div className="flex flex-wrap gap-x-6 gap-y-1">
           <p>
             © {year} {ORG.legalName || ORG.name}. {copy.rights}
