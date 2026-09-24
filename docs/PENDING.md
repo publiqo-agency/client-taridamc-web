@@ -34,8 +34,11 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
   Replace them file by file, same path and aspect ratio, with the client's own
   photography or renders. Weakest picks to replace first: `about/interior.webp`
   and `cta/sell.webp`. One photo came with the brief (IMG_1421.JPG, in GoFeed).
-- Logo: until it arrives the header and footer use a typographic wordmark
-  (`components/site/logo.tsx`); restore the PNG version after `brand:build`.
+- Logo: received only as a 640 px JPEG (`brand/IMG_1421.JPG`). The site uses
+  a vector REBUILD of it (`brand/logo.svg`, `components/site/logo-paths.ts`):
+  waves fitted to the raster, lettering set in Montserrat. Ask the client for
+  the original vector file (AI/SVG/PDF) and the exact brand colour; the site
+  uses #07588C, sampled from the JPEG.
 - A portrait of Ramon Seva would strengthen the about page (optional).
 - Property catalogue: built (home rail + filterable grid on the rental page),
   fed by `lib/properties.ts`. `PROPERTIES` is empty, so production shows an
@@ -60,6 +63,9 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
 
 ## Resolved
 
+- 2026-09-24 — Logo delivered (raster) and applied: palette re-based on its
+  blue (navy ink, salt-white paper, deep-sea dark bands), Montserrat as the
+  sans, logo in header, intro, footer, favicon, OG card and manifest icons.
 - 2026-09-24 — Design and build of every page ("serene Mediterranean":
   Instrument Serif + Inter Tight, espresso/bone palette, GSAP + Lenis motion
   engine in `components/site/motion/`). The FAQ route was removed: the brief
