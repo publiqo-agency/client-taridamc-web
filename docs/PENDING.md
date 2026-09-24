@@ -8,9 +8,11 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
 
 ## Blocks launch
 
-1. **Content.** The content pages (home, about, services, service pages, FAQ)
-   render nothing on purpose: the scaffold left them empty and the design and
-   copy are built in a later change from the brief.
+1. **Copy approval.** Every page is designed and written (es, with en, fr and
+   ca translated from it) using only facts from the brief. The client signs
+   it off, in particular: the home headline ("Inmuebles con criterio"), the
+   three values and their lines, the purchase process (four steps) and the
+   line under Ramon Seva's name.
 2. **Domain and DNS.** Production domain `www.taridamc.com` (canonical host
    `www`). Who manages the domain and hosting is not stated in the brief.
 3. **Legal data.** Tax id (NIF) and registered address → `lib/site.ts`.
@@ -27,12 +29,21 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
 
 - Logo (transparent PNG or SVG) → `brand/`, then `npm run brand:build`. The
   brief does not say whether a logo or brand manual exists.
-- Photos: the client has renders only, "placeholders for now". Heroes
-  (`public/hero/*.webp`) and each service (`public/services/<id>/hero.webp`).
-  One photo came with the brief (IMG_1421.JPG, in GoFeed).
-- Property catalogue: the brief asks for "a catalogue of the properties they
-  have". This is archetype A (the agency edits content); if the client wants
-  to update listings themselves, that is archetype B — decide before building it.
+- Photos: every photo on the site is a **provisional** free-licence stock
+  image (Unsplash/Pexels), listed with its credit in `docs/PHOTO-CREDITS.md`.
+  Replace them file by file, same path and aspect ratio, with the client's own
+  photography or renders. Weakest picks to replace first: `about/interior.webp`
+  and `cta/sell.webp`. One photo came with the brief (IMG_1421.JPG, in GoFeed).
+- Logo: until it arrives the header and footer use a typographic wordmark
+  (`components/site/logo.tsx`); restore the PNG version after `brand:build`.
+- A portrait of Ramon Seva would strengthen the about page (optional).
+- Property catalogue: built (home rail + filterable grid on the rental page),
+  fed by `lib/properties.ts`. `PROPERTIES` is empty, so production shows an
+  "ask for availability" block; previews show six SAMPLE listings with a chip.
+  Needs from the client per listing: reference, type (industrial unit, home,
+  commercial), m², zone and one photo. This is archetype A (the agency edits
+  content); if the client wants to update listings themselves, that is
+  archetype B — decide before it grows.
 - Final copy for every page in es, en, fr, ca. Nobody is named yet as the
   writer or approver of texts and photos.
 - Social profile URLs → `lib/site.ts`.
@@ -45,11 +56,13 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
 
 ## Decided, not done
 
-- The FAQ route is kept from the template; the brief lists home, about,
-  services (rental, purchase) and contact only. Remove it or use it when the
-  content is built.
+- (empty)
 
 ## Resolved
 
+- 2026-09-24 — Design and build of every page ("serene Mediterranean":
+  Instrument Serif + Inter Tight, espresso/bone palette, GSAP + Lenis motion
+  engine in `components/site/motion/`). The FAQ route was removed: the brief
+  does not ask for it and its answers would have had to be invented.
 - 2026-09-24 — Locales es (default), en, fr, ca; services `rental` and
   `purchase`; formal register (usted / vous / vostè) per the brief.
