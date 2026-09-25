@@ -13,4 +13,4 @@
  */
 export const INTRO_KEY = "tarida:intro";
 
-export const MOTION_INIT_SCRIPT = `(function(){try{var d=document.documentElement;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;d.setAttribute("data-motion","on");var seen=false;try{seen=sessionStorage.getItem("${INTRO_KEY}")==="1"}catch(e){}if(!seen)d.setAttribute("data-intro","on");setTimeout(function(){if(!d.hasAttribute("data-motion-ready")){d.removeAttribute("data-motion");d.removeAttribute("data-intro")}},4500)}catch(e){}})()`;
+export const MOTION_INIT_SCRIPT = `(function(){try{var d=document.documentElement;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;d.setAttribute("data-motion","on");var seen=false;try{seen=sessionStorage.getItem("${INTRO_KEY}")==="1"}catch(e){}if(!seen)d.setAttribute("data-intro","on");setTimeout(function(){if(!d.hasAttribute("data-motion-ready")){d.removeAttribute("data-motion");d.removeAttribute("data-intro")}},3000)}catch(e){}})()`;

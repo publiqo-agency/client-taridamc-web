@@ -145,7 +145,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
         body={common.closing.body}
         image={{ src: "/cta/sell.webp", alt: common.closing.imageAlt }}
       >
-        <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" seed>
+        <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" rise>
           {services.items.purchase.cta}
         </PillButton>
         <WhatsAppCta label={common.cta.whatsapp} message={services.items.purchase.whatsappMessage} service="purchase" tone="outline" />

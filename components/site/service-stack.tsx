@@ -58,7 +58,7 @@ export function ServiceStack({ items }: { items: StackItem[] }) {
                     {item.body}
                   </p>
                   <div className="mt-8 md:mt-10">
-                    <PillButton href={item.href} tone={item.tone === "dark" ? "white" : "ink"} seed>
+                    <PillButton href={item.href} tone={item.tone === "dark" ? "white" : "ink"} rise>
                       {item.cta}
                     </PillButton>
                   </div>

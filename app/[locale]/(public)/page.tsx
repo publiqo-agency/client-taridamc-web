@@ -57,10 +57,10 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
           intro={home.hero.intro}
           image={{ src: HERO_IMAGE, alt: home.hero.imageAlt }}
         >
-          <PillButton href={sellHref} tone="white" seed delay={1}>
+          <PillButton href={sellHref} tone="white" rise delay={0.7}>
             {home.hero.ctaPrimary}
           </PillButton>
-          <PillButton href={rentHref} tone="outline" seed delay={1.1}>
+          <PillButton href={rentHref} tone="outline" rise delay={0.76}>
             {home.hero.ctaSecondary}
           </PillButton>
         </HomeHero>
@@ -152,7 +152,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
         body={common.closing.body}
         image={{ src: CLOSING_IMAGE, alt: common.closing.imageAlt }}
       >
-        <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" seed>
+        <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" rise>
           {services.items.purchase.cta}
         </PillButton>
         <WhatsAppCta

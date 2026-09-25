@@ -23,7 +23,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
   const { locale: raw } = await props.params;
   const locale = toLocale(raw);
   const dict = await getDictionary(locale);
-  const { nav, cta, whatsapp, footer, localeSwitcher, consent, brand } = dict.common;
+  const { nav, cta, whatsapp, footer, localeSwitcher, consent } = dict.common;
 
   const homeHref = localeHref(locale, "home");
   const contactHref = localeHref(locale, "contact");
@@ -57,7 +57,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
 
   return (
     <>
-      <Intro years={40} yearsLabel={brand.yearsLabel} />
+      <Intro />
 
       <SiteHeader
         locale={locale}
