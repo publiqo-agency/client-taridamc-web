@@ -63,14 +63,6 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
 
 ## Resolved
 
-- 2026-09-25 — Premium polish pass (taste-skill + Emil Kowalski): every
-  headline in Montserrat (Instrument Serif dropped); coordinates, live
-  clock, scroll cue, custom cursor, plan ticks, sundial and coastline
-  removed; eyebrows cut to about one every three sections and section
-  numbers dropped; section headers stacked; duplicate CTA pairs removed;
-  motion shortened (strong ease-out, UI under 300 ms, press feedback,
-  hovers only with a fine pointer, a ~1.5 s intro); reduced motion keeps
-  colour and opacity feedback.
 - 2026-09-24 — Logo delivered (raster) and applied: palette re-based on its
   blue (navy ink, salt-white paper, deep-sea dark bands), Montserrat as the
   sans, logo in header, intro, footer, favicon, OG card and manifest icons.

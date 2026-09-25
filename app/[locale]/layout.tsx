@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
+import { Instrument_Serif, Montserrat } from "next/font/google";
 import { LOCALES, HTML_LANG, OG_LOCALE, toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { IS_INDEXABLE, ORG, OG_IMAGE, SITE_URL } from "@/lib/seo";
@@ -17,15 +17,18 @@ import "../globals.css";
  * Fonts. CLIENT-SKIN: swap the families, keep the two CSS variables that
  * globals.css maps to --font-display / --font-sans.
  */
-/* One family for the whole site: Montserrat, the logo's typeface. Headlines
-   use its light weights, emphasis a thinner weight of the same face, labels
-   the tracked capitals of the logo's "REAL ESTATE" line. globals.css points
-   --font-display at this same variable, so CORE files that ask for
-   `font-display` get Montserrat too. */
+/* Montserrat is the logo's typeface: labels in tracked capitals echo its
+   "REAL ESTATE" line, and the thin weights carry the big sans headlines. */
 const sans = Montserrat({
   subsets: ["latin", "latin-ext"],
   weight: "variable",
   variable: "--font-sans-family",
+});
+const display = Instrument_Serif({
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
+  style: ["normal"],
+  variable: "--font-display-family",
 });
 
 export function generateStaticParams() {
@@ -74,7 +77,7 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
   return (
     <html
       lang={HTML_LANG[locale]}
-      className={sans.variable}
+      className={`${sans.variable} ${display.variable}`}
       suppressHydrationWarning
     >
       <head>

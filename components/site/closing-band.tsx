@@ -11,9 +11,9 @@ type Props = {
 };
 
 /**
- * The closing call to action most pages end on: a deep-sea band, a photo
+ * The closing call to action every page ends on: an espresso band, a photo
  * framed like a window that opens as it arrives, and the question in large
- * light type.
+ * serif. The buttons come in as seeds.
  */
 export function ClosingBand({ eyebrow, title, body, image, children }: Props) {
   return (
@@ -23,7 +23,7 @@ export function ClosingBand({ eyebrow, title, body, image, children }: Props) {
           <p className="label text-ink-soft" data-m="fade">
             {eyebrow}
           </p>
-          <h2 className={`${DISPLAY} mt-8 text-[clamp(2.5rem,5.2vw,5.75rem)]`} data-m="lines">
+          <h2 className={`${DISPLAY} mt-8 text-[clamp(3rem,7vw,8rem)]`} data-m="lines">
             <Lines text={title} />
           </h2>
           <p className="mt-8 max-w-lg text-lg text-ink-soft" data-m="fade" data-delay="0.25">

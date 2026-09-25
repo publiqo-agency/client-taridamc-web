@@ -10,6 +10,8 @@ import { ConsentBanner } from "@/components/site/consent-banner";
 import { RevealObserver } from "@/components/site/reveal-observer";
 import { MotionRoot } from "@/components/site/motion/motion-root";
 import { Intro } from "@/components/site/motion/intro";
+import { Cursor } from "@/components/site/motion/cursor";
+import { COORDS, PLACE } from "@/components/site/coords";
 
 /**
  * Public site chrome. All copy is resolved HERE, on the server, and goes
@@ -23,7 +25,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
   const { locale: raw } = await props.params;
   const locale = toLocale(raw);
   const dict = await getDictionary(locale);
-  const { nav, cta, whatsapp, footer, localeSwitcher, consent } = dict.common;
+  const { nav, cta, whatsapp, footer, localeSwitcher, consent, brand } = dict.common;
 
   const homeHref = localeHref(locale, "home");
   const contactHref = localeHref(locale, "contact");
@@ -57,7 +59,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
 
   return (
     <>
-      <Intro />
+      <Intro years={40} yearsLabel={brand.yearsLabel} place={PLACE} coords={COORDS} />
 
       <SiteHeader
         locale={locale}
@@ -99,6 +101,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
           contactTitle: footer.contactTitle,
           followTitle: footer.followTitle,
           localeAria: localeSwitcher.aria,
+          localTime: footer.localTime,
           cookieSettings: footer.cookieSettings,
           rights: footer.rights,
           credit: footer.credit,
@@ -113,6 +116,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
 
       <RevealObserver />
       <MotionRoot />
+      <Cursor />
     </>
   );
 }

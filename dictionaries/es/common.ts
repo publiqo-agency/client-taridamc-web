@@ -32,12 +32,15 @@ export const common = {
     back: "Volver al inicio",
     allServices: "Ver todos los servicios",
     learnMore: "Saber más",
+    scroll: "Desplazar",
   },
   brand: {
     yearsLabel: "años",
     yearsCaption: "en el sector inmobiliario",
+    family: "Empresa familiar",
   },
   catalogue: {
+    eyebrow: "Catálogo",
     title: "Inmuebles\n*en alquiler*",
     intro:
       "Naves industriales y viviendas en Castelldefels, de nuestra propia cartera. Le atendemos directamente.",
@@ -59,15 +62,17 @@ export const common = {
       zone: "Zona",
     },
     enquire: "Consultar",
+    view: "Ver",
     seeAll: "Ver el catálogo",
     whatsappMessage: "Hola, me interesa el inmueble con referencia {ref}.",
     empty: {
       title: "Consulte *disponibilidad*",
-      body: "Nuestra cartera de alquiler cambia con frecuencia. Díganos qué busca (nave o vivienda, superficie aproximada y zona) y le informaremos de lo que tengamos disponible.",
+      body: "Nuestra cartera de alquiler cambia con frecuencia. Díganos qué busca —nave o vivienda, superficie aproximada y zona— y le informaremos de lo que tengamos disponible.",
       cta: "Consultar disponibilidad",
     },
   },
   values: {
+    eyebrow: "Cómo trabajamos",
     title: "Tres palabras\n*que nos definen*",
     items: [
       {
@@ -102,6 +107,7 @@ export const common = {
     servicesTitle: "Servicios",
     contactTitle: "Contacto",
     followTitle: "Síganos",
+    localTime: "Hora local",
     cookieSettings: "Preferencias de cookies",
     rights: "Todos los derechos reservados.",
     credit: "Diseño y desarrollo:",

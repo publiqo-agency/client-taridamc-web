@@ -19,12 +19,14 @@ export const home: HomeDict = {
     imageAlt: "Vil·la mediterrània contemporània a la posta de sol",
   },
   manifesto: {
+    eyebrow: "Qui som",
     text: "Som una empresa familiar de Castelldefels. Des de fa quaranta anys comprem i lloguem immobles amb una mateixa regla: *serietat, honestedat i transparència* en cada operació.",
     signature: "Ramon Seva",
     role: "Al capdavant de Tarida MC",
     cta: "Coneixe'ns",
   },
   lines: {
+    eyebrow: "Què fem",
     title: "Dues maneres\nde *treballar amb vostè*",
     purchaseKicker: "Per a propietaris",
     purchaseTitle: "Comprem\n*el seu immoble*",

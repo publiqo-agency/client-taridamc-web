@@ -25,11 +25,8 @@ What is wired, what the consoles hold and what is pending. Filled by the
 - `components/site/contact-form.tsx`: `generate_lead` on a successful send.
 
 Placements in use (`data-placement`): `header`, `home-hero`, `home-services`,
-`home-catalogue`, `service-purchase`, `service-rental`, `catalogue`,
-`closing`, `contact-page`, `footer`, `bubble`. (`home-process` was retired on
-2026-09-25: the home's process section no longer carries CTAs, the closing
-band right after it does. The rental page shows its `closing` band only when
-the catalogue has listings; with none, the catalogue block is the CTA.) A catalogue card's
+`home-process`, `home-catalogue`, `service-purchase`, `service-rental`,
+`catalogue`, `closing`, `contact-page`, `footer`, `bubble`. A catalogue card's
 enquiry is a `whatsapp` (or `form`, while there is no number) CTA with
 `service=rental`.
 

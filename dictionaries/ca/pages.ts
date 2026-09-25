@@ -31,13 +31,16 @@ export const about: AboutDict = {
   ],
   storyImageAlt: "Mur emblanquinat i finestrons de fusta sota la llum mediterrània",
   leader: {
+    eyebrow: "Al capdavant",
     name: "Ramon Seva",
     role: "Al capdavant de Tarida MC",
     body: "En una empresa familiar, qui l'atén és qui coneix cada immoble.",
   },
   place: {
+    eyebrow: "Castelldefels",
     title: "El nostre *lloc*",
     body: "Treballem des de Castelldefels, entre el mar i el massís del Garraf. Coneixem el seu mercat immobiliari perquè fa quaranta anys que en formem part.",
     imageAlt: "Costa mediterrània amb pins a la posta de sol",
+    sea: "Mar Mediterrània",
   },
 };
