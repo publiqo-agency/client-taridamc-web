@@ -59,7 +59,7 @@ export const common: CommonDict = {
     whatsappMessage: "Hola, m'interessa l'immoble amb referència {ref}.",
     empty: {
       title: "Consulti *disponibilitat*",
-      body: "La nostra cartera de lloguer canvia sovint. Digui'ns què busca —nau o habitatge, superfície aproximada i zona— i l'informarem del que tinguem disponible.",
+      body: "La nostra cartera de lloguer canvia sovint. Digui'ns què busca (nau o habitatge, superfície aproximada i zona) i l'informarem del que tinguem disponible.",
       cta: "Consultar disponibilitat",
     },
   },

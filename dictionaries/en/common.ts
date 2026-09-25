@@ -59,7 +59,7 @@ export const common: CommonDict = {
     whatsappMessage: "Hello, I am interested in the property with reference {ref}.",
     empty: {
       title: "Ask about *availability*",
-      body: "Our rental portfolio changes frequently. Tell us what you are looking for — an industrial unit or a home, approximate size and area — and we will let you know what we have available.",
+      body: "Our rental portfolio changes frequently. Tell us what you are looking for (an industrial unit or a home, approximate size and area) and we will let you know what we have available.",
       cta: "Ask about availability",
     },
   },

@@ -63,7 +63,7 @@ export const common = {
     whatsappMessage: "Hola, me interesa el inmueble con referencia {ref}.",
     empty: {
       title: "Consulte *disponibilidad*",
-      body: "Nuestra cartera de alquiler cambia con frecuencia. Díganos qué busca —nave o vivienda, superficie aproximada y zona— y le informaremos de lo que tengamos disponible.",
+      body: "Nuestra cartera de alquiler cambia con frecuencia. Díganos qué busca (nave o vivienda, superficie aproximada y zona) y le informaremos de lo que tengamos disponible.",
       cta: "Consultar disponibilidad",
     },
   },
