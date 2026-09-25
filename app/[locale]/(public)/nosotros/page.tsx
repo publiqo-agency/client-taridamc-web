@@ -11,14 +11,11 @@ import { PageTransition } from "@/components/site/page-transition";
 import { PageHero } from "@/components/site/page-hero";
 import { SectionHeader } from "@/components/site/section-header";
 import { Media } from "@/components/site/media";
-import { Sundial } from "@/components/site/sundial";
-import { Coastline } from "@/components/site/coastline";
 import { ValuesGrid } from "@/components/site/values-grid";
 import { ClosingBand } from "@/components/site/closing-band";
 import { PillButton } from "@/components/site/pill-button";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 import { Lines } from "@/components/site/motion/split";
-import { PLACE } from "@/components/site/coords";
 
 export async function generateMetadata(props: PageProps<"/[locale]/nosotros">): Promise<Metadata> {
   const { locale: raw } = await props.params;
@@ -115,27 +112,26 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
         </div>
       </section>
 
-      {/* Castelldefels: the signature sundial reveal. */}
-      <section className={`${SECTION} overflow-hidden`}>
-        <div className={FRAME}>
-          <div className="grid grid-cols-12 items-center gap-x-8 gap-y-24">
-            <div className="col-span-12 md:col-span-6 md:pr-8">
-              <Sundial src="/about/castelldefels.webp" alt={about.place.imageAlt} />
-            </div>
-            <div className="col-span-12 md:col-span-5 md:col-start-8">
-              <p className="label text-ink-soft" data-m="fade">
-                {about.place.eyebrow}
-              </p>
-              <h2 className={`${DISPLAY} mt-6 text-[clamp(2.25rem,4.6vw,4.5rem)]`} data-m="lines">
-                <Lines text={about.place.title} />
-              </h2>
-              <p className="mt-8 max-w-md text-lg text-ink-soft" data-m="fade" data-delay="0.2">
-                {about.place.body}
-              </p>
-            </div>
+      {/* Castelldefels: text first this time, the photo opening beside it. */}
+      <section className={SECTION}>
+        <div className={`${FRAME} grid grid-cols-12 items-center gap-x-8 gap-y-16`}>
+          <div className="col-span-12 md:col-span-5">
+            <h2 className={`${DISPLAY} text-[clamp(2.25rem,4.6vw,4.5rem)]`} data-m="lines">
+              <Lines text={about.place.title} />
+            </h2>
+            <p className="mt-8 max-w-md text-lg text-ink-soft" data-m="fade" data-delay="0.2">
+              {about.place.body}
+            </p>
           </div>
-          <div className="mt-28 md:mt-36">
-            <Coastline sea={about.place.sea} place={PLACE} />
+          <div className="col-span-12 md:col-span-6 md:col-start-7">
+            <Media
+              src="/about/castelldefels.webp"
+              alt={about.place.imageAlt}
+              className="aspect-square w-full"
+              reveal="window"
+              parallax={6}
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
           </div>
         </div>
       </section>

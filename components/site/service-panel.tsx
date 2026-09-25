@@ -15,7 +15,6 @@ type Props = {
   specs: string[];
   href: string;
   cta: string;
-  cursor: string;
   image: { src: string; alt: string };
   tone: "light" | "dark";
   /** Photo on the right instead of the left. */
@@ -28,18 +27,17 @@ type Props = {
  * list and the way in. The photo carries a shared view-transition name, so
  * it morphs into the hero of the service page it links to.
  */
-export function ServicePanel({ id, index, total, kicker, title, teaser, specs, href, cta, cursor, image, tone, mirror = false }: Props) {
+export function ServicePanel({ id, index, total, kicker, title, teaser, specs, href, cta, image, tone, mirror = false }: Props) {
   return (
     <article className={`${tone === "dark" ? "band-dark" : "band-light"} grain relative bg-stock-2 text-ink`}>
       <div className="grid md:min-h-[92svh] md:grid-cols-2">
         <Link href={href} tabIndex={-1} aria-hidden className={`relative block aspect-[4/5] md:aspect-auto ${mirror ? "md:order-2" : ""}`}>
           <ViewTransition name={`service-${id}`} share="morph" default="none">
-            <Media src={image.src} alt={image.alt} className="absolute inset-0" parallax={7} cursor={cursor} sizes="(min-width: 768px) 50vw, 100vw" />
+            <Media src={image.src} alt={image.alt} className="absolute inset-0" parallax={7} sizes="(min-width: 768px) 50vw, 100vw" />
           </ViewTransition>
         </Link>
 
         <div className={`${FRAME} relative flex flex-col justify-between gap-16 py-14 md:px-12 md:py-16 lg:px-16 xl:px-20`}>
-          <span aria-hidden className="tick top-0 left-0 hidden md:block" />
           <div className="flex items-baseline justify-between" data-m="fade">
             <span className="label">{kicker}</span>
             <span className="label tnum text-ink-soft">

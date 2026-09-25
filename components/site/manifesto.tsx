@@ -24,7 +24,7 @@ export function Manifesto({ index, eyebrow, text, years, yearsLabel, yearsCaptio
   return (
     <section className={`${SECTION} relative`}>
       <div className={FRAME}>
-        <span aria-hidden data-m="draw-x" data-origin="0% 50%" className="block h-px w-full bg-line" />
+        <span aria-hidden className="block h-px w-full bg-line" />
 
         <div className="mt-10 grid grid-cols-12 gap-x-8 gap-y-10">
           <div className="col-span-12 flex gap-4 md:col-span-3 md:flex-col md:gap-2" data-m="fade">

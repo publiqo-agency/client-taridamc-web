@@ -22,7 +22,7 @@ export type StackItem = {
  * one slides up over it while the one underneath recedes (scales down and
  * darkens, scrubbed). On reduced motion they are simply consecutive panels.
  */
-export function ServiceStack({ items, cursor }: { items: StackItem[]; cursor: string }) {
+export function ServiceStack({ items }: { items: StackItem[] }) {
   return (
     <div data-m="stack" data-placement="home-services" className="relative">
       {items.map((item) => (
@@ -43,7 +43,6 @@ export function ServiceStack({ items, cursor }: { items: StackItem[]; cursor: st
                   alt={item.image.alt}
                   className="absolute inset-0"
                   parallax={8}
-                  cursor={cursor}
                   sizes="(min-width: 768px) 50vw, 100vw"
                 />
               </Link>

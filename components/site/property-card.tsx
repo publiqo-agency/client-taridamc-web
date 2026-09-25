@@ -38,7 +38,6 @@ export function PropertyCard({ property, locale, copy, sample = false, formHref,
         alt={`${type} · ${property.zone}`}
         className="aspect-[4/5] w-full"
         reveal={reveal}
-        cursor={copy.view}
         sizes={sizes ?? "(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 80vw"}
         imgClassName="transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
       >

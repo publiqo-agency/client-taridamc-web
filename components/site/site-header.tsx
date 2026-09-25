@@ -8,8 +8,6 @@ import { DISPLAY, FRAME } from "@/lib/styles";
 import { Logo } from "./logo";
 import { LocaleSwitcher } from "./locale-switcher";
 import { PillButton } from "./pill-button";
-import { LocalTime } from "./local-time";
-import { COORDS, PLACE } from "./coords";
 import { SCROLL_LOCK_EVENT, SCROLL_UNLOCK_EVENT } from "./motion/motion-root";
 
 export type NavItem = { href: string; label: string };
@@ -39,7 +37,7 @@ const normalize = (path: string) => path.replace(/\/+$/, "") || "/";
  * Site header. Transparent over a hero (`band-dark`: logo and links turn
  * light), bone with a hairline once scrolled. It slips away while reading
  * down and comes back on the first scroll up. The menu is a full-screen
- * espresso curtain with large serif links; the page behind goes `inert`
+ * deep-sea curtain with large light links; the page behind goes `inert`
  * while it is open and Escape closes it.
  *
  * All copy arrives resolved as props: reading the dictionary here would
@@ -139,9 +137,6 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
           </nav>
 
           <div className="flex items-center justify-self-end gap-5">
-            <span className="label hidden text-ink-soft 2xl:inline">
-              {PLACE} · <LocalTime />
-            </span>
             <LocaleSwitcher current={locale} aria={copy.localeAria} className="hidden md:flex" />
             <PillButton
               href={contactHref}
@@ -178,7 +173,7 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
 
         <span
           aria-hidden
-          className={`header-rule absolute inset-x-0 bottom-0 block h-px transition-colors duration-500 ${
+          className={`absolute inset-x-0 bottom-0 block h-px transition-colors duration-500 ${
             dark ? "bg-ink/20" : "bg-line"
           }`}
         />
@@ -202,9 +197,6 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
               aria-current={current === item.href ? "page" : undefined}
               className="group flex items-baseline gap-5 border-b border-line py-3"
             >
-              <span className="label tnum w-6 text-ink-soft transition-colors group-hover:text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
               <span className="mask">
                 <span
                   className={`${DISPLAY} text-[clamp(2.25rem,8vw,4rem)] transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3 group-aria-[current=page]:text-accent ${
@@ -225,9 +217,6 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
           }`}
         >
           <LocaleSwitcher current={locale} aria={copy.localeAria} />
-          <span className="label tnum text-ink-soft">
-            {COORDS} · <LocalTime />
-          </span>
         </div>
       </div>
     </>

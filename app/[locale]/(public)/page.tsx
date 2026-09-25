@@ -56,7 +56,6 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
           titleBottom={home.hero.titleBottom}
           intro={home.hero.intro}
           image={{ src: HERO_IMAGE, alt: home.hero.imageAlt }}
-          scroll={common.cta.scroll}
         >
           <PillButton href={sellHref} tone="white" seed delay={1}>
             {home.hero.ctaPrimary}
@@ -83,7 +82,6 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
         <SectionHeader index="02" eyebrow={home.lines.eyebrow} title={home.lines.title} className={FRAME} />
       </section>
       <ServiceStack
-        cursor={common.catalogue.view}
         items={[
           {
             id: "purchase",

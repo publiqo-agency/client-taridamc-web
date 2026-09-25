@@ -65,7 +65,6 @@ export default async function ServicesPage(props: PageProps<"/[locale]/servicios
           specs={panels[id].specs}
           href={serviceHref(locale, id)}
           cta={common.cta.learnMore}
-          cursor={common.catalogue.view}
           image={{ src: SERVICE_IMAGES[id], alt: services.items[id].imageAlt }}
           tone={i % 2 === 0 ? "light" : "dark"}
           mirror={i % 2 === 1}

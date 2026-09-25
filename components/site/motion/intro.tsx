@@ -12,8 +12,6 @@ type Props = {
   /** 40 — a fact from the brief, never a founding year we do not have. */
   years: number;
   yearsLabel: string;
-  place: string;
-  coords: string;
 };
 
 /**
@@ -25,7 +23,7 @@ type Props = {
  * Shown only when MOTION_INIT_SCRIPT set html[data-intro="on"] (first visit
  * of the session, motion allowed). Click or any key hurries it along.
  */
-export function Intro({ years, yearsLabel, place, coords }: Props) {
+export function Intro({ years, yearsLabel }: Props) {
   const panel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -93,14 +91,7 @@ export function Intro({ years, yearsLabel, place, coords }: Props) {
       style={{ clipPath: "inset(0% 0% 0% 0%)" }}
     >
       <div data-intro-content className="absolute inset-0 flex flex-col justify-between p-5 md:p-10">
-        <div className="flex items-start justify-between">
-          <span data-intro-meta className="label text-ink-soft opacity-0">
-            {place}
-          </span>
-          <span data-intro-meta className="label tnum text-ink-soft opacity-0">
-            {coords}
-          </span>
-        </div>
+        <span />
 
         <div className="relative flex justify-center">
           <Logo variant="full" decorative className="h-auto w-[min(78vw,34rem)]" />

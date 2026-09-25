@@ -3,7 +3,6 @@ import { ViewTransition } from "react";
 import { FRAME, DISPLAY } from "@/lib/styles";
 import { hasPublicImage } from "@/lib/images";
 import { Lines } from "./motion/split";
-import { COORDS } from "./coords";
 
 type Props = {
   eyebrow?: string;
@@ -19,9 +18,9 @@ type Props = {
 };
 
 /**
- * Page opener: an espresso band, the photo opening like a curtain behind a
- * darkening wash, the serif headline rising line by line at the bottom-left
- * and the intro on the right. `band-dark` inverts the tokens so the
+ * Page opener: a deep-sea band, the photo opening like a curtain behind a
+ * darkening wash, the headline rising line by line at the bottom-left and
+ * the intro stacked under it. `band-dark` inverts the tokens so the
  * transparent header above reads light without knowing where it is.
  */
 export function PageHero({ eyebrow, title, intro, image, transitionName, compact = false, children }: Props) {
@@ -58,18 +57,21 @@ export function PageHero({ eyebrow, title, intro, image, transitionName, compact
       )}
 
       <div className={`${FRAME} relative z-[2] flex flex-1 flex-col justify-between pt-32 pb-10 md:pb-14`}>
-        <div className="flex items-start justify-between gap-6" data-m="fade" data-delay="0.2">
-          {eyebrow && <p className="label">{eyebrow}</p>}
-          <p className="label tnum hidden text-ink-soft sm:block">{COORDS}</p>
-        </div>
+        {eyebrow ? (
+          <p className="label" data-m="fade" data-delay="0.15">
+            {eyebrow}
+          </p>
+        ) : (
+          <span />
+        )}
 
-        <div className="grid grid-cols-12 items-end gap-x-8 gap-y-8 pt-24">
-          <h1 className={`${DISPLAY} col-span-12 text-[clamp(2.75rem,6.2vw,7rem)] lg:col-span-8`} data-m="lines" data-delay="0.25">
+        <div className="max-w-5xl pt-24">
+          <h1 className={`${DISPLAY} text-[clamp(2.75rem,6.2vw,7rem)]`} data-m="lines" data-delay="0.2">
             <Lines text={title} />
           </h1>
           {(intro || children) && (
-            <div className="col-span-12 lg:col-span-4 lg:pb-3" data-m="fade" data-delay="0.6">
-              {intro && <p className="max-w-md text-lg text-ink-2">{intro}</p>}
+            <div className="mt-8 md:mt-10" data-m="fade" data-delay="0.45">
+              {intro && <p className="max-w-[46ch] text-lg text-ink-2">{intro}</p>}
               {children && <div className="mt-8 flex flex-wrap gap-3">{children}</div>}
             </div>
           )}
