@@ -7,7 +7,6 @@ import { PropertyCard } from "./property-card";
 import { Arrow } from "./pill-button";
 
 type Props = {
-  index: string;
   items: Property[];
   sample: boolean;
   locale: string;
@@ -19,20 +18,15 @@ type Props = {
 /**
  * The home's catalogue teaser. The heading scrolls in like any other
  * section; then, on wide screens with a mouse, only the rail pins (sized so
- * a whole card fits the viewport) and travels sideways with the scroll, with
- * an "01 / 06" index and a progress hairline. On touch it is a native snap
+ * a whole card fits the viewport) and travels sideways with the scroll, a
+ * progress hairline under it. On touch it is a native snap
  * row you swipe.
  */
-export function PropertyRail({ index, items, sample, locale, copy, catalogueHref, formHref }: Props) {
-  const total = String(items.length).padStart(2, "0");
+export function PropertyRail({ items, sample, locale, copy, catalogueHref, formHref }: Props) {
   return (
     <section data-m="hscroll" data-placement="home-catalogue" className="relative overflow-hidden py-24 md:py-32">
       <div className={`${FRAME} grid grid-cols-12 items-end gap-x-8 gap-y-8`}>
-        <div className="col-span-12 md:col-span-3" data-m="fade">
-          <span className="label tnum text-ink-soft">({index})</span>
-          <span className="label ml-4 md:ml-0 md:mt-2 md:block">{copy.eyebrow}</span>
-        </div>
-        <h2 className={`${DISPLAY} col-span-12 text-[clamp(2.25rem,4.6vw,4.5rem)] md:col-span-5`} data-m="lines">
+        <h2 className={`${DISPLAY} col-span-12 text-[clamp(2.25rem,4.6vw,4.5rem)] md:col-span-8`} data-m="lines">
           <Lines text={copy.title} />
         </h2>
         <div className="col-span-12 flex md:col-span-4 md:justify-end" data-m="fade" data-delay="0.2">
@@ -45,10 +39,6 @@ export function PropertyRail({ index, items, sample, locale, copy, catalogueHref
 
       <div data-pin className="mt-12 md:mt-16 lg:mt-0 lg:flex lg:h-[100svh] lg:flex-col lg:justify-center">
         <div className={`${FRAME} hidden items-center gap-6 lg:flex`}>
-          <p className="label tnum shrink-0">
-            <span data-current>01</span>
-            <span className="text-ink-soft"> / {total}</span>
-          </p>
           <span className="relative block h-px w-full bg-line">
             <span data-progress className="absolute inset-0 origin-left scale-x-0 bg-ink" />
           </span>

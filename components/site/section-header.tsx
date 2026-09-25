@@ -2,8 +2,7 @@ import { DISPLAY } from "@/lib/styles";
 import { Lines } from "./motion/split";
 
 type Props = {
-  /** "(02)" style index; optional. */
-  index?: string;
+  /** Small label above the headline. Use sparingly: one every few sections. */
   eyebrow?: string;
   title: string;
   intro?: string;
@@ -13,12 +12,10 @@ type Props = {
 };
 
 /**
- * The head of a content section on the 12-column plan: index and eyebrow
- * in the narrow left column, the serif headline rising line by line on the
- * right, the intro fading in after it.
+ * The head of a content section: one stacked message. The headline rises
+ * line by line, the intro fades in under it at reading width.
  */
 export function SectionHeader({
-  index,
   eyebrow,
   title,
   intro,
@@ -27,21 +24,20 @@ export function SectionHeader({
   titleClassName = "text-[clamp(2.25rem,4.6vw,4.5rem)]",
 }: Props) {
   return (
-    <div className={`grid grid-cols-12 gap-x-5 gap-y-6 md:gap-x-8 ${className}`}>
-      <div className="col-span-12 flex gap-4 md:col-span-3 md:flex-col md:gap-2 md:pt-4" data-m="fade">
-        {index && <span className="label tnum text-ink-soft">({index})</span>}
-        {eyebrow && <span className="label text-ink">{eyebrow}</span>}
-      </div>
-      <div className="col-span-12 md:col-span-9">
-        <Tag className={`${DISPLAY} ${titleClassName}`} data-m="lines">
-          <Lines text={title} />
-        </Tag>
-        {intro && (
-          <p className="mt-8 max-w-xl text-lg text-ink-soft" data-m="fade" data-delay="0.25">
-            {intro}
-          </p>
-        )}
-      </div>
+    <div className={`max-w-5xl ${className}`}>
+      {eyebrow && (
+        <p className="label mb-6 text-ink-soft md:mb-8" data-m="fade">
+          {eyebrow}
+        </p>
+      )}
+      <Tag className={`${DISPLAY} ${titleClassName}`} data-m="lines">
+        <Lines text={title} />
+      </Tag>
+      {intro && (
+        <p className="mt-8 max-w-[58ch] text-lg text-ink-soft" data-m="fade" data-delay="0.2">
+          {intro}
+        </p>
+      )}
     </div>
   );
 }

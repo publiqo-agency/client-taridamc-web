@@ -57,8 +57,6 @@ export default async function ServicesPage(props: PageProps<"/[locale]/servicios
         <ServicePanel
           key={id}
           id={id}
-          index={String(i + 1).padStart(2, "0")}
-          total={SERVICE_IDS.length}
           kicker={panels[id].kicker}
           title={panels[id].title}
           teaser={services.items[id].teaser}

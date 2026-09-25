@@ -11,9 +11,9 @@ type Props = {
 };
 
 /**
- * The closing call to action every page ends on: an espresso band, a photo
+ * The closing call to action most pages end on: a deep-sea band, a photo
  * framed like a window that opens as it arrives, and the question in large
- * serif. The buttons come in as seeds.
+ * light type.
  */
 export function ClosingBand({ eyebrow, title, body, image, children }: Props) {
   return (

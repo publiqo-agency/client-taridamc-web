@@ -28,15 +28,12 @@ export const common: CommonDict = {
     back: "Tornar a l'inici",
     allServices: "Veure tots els serveis",
     learnMore: "Més informació",
-    scroll: "Desplaçar",
   },
   brand: {
     yearsLabel: "anys",
     yearsCaption: "al sector immobiliari",
-    family: "Empresa familiar",
   },
   catalogue: {
-    eyebrow: "Catàleg",
     title: "Immobles\n*de lloguer*",
     intro:
       "Naus industrials i habitatges a Castelldefels, de la nostra pròpia cartera. L'atenem directament.",
@@ -58,7 +55,6 @@ export const common: CommonDict = {
       zone: "Zona",
     },
     enquire: "Consultar",
-    view: "Veure",
     seeAll: "Veure el catàleg",
     whatsappMessage: "Hola, m'interessa l'immoble amb referència {ref}.",
     empty: {
@@ -68,7 +64,6 @@ export const common: CommonDict = {
     },
   },
   values: {
-    eyebrow: "Com treballem",
     title: "Tres paraules\n*que ens defineixen*",
     items: [
       {
@@ -103,7 +98,6 @@ export const common: CommonDict = {
     servicesTitle: "Serveis",
     contactTitle: "Contacte",
     followTitle: "Segueixi'ns",
-    localTime: "Hora local",
     cookieSettings: "Preferències de galetes",
     rights: "Tots els drets reservats.",
     credit: "Disseny i desenvolupament:",

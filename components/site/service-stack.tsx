@@ -6,14 +6,13 @@ import { PillButton } from "./pill-button";
 
 export type StackItem = {
   id: string;
-  index: string;
   kicker: string;
   title: string;
   body: string;
   href: string;
   cta: string;
   image: { src: string; alt: string };
-  /** Light (cream) or dark (espresso) panel. */
+  /** Light (salt) or dark (deep-sea) panel. */
   tone: "light" | "dark";
 };
 
@@ -47,13 +46,11 @@ export function ServiceStack({ items }: { items: StackItem[] }) {
                 />
               </Link>
 
-              <div className={`${FRAME} flex flex-col justify-between py-10 md:px-12 md:py-16 lg:px-16 xl:px-20`}>
-                <div className="flex items-baseline justify-between gap-6" data-m="fade">
-                  <span className="label">{item.kicker}</span>
-                  <span className="label tnum text-ink-soft">{item.index} / 0{items.length}</span>
-                </div>
-
+              <div className={`${FRAME} flex flex-col justify-end py-10 md:px-12 md:py-16 lg:px-16 xl:px-20`}>
                 <div>
+                  <p className="mb-5 text-sm text-ink-soft md:mb-6" data-m="fade">
+                    {item.kicker}
+                  </p>
                   <h3 className={`${DISPLAY} text-[clamp(2.25rem,4vw,4.5rem)]`} data-m="lines">
                     <Lines text={item.title} />
                   </h3>

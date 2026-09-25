@@ -69,14 +69,7 @@ export default async function ServicePage(props: Props) {
   const other = SERVICE_IDS.find((s) => s !== id)!;
   const heroTitle = id === "purchase" ? home.lines.purchaseTitle : home.lines.rentalTitle;
 
-  const ctas = (tone: "white" | "ink") => (
-    <>
-      <PillButton href={formHref} tone={tone} cta="form" service={id} seed>
-        {item.cta}
-      </PillButton>
-      <WhatsAppCta label={common.cta.whatsapp} message={item.whatsappMessage} service={id} tone="outline" />
-    </>
-  );
+  const listings = catalogue().items.length;
 
   return (
     <PageTransition>
@@ -90,16 +83,13 @@ export default async function ServicePage(props: Props) {
 
         {/* Intro: the promise of the page in one large paragraph. */}
         <section className={SECTION}>
-          <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-10`}>
-            <div className="col-span-12 md:col-span-3" data-m="fade">
-              <span className="label text-ink-soft">{item.title}</span>
-            </div>
-            <div className="col-span-12 md:col-span-9">
-              <p className={`${DISPLAY_QUIET} text-[clamp(1.5rem,2.4vw,2.5rem)] leading-[1.25]`} data-m="fade">
-                {item.intro}
-              </p>
-              <div className="mt-12 flex flex-wrap gap-3">{ctas("ink")}</div>
-            </div>
+          <div className={FRAME}>
+            <p
+              className={`${DISPLAY_QUIET} max-w-[38ch] text-[clamp(1.5rem,2.4vw,2.5rem)] leading-[1.3] md:ml-[25%]`}
+              data-m="fade"
+            >
+              {item.intro}
+            </p>
           </div>
         </section>
 
@@ -126,11 +116,10 @@ export default async function ServicePage(props: Props) {
                   {item.includes.map((line, i) => (
                     <li
                       key={line}
-                      className="group relative flex items-baseline gap-6 border-b border-line py-7 md:gap-10 md:py-9"
+                      className="group relative border-b border-line py-7 first:border-t md:py-9"
                       data-m="fade"
-                      data-delay={String(i * 0.06)}
+                      data-delay={String(i * 0.05)}
                     >
-                      <span className="label tnum w-8 text-ink-soft">{String(i + 1).padStart(2, "0")}</span>
                       <span className={`${DISPLAY_QUIET} text-[clamp(1.375rem,2.2vw,2.25rem)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3`}>
                         {line}
                       </span>
@@ -142,7 +131,7 @@ export default async function ServicePage(props: Props) {
 
             <section className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
               <div className={FRAME}>
-                <SectionHeader index="01" eyebrow={home.process.eyebrow} title={home.process.title} intro={home.process.intro} />
+                <SectionHeader eyebrow={home.process.eyebrow} title={home.process.title} intro={home.process.intro} />
                 <div className="mt-20 md:mt-28">
                   <ProcessGrid steps={item.sections} />
                 </div>
@@ -162,8 +151,7 @@ export default async function ServicePage(props: Props) {
                   </span>
                 </p>
                 <div className="col-span-12 md:col-span-5" data-m="fade" data-delay="0.15">
-                  <p className="label text-ink-soft">{common.brand.family}</p>
-                  <p className={`${DISPLAY_QUIET} mt-4 text-2xl`}>{dict.about.leader.body}</p>
+                  <p className={`${DISPLAY_QUIET} text-2xl`}>{dict.about.leader.body}</p>
                   <p className={`${ACCENT} mt-8 text-2xl`}>{dict.about.leader.name}</p>
                   <p className="label mt-1 text-ink-soft">{dict.about.leader.role}</p>
                 </div>
@@ -177,26 +165,33 @@ export default async function ServicePage(props: Props) {
         {/* The other service, as one large link. */}
         <section className="border-t border-line">
           <Link href={serviceHref(locale, other)} className="group block">
-            <div className={`${FRAME} grid grid-cols-12 items-center gap-x-8 gap-y-8 py-16 md:py-24`}>
-              <span className="label col-span-12 text-ink-soft md:col-span-3">{services.detail.otherServices}</span>
-              <span className={`${DISPLAY} col-span-10 text-[clamp(2.25rem,4.6vw,4.75rem)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-4 md:col-span-7`}>
+            <div className={`${FRAME} flex items-center justify-between gap-8 py-16 md:py-24`}>
+              <span className="sr-only">{services.detail.otherServices}: </span>
+              <span className={`${DISPLAY} text-[clamp(2.25rem,4.6vw,4.75rem)] transition-[translate] duration-300 ease-(--ease-out) group-hover:translate-x-4`}>
                 {services.items[other].title}
               </span>
-              <span className="col-span-2 justify-self-end text-3xl">
+              <span className="text-3xl">
                 <Arrow />
               </span>
             </div>
           </Link>
         </section>
 
-        <ClosingBand
-          eyebrow={services.detail.requestTitle}
-          title={id === "purchase" ? common.closing.title : common.catalogue.empty.title}
-          body={id === "purchase" ? common.closing.body : common.catalogue.empty.body}
-          image={{ src: "/cta/sell.webp", alt: common.closing.imageAlt }}
-        >
-          {ctas("white")}
-        </ClosingBand>
+        {/* With an empty catalogue the rental page already ends on the
+            availability block; a closing band would repeat it word for word. */}
+        {(id === "purchase" || listings > 0) && (
+          <ClosingBand
+            eyebrow={services.detail.requestTitle}
+            title={id === "purchase" ? common.closing.title : common.catalogue.empty.title}
+            body={id === "purchase" ? common.closing.body : common.catalogue.empty.body}
+            image={{ src: "/cta/sell.webp", alt: common.closing.imageAlt }}
+          >
+            <PillButton href={formHref} tone="white" cta="form" service={id}>
+              {item.cta}
+            </PillButton>
+            <WhatsAppCta label={common.cta.whatsapp} message={item.whatsappMessage} service={id} tone="outline" />
+          </ClosingBand>
+        )}
       </div>
 
       <JsonLd
@@ -230,7 +225,7 @@ async function RentalCatalogue({
   return (
     <section data-placement="catalogue" className="pb-24 md:pb-36">
       <div className={FRAME}>
-        <SectionHeader eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} />
+        <SectionHeader title={copy.title} intro={copy.intro} />
         <div className="mt-16 md:mt-24">
           {items.length > 0 ? (
             <PropertyCatalogue
