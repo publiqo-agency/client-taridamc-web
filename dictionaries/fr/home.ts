@@ -19,12 +19,14 @@ export const home: HomeDict = {
     imageAlt: "Villa méditerranéenne contemporaine au coucher du soleil",
   },
   manifesto: {
+    eyebrow: "Qui sommes-nous",
     text: "Nous sommes une entreprise familiale de Castelldefels. Depuis quarante ans, nous achetons et louons des biens immobiliers selon une même règle : *sérieux, honnêteté et transparence* à chaque opération.",
     signature: "Ramon Seva",
     role: "À la tête de Tarida MC",
     cta: "Mieux nous connaître",
   },
   lines: {
+    eyebrow: "Ce que nous faisons",
     title: "Deux façons\nde *travailler avec vous*",
     purchaseKicker: "Pour les propriétaires",
     purchaseTitle: "Nous achetons\n*votre bien*",

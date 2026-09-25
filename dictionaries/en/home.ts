@@ -19,12 +19,14 @@ export const home: HomeDict = {
     imageAlt: "Contemporary Mediterranean villa at sunset",
   },
   manifesto: {
+    eyebrow: "Who we are",
     text: "We are a family business in Castelldefels. For forty years we have bought and let property by one rule: *integrity, honesty and transparency* in every transaction.",
     signature: "Ramon Seva",
     role: "Head of Tarida MC",
     cta: "About us",
   },
   lines: {
+    eyebrow: "What we do",
     title: "Two ways\nto *work with you*",
     purchaseKicker: "For owners",
     purchaseTitle: "We buy\n*your property*",

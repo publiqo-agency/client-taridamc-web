@@ -56,17 +56,20 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
           titleBottom={home.hero.titleBottom}
           intro={home.hero.intro}
           image={{ src: HERO_IMAGE, alt: home.hero.imageAlt }}
+          scroll={common.cta.scroll}
         >
-          <PillButton href={sellHref} tone="white" rise delay={0.7}>
+          <PillButton href={sellHref} tone="white" seed delay={1}>
             {home.hero.ctaPrimary}
           </PillButton>
-          <PillButton href={rentHref} tone="outline" rise delay={0.76}>
+          <PillButton href={rentHref} tone="outline" seed delay={1.1}>
             {home.hero.ctaSecondary}
           </PillButton>
         </HomeHero>
       </div>
 
       <Manifesto
+        index="01"
+        eyebrow={home.manifesto.eyebrow}
         text={home.manifesto.text}
         years={40}
         yearsLabel={common.brand.yearsLabel}
@@ -77,12 +80,14 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       />
 
       <section className="pb-16 md:pb-24">
-        <SectionHeader title={home.lines.title} className={FRAME} />
+        <SectionHeader index="02" eyebrow={home.lines.eyebrow} title={home.lines.title} className={FRAME} />
       </section>
       <ServiceStack
+        cursor={common.catalogue.view}
         items={[
           {
             id: "purchase",
+            index: "01",
             kicker: home.lines.purchaseKicker,
             title: home.lines.purchaseTitle,
             body: services.items.purchase.teaser,
@@ -93,6 +98,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
           },
           {
             id: "rental",
+            index: "02",
             kicker: home.lines.rentalKicker,
             title: home.lines.rentalTitle,
             body: services.items.rental.teaser,
@@ -104,17 +110,29 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
         ]}
       />
 
-      <section className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
+      <section data-placement="home-process" className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
         <div className={FRAME}>
-          <SectionHeader eyebrow={home.process.eyebrow} title={home.process.title} intro={home.process.intro} />
+          <SectionHeader index="03" eyebrow={home.process.eyebrow} title={home.process.title} intro={home.process.intro} />
           <div className="mt-20 md:mt-28">
             <ProcessGrid steps={services.items.purchase.sections} />
+          </div>
+          <div className="mt-14 flex flex-wrap gap-3">
+            <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" seed>
+              {services.items.purchase.cta}
+            </PillButton>
+            <WhatsAppCta
+              label={common.cta.whatsapp}
+              message={services.items.purchase.whatsappMessage}
+              service="purchase"
+              tone="outline"
+            />
           </div>
         </div>
       </section>
 
       {listings.length > 0 ? (
         <PropertyRail
+          index="04"
           items={listings}
           sample={sample}
           locale={locale}
@@ -125,7 +143,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       ) : (
         <section data-placement="home-catalogue" className={SECTION}>
           <div className={FRAME}>
-            <SectionHeader title={common.catalogue.title} intro={common.catalogue.intro} />
+            <SectionHeader index="04" eyebrow={common.catalogue.eyebrow} title={common.catalogue.title} intro={common.catalogue.intro} />
             <div className="mt-16">
               <CatalogueEmpty title={common.catalogue.empty.title} body={common.catalogue.empty.body}>
                 <PillButton href={proposalFormHref(contactHref, "rental")} cta="form" service="rental">
@@ -139,8 +157,8 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
 
       <section className={`${SECTION} bg-stock-2`}>
         <div className={FRAME}>
-          <SectionHeader title={common.values.title} />
-          <div className="mt-16 md:mt-24">
+          <SectionHeader index="05" eyebrow={common.values.eyebrow} title={common.values.title} />
+          <div className="mt-20 md:mt-28">
             <ValuesGrid items={common.values.items} />
           </div>
         </div>
@@ -152,7 +170,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
         body={common.closing.body}
         image={{ src: CLOSING_IMAGE, alt: common.closing.imageAlt }}
       >
-        <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" rise>
+        <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" seed>
           {services.items.purchase.cta}
         </PillButton>
         <WhatsAppCta

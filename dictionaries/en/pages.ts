@@ -31,13 +31,16 @@ export const about: AboutDict = {
   ],
   storyImageAlt: "Whitewashed wall and wooden shutters in Mediterranean light",
   leader: {
+    eyebrow: "At the helm",
     name: "Ramon Seva",
     role: "Head of Tarida MC",
     body: "In a family business, the person who looks after you is the one who knows every property.",
   },
   place: {
+    eyebrow: "Castelldefels",
     title: "Our *place*",
     body: "We work from Castelldefels, between the sea and the Garraf massif. We know its property market because we have been part of it for forty years.",
     imageAlt: "Mediterranean coastline with pine trees at sunset",
+    sea: "Mediterranean Sea",
   },
 };

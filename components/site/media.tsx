@@ -13,6 +13,8 @@ type Props = {
   reveal?: "img" | "window" | "none";
   /** Scrubbed vertical parallax of the photo inside its frame (percent). */
   parallax?: number;
+  /** Label of the follow-cursor over this image ("Ver"). */
+  cursor?: string;
   delay?: number;
   /** Extra classes on the <img> (object position, grading). */
   imgClassName?: string;
@@ -35,6 +37,7 @@ export function Media({
   className = "",
   reveal = "img",
   parallax,
+  cursor,
   delay,
   imgClassName = "",
   children,
@@ -45,6 +48,7 @@ export function Media({
       className={`relative overflow-hidden bg-stock-2 ${className}`}
       {...(reveal !== "none" && exists ? { "data-m": reveal } : {})}
       {...(delay ? { "data-delay": String(delay) } : {})}
+      {...(cursor ? { "data-cursor": cursor } : {})}
     >
       {exists ? (
         <div

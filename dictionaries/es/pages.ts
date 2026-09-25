@@ -28,13 +28,16 @@ export const about = {
   ],
   storyImageAlt: "Muro encalado y contraventanas de madera bajo la luz mediterránea",
   leader: {
+    eyebrow: "Al frente",
     name: "Ramon Seva",
     role: "Al frente de Tarida MC",
     body: "En una empresa familiar, quien le atiende es quien conoce cada inmueble.",
   },
   place: {
+    eyebrow: "Castelldefels",
     title: "Nuestro *lugar*",
     body: "Trabajamos desde Castelldefels, entre el mar y el macizo del Garraf. Conocemos su mercado inmobiliario porque llevamos cuarenta años formando parte de él.",
     imageAlt: "Costa mediterránea con pinos al atardecer",
+    sea: "Mar Mediterráneo",
   },
 };

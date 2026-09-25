@@ -8,6 +8,8 @@ import { DISPLAY, FRAME } from "@/lib/styles";
 import { Logo } from "./logo";
 import { LocaleSwitcher } from "./locale-switcher";
 import { PillButton } from "./pill-button";
+import { LocalTime } from "./local-time";
+import { COORDS, PLACE } from "./coords";
 import { SCROLL_LOCK_EVENT, SCROLL_UNLOCK_EVENT } from "./motion/motion-root";
 
 export type NavItem = { href: string; label: string };
@@ -37,7 +39,7 @@ const normalize = (path: string) => path.replace(/\/+$/, "") || "/";
  * Site header. Transparent over a hero (`band-dark`: logo and links turn
  * light), bone with a hairline once scrolled. It slips away while reading
  * down and comes back on the first scroll up. The menu is a full-screen
- * deep-sea curtain with large light links; the page behind goes `inert`
+ * espresso curtain with large serif links; the page behind goes `inert`
  * while it is open and Escape closes it.
  *
  * All copy arrives resolved as props: reading the dictionary here would
@@ -107,7 +109,7 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
       <header
         data-placement="header"
         style={{ viewTransitionName: "site-header" }}
-        className={`fixed inset-x-0 top-0 z-50 transition-[translate,background-color] duration-300 ease-(--ease-out) ${
+        className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           hidden && !open ? "-translate-y-full" : "translate-y-0"
         } ${dark ? "band-dark bg-transparent text-ink" : "bg-stock/90 text-ink backdrop-blur-md"}`}
       >
@@ -137,6 +139,9 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
           </nav>
 
           <div className="flex items-center justify-self-end gap-5">
+            <span className="label hidden text-ink-soft 2xl:inline">
+              {PLACE} · <LocalTime />
+            </span>
             <LocaleSwitcher current={locale} aria={copy.localeAria} className="hidden md:flex" />
             <PillButton
               href={contactHref}
@@ -157,13 +162,13 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
               <span className="label">{open ? copy.close : copy.menu}</span>
               <span aria-hidden className="relative block h-3 w-7">
                 <span
-                  className={`absolute top-0 left-0 h-px w-full bg-current transition-transform duration-300 ease-(--ease-in-out) ${
-                    open ? "translate-y-1.5 rotate-[20deg]" : ""
+                  className={`absolute left-0 h-px w-full bg-current transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+                    open ? "top-1.5 rotate-[20deg]" : "top-0"
                   }`}
                 />
                 <span
-                  className={`absolute top-3 left-0 h-px w-full origin-left bg-current transition-transform duration-300 ease-(--ease-in-out) ${
-                    open ? "-translate-y-1.5 -rotate-[20deg]" : "scale-x-[0.66] group-hover:scale-x-100"
+                  className={`absolute left-0 h-px bg-current transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+                    open ? "top-1.5 w-full -rotate-[20deg]" : "top-3 w-2/3 group-hover:w-full"
                   }`}
                 />
               </span>
@@ -173,7 +178,7 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
 
         <span
           aria-hidden
-          className={`absolute inset-x-0 bottom-0 block h-px transition-colors duration-300 ${
+          className={`header-rule absolute inset-x-0 bottom-0 block h-px transition-colors duration-500 ${
             dark ? "bg-ink/20" : "bg-line"
           }`}
         />
@@ -183,8 +188,8 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
         id="site-menu"
         aria-hidden={!open}
         inert={!open}
-        className={`band-dark grain fixed inset-0 z-40 flex flex-col bg-stock text-ink transition-[clip-path] ease-(--ease-out) lg:hidden ${
-          open ? "duration-500 [clip-path:inset(0_0_0_0)]" : "duration-300 [clip-path:inset(0_0_100%_0)]"
+        className={`band-dark grain fixed inset-0 z-40 flex flex-col bg-stock text-ink transition-[clip-path] duration-[900ms] ease-[cubic-bezier(0.76,0,0.24,1)] lg:hidden ${
+          open ? "[clip-path:inset(0_0_0_0)]" : "[clip-path:inset(0_0_100%_0)]"
         }`}
       >
         <nav aria-label={copy.mainNavAria} className={`${FRAME} flex flex-1 flex-col justify-center gap-1 pt-24`}>
@@ -197,12 +202,15 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
               aria-current={current === item.href ? "page" : undefined}
               className="group flex items-baseline gap-5 border-b border-line py-3"
             >
+              <span className="label tnum w-6 text-ink-soft transition-colors group-hover:text-accent">
+                {String(i + 1).padStart(2, "0")}
+              </span>
               <span className="mask">
                 <span
-                  className={`${DISPLAY} text-[clamp(2.25rem,8vw,4rem)] transition-transform ease-(--ease-out) group-aria-[current=page]:text-accent ${
-                    open ? "translate-y-0 duration-500" : "translate-y-[115%] duration-200"
+                  className={`${DISPLAY} text-[clamp(2.5rem,10vw,5rem)] transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3 group-aria-[current=page]:text-accent ${
+                    open ? "translate-y-0" : "translate-y-[115%]"
                   }`}
-                  style={{ transitionDelay: open ? `${0.12 + i * 0.04}s` : "0s" }}
+                  style={{ transitionDelay: open ? `${0.25 + i * 0.06}s` : "0s" }}
                 >
                   {item.label}
                 </span>
@@ -212,11 +220,14 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
         </nav>
 
         <div
-          className={`${FRAME} flex flex-wrap items-center justify-between gap-4 pb-8 transition-opacity ${
-            open ? "opacity-100 duration-300 delay-300" : "opacity-0 duration-150"
+          className={`${FRAME} flex flex-wrap items-center justify-between gap-4 pb-8 transition-opacity duration-700 ${
+            open ? "opacity-100 delay-500" : "opacity-0"
           }`}
         >
           <LocaleSwitcher current={locale} aria={copy.localeAria} />
+          <span className="label tnum text-ink-soft">
+            {COORDS} · <LocalTime />
+          </span>
         </div>
       </div>
     </>

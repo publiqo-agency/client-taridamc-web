@@ -57,12 +57,15 @@ export default async function ServicesPage(props: PageProps<"/[locale]/servicios
         <ServicePanel
           key={id}
           id={id}
+          index={String(i + 1).padStart(2, "0")}
+          total={SERVICE_IDS.length}
           kicker={panels[id].kicker}
           title={panels[id].title}
           teaser={services.items[id].teaser}
           specs={panels[id].specs}
           href={serviceHref(locale, id)}
           cta={common.cta.learnMore}
+          cursor={common.catalogue.view}
           image={{ src: SERVICE_IMAGES[id], alt: services.items[id].imageAlt }}
           tone={i % 2 === 0 ? "light" : "dark"}
           mirror={i % 2 === 1}
@@ -75,7 +78,7 @@ export default async function ServicesPage(props: PageProps<"/[locale]/servicios
         body={common.closing.body}
         image={{ src: "/cta/sell.webp", alt: common.closing.imageAlt }}
       >
-        <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" rise>
+        <PillButton href={proposalFormHref(contactHref, "purchase")} tone="white" cta="form" service="purchase" seed>
           {services.items.purchase.cta}
         </PillButton>
         <WhatsAppCta label={common.cta.whatsapp} message={services.items.purchase.whatsappMessage} service="purchase" tone="outline" />

@@ -4,6 +4,8 @@ import { Words } from "./motion/split";
 import { Arrow } from "./pill-button";
 
 type Props = {
+  index: string;
+  eyebrow: string;
   text: string;
   years: number;
   yearsLabel: string;
@@ -14,22 +16,28 @@ type Props = {
 };
 
 /**
- * The statement. A large light paragraph that lights up word by word as it
+ * The statement. A large serif paragraph that lights up word by word as it
  * scrolls through the viewport (scrubbed, so the reader sets the pace), then
  * the one number the brief gives us, counted once, and the signature.
  */
-export function Manifesto({ text, years, yearsLabel, yearsCaption, signature, role, cta }: Props) {
+export function Manifesto({ index, eyebrow, text, years, yearsLabel, yearsCaption, signature, role, cta }: Props) {
   return (
     <section className={`${SECTION} relative`}>
       <div className={FRAME}>
-        <span aria-hidden className="block h-px w-full bg-line" />
+        <span aria-hidden data-m="draw-x" data-origin="0% 50%" className="block h-px w-full bg-line" />
 
-        <p
-          data-m="words"
-          className={`${DISPLAY} mt-12 max-w-[30ch] text-[clamp(1.625rem,3.1vw,3.25rem)] leading-[1.2] md:mt-16 md:ml-[25%]`}
-        >
-          <Words text={text} />
-        </p>
+        <div className="mt-10 grid grid-cols-12 gap-x-8 gap-y-10">
+          <div className="col-span-12 flex gap-4 md:col-span-3 md:flex-col md:gap-2" data-m="fade">
+            <span className="label tnum text-ink-soft">({index})</span>
+            <span className="label">{eyebrow}</span>
+          </div>
+          <p
+            data-m="words"
+            className={`${DISPLAY} col-span-12 text-[clamp(2rem,4.3vw,4.5rem)] leading-[1.08] md:col-span-9`}
+          >
+            <Words text={text} />
+          </p>
+        </div>
 
         <div className="mt-20 grid grid-cols-12 items-end gap-x-8 gap-y-12 md:mt-28">
           <div className="col-span-12 md:col-span-6 md:col-start-4">
