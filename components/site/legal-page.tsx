@@ -19,7 +19,7 @@ type Props = {
 export function LegalPage({ title, intro, sections, pending, updated }: Props) {
   return (
     <article className={`${FRAME_NARROW} ${SECTION} pt-32 md:pt-40`}>
-      <h1 className={`${DISPLAY} text-5xl md:text-7xl`}>{title}</h1>
+      <h1 className={`${DISPLAY} text-4xl md:text-6xl`}>{title}</h1>
       <p className="mt-6 text-lg text-ink-soft">{intro}</p>
 
       {pending && (

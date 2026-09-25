@@ -5,8 +5,8 @@ import Link from "next/link";
  * vocabulary of the site has no pills. (The name stays for the CORE form,
  * which imports `pillClass` to clone the geometry onto its submit button.)
  *
- * `seed` makes the button grow from a square the first time it is seen
- * (motion engine, data-m="seed").
+ * `rise` lets the button settle in the first time it is seen (motion
+ * engine, data-m="rise"); `delay` staggers it after its neighbours.
  */
 
 export type PillTone = "ink" | "accent" | "outline" | "white" | "whatsapp" | "whatsapp-outline";
@@ -25,7 +25,9 @@ export const pillClass = (tone: PillTone = "ink", extra = "") =>
   [
     "group inline-flex h-12 items-center justify-center gap-3 px-6",
     "text-[0.8125rem] font-medium tracking-[0.02em] whitespace-nowrap",
-    "transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+    // Colours follow the pointer quickly; the press scales down a touch so
+    // the button answers the finger before the page does.
+    "transition-[color,background-color,border-color,scale] duration-200 ease-(--ease-out) active:scale-[0.97]",
     TONE[tone],
     extra,
   ]
@@ -55,7 +57,7 @@ type Props = {
   /** Analytics tag, read by <AnalyticsListener>. */
   cta?: string;
   service?: string;
-  seed?: boolean;
+  rise?: boolean;
   delay?: number;
 };
 
@@ -68,7 +70,7 @@ export function PillButton({
   external = false,
   cta,
   service,
-  seed = false,
+  rise = false,
   delay,
 }: Props) {
   const content = (
@@ -82,8 +84,8 @@ export function PillButton({
     className: pillClass(tone, className),
     ...(cta ? { "data-cta": cta } : {}),
     ...(service ? { "data-service": service } : {}),
-    ...(seed ? { "data-m": "seed" } : {}),
-    ...(seed && delay ? { "data-delay": String(delay) } : {}),
+    ...(rise ? { "data-m": "rise" } : {}),
+    ...(rise && delay ? { "data-delay": String(delay) } : {}),
   };
 
   if (external) {

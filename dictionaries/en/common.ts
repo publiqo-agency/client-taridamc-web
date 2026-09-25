@@ -28,15 +28,12 @@ export const common: CommonDict = {
     back: "Back to home",
     allServices: "View all services",
     learnMore: "Learn more",
-    scroll: "Scroll",
   },
   brand: {
     yearsLabel: "years",
     yearsCaption: "in real estate",
-    family: "Family business",
   },
   catalogue: {
-    eyebrow: "Catalogue",
     title: "Properties\n*to let*",
     intro:
       "Industrial units and homes in Castelldefels, from our own portfolio. You deal with us directly.",
@@ -58,17 +55,15 @@ export const common: CommonDict = {
       zone: "Area",
     },
     enquire: "Enquire",
-    view: "View",
     seeAll: "View the catalogue",
     whatsappMessage: "Hello, I am interested in the property with reference {ref}.",
     empty: {
       title: "Ask about *availability*",
-      body: "Our rental portfolio changes frequently. Tell us what you are looking for — an industrial unit or a home, approximate size and area — and we will let you know what we have available.",
+      body: "Our rental portfolio changes frequently. Tell us what you are looking for (an industrial unit or a home, approximate size and area) and we will let you know what we have available.",
       cta: "Ask about availability",
     },
   },
   values: {
-    eyebrow: "How we work",
     title: "Three words\n*that define us*",
     items: [
       {
@@ -103,7 +98,6 @@ export const common: CommonDict = {
     servicesTitle: "Services",
     contactTitle: "Contact",
     followTitle: "Follow us",
-    localTime: "Local time",
     cookieSettings: "Cookie preferences",
     rights: "All rights reserved.",
     credit: "Design and development:",

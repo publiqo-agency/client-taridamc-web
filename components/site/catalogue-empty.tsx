@@ -15,11 +15,11 @@ export function CatalogueEmpty({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative grid gap-10 border-y border-line py-16 md:grid-cols-12 md:py-24">
-      <p className={`${DISPLAY} text-[clamp(2.5rem,5vw,5rem)] md:col-span-6`} data-m="fade">
+    <div className="border-y border-line py-16 md:py-24">
+      <p className={`${DISPLAY} max-w-4xl text-[clamp(2rem,3.8vw,3.75rem)]`} data-m="fade">
         <Rich text={title} />
       </p>
-      <div className="md:col-span-5 md:col-start-8" data-m="fade" data-delay="0.15">
+      <div className="mt-8 max-w-[58ch]" data-m="fade" data-delay="0.15">
         <p className="text-lg text-ink-soft">{body}</p>
         <div className="mt-8 flex flex-wrap gap-3">{children}</div>
       </div>

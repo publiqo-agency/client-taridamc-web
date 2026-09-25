@@ -35,11 +35,30 @@
   --color-surface: var(--surface);
   --color-line: var(--line);
 
-  --font-display: var(--font-display-family), "Times New Roman", serif;
+  --font-display: var(--font-sans-family), system-ui, sans-serif;
   --font-sans: var(--font-sans-family), system-ui, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-curtain: cubic-bezier(0.76, 0, 0.24, 1);
+  /* UI curves (Emil Kowalski): a strong ease-out for anything that responds
+     to the user, a strong in-out only for things moving across the screen.
+     Nothing in the interface eases in. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/*
+  Hover only where there is a real pointer. Tailwind's default already skips
+  devices without hover; this also skips coarse pointers (a tablet with a
+  pen or a TV remote), so a tap never leaves a hover state stuck on.
+  `group-hover` and `peer-hover` follow this definition too.
+*/
+@custom-variant hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @slot;
+    }
+  }
 }
 
 /*
@@ -192,18 +211,6 @@ html.lenis body {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
-/*
-  Plan-drawing corner ticks (the Cala Mira grid): a 5px square at an
-  intersection of hairlines. Place with absolute positioning.
-*/
-.tick {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background: var(--ink);
-  transform: translate(-50%, -50%);
-}
-
 /* A line mask: each line of a split headline lives in one. `clip` and not
    `hidden` so it never creates a scroll container; the padding keeps
    descenders (g, j, p) and the italic overhang inside the mask. */
@@ -235,14 +242,21 @@ html.lenis body {
   background-size: 0% 1px;
   background-position: 100% 100%;
   background-repeat: no-repeat;
-  transition: background-size 0.6s var(--ease-out-expo);
+  transition:
+    background-size 0.3s var(--ease-out),
+    color 0.2s ease;
   padding-bottom: 2px;
 }
-.link-line:hover,
 .link-line:focus-visible,
 .link-line[aria-current="page"] {
   background-size: 100% 1px;
   background-position: 0% 100%;
+}
+@media (hover: hover) and (pointer: fine) {
+  .link-line:hover {
+    background-size: 100% 1px;
+    background-position: 0% 100%;
+  }
 }
 
 /* Arrow that slides out and is replaced by its twin (buttons, links). */
@@ -253,38 +267,25 @@ html.lenis body {
 }
 .arrow-swap > span {
   display: inline-block;
-  transition: transform 0.55s var(--ease-out-expo);
+  transition: transform 0.25s var(--ease-out);
 }
 .arrow-swap > span + span {
   position: absolute;
   inset: 0;
   transform: translateX(-120%);
 }
-.group:hover .arrow-swap > span:first-child,
 .group:focus-visible .arrow-swap > span:first-child {
   transform: translateX(120%);
 }
-.group:hover .arrow-swap > span + span,
 .group:focus-visible .arrow-swap > span + span {
   transform: none;
 }
-
-/* The hero's scroll hint: a short light that runs down a hairline. */
-.scroll-hint::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--ink);
-  transform: translateY(-100%);
-  animation: scroll-hint 2.4s var(--ease-curtain) infinite;
-}
-@keyframes scroll-hint {
-  0% {
-    transform: translateY(-100%);
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .arrow-swap > span:first-child {
+    transform: translateX(120%);
   }
-  55%,
-  100% {
-    transform: translateY(100%);
+  .group:hover .arrow-swap > span + span {
+    transform: none;
   }
 }
 
@@ -322,15 +323,16 @@ html.lenis body {
   border-radius: 0;
 }
 
-/* Catalogue filter: each change replays a short rise. */
+/* Catalogue filter: each change replays a short rise. It runs on every
+   click, so it stays brief and barely travels. */
 @keyframes catalogue-rise {
   from {
     opacity: 0;
-    transform: translateY(1.5rem);
+    transform: translateY(0.75rem);
   }
 }
 .catalogue-rise {
-  animation: catalogue-rise 0.9s var(--ease-out-expo) backwards;
+  animation: catalogue-rise 0.5s var(--ease-out) backwards;
 }
 
 /* Horizontal scroller with snap and no visible bar (mobile catalogue). */
@@ -421,78 +423,30 @@ html.lenis body {
   }
   [data-motion="on"] [data-m="fade"] {
     opacity: 0;
-    transform: translate3d(0, 1.5rem, 0);
+    transform: translate3d(0, 1rem, 0);
+  }
+  [data-motion="on"] [data-m="rise"] {
+    opacity: 0;
+    transform: translate3d(0, 0.5rem, 0);
   }
   [data-motion="on"] [data-m="blur"] {
     opacity: 0;
-    filter: blur(10px);
+    filter: blur(6px);
   }
   [data-motion="on"] [data-m="img"] {
     clip-path: inset(100% 0 0 0);
   }
   [data-motion="on"] [data-m="img"] img {
-    transform: scale(1.22);
-  }
-  [data-motion="on"] [data-m="draw-x"] {
-    transform: scaleX(0);
-  }
-  [data-motion="on"] [data-m="draw-y"] {
-    transform: scaleY(0);
-  }
-  [data-motion="on"] [data-m="seed"] {
-    clip-path: inset(0 calc(50% - 1.5rem));
-  }
-  [data-motion="on"] [data-m="seed"] > * {
-    opacity: 0;
+    transform: scale(1.1);
   }
   [data-motion="on"] [data-m="window"] {
     clip-path: inset(34% 38% 34% 38%);
   }
   [data-motion="on"] [data-m="window"] img {
-    transform: scale(1.12);
-  }
-  [data-motion="on"] [data-m="sundial"] {
-    --dial: 0deg;
-  }
-  [data-motion="on"] [data-m="sundial"] .sundial-hand {
-    transform: rotate(215deg) scaleY(0);
-  }
-  [data-motion="on"] [data-m="stroke"] path {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
+    transform: scale(1.1);
   }
   [data-motion="on"] [data-m="words"] .w {
-    opacity: 0.14;
-  }
-}
-
-/*
-  Sundial reveal: a conic mask whose sweep is --dial. Fully open (360deg) by
-  default; the engine starts it at 0 and turns it once, with the hand.
-*/
-.sundial-hand {
-  transform-origin: 50% 100%;
-  transform: rotate(215deg);
-}
-.sundial-photo {
-  --dial-open: var(--dial, 360deg);
-  -webkit-mask-image: conic-gradient(from 215deg, #000 var(--dial-open), transparent var(--dial-open));
-  mask-image: conic-gradient(from 215deg, #000 var(--dial-open), transparent var(--dial-open));
-}
-
-/* The header's hairline draws from the centre once per hard load (the header
-   lives in the layout, so it never replays on client navigation). */
-@keyframes rule-draw {
-  from {
-    transform: scaleX(0);
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  [data-motion="on"] .header-rule {
-    animation: rule-draw 1.4s var(--ease-curtain) 0.6s backwards;
-  }
-  [data-intro="on"] .header-rule {
-    animation-delay: 2.2s;
+    opacity: 0.2;
   }
 }
 
@@ -513,8 +467,8 @@ html.lenis body {
 
 /*
   Page transitions: React <ViewTransition> (App Router navigations are
-  transitions). The old page leaves fast and a little upward; the new one
-  arrives under a bone veil that lifts. The header is anchored so the
+  transitions). Seen on every navigation, so both halves are short: the old
+  page fades out quickly, the new one settles in from a little below. The header is anchored so the
   viewer keeps one fixed reference.
 */
 ::view-transition {
@@ -531,27 +485,27 @@ html.lenis body {
   animation: none;
 }
 ::view-transition-old(.page) {
-  animation: vt-leave 0.42s var(--ease-curtain) both;
+  animation: vt-leave 0.25s var(--ease-out) both;
 }
 ::view-transition-new(.page) {
-  animation: vt-enter 0.9s var(--ease-out-expo) 0.18s both;
+  animation: vt-enter 0.55s var(--ease-out) 0.08s both;
 }
 ::view-transition-group(.morph) {
-  animation-duration: 0.8s;
-  animation-timing-function: var(--ease-curtain);
+  animation-duration: 0.6s;
+  animation-timing-function: var(--ease-in-out);
 }
 @keyframes vt-leave {
   to {
     opacity: 0;
-    transform: translateY(-3vh);
-    filter: blur(4px);
+    transform: translateY(-1vh);
+    filter: blur(2px);
   }
 }
 @keyframes vt-enter {
   from {
     opacity: 0;
-    clip-path: inset(18% 0 0 0);
-    transform: translateY(6vh);
+    clip-path: inset(6% 0 0 0);
+    transform: translateY(2vh);
   }
   to {
     opacity: 1;
@@ -560,19 +514,35 @@ html.lenis body {
   }
 }
 
+/*
+  Reduced motion means no movement, not no feedback: keyframed motion and
+  transforms go, colour and opacity transitions stay, and a page change is a
+  plain short crossfade. The GSAP engine never loads in this mode.
+*/
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+    /* Only colour and opacity may still transition: transforms, clips and
+       sizes snap to their end state instead of travelling there. */
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity !important;
   }
-  ::view-transition-old(*),
-  ::view-transition-new(*),
   ::view-transition-group(*) {
     animation-duration: 0s !important;
-    animation-delay: 0s !important;
+  }
+  ::view-transition-old(.page),
+  ::view-transition-new(.page) {
+    animation: vt-fade 0.2s ease both !important;
+  }
+  ::view-transition-old(.page) {
+    animation-direction: reverse !important;
+  }
+}
+@keyframes vt-fade {
+  from {
+    opacity: 0;
   }
 }

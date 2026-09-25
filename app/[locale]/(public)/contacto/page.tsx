@@ -6,15 +6,13 @@ import { pageMetadata } from "@/lib/i18n/metadata";
 import { localeHref, routePaths } from "@/lib/routes";
 import { SERVICE_IDS } from "@/lib/services";
 import { routeBreadcrumb } from "@/lib/schema";
-import { MAILTO_HREF, ORG, TEL_HREF, hasEmail, hasPhone } from "@/lib/seo";
+import { MAILTO_HREF, ORG, TEL_HREF, hasEmail, hasPhone, hasPostalAddress } from "@/lib/seo";
 import { DISPLAY, FRAME, SECTION } from "@/lib/styles";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/site/page-hero";
 import { ContactFormPrefill } from "@/components/site/contact-form-prefill";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 import { PageTransition } from "@/components/site/page-transition";
-import { LocalTime } from "@/components/site/local-time";
-import { COORDS, PLACE } from "@/components/site/coords";
 import { Lines } from "@/components/site/motion/split";
 import { sendContact } from "./actions";
 
@@ -61,7 +59,7 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
 
           <aside className="col-span-12 lg:col-span-4 lg:col-start-9">
             <div className="lg:sticky lg:top-28">
-              <h2 className={`${DISPLAY} text-[clamp(2.25rem,3.4vw,3.5rem)]`} data-m="lines">
+              <h2 className={`${DISPLAY} text-[clamp(1.875rem,2.6vw,2.75rem)]`} data-m="lines">
                 <Lines text={contact.aside.title} />
               </h2>
               <p className="mt-5 text-ink-soft" data-m="fade" data-delay="0.15">
@@ -71,7 +69,7 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
                 <WhatsAppCta label={contact.aside.whatsappCta} message={common.whatsapp.messages.general} />
               </div>
 
-              <dl className="mt-12 text-sm" data-m="fade" data-delay="0.3">
+              <dl className="mt-12 text-sm [&>div:last-child]:border-b" data-m="fade" data-delay="0.3">
                 {hasPhone() && (
                   <div className="flex justify-between gap-6 border-t border-line py-3">
                     <dt className="text-ink-soft">Tel.</dt>
@@ -92,16 +90,14 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
                     </dd>
                   </div>
                 )}
-                <div className="flex justify-between gap-6 border-t border-line py-3">
-                  <dt className="text-ink-soft">{PLACE}</dt>
-                  <dd className="tnum">{COORDS}</dd>
-                </div>
-                <div className="flex justify-between gap-6 border-y border-line py-3">
-                  <dt className="text-ink-soft">{common.footer.localTime}</dt>
-                  <dd>
-                    <LocalTime />
-                  </dd>
-                </div>
+                {hasPostalAddress() && (
+                  <div className="flex justify-between gap-6 border-t border-line py-3">
+                    <dt className="text-ink-soft">{ORG.address.city}</dt>
+                    <dd className="text-right">
+                      {ORG.address.street}, {ORG.address.postalCode}
+                    </dd>
+                  </div>
+                )}
               </dl>
             </div>
           </aside>

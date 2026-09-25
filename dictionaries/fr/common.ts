@@ -25,15 +25,12 @@ export const common: CommonDict = {
     back: "Retour à l’accueil",
     allServices: "Voir tous les services",
     learnMore: "En savoir plus",
-    scroll: "Défiler",
   },
   brand: {
     yearsLabel: "ans",
     yearsCaption: "dans l’immobilier",
-    family: "Entreprise familiale",
   },
   catalogue: {
-    eyebrow: "Catalogue",
     title: "Biens\n*à louer*",
     intro:
       "Locaux industriels et logements à Castelldefels, issus de notre propre patrimoine. Vous traitez directement avec nous.",
@@ -55,17 +52,15 @@ export const common: CommonDict = {
       zone: "Secteur",
     },
     enquire: "Se renseigner",
-    view: "Voir",
     seeAll: "Voir le catalogue",
     whatsappMessage: "Bonjour, le bien de référence {ref} m’intéresse.",
     empty: {
       title: "Demandez les *disponibilités*",
-      body: "Notre offre locative évolue souvent. Dites-nous ce que vous recherchez — entrepôt ou logement, surface approximative et secteur — et nous vous informerons des biens disponibles.",
+      body: "Notre offre locative évolue souvent. Dites-nous ce que vous recherchez (entrepôt ou logement, surface approximative et secteur) et nous vous informerons des biens disponibles.",
       cta: "Connaître les disponibilités",
     },
   },
   values: {
-    eyebrow: "Notre façon de travailler",
     title: "Trois mots\n*qui nous définissent*",
     items: [
       {
@@ -100,7 +95,6 @@ export const common: CommonDict = {
     servicesTitle: "Services",
     contactTitle: "Contact",
     followTitle: "Suivez-nous",
-    localTime: "Heure locale",
     cookieSettings: "Préférences cookies",
     rights: "Tous droits réservés.",
     credit: "Conception et développement :",

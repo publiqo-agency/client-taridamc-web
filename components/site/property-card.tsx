@@ -3,7 +3,6 @@ import { formatArea, type Property } from "@/lib/properties";
 import type { CommonDict } from "@/lib/i18n/types";
 import { DISPLAY_QUIET } from "@/lib/styles";
 import { Media } from "./media";
-import { Arrow } from "./pill-button";
 import { PendingData } from "./pending";
 
 type Props = {
@@ -38,9 +37,8 @@ export function PropertyCard({ property, locale, copy, sample = false, formHref,
         alt={`${type} · ${property.zone}`}
         className="aspect-[4/5] w-full"
         reveal={reveal}
-        cursor={copy.view}
         sizes={sizes ?? "(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 80vw"}
-        imgClassName="transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+        imgClassName="transition-transform duration-[600ms] ease-(--ease-out) group-hover:scale-[1.03]"
       >
         {sample && (
           <span className="absolute top-3 left-3 z-[3]">
@@ -50,7 +48,7 @@ export function PropertyCard({ property, locale, copy, sample = false, formHref,
       </Media>
 
       <div className="mt-5 flex items-baseline justify-between gap-4">
-        <h3 className={`${DISPLAY_QUIET} text-3xl`}>{type}</h3>
+        <h3 className={`${DISPLAY_QUIET} text-2xl`}>{type}</h3>
         <span className="label tnum text-ink-soft">
           {copy.specs.ref} {property.ref}
         </span>
@@ -72,10 +70,12 @@ export function PropertyCard({ property, locale, copy, sample = false, formHref,
         href={wa ?? formHref}
         {...(wa ? { target: "_blank", rel: "noopener noreferrer", "data-cta": "whatsapp" } : { "data-cta": "form" })}
         data-service="rental"
-        className="group/btn mt-1 flex items-center justify-between border-y border-ink py-3 text-sm font-medium transition-colors duration-500 hover:bg-ink hover:px-4 hover:text-stock"
+        className="group/btn mt-1 flex items-center justify-between border-y border-ink py-3 text-sm font-medium transition-[color,scale] duration-200 ease-(--ease-out) hover:text-accent active:scale-[0.98]"
       >
         <span>{copy.enquire}</span>
-        <Arrow />
+        <span aria-hidden className="transition-transform duration-200 ease-(--ease-out) group-hover/btn:translate-x-1">
+          →
+        </span>
       </a>
     </article>
   );
