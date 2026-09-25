@@ -29,7 +29,7 @@ export function ProcessGrid({ steps }: { steps: Step[] }) {
               {String(i + 1).padStart(2, "0")}
             </span>
             <div>
-              <h3 className={`${DISPLAY_QUIET} text-3xl md:text-[2.25rem]`}>{step.heading}</h3>
+              <h3 className={`${DISPLAY_QUIET} text-2xl md:text-[1.75rem]`}>{step.heading}</h3>
               {step.body.map((p) => (
                 <p key={p} className="mt-4 max-w-xs text-ink-soft">
                   {p}

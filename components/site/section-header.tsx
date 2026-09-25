@@ -24,7 +24,7 @@ export function SectionHeader({
   intro,
   className = "",
   as: Tag = "h2",
-  titleClassName = "text-[clamp(2.75rem,6.4vw,6.5rem)]",
+  titleClassName = "text-[clamp(2.25rem,4.6vw,4.5rem)]",
 }: Props) {
   return (
     <div className={`grid grid-cols-12 gap-x-5 gap-y-6 md:gap-x-8 ${className}`}>

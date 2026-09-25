@@ -35,7 +35,7 @@
   --color-surface: var(--surface);
   --color-line: var(--line);
 
-  --font-display: var(--font-display-family), "Times New Roman", serif;
+  --font-display: var(--font-sans-family), system-ui, sans-serif;
   --font-sans: var(--font-sans-family), system-ui, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

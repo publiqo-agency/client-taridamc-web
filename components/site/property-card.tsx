@@ -50,7 +50,7 @@ export function PropertyCard({ property, locale, copy, sample = false, formHref,
       </Media>
 
       <div className="mt-5 flex items-baseline justify-between gap-4">
-        <h3 className={`${DISPLAY_QUIET} text-3xl`}>{type}</h3>
+        <h3 className={`${DISPLAY_QUIET} text-2xl`}>{type}</h3>
         <span className="label tnum text-ink-soft">
           {copy.specs.ref} {property.ref}
         </span>

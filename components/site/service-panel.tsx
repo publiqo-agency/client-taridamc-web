@@ -48,7 +48,7 @@ export function ServicePanel({ id, index, total, kicker, title, teaser, specs, h
           </div>
 
           <div>
-            <h2 className={`${DISPLAY} text-[clamp(2.75rem,5.4vw,6rem)]`} data-m="lines">
+            <h2 className={`${DISPLAY} text-[clamp(2.25rem,4vw,4.5rem)]`} data-m="lines">
               <Lines text={title} />
             </h2>
             <p className="mt-6 max-w-md text-lg text-ink-soft" data-m="fade" data-delay="0.2">

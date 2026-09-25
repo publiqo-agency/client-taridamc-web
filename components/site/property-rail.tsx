@@ -32,7 +32,7 @@ export function PropertyRail({ index, items, sample, locale, copy, catalogueHref
           <span className="label tnum text-ink-soft">({index})</span>
           <span className="label ml-4 md:ml-0 md:mt-2 md:block">{copy.eyebrow}</span>
         </div>
-        <h2 className={`${DISPLAY} col-span-12 text-[clamp(2.75rem,5.6vw,6rem)] md:col-span-5`} data-m="lines">
+        <h2 className={`${DISPLAY} col-span-12 text-[clamp(2.25rem,4.6vw,4.5rem)] md:col-span-5`} data-m="lines">
           <Lines text={copy.title} />
         </h2>
         <div className="col-span-12 flex md:col-span-4 md:justify-end" data-m="fade" data-delay="0.2">

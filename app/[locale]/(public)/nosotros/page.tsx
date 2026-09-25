@@ -69,7 +69,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
                 <p className="label tnum text-ink-soft" data-m="fade">
                   ({String(i + 1).padStart(2, "0")})
                 </p>
-                <h2 className={`${DISPLAY} mt-4 text-[clamp(2.5rem,4.4vw,4.5rem)]`} data-m="lines">
+                <h2 className={`${DISPLAY} mt-4 text-[clamp(2rem,3.4vw,3.5rem)]`} data-m="lines">
                   <Lines text={section.heading} />
                 </h2>
                 {section.body.map((paragraph) => (
@@ -107,7 +107,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
               <p className="label text-ink-soft" data-m="fade">
                 {about.leader.role}
               </p>
-              <p className={`${DISPLAY_QUIET} text-3xl`} data-m="fade" data-delay="0.15">
+              <p className={`${DISPLAY_QUIET} text-2xl`} data-m="fade" data-delay="0.15">
                 {about.leader.body}
               </p>
             </div>
@@ -126,7 +126,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
               <p className="label text-ink-soft" data-m="fade">
                 {about.place.eyebrow}
               </p>
-              <h2 className={`${DISPLAY} mt-6 text-[clamp(3rem,6vw,6.5rem)]`} data-m="lines">
+              <h2 className={`${DISPLAY} mt-6 text-[clamp(2.25rem,4.6vw,4.5rem)]`} data-m="lines">
                 <Lines text={about.place.title} />
               </h2>
               <p className="mt-8 max-w-md text-lg text-ink-soft" data-m="fade" data-delay="0.2">

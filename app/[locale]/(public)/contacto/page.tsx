@@ -61,7 +61,7 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
 
           <aside className="col-span-12 lg:col-span-4 lg:col-start-9">
             <div className="lg:sticky lg:top-28">
-              <h2 className={`${DISPLAY} text-[clamp(2.25rem,3.4vw,3.5rem)]`} data-m="lines">
+              <h2 className={`${DISPLAY} text-[clamp(1.875rem,2.6vw,2.75rem)]`} data-m="lines">
                 <Lines text={contact.aside.title} />
               </h2>
               <p className="mt-5 text-ink-soft" data-m="fade" data-delay="0.15">

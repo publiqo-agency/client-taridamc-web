@@ -207,7 +207,7 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
               </span>
               <span className="mask">
                 <span
-                  className={`${DISPLAY} text-[clamp(2.5rem,10vw,5rem)] transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3 group-aria-[current=page]:text-accent ${
+                  className={`${DISPLAY} text-[clamp(2.25rem,8vw,4rem)] transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3 group-aria-[current=page]:text-accent ${
                     open ? "translate-y-0" : "translate-y-[115%]"
                   }`}
                   style={{ transitionDelay: open ? `${0.25 + i * 0.06}s` : "0s" }}

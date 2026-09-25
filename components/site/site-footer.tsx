@@ -48,7 +48,7 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
 
       <div className={`${FRAME} relative z-[1] grid grid-cols-12 gap-x-8 gap-y-14 pt-24 pb-[min(18vw,15rem)] md:pt-32`}>
         <div className="col-span-12 lg:col-span-5">
-          <p className={`${DISPLAY} max-w-md text-[clamp(1.9rem,2.8vw,2.75rem)] leading-[1.1]`} data-m="fade">
+          <p className={`${DISPLAY} max-w-md text-[clamp(1.5rem,2.1vw,2rem)] leading-[1.25]`} data-m="fade">
             {copy.tagline}
           </p>
         </div>

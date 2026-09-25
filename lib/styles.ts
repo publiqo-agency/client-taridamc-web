@@ -13,18 +13,18 @@ export const SECTION = "py-24 md:py-36";
 /** A plate. Square corners and a hairline: no shadows, no radii. */
 export const CARD = "relative border border-line bg-surface";
 
-/** Display serif (Instrument Serif), the voice of the big statements. */
-export const DISPLAY = "font-display font-normal leading-[0.95] tracking-[-0.015em]";
+/** Display voice: light Montserrat, tight tracking. The big statements. */
+export const DISPLAY = "font-display font-light leading-[1.04] tracking-[-0.035em]";
 
-/** Same serif for smaller headings, a little looser. */
-export const DISPLAY_QUIET = "font-display font-normal leading-[1.05] tracking-[-0.01em]";
+/** Same face for smaller headings and lead paragraphs, a little looser. */
+export const DISPLAY_QUIET = "font-display font-light leading-[1.2] tracking-[-0.02em]";
 
-/** Huge thin geometric sans (Montserrat 200, the logo's family), the Velora voice. */
+/** Huge thin Montserrat (200) for the hero and the big numbers. */
 export const DISPLAY_SANS = "font-sans font-extralight leading-[0.86] tracking-[-0.06em]";
 
 /**
- * The accent phrase inside a headline: the hero's thin Montserrat (the
- * logo's family), upright. Italics are kept out of the site on purpose.
+ * The accent phrase inside a headline: a thinner weight of the same face,
+ * upright, in the logo's blue. Never a second family, never italics.
  */
 export const ACCENT = "font-sans font-extralight not-italic tracking-[-0.045em]";
 

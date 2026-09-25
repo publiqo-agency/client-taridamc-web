@@ -95,7 +95,7 @@ export default async function ServicePage(props: Props) {
               <span className="label text-ink-soft">{item.title}</span>
             </div>
             <div className="col-span-12 md:col-span-9">
-              <p className={`${DISPLAY_QUIET} text-[clamp(1.75rem,3.2vw,3.25rem)] leading-[1.15]`} data-m="fade">
+              <p className={`${DISPLAY_QUIET} text-[clamp(1.5rem,2.4vw,2.5rem)] leading-[1.25]`} data-m="fade">
                 {item.intro}
               </p>
               <div className="mt-12 flex flex-wrap gap-3">{ctas("ink")}</div>
@@ -110,7 +110,7 @@ export default async function ServicePage(props: Props) {
               <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-14`}>
                 <div className="col-span-12 lg:col-span-5">
                   <div className="lg:sticky lg:top-28">
-                    <h2 className={`${DISPLAY} text-[clamp(2.75rem,5vw,5.5rem)]`} data-m="lines">
+                    <h2 className={`${DISPLAY} text-[clamp(2.25rem,3.8vw,4.25rem)]`} data-m="lines">
                       <Lines text={services.detail.includesTitle} />
                     </h2>
                     <Media
@@ -131,7 +131,7 @@ export default async function ServicePage(props: Props) {
                       data-delay={String(i * 0.06)}
                     >
                       <span className="label tnum w-8 text-ink-soft">{String(i + 1).padStart(2, "0")}</span>
-                      <span className={`${DISPLAY_QUIET} text-[clamp(1.75rem,3vw,3rem)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3`}>
+                      <span className={`${DISPLAY_QUIET} text-[clamp(1.375rem,2.2vw,2.25rem)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3`}>
                         {line}
                       </span>
                     </li>
@@ -163,7 +163,7 @@ export default async function ServicePage(props: Props) {
                 </p>
                 <div className="col-span-12 md:col-span-5" data-m="fade" data-delay="0.15">
                   <p className="label text-ink-soft">{common.brand.family}</p>
-                  <p className={`${DISPLAY_QUIET} mt-4 text-3xl`}>{dict.about.leader.body}</p>
+                  <p className={`${DISPLAY_QUIET} mt-4 text-2xl`}>{dict.about.leader.body}</p>
                   <p className={`${ACCENT} mt-8 text-2xl`}>{dict.about.leader.name}</p>
                   <p className="label mt-1 text-ink-soft">{dict.about.leader.role}</p>
                 </div>
@@ -179,7 +179,7 @@ export default async function ServicePage(props: Props) {
           <Link href={serviceHref(locale, other)} className="group block">
             <div className={`${FRAME} grid grid-cols-12 items-center gap-x-8 gap-y-8 py-16 md:py-24`}>
               <span className="label col-span-12 text-ink-soft md:col-span-3">{services.detail.otherServices}</span>
-              <span className={`${DISPLAY} col-span-10 text-[clamp(2.5rem,6vw,6.5rem)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-4 md:col-span-7`}>
+              <span className={`${DISPLAY} col-span-10 text-[clamp(2.25rem,4.6vw,4.75rem)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-4 md:col-span-7`}>
                 {services.items[other].title}
               </span>
               <span className="col-span-2 justify-self-end text-3xl">

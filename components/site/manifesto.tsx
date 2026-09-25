@@ -33,7 +33,7 @@ export function Manifesto({ index, eyebrow, text, years, yearsLabel, yearsCaptio
           </div>
           <p
             data-m="words"
-            className={`${DISPLAY} col-span-12 text-[clamp(2rem,4.3vw,4.5rem)] leading-[1.08] md:col-span-9`}
+            className={`${DISPLAY} col-span-12 text-[clamp(1.625rem,3.1vw,3.25rem)] leading-[1.2] md:col-span-9`}
           >
             <Words text={text} />
           </p>
