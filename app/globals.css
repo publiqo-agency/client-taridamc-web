@@ -48,6 +48,20 @@
 }
 
 /*
+  Hover only where there is a real pointer. Tailwind's default already skips
+  devices without hover; this also skips coarse pointers (a tablet with a
+  pen or a TV remote), so a tap never leaves a hover state stuck on.
+  `group-hover` and `peer-hover` follow this definition too.
+*/
+@custom-variant hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @slot;
+    }
+  }
+}
+
+/*
   "Serene Mediterranean", tuned to the Tarida MC logo: salt-white paper,
   deep-navy ink, the logo's sea blue as the one accent (CTAs, hovers, the
   thin accent phrases, the logo itself). Photos carry the rest of the colour.
@@ -228,14 +242,21 @@ html.lenis body {
   background-size: 0% 1px;
   background-position: 100% 100%;
   background-repeat: no-repeat;
-  transition: background-size 0.6s var(--ease-out-expo);
+  transition:
+    background-size 0.3s var(--ease-out),
+    color 0.2s ease;
   padding-bottom: 2px;
 }
-.link-line:hover,
 .link-line:focus-visible,
 .link-line[aria-current="page"] {
   background-size: 100% 1px;
   background-position: 0% 100%;
+}
+@media (hover: hover) and (pointer: fine) {
+  .link-line:hover {
+    background-size: 100% 1px;
+    background-position: 0% 100%;
+  }
 }
 
 /* Arrow that slides out and is replaced by its twin (buttons, links). */
@@ -246,20 +267,26 @@ html.lenis body {
 }
 .arrow-swap > span {
   display: inline-block;
-  transition: transform 0.55s var(--ease-out-expo);
+  transition: transform 0.25s var(--ease-out);
 }
 .arrow-swap > span + span {
   position: absolute;
   inset: 0;
   transform: translateX(-120%);
 }
-.group:hover .arrow-swap > span:first-child,
 .group:focus-visible .arrow-swap > span:first-child {
   transform: translateX(120%);
 }
-.group:hover .arrow-swap > span + span,
 .group:focus-visible .arrow-swap > span + span {
   transform: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .group:hover .arrow-swap > span:first-child {
+    transform: translateX(120%);
+  }
+  .group:hover .arrow-swap > span + span {
+    transform: none;
+  }
 }
 
 /*
@@ -296,15 +323,16 @@ html.lenis body {
   border-radius: 0;
 }
 
-/* Catalogue filter: each change replays a short rise. */
+/* Catalogue filter: each change replays a short rise. It runs on every
+   click, so it stays brief and barely travels. */
 @keyframes catalogue-rise {
   from {
     opacity: 0;
-    transform: translateY(1.5rem);
+    transform: translateY(0.75rem);
   }
 }
 .catalogue-rise {
-  animation: catalogue-rise 0.9s var(--ease-out-expo) backwards;
+  animation: catalogue-rise 0.5s var(--ease-out) backwards;
 }
 
 /* Horizontal scroller with snap and no visible bar (mobile catalogue). */

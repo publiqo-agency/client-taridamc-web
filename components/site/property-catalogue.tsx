@@ -32,7 +32,7 @@ export function PropertyCatalogue({ aria, labels, types, cards }: Props) {
               type="button"
               aria-pressed={filter === option}
               onClick={() => setFilter(option)}
-              className="link-line text-sm text-ink-soft transition-colors hover:text-ink aria-pressed:text-ink aria-pressed:[background-size:100%_1px]"
+              className="link-line text-sm text-ink-soft transition-[scale] duration-150 ease-(--ease-out) hover:text-ink active:scale-[0.97] aria-pressed:text-ink aria-pressed:[background-size:100%_1px]"
             >
               {labels[option]}
               <span className="label tnum ml-2 text-ink-soft">
@@ -45,7 +45,7 @@ export function PropertyCatalogue({ aria, labels, types, cards }: Props) {
 
       <div key={filter} className="mt-12 grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((card, i) => (
-          <div key={card.key} className="catalogue-rise" style={{ animationDelay: `${Math.min(i, 5) * 70}ms` }}>
+          <div key={card.key} className="catalogue-rise" style={{ animationDelay: `${Math.min(i, 5) * 40}ms` }}>
             {card.node}
           </div>
         ))}

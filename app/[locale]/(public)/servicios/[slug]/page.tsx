@@ -120,7 +120,7 @@ export default async function ServicePage(props: Props) {
                       data-m="fade"
                       data-delay={String(i * 0.05)}
                     >
-                      <span className={`${DISPLAY_QUIET} text-[clamp(1.375rem,2.2vw,2.25rem)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3`}>
+                      <span className={`${DISPLAY_QUIET} text-[clamp(1.375rem,2.2vw,2.25rem)] transition-transform duration-300 ease-(--ease-out) group-hover:translate-x-2`}>
                         {line}
                       </span>
                     </li>
@@ -167,7 +167,7 @@ export default async function ServicePage(props: Props) {
           <Link href={serviceHref(locale, other)} className="group block">
             <div className={`${FRAME} flex items-center justify-between gap-8 py-16 md:py-24`}>
               <span className="sr-only">{services.detail.otherServices}: </span>
-              <span className={`${DISPLAY} text-[clamp(2.25rem,4.6vw,4.75rem)] transition-[translate] duration-300 ease-(--ease-out) group-hover:translate-x-4`}>
+              <span className={`${DISPLAY} text-[clamp(2.25rem,4.6vw,4.75rem)] transition-transform duration-300 ease-(--ease-out) group-hover:translate-x-3`}>
                 {services.items[other].title}
               </span>
               <span className="text-3xl">

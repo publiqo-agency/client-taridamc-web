@@ -31,5 +31,4 @@ export const ACCENT = "font-sans font-extralight not-italic tracking-[-0.045em]"
 /** Section index, e.g. "(01)". */
 export const INDEX = "label tnum text-ink-soft";
 
-export const EASE_OUT = "ease-[cubic-bezier(0.16,1,0.3,1)]";
-export const EASE_CURTAIN = "ease-[cubic-bezier(0.76,0,0.24,1)]";
+/* Easing lives in globals.css (--ease-out, --ease-in-out): use `ease-(--ease-out)`. */

@@ -25,7 +25,9 @@ export const pillClass = (tone: PillTone = "ink", extra = "") =>
   [
     "group inline-flex h-12 items-center justify-center gap-3 px-6",
     "text-[0.8125rem] font-medium tracking-[0.02em] whitespace-nowrap",
-    "transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+    // Colours follow the pointer quickly; the press scales down a touch so
+    // the button answers the finger before the page does.
+    "transition-[color,background-color,border-color,scale] duration-200 ease-(--ease-out) active:scale-[0.97]",
     TONE[tone],
     extra,
   ]
