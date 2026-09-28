@@ -48,10 +48,10 @@ export function ServiceStack({ items, cursor }: { items: StackItem[]; cursor: st
                 />
               </Link>
 
-              <div className={`${FRAME} flex flex-col justify-between py-10 md:px-12 md:py-16 lg:px-16 xl:px-20`}>
-                <div className="flex items-start justify-between gap-6" data-m="fade">
-                  <span className="label pt-2">{item.kicker}</span>
-                  <span aria-hidden className={`${DISPLAY_SANS} tnum -mr-[0.04em] text-[clamp(5rem,10vw,11rem)] leading-[0.78] text-ink-soft`}>
+              <div className={`${FRAME} flex flex-col justify-center py-10 md:px-12 md:py-16 lg:px-16 xl:px-20`}>
+                <div className="mb-8 flex items-baseline justify-between gap-6 md:mb-12" data-m="fade">
+                  <span className="label">{item.kicker}</span>
+                  <span aria-hidden className={`${DISPLAY_SANS} tnum -mr-[0.04em] text-[clamp(3rem,4.5vw,5rem)] leading-[0.78] text-ink-soft`}>
                     {Number(item.index)}
                   </span>
                 </div>
