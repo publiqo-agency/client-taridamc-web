@@ -219,10 +219,13 @@ html.lenis body {
   display: inline-block;
 }
 /* Letter masks sit in the hero wordmark's 0.86 leading, so the bottom
-   padding has to reach Montserrat's full descender (the tail of the y). */
+   padding has to reach Montserrat's full descender. They clip only
+   vertically: at this tracking the y's tail sweeps left out of its own box,
+   and a sideways clip slices it off. */
 .mask-inline {
   display: inline-block;
-  overflow: clip;
+  overflow-x: visible;
+  overflow-y: clip;
   vertical-align: top;
   padding-block: 0.1em 0.32em;
   margin-block: -0.1em -0.32em;
