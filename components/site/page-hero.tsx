@@ -3,7 +3,6 @@ import { ViewTransition } from "react";
 import { FRAME, DISPLAY } from "@/lib/styles";
 import { hasPublicImage } from "@/lib/images";
 import { Lines } from "./motion/split";
-import { COORDS } from "./coords";
 
 type Props = {
   eyebrow?: string;
@@ -59,7 +58,6 @@ export function PageHero({ eyebrow, title, intro, image, transitionName, compact
       <div className={`${FRAME} relative z-[2] flex flex-1 flex-col justify-between pt-32 pb-10 md:pb-14`}>
         <div className="flex items-start justify-between gap-6" data-m="fade" data-delay="0.2">
           {eyebrow && <p className="label">{eyebrow}</p>}
-          <p className="label tnum hidden text-ink-soft sm:block">{COORDS}</p>
         </div>
 
         <div className="grid grid-cols-12 items-end gap-x-8 gap-y-8 pt-24">

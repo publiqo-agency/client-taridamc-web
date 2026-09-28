@@ -9,7 +9,7 @@ import { Logo } from "./logo";
 import { LocaleSwitcher } from "./locale-switcher";
 import { PillButton } from "./pill-button";
 import { LocalTime } from "./local-time";
-import { COORDS, PLACE } from "./coords";
+import { PLACE } from "./place";
 import { SCROLL_LOCK_EVENT, SCROLL_UNLOCK_EVENT } from "./motion/motion-root";
 
 export type NavItem = { href: string; label: string };
@@ -226,7 +226,7 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
         >
           <LocaleSwitcher current={locale} aria={copy.localeAria} />
           <span className="label tnum text-ink-soft">
-            {COORDS} · <LocalTime />
+            <LocalTime />
           </span>
         </div>
       </div>

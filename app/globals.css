@@ -148,7 +148,7 @@
   line-height: 1.4;
 }
 
-/* Tabular figures for counters, coordinates and indexes. */
+/* Tabular figures for counters, clocks and indexes. */
 @utility tnum {
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";

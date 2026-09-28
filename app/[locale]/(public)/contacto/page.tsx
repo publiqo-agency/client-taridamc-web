@@ -14,7 +14,6 @@ import { ContactFormPrefill } from "@/components/site/contact-form-prefill";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 import { PageTransition } from "@/components/site/page-transition";
 import { LocalTime } from "@/components/site/local-time";
-import { COORDS, PLACE } from "@/components/site/coords";
 import { Lines } from "@/components/site/motion/split";
 import { sendContact } from "./actions";
 
@@ -92,10 +91,6 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
                     </dd>
                   </div>
                 )}
-                <div className="flex justify-between gap-6 border-t border-line py-3">
-                  <dt className="text-ink-soft">{PLACE}</dt>
-                  <dd className="tnum">{COORDS}</dd>
-                </div>
                 <div className="flex justify-between gap-6 border-y border-line py-3">
                   <dt className="text-ink-soft">{common.footer.localTime}</dt>
                   <dd>

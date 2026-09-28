@@ -6,7 +6,7 @@ import { LocaleSwitcher } from "./locale-switcher";
 import { ConsentReopenButton } from "./consent-banner";
 import { PendingData } from "./pending";
 import { LocalTime } from "./local-time";
-import { COORDS, PLACE } from "./coords";
+import { PLACE } from "./place";
 import { Logo } from "./logo";
 
 type LinkItem = { href: string; label: string };
@@ -111,7 +111,7 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
             </>
           )}
           <p className="label tnum mt-10 text-ink-soft">
-            {PLACE} · {COORDS}
+            {PLACE}
             <br />
             {copy.localTime} <LocalTime className="text-ink" />
           </p>

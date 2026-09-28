@@ -18,7 +18,7 @@ import { ClosingBand } from "@/components/site/closing-band";
 import { PillButton } from "@/components/site/pill-button";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 import { Lines } from "@/components/site/motion/split";
-import { PLACE } from "@/components/site/coords";
+import { PLACE } from "@/components/site/place";
 
 export async function generateMetadata(props: PageProps<"/[locale]/nosotros">): Promise<Metadata> {
   const { locale: raw } = await props.params;

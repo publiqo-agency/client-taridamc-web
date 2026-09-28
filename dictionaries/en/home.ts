@@ -9,7 +9,6 @@ export const home: HomeDict = {
       "A family business in Castelldefels with forty years in the sector. We buy properties directly from their owners and let industrial units and homes.",
   },
   hero: {
-    eyebrow: "Castelldefels · Family business",
     titleTop: "Property",
     titleBottom: "with judgement",
     intro:
