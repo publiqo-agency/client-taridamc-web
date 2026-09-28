@@ -12,6 +12,7 @@ export const contact: ContactDict = {
     title: "Parlem del\n*seu immoble*",
     intro:
       "Expliqui'ns què necessita: vendre una propietat o llogar una nau o un habitatge. Li respondrem personalment.",
+    imageAlt: "Vista aèria d'un port esportiu a la costa mediterrània",
   },
   aside: {
     title: "Prefereix parlar directament?",

@@ -13,6 +13,7 @@ export const services: ServicesDict = {
     title: "Acheter et louer,\n*avec la même exigence*",
     intro:
       "Deux activités, une seule façon de travailler : étudier chaque bien avec attention et traiter chaque client avec franchise.",
+    imageAlt: "Façade blanche aux volets bleus",
     allServices: "Tous les services",
   },
   detail: {

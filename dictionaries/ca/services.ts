@@ -13,6 +13,7 @@ export const services: ServicesDict = {
     title: "Comprar i llogar,\n*amb el mateix criteri*",
     intro:
       "Dues activitats, una sola manera de treballar: estudiar cada immoble amb atenció i tractar cada client amb franquesa.",
+    imageAlt: "Façana blanca amb finestrons blaus",
     allServices: "Tots els serveis",
   },
   detail: {
