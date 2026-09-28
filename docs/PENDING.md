@@ -18,8 +18,9 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
 3. **Legal data.** Tax id (NIF) and registered address → `lib/site.ts`.
    Legal name is set (`Tarida MC S.L.`). Until then every legal page shows a
    visible "pending" block.
-4. **Contact data.** WhatsApp number, phone, email → `lib/site.ts`. Until then
-   the WhatsApp bubble is a pending chip and the footer shows nothing.
+4. **Contact data.** Phone and email → `lib/site.ts`. WhatsApp is set
+   (+34 659 35 97 76); confirm whether it is also the phone for calls. Until
+   then the footer shows no phone or email.
 5. **Resend key** (`RESEND_API_KEY`, send-only, scoped to `web.publiqo.es`) and
    `CONTACT_EMAIL` in Vercel Production. Without them the form errors in production.
 6. **Translations reviewed.** `dictionaries/fr` and `dictionaries/ca` are
