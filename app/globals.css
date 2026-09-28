@@ -218,12 +218,14 @@ html.lenis body {
 .mask > span {
   display: inline-block;
 }
+/* Letter masks sit in the hero wordmark's 0.86 leading, so the bottom
+   padding has to reach Montserrat's full descender (the tail of the y). */
 .mask-inline {
   display: inline-block;
   overflow: clip;
   vertical-align: top;
-  padding-block: 0.1em 0.16em;
-  margin-block: -0.1em -0.16em;
+  padding-block: 0.1em 0.32em;
+  margin-block: -0.1em -0.32em;
 }
 .mask-inline > span {
   display: inline-block;
@@ -411,9 +413,13 @@ html.lenis body {
   must stay in sync: see components/site/motion/effects.ts.
 */
 @media (prefers-reduced-motion: no-preference) {
-  [data-motion="on"] [data-m="lines"] .mask > span,
-  [data-motion="on"] [data-m="chars"] .mask-inline > span {
+  [data-motion="on"] [data-m="lines"] .mask > span {
     transform: translate3d(0, 115%, 0);
+  }
+  /* Further down than the lines: the deeper letter mask must not show the
+     tops of the letters while they wait. */
+  [data-motion="on"] [data-m="chars"] .mask-inline > span {
+    transform: translate3d(0, 145%, 0);
   }
   [data-motion="on"] [data-m="logo"] :is([data-logo-wave], [data-logo-glyph], [data-logo-sub]) {
     opacity: 0;

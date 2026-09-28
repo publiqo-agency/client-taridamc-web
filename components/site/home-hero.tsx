@@ -58,7 +58,7 @@ export function HomeHero({ titleTop, titleBottom, intro, image, scroll, children
             </span>
           </span>
           <span
-            className={`${ACCENT} -mt-[0.06em] block text-right text-[clamp(3.25rem,12vw,14rem)] leading-[0.9]`}
+            className={`${ACCENT} mt-[0.12em] block text-right text-[clamp(3.25rem,12vw,14rem)] leading-[0.9]`}
             data-m="drift"
             data-x="7"
             data-opacity="0.2"
