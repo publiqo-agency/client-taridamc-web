@@ -110,7 +110,7 @@ export function mount(): () => void {
         onEnter(el, () =>
           gsap.fromTo(
             spans,
-            { y: 0, yPercent: 115 },
+            { y: 0, yPercent: 145 },
             { yPercent: 0, duration: 1.2, ease: EXPO, stagger: num(el.dataset.stagger, 0.035), delay: delayOf(el) },
           ),
         ),
