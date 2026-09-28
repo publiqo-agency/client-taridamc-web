@@ -51,7 +51,13 @@ export default async function ServicesPage(props: PageProps<"/[locale]/servicios
 
   return (
     <PageTransition>
-      <PageHero eyebrow={services.index.eyebrow} title={services.index.title} intro={services.index.intro} compact />
+      <PageHero
+        eyebrow={services.index.eyebrow}
+        title={services.index.title}
+        intro={services.index.intro}
+        image={{ src: "/services/index.webp", alt: services.index.imageAlt }}
+        compact
+      />
 
       {SERVICE_IDS.map((id, i) => (
         <ServicePanel

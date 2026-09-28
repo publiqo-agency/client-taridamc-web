@@ -42,7 +42,13 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
 
   return (
     <PageTransition>
-      <PageHero eyebrow={contact.hero.eyebrow} title={contact.hero.title} intro={contact.hero.intro} compact />
+      <PageHero
+        eyebrow={contact.hero.eyebrow}
+        title={contact.hero.title}
+        intro={contact.hero.intro}
+        image={{ src: "/contact/hero.webp", alt: contact.hero.imageAlt }}
+        compact
+      />
 
       <section data-placement="contact-page" className={SECTION}>
         <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-16`}>

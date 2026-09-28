@@ -7,6 +7,8 @@ These are provisional stock placeholders, to be replaced once the client deliver
 | `public/hero/home.webp` | Giorgi Gobadze | https://www.pexels.com/photo/historic-italian-villa-in-lush-mediterranean-landscape-36770792/ | Pexels License |
 | `public/services/purchase/hero.webp` | Jo Rhn | https://unsplash.com/photos/cxbIbeXslLE | Unsplash License |
 | `public/services/rental/hero.webp` | Craftsman Concrete Floors | https://unsplash.com/photos/NADTQRbS0s4 | Unsplash License |
+| `public/services/index.webp` | Lucas Gallone | https://unsplash.com/photos/WXZHofR4b8w | Unsplash License |
+| `public/contact/hero.webp` | Manuel Torres Garcia | https://unsplash.com/photos/qGcrFMFQ_sc | Unsplash License |
 | `public/about/story.webp` | Tuan P. | https://unsplash.com/photos/yrAgKogqx1Y | Unsplash License |
 | `public/about/castelldefels.webp` | Max (@maxprivate0202) | https://unsplash.com/photos/gW5iXHTKJt8 | Unsplash License |
 | `public/about/interior.webp` | Yose Antonius | https://www.pexels.com/photo/modern-interior-design-living-room-in-bali-villa-33709937/ | Pexels License |
@@ -18,4 +20,4 @@ These are provisional stock placeholders, to be replaced once the client deliver
 | `public/properties/vivienda-3.webp` | Maria Lupan | https://unsplash.com/photos/4DG2dLLjSfU | Unsplash License |
 | `public/properties/local-1.webp` | Max Vakhtbovych | https://www.pexels.com/photo/empty-spacious-room-in-modern-villa-with-windows-overlooking-lake-7031622/ | Pexels License |
 
-All images were cropped, resized, lightly colour-graded (slightly warmer, slightly desaturated) and re-encoded as WebP. Neither licence requires attribution; it is recorded here for traceability.
+All images were cropped, resized, lightly colour-graded (slightly warmer, slightly desaturated) and re-encoded as WebP, except `services/index.webp` and `contact/hero.webp`, which are only resized and re-encoded. Neither licence requires attribution; it is recorded here for traceability.
