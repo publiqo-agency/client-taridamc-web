@@ -40,7 +40,8 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
   waves fitted to the raster, lettering set in Montserrat. Ask the client for
   the original vector file (AI/SVG/PDF) and the exact brand colour; the site
   uses #07588C, sampled from the JPEG.
-- A portrait of Ramon Seva would strengthen the about page (optional).
+- Portrait of Ramon Seva: received (a 954 px crop, on the about page). A
+  larger original would render sharper on wide screens.
 - Property catalogue: built (home rail + filterable grid on the rental page),
   fed by `lib/properties.ts`. `PROPERTIES` is empty, so production shows an
   "ask for availability" block; previews show six SAMPLE listings with a chip.

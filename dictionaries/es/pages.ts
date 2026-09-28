@@ -30,6 +30,7 @@ export const about = {
   leader: {
     eyebrow: "Al frente",
     name: "Ramon Seva",
+    portraitAlt: "Retrato de Ramon Seva",
     role: "Al frente de Tarida MC",
     body: "En una empresa familiar, quien le atiende es quien conoce cada inmueble.",
   },
