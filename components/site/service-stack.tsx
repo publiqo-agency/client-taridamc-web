@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DISPLAY, FRAME } from "@/lib/styles";
+import { DISPLAY, DISPLAY_SANS, FRAME } from "@/lib/styles";
 import { Lines } from "./motion/split";
 import { Media } from "./media";
 import { PillButton } from "./pill-button";
@@ -49,9 +49,11 @@ export function ServiceStack({ items, cursor }: { items: StackItem[]; cursor: st
               </Link>
 
               <div className={`${FRAME} flex flex-col justify-between py-10 md:px-12 md:py-16 lg:px-16 xl:px-20`}>
-                <div className="flex items-baseline justify-between gap-6" data-m="fade">
-                  <span className="label">{item.kicker}</span>
-                  <span className="label tnum text-ink-soft">{item.index} / 0{items.length}</span>
+                <div className="flex items-start justify-between gap-6" data-m="fade">
+                  <span className="label pt-2">{item.kicker}</span>
+                  <span aria-hidden className={`${DISPLAY_SANS} tnum -mr-[0.04em] text-[clamp(5rem,10vw,11rem)] leading-[0.78] text-ink-soft`}>
+                    {Number(item.index)}
+                  </span>
                 </div>
 
                 <div>
