@@ -2,11 +2,9 @@ import Image from "next/image";
 import { DISPLAY_SANS, FRAME, ACCENT } from "@/lib/styles";
 import { hasPublicImage } from "@/lib/images";
 import { Chars } from "./motion/split";
-import { COORDS } from "./coords";
 import { LocalTime } from "./local-time";
 
 type Props = {
-  eyebrow: string;
   titleTop: string;
   titleBottom: string;
   intro: string;
@@ -22,12 +20,11 @@ type Props = {
  * thin accent phrase answers from the right, and on scroll the two halves drift
  * apart while the photo sinks with parallax.
  */
-export function HomeHero({ eyebrow, titleTop, titleBottom, intro, image, scroll, children }: Props) {
+export function HomeHero({ titleTop, titleBottom, intro, image, scroll, children }: Props) {
   const photo = hasPublicImage(image.src);
 
   return (
     <section
-      data-after-intro
       data-drift-scope
       className="band-dark relative h-[100svh] min-h-[640px] overflow-hidden bg-stock text-ink"
     >
@@ -44,10 +41,9 @@ export function HomeHero({ eyebrow, titleTop, titleBottom, intro, image, scroll,
       </div>
 
       <div className={`${FRAME} relative z-[2] flex h-full flex-col justify-between pt-28 pb-8 md:pb-10`}>
-        <div className="flex items-start justify-between gap-6" data-m="fade" data-delay="0.7">
-          <p className="label">{eyebrow}</p>
+        <div className="flex items-start justify-end gap-6" data-m="fade" data-delay="0.7">
           <p className="label tnum hidden text-ink-2 sm:block">
-            {COORDS} · <LocalTime />
+            <LocalTime />
           </p>
         </div>
 

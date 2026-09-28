@@ -9,7 +9,6 @@ export const home: HomeDict = {
       "Empresa familiar de Castelldefels amb quaranta anys al sector. Comprem immobles als seus propietaris i lloguem naus industrials i habitatges.",
   },
   hero: {
-    eyebrow: "Castelldefels · Empresa familiar",
     titleTop: "Immobles",
     titleBottom: "amb criteri",
     intro:

@@ -9,13 +9,11 @@ import { WhatsAppBubble } from "@/components/site/whatsapp";
 import { ConsentBanner } from "@/components/site/consent-banner";
 import { RevealObserver } from "@/components/site/reveal-observer";
 import { MotionRoot } from "@/components/site/motion/motion-root";
-import { Intro } from "@/components/site/motion/intro";
 import { Cursor } from "@/components/site/motion/cursor";
-import { COORDS, PLACE } from "@/components/site/coords";
 
 /**
  * Public site chrome. All copy is resolved HERE, on the server, and goes
- * down to header, footer and intro as props: they are client components and
+ * down to header and footer as props: they are client components and
  * if they read the dictionary every language would end up in the bundle.
  *
  * The 404 needs no entry: not-found.tsx hangs from [locale], outside this
@@ -25,7 +23,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
   const { locale: raw } = await props.params;
   const locale = toLocale(raw);
   const dict = await getDictionary(locale);
-  const { nav, cta, whatsapp, footer, localeSwitcher, consent, brand } = dict.common;
+  const { nav, cta, whatsapp, footer, localeSwitcher, consent } = dict.common;
 
   const homeHref = localeHref(locale, "home");
   const contactHref = localeHref(locale, "contact");
@@ -59,8 +57,6 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
 
   return (
     <>
-      <Intro years={40} yearsLabel={brand.yearsLabel} place={PLACE} coords={COORDS} />
-
       <SiteHeader
         locale={locale}
         overlayPaths={overlayPathsFor(locale)}

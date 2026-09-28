@@ -6,7 +6,6 @@ export const home = {
       "Empresa familiar de Castelldefels con cuarenta años en el sector. Compramos inmuebles a sus propietarios y alquilamos naves industriales y viviendas.",
   },
   hero: {
-    eyebrow: "Castelldefels · Empresa familiar",
     titleTop: "Inmuebles",
     titleBottom: "con criterio",
     intro:

@@ -51,7 +51,6 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
     <PageTransition>
       <div data-placement="home-hero">
         <HomeHero
-          eyebrow={home.hero.eyebrow}
           titleTop={home.hero.titleTop}
           titleBottom={home.hero.titleBottom}
           intro={home.hero.intro}

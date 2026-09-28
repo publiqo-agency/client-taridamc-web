@@ -31,8 +31,6 @@ gsap.registerPlugin(ScrollTrigger, CustomEase);
 const CURTAIN = CustomEase.create("curtain", "0.76,0,0.24,1");
 const EXPO = "expo.out";
 
-export const INTRO_DONE_EVENT = "tarida:intro-done";
-
 let lenis: Lenis | null = null;
 
 /** One Lenis for the whole visit; routes come and go under it. */
@@ -42,7 +40,6 @@ export function startLenis() {
   lenis.on("scroll", ScrollTrigger.update);
   gsap.ticker.add((time) => lenis?.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
-  if (document.documentElement.hasAttribute("data-intro")) lenis.stop();
   return lenis;
 }
 
@@ -55,27 +52,10 @@ const num = (value: string | undefined, fallback: number) => {
 
 const pad = (n: number, width: number) => String(Math.round(n)).padStart(width, "0");
 
-/** Runs `start` once the first-visit intro has lifted (immediately otherwise). */
-function afterIntro(start: () => void) {
-  if (document.documentElement.getAttribute("data-intro") !== "on") {
-    start();
-    return () => {};
-  }
-  const handler = () => start();
-  window.addEventListener(INTRO_DONE_EVENT, handler, { once: true });
-  return () => window.removeEventListener(INTRO_DONE_EVENT, handler);
-}
-
-/**
- * Plays `build()` when `el` enters the viewport, once. Elements inside a
- * `[data-after-intro]` block (the heroes) wait for the intro instead.
- */
+/** Plays `build()` when `el` enters the viewport, once. */
 function onEnter(el: Element, build: () => gsap.core.Animation, start = "top 88%") {
   const anim = build();
   anim.pause();
-  if (el.closest("[data-after-intro]")) {
-    return afterIntro(() => anim.play());
-  }
   ScrollTrigger.create({ trigger: el, start, once: true, onEnter: () => anim.play() });
   return () => {};
 }

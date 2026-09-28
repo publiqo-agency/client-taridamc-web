@@ -46,7 +46,6 @@ export default function OgImage() {
           }}
         >
           <span>{SITE.address.city || " "}</span>
-          <span>41°16′N 1°58′E</span>
         </div>
         <svg
           width={w}

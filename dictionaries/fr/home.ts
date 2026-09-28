@@ -9,7 +9,6 @@ export const home: HomeDict = {
       "Entreprise familiale de Castelldefels forte de quarante ans d’expérience. Nous achetons des biens directement à leurs propriétaires et louons des locaux industriels et des logements.",
   },
   hero: {
-    eyebrow: "Castelldefels · Entreprise familiale",
     titleTop: "L’immobilier",
     titleBottom: "avec discernement",
     intro:

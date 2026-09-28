@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { TIME_ZONE } from "./coords";
+import { TIME_ZONE } from "./place";
 
 const format = () =>
   new Intl.DateTimeFormat("es-ES", { hour: "2-digit", minute: "2-digit", timeZone: TIME_ZONE }).format(new Date());
