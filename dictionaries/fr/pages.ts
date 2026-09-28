@@ -33,6 +33,7 @@ export const about: AboutDict = {
   leader: {
     eyebrow: "Direction",
     name: "Ramon Seva",
+    portraitAlt: "Portrait de Ramon Seva",
     role: "À la tête de Tarida MC",
     body: "Dans une entreprise familiale, la personne qui vous reçoit est celle qui connaît chaque bien.",
   },

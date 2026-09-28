@@ -93,14 +93,23 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
         </div>
       </section>
 
-      {/* The person behind it. No portrait yet: the name carries the block. */}
+      {/* The person behind it: his portrait, then the name carries the block. */}
       <section className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
         <div className={`${FRAME} grid grid-cols-12 items-end gap-x-8 gap-y-10`}>
-          <div className="col-span-12 md:col-span-3" data-m="fade">
-            <span className="label text-ink-soft">{about.leader.eyebrow}</span>
+          <div className="col-span-12 sm:col-span-8 md:col-span-4">
+            <Media
+              src="/about/ramon-seva.webp"
+              alt={about.leader.portraitAlt}
+              className="aspect-[4/5] w-full"
+              parallax={6}
+              sizes="(min-width: 768px) 33vw, (min-width: 640px) 66vw, 100vw"
+            />
           </div>
-          <div className="col-span-12 md:col-span-9">
-            <p className={`${ACCENT} text-[clamp(4rem,11vw,12rem)] leading-[0.9]`} data-m="lines">
+          <div className="col-span-12 md:col-span-8">
+            <span className="label block text-ink-soft" data-m="fade">
+              {about.leader.eyebrow}
+            </span>
+            <p className={`${ACCENT} mt-6 text-[clamp(4rem,8vw,9rem)] leading-[0.9]`} data-m="lines">
               <Lines text={about.leader.name} />
             </p>
             <div className="mt-12 grid gap-8 border-t border-line pt-8 md:grid-cols-2">
