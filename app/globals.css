@@ -415,8 +415,7 @@ html.lenis body {
   [data-motion="on"] [data-m="chars"] .mask-inline > span {
     transform: translate3d(0, 115%, 0);
   }
-  [data-motion="on"] [data-m="logo"] :is([data-logo-wave], [data-logo-glyph], [data-logo-sub]),
-  [data-intro="on"] .intro :is([data-logo-wave], [data-logo-glyph], [data-logo-sub]) {
+  [data-motion="on"] [data-m="logo"] :is([data-logo-wave], [data-logo-glyph], [data-logo-sub]) {
     opacity: 0;
   }
   [data-motion="on"] [data-m="fade"] {
@@ -491,25 +490,7 @@ html.lenis body {
   [data-motion="on"] .header-rule {
     animation: rule-draw 1.4s var(--ease-curtain) 0.6s backwards;
   }
-  [data-intro="on"] .header-rule {
-    animation-delay: 2.2s;
-  }
 }
-
-/* The intro curtain (first visit only; components/site/motion/intro.tsx). */
-.intro {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: none;
-}
-[data-intro="on"] .intro {
-  display: block;
-}
-[data-intro="on"] body {
-  overflow: hidden;
-}
-
 
 /*
   Page transitions: React <ViewTransition> (App Router navigations are

@@ -27,7 +27,6 @@ export function HomeHero({ eyebrow, titleTop, titleBottom, intro, image, scroll,
 
   return (
     <section
-      data-after-intro
       data-drift-scope
       className="band-dark relative h-[100svh] min-h-[640px] overflow-hidden bg-stock text-ink"
     >

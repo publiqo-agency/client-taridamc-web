@@ -37,7 +37,6 @@ export function PageHero({ eyebrow, title, intro, image, transitionName, compact
 
   return (
     <section
-      data-after-intro
       className={`band-dark grain relative flex overflow-hidden bg-stock text-ink ${
         compact ? "min-h-[72svh]" : "min-h-[92svh]"
       }`}
