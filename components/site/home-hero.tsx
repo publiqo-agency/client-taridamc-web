@@ -2,7 +2,6 @@ import Image from "next/image";
 import { DISPLAY_SANS, FRAME, ACCENT } from "@/lib/styles";
 import { hasPublicImage } from "@/lib/images";
 import { Chars } from "./motion/split";
-import { LocalTime } from "./local-time";
 
 type Props = {
   titleTop: string;
@@ -41,11 +40,8 @@ export function HomeHero({ titleTop, titleBottom, intro, image, scroll, children
       </div>
 
       <div className={`${FRAME} relative z-[2] flex h-full flex-col justify-between pt-28 pb-8 md:pb-10`}>
-        <div className="flex items-start justify-end gap-6" data-m="fade" data-delay="0.7">
-          <p className="label tnum hidden text-ink-2 sm:block">
-            <LocalTime />
-          </p>
-        </div>
+        {/* Top slot of the three-row frame: empty, it keeps the headline centred. */}
+        <div aria-hidden />
 
         <h1 className="relative -mx-[0.04em] select-none">
           <span
