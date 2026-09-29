@@ -19,6 +19,19 @@ export const contact: ContactDict = {
     body: "WhatsApp est le moyen le plus rapide. Si vous préférez l’e-mail ou le téléphone, vous les trouverez ici.",
     whatsappCta: "Ouvrir WhatsApp",
   },
+  /** First-layer data protection notice under the form (LOPDGDD art. 11). */
+  dataNotice: {
+    title: "Informations de base sur la protection des données",
+    controller: "Responsable",
+    rows: [
+      ["Finalité", "répondre à votre demande"],
+      ["Base juridique", "votre consentement"],
+      ["Destinataires", "aucune donnée n'est communiquée à des tiers, sauf obligation légale"],
+      ["Droits", "accès, rectification, effacement, opposition, limitation et portabilité"],
+    ],
+    more: "Plus d'informations dans la",
+    link: "politique de confidentialité",
+  },
   form: {
     name: "Nom",
     email: "E-mail",
