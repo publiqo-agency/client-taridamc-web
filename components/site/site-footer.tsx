@@ -113,7 +113,8 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
       <div className={`${FRAME} relative z-[1] flex flex-col gap-4 border-t border-line py-6 text-sm text-ink-soft md:flex-row md:items-center md:justify-between`}>
         <div className="flex flex-wrap gap-x-6 gap-y-1">
           <p>
-            © {year} {ORG.legalName || ORG.name}. {copy.rights}
+            © {year} {ORG.legalName || ORG.name}
+            {ORG.taxId && ` · NIF ${ORG.taxId}`}. {copy.rights}
           </p>
           {/* Agency credit. A followed link (no `nofollow`): it is the backlink
               the agency gets from every site it builds. Brand anchor only;

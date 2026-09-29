@@ -15,12 +15,13 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
    line under Ramon Seva's name.
 2. **Domain and DNS.** Production domain `www.taridamc.com` (canonical host
    `www`). Who manages the domain and hosting is not stated in the brief.
-3. **Legal data.** Tax id (NIF) and registered address → `lib/site.ts`.
-   Legal name is set (`Tarida MC S.L.`). Until then every legal page shows a
-   visible "pending" block.
-4. **Contact data.** Phone and email → `lib/site.ts`. WhatsApp is set
-   (+34 659 35 97 76); confirm whether it is also the phone for calls. Until
-   then the footer shows no phone or email.
+3. **Legal data.** Done: `Tarida MC S.L.`, NIF B67987420, registered office
+   Calle Còrsega 270, entresuelo, puerta 4, 08008 Barcelona (GoFeed client
+   record). The footer shows the NIF and the office; the lawyer still reviews
+   the legal copy.
+4. **Contact data.** Email set (`rs@taridamc.com`). Phone still missing:
+   WhatsApp is set (+34 659 35 97 76); confirm whether it is also the phone
+   for calls. Until then the site shows no phone.
 5. **Resend key** (`RESEND_API_KEY`, send-only, scoped to `web.publiqo.es`) and
    `CONTACT_EMAIL` in Vercel Production. Without them the form errors in production.
 6. **Translations reviewed.** `dictionaries/fr` and `dictionaries/ca` are

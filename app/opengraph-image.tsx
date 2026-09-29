@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { SITE } from "@/lib/site";
+import { PLACE } from "@/components/site/place";
 import {
   LOGO_HEIGHT,
   LOGO_SUBTITLE,
@@ -45,7 +46,7 @@ export default function OgImage() {
             color: "rgba(243,241,234,0.55)",
           }}
         >
-          <span>{SITE.address.city || " "}</span>
+          <span>{PLACE}</span>
         </div>
         <svg
           width={w}
