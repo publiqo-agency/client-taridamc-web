@@ -3,6 +3,7 @@ import { ViewTransition } from "react";
 import { FRAME, DISPLAY } from "@/lib/styles";
 import { hasPublicImage } from "@/lib/images";
 import { Lines } from "./motion/split";
+import { MORPH_SHARE } from "./page-transition";
 
 type Props = {
   eyebrow?: string;
@@ -42,7 +43,7 @@ export function PageHero({ eyebrow, title, intro, image, transitionName, compact
     >
       {picture &&
         (transitionName ? (
-          <ViewTransition name={transitionName} share="morph" default="none">
+          <ViewTransition name={transitionName} share={MORPH_SHARE} default="none">
             {picture}
           </ViewTransition>
         ) : (
