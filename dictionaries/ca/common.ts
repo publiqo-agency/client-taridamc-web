@@ -19,6 +19,7 @@ export const common: CommonDict = {
     menu: "Menú",
     close: "Tancar",
     mainNavAria: "Navegació principal",
+    submenu: "Pàgines de {label}",
     skipToContent: "Saltar al contingut",
   },
   cta: {

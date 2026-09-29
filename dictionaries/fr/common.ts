@@ -16,6 +16,7 @@ export const common: CommonDict = {
     menu: "Menu",
     close: "Fermer",
     mainNavAria: "Navigation principale",
+    submenu: "Pages de la rubrique {label}",
     skipToContent: "Aller au contenu",
   },
   cta: {

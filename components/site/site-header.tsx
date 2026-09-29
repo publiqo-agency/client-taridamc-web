@@ -12,7 +12,10 @@ import { LocalTime } from "./local-time";
 import { PLACE } from "./place";
 import { SCROLL_LOCK_EVENT, SCROLL_UNLOCK_EVENT } from "./motion/motion-root";
 
-export type NavItem = { href: string; label: string };
+export type NavLink = { href: string; label: string };
+
+/** A nav entry; a hub carries the pages it holds, shown in a dropdown. */
+export type NavItem = NavLink & { children?: NavLink[] };
 
 type Props = {
   locale: Locale;
@@ -28,6 +31,8 @@ type Props = {
     menu: string;
     close: string;
     mainNavAria: string;
+    /** Aria label of a dropdown's chevron; "{label}" is the entry's label. */
+    submenu: string;
     localeAria: string;
     skipToContent: string;
   };
@@ -59,6 +64,11 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
     });
   const toggle = useRef<HTMLButtonElement>(null);
   const firstLink = useRef<HTMLAnchorElement>(null);
+  // The open dropdown, also FOR a path: a navigation closes it.
+  const [dropdownAt, setDropdownAt] = useState<{ href: string; at: string } | null>(null);
+  const dropdown = dropdownAt?.at === pathname ? dropdownAt.href : null;
+  const setDropdown = (href: string | null) => setDropdownAt(href ? { href, at: pathname } : null);
+  const navRef = useRef<HTMLElement>(null);
 
   const current = normalize(pathname);
   const overlay = overlayPaths.includes(current);
@@ -78,6 +88,26 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // An open dropdown closes on Escape (focus back to its chevron) and on a
+  // pointer down anywhere outside the nav.
+  useEffect(() => {
+    if (!dropdown) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      navRef.current?.querySelector<HTMLButtonElement>(`[data-dropdown="${dropdown}"]`)?.focus();
+      setDropdownAt(null);
+    };
+    const onPointer = (event: PointerEvent) => {
+      if (!navRef.current?.contains(event.target as Node)) setDropdownAt(null);
+    };
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("pointerdown", onPointer);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("pointerdown", onPointer);
+    };
+  }, [dropdown]);
 
   const wasOpen = useRef(false);
   useEffect(() => {
@@ -130,17 +160,71 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
             <Logo className="h-9 md:h-10" />
           </Link>
 
-          <nav aria-label={copy.mainNavAria} className="hidden items-center gap-9 lg:flex">
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={current === item.href ? "page" : undefined}
-                className="link-line text-[0.8125rem] tracking-[0.02em] text-ink/80 transition-colors hover:text-ink aria-[current=page]:text-ink"
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav ref={navRef} aria-label={copy.mainNavAria} className="hidden items-center gap-9 lg:flex">
+            {nav.map((item) => {
+              const link = (
+                <Link
+                  href={item.href}
+                  aria-current={current === item.href ? "page" : undefined}
+                  className="link-line text-[0.8125rem] tracking-[0.02em] text-ink/80 transition-colors hover:text-ink aria-[current=page]:text-ink"
+                >
+                  {item.label}
+                </Link>
+              );
+              if (!item.children?.length) return <span key={item.href}>{link}</span>;
+
+              const expanded = dropdown === item.href;
+              const panelId = `nav-${item.href.replace(/\W+/g, "-")}`;
+              return (
+                <div
+                  key={item.href}
+                  className="relative flex items-center gap-1.5"
+                  onMouseEnter={() => setDropdown(item.href)}
+                  onMouseLeave={() => setDropdown(null)}
+                >
+                  {link}
+                  <button
+                    type="button"
+                    data-dropdown={item.href}
+                    aria-expanded={expanded}
+                    aria-controls={panelId}
+                    aria-label={copy.submenu.replace("{label}", item.label)}
+                    onClick={() => setDropdown(expanded ? null : item.href)}
+                    className="-m-2 p-2 text-ink/70 transition-colors hover:text-ink"
+                  >
+                    <Chevron open={expanded} />
+                  </button>
+
+                  {/* The hover bridge (pt-4) keeps the panel open while the
+                      pointer crosses the gap under the bar. */}
+                  <div
+                    id={panelId}
+                    inert={!expanded}
+                    className={`absolute top-full -left-5 pt-4 transition-[opacity,translate] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      expanded ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
+                    }`}
+                  >
+                    <ul className="band-light min-w-[17rem] border border-line bg-stock py-2 text-ink shadow-[0_18px_40px_-20px_rgba(6,26,42,0.35)]">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            onClick={() => setDropdownAt(null)}
+                            aria-current={current === child.href ? "page" : undefined}
+                            className="group flex items-center justify-between gap-6 px-5 py-3 text-[0.8125rem] tracking-[0.02em] text-ink/80 transition-colors hover:bg-stock-2 hover:text-ink aria-[current=page]:text-accent"
+                          >
+                            {child.label}
+                            <span aria-hidden className="text-ink-soft transition-transform duration-300 group-hover:translate-x-1">
+                              →
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
           </nav>
 
           <div className="flex items-center justify-self-end gap-5">
@@ -199,28 +283,49 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
       >
         <nav aria-label={copy.mainNavAria} className={`${FRAME} flex flex-1 flex-col justify-center gap-1 pt-24`}>
           {menu.map((item, i) => (
-            <Link
-              key={item.href}
-              ref={i === 0 ? firstLink : undefined}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              aria-current={current === item.href ? "page" : undefined}
-              className="group flex items-baseline gap-5 border-b border-line py-3"
-            >
-              <span className="label tnum w-6 text-ink-soft transition-colors group-hover:text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span className="mask">
-                <span
-                  className={`${DISPLAY} text-[clamp(2.5rem,10vw,5rem)] transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3 group-aria-[current=page]:text-accent ${
-                    open ? "translate-y-0" : "translate-y-[115%]"
-                  }`}
-                  style={{ transitionDelay: open ? `${0.25 + i * 0.06}s` : "0s" }}
-                >
-                  {item.label}
+            <div key={item.href} className="border-b border-line">
+              <Link
+                ref={i === 0 ? firstLink : undefined}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                aria-current={current === item.href ? "page" : undefined}
+                className="group flex items-baseline gap-5 py-3"
+              >
+                <span className="label tnum w-6 text-ink-soft transition-colors group-hover:text-accent">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
-              </span>
-            </Link>
+                <span className="mask">
+                  <span
+                    className={`${DISPLAY} text-[clamp(2.5rem,10vw,5rem)] transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3 group-aria-[current=page]:text-accent ${
+                      open ? "translate-y-0" : "translate-y-[115%]"
+                    }`}
+                    style={{ transitionDelay: open ? `${0.25 + i * 0.06}s` : "0s" }}
+                  >
+                    {item.label}
+                  </span>
+                </span>
+              </Link>
+              {item.children?.length ? (
+                <ul
+                  className={`flex flex-wrap gap-x-6 gap-y-2 pb-4 pl-11 transition-opacity duration-700 ${
+                    open ? "opacity-100 delay-500" : "opacity-0"
+                  }`}
+                >
+                  {item.children.map((child) => (
+                    <li key={child.href}>
+                      <Link
+                        href={child.href}
+                        onClick={() => setOpen(false)}
+                        aria-current={current === child.href ? "page" : undefined}
+                        className="link-line text-sm text-ink-2 transition-colors hover:text-ink aria-[current=page]:text-accent"
+                      >
+                        {child.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
           ))}
         </nav>
 
@@ -236,5 +341,21 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
         </div>
       </div>
     </>
+  );
+}
+
+/** The dropdown's chevron: points down, turns up while the panel is open. */
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 10 6"
+      className={`block h-[6px] w-[10px] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${open ? "rotate-180" : ""}`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.25"
+    >
+      <path d="M1 1l4 4 4-4" />
+    </svg>
   );
 }

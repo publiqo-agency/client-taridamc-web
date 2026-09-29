@@ -25,6 +25,7 @@ export const common = {
     menu: "Menú",
     close: "Cerrar",
     mainNavAria: "Navegación principal",
+    submenu: "Páginas de {label}",
     skipToContent: "Saltar al contenido",
   },
   cta: {
