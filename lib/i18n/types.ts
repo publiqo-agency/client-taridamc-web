@@ -67,8 +67,6 @@ export type ServiceCopy = {
     columns: [string, string];
     rows: { label: string; values: [string, string] }[];
   };
-  /** Documents a seller usually gathers. Public information, not advice. */
-  documents?: { title: string; intro: string; items: string[]; note: string };
   /** Visible on the page AND emitted as FAQPage: the two must match. */
   faq: Faq[];
   closing: { title: string; body: string };

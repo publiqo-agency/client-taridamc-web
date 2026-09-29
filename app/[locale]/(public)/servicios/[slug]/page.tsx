@@ -32,7 +32,7 @@ import { Media } from "@/components/site/media";
 import { Arrow, PillButton } from "@/components/site/pill-button";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 import { Lines } from "@/components/site/motion/split";
-import { ServiceComparison, ServiceDocuments, ServiceFaq, ServiceScope } from "@/components/site/service-sections";
+import { ServiceComparison, ServiceFaq, ServiceScope } from "@/components/site/service-sections";
 
 type Props = PageProps<"/[locale]/servicios/[slug]">;
 
@@ -165,7 +165,6 @@ export default async function ServicePage(props: Props) {
         {kind === "rental" && <RentalCatalogue id={id} locale={locale} dict={dict} formHref={formHref} />}
 
         {item.comparison && <ServiceComparison comparison={item.comparison} />}
-        {item.documents && <ServiceDocuments documents={item.documents} />}
 
         {/* Trust: the one number, and who is behind it. */}
         {kind === "purchase" && (

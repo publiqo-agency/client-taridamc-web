@@ -92,22 +92,6 @@ export const services: ServicesDict = {
           { label: "Cuándo conviene", values: ["Si prefiere certeza y un solo interlocutor", "Si busca el precio de mercado y puede esperar"] },
         ],
       },
-      documents: {
-        title: "Documentos\n*para vender*",
-        intro:
-          "No los necesita para escribirnos: para empezar basta con que nos cuente cómo es el inmueble. Más adelante, estos son los documentos habituales en una compraventa.",
-        items: [
-          "Escritura de propiedad",
-          "Nota simple del Registro de la Propiedad",
-          "Último recibo del IBI",
-          "Certificado de eficiencia energética",
-          "Cédula de habitabilidad, donde la comunidad autónoma la exija",
-          "Certificado de la comunidad de propietarios de estar al corriente de pago",
-          "Si hay hipoteca, certificado de la deuda pendiente",
-          "Si está alquilado, el contrato de arrendamiento vigente",
-        ],
-        note: "Si le falta alguno, no es un obstáculo para empezar: lo revisamos con usted.",
-      },
       faq: [
         {
           question: "¿Qué tipo de inmuebles compran?",
@@ -207,20 +191,6 @@ export const services: ServicesDict = {
           "Naves industriales en cualquier punto de España, libres o con inquilino. Tenemos la sede en Castelldefels, pero estudiamos naves en todo el país.",
           "También cuando la nave necesita una reforma o tiene hipoteca o cargas: su situación forma parte del análisis y se tiene en cuenta en la propuesta.",
         ],
-      },
-      documents: {
-        title: "Documentos\n*para vender una nave*",
-        intro:
-          "Para empezar basta con que nos cuente cómo es la nave. Más adelante, estos son los documentos habituales en la venta de una nave.",
-        items: [
-          "Escritura de propiedad",
-          "Nota simple del Registro de la Propiedad",
-          "Último recibo del IBI",
-          "Si está alquilada, el contrato de arrendamiento vigente",
-          "Si hay hipoteca, certificado de la deuda pendiente",
-          "Planos y superficies de la nave, si los tiene",
-        ],
-        note: "Si le falta alguno, no es un obstáculo para empezar: lo revisamos con usted.",
       },
       faq: [
         {

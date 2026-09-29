@@ -85,22 +85,6 @@ export const services: ServicesDict = {
           { label: "Quand la choisir", values: ["Si vous préférez la certitude et un seul interlocuteur", "Si vous visez le prix du marché et pouvez attendre"] },
         ],
       },
-      documents: {
-        title: "Documents\n*pour vendre*",
-        intro:
-          "Vous n’en avez pas besoin pour nous écrire : pour commencer, il suffit de nous décrire le bien. Par la suite, voici les documents habituels d’une vente.",
-        items: [
-          "Titre de propriété",
-          "Extrait du Registre de la propriété (nota simple)",
-          "Dernier avis de taxe foncière (IBI)",
-          "Certificat de performance énergétique",
-          "Certificat d’habitabilité, là où la région l’exige",
-          "Attestation de la copropriété indiquant que les charges sont à jour",
-          "En cas d’hypothèque, un certificat du capital restant dû",
-          "Si le bien est loué, le bail en cours",
-        ],
-        note: "S’il en manque un, ce n’est pas un obstacle pour commencer : nous le vérifions avec vous.",
-      },
       faq: [
         {
           question: "Quels types de biens achetez-vous ?",
@@ -200,20 +184,6 @@ export const services: ServicesDict = {
           "Entrepôts et bâtiments industriels partout en Espagne, libres ou loués. Notre siège est à Castelldefels, mais nous étudions des entrepôts dans tout le pays.",
           "Y compris lorsque l’entrepôt est à rénover ou grevé d’une hypothèque ou de charges : sa situation fait partie de l’analyse et est prise en compte dans la proposition.",
         ],
-      },
-      documents: {
-        title: "Documents pour vendre\n*un entrepôt*",
-        intro:
-          "Pour commencer, il suffit de nous décrire l’entrepôt. Par la suite, voici les documents habituels de la vente d’un entrepôt.",
-        items: [
-          "Titre de propriété",
-          "Extrait du Registre de la propriété (nota simple)",
-          "Dernier avis de taxe foncière (IBI)",
-          "S’il est loué, le bail en cours",
-          "En cas d’hypothèque, un certificat du capital restant dû",
-          "Plans et surfaces de l’entrepôt, si vous les avez",
-        ],
-        note: "S’il en manque un, ce n’est pas un obstacle pour commencer : nous le vérifions avec vous.",
       },
       faq: [
         {
