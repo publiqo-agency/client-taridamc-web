@@ -43,12 +43,10 @@ export const common: CommonDict = {
       all: "Tots",
       warehouse: "Naus",
       home: "Habitatges",
-      commercial: "Locals",
     },
     types: {
       warehouse: "Nau industrial",
       home: "Habitatge",
-      commercial: "Local",
     },
     specs: {
       ref: "Ref.",

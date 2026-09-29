@@ -5,10 +5,19 @@ import { LOCALES, toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { pageMetadata } from "@/lib/i18n/metadata";
 import { localeHref, serviceHref, servicePaths } from "@/lib/routes";
-import { SERVICE_IDS, SERVICE_IMAGES, canonicalServiceSlug, serviceFromCanonicalSlug } from "@/lib/services";
+import {
+  RENTAL_TYPES,
+  SERVICE_IDS,
+  SERVICE_IMAGES,
+  SERVICE_KIND,
+  SERVICE_RELATED,
+  canonicalServiceSlug,
+  serviceFromCanonicalSlug,
+  type ServiceId,
+} from "@/lib/services";
 import { catalogue, PROPERTY_TYPES } from "@/lib/properties";
 import { proposalFormHref } from "@/lib/whatsapp";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { DISPLAY, DISPLAY_QUIET, DISPLAY_SANS, FRAME, ACCENT, SECTION } from "@/lib/styles";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageTransition } from "@/components/site/page-transition";
@@ -23,6 +32,7 @@ import { Media } from "@/components/site/media";
 import { Arrow, PillButton } from "@/components/site/pill-button";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 import { Lines } from "@/components/site/motion/split";
+import { ServiceComparison, ServiceDocuments, ServiceFaq, ServiceScope } from "@/components/site/service-sections";
 
 type Props = PageProps<"/[locale]/servicios/[slug]">;
 
@@ -51,6 +61,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     locale,
     paths: servicePaths(id),
     title: item.title,
+    seoTitle: item.seoTitle,
     description: item.metaDescription,
   });
 }
@@ -62,12 +73,12 @@ export default async function ServicePage(props: Props) {
   if (!id) notFound();
 
   const dict = await getDictionary(locale);
-  const { services, common, home } = dict;
+  const { services, common } = dict;
   const item = services.items[id];
+  const kind = SERVICE_KIND[id];
   const contactHref = localeHref(locale, "contact");
   const formHref = proposalFormHref(contactHref, id);
-  const other = SERVICE_IDS.find((s) => s !== id)!;
-  const heroTitle = id === "purchase" ? home.lines.purchaseTitle : home.lines.rentalTitle;
+  const other = SERVICE_RELATED[id];
 
   const ctas = (tone: "white" | "ink") => (
     <>
@@ -82,8 +93,8 @@ export default async function ServicePage(props: Props) {
     <PageTransition>
       <div data-placement={`service-${id}`}>
         <PageHero
-          eyebrow={id === "purchase" ? home.lines.purchaseKicker : home.lines.rentalKicker}
-          title={heroTitle}
+          eyebrow={item.kicker}
+          title={item.heroTitle}
           image={{ src: SERVICE_IMAGES[id], alt: item.imageAlt }}
           transitionName={`service-${id}`}
         />
@@ -103,76 +114,83 @@ export default async function ServicePage(props: Props) {
           </div>
         </section>
 
-        {id === "purchase" && (
-          <>
-            {/* What we look at: a hairline index, the image held beside it. */}
-            <section className="pb-20 md:pb-28">
-              <div className={`${FRAME} grid grid-cols-12 gap-x-5 gap-y-14 md:gap-x-8`}>
-                <div className="col-span-12 lg:col-span-5">
-                  <div className="lg:sticky lg:top-28">
-                    <h2 className={`${DISPLAY} text-[clamp(2.75rem,5vw,5.5rem)]`} data-m="lines">
-                      <Lines text={services.detail.includesTitle} />
-                    </h2>
-                    <Media
-                      src="/about/story.webp"
-                      alt={dict.about.storyImageAlt}
-                      className="mt-10 hidden aspect-[4/5] w-full max-w-sm lg:block"
-                      parallax={8}
-                      sizes="(min-width: 1024px) 24rem, 1px"
-                    />
-                  </div>
-                </div>
-                <ol className="col-span-12 lg:col-span-7">
-                  {item.includes.map((line, i) => (
-                    <li
-                      key={line}
-                      className="group relative flex items-baseline gap-6 border-b border-line py-7 md:gap-10 md:py-9"
-                      data-m="fade"
-                      data-delay={String(i * 0.06)}
-                    >
-                      <span className="label tnum w-8 text-ink-soft">{String(i + 1).padStart(2, "0")}</span>
-                      <span className={`${DISPLAY_QUIET} text-[clamp(1.75rem,3vw,3rem)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3`}>
-                        {line}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            </section>
+        {kind === "purchase" && item.scope && <ServiceScope scope={item.scope} />}
 
-            <section className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
-              <div className={FRAME}>
-                <SectionHeader title={home.process.title} intro={home.process.intro} />
-                <div className="mt-20 md:mt-28">
-                  <ProcessGrid steps={item.sections} />
-                </div>
+        {/* What we look at (or offer): a hairline index, the image held beside it. */}
+        <section className="pb-20 md:pb-28">
+          <div className={`${FRAME} grid grid-cols-12 gap-x-5 gap-y-14 md:gap-x-8`}>
+            <div className="col-span-12 lg:col-span-5">
+              <div className="lg:sticky lg:top-28">
+                <h2 className={`${DISPLAY} text-[clamp(2.75rem,5vw,5.5rem)]`} data-m="lines">
+                  <Lines text={item.includesTitle} />
+                </h2>
+                {kind === "purchase" && (
+                  <Media
+                    src="/about/story.webp"
+                    alt={dict.about.storyImageAlt}
+                    className="mt-10 hidden aspect-[4/5] w-full max-w-sm lg:block"
+                    parallax={8}
+                    sizes="(min-width: 1024px) 24rem, 1px"
+                  />
+                )}
               </div>
-            </section>
+            </div>
+            <ol className="col-span-12 lg:col-span-7">
+              {item.includes.map((line, i) => (
+                <li
+                  key={line}
+                  className="group relative flex items-baseline gap-6 border-b border-line py-7 md:gap-10 md:py-9"
+                  data-m="fade"
+                  data-delay={String(i * 0.06)}
+                >
+                  <span className="label tnum w-8 text-ink-soft">{String(i + 1).padStart(2, "0")}</span>
+                  <span className={`${DISPLAY_QUIET} text-[clamp(1.75rem,3vw,3rem)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3`}>
+                    {line}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
 
-            {/* Trust: the one number, and who is behind it. */}
-            <section className={SECTION}>
-              <div className={`${FRAME} grid grid-cols-12 items-end gap-x-5 gap-y-10 md:gap-x-8`}>
-                <p className="col-span-12 flex items-end gap-4 md:col-span-7" data-m="fade">
-                  <span data-m="count" data-to="40" data-pad="2" className={`${DISPLAY_SANS} tnum text-[clamp(7rem,17vw,17rem)] leading-[0.78]`}>
-                    40
-                  </span>
-                  <span className="pb-[0.4em]">
-                    <span className={`${ACCENT} block text-[clamp(2rem,3.4vw,3.5rem)] leading-none`}>{common.brand.yearsLabel}</span>
-                    <span className="label mt-3 block text-ink-soft">{common.brand.yearsCaption}</span>
-                  </span>
-                </p>
-                <div className="col-span-12 md:col-span-5" data-m="fade" data-delay="0.15">
-                  <p className="label text-ink-soft">{common.brand.family}</p>
-                  <p className={`${DISPLAY_QUIET} mt-4 text-3xl`}>{dict.about.leader.body}</p>
-                  <p className={`${ACCENT} mt-8 text-2xl`}>{dict.about.leader.name}</p>
-                  <p className="label mt-1 text-ink-soft">{dict.about.leader.role}</p>
-                </div>
+        <section className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
+          <div className={FRAME}>
+            <SectionHeader title={item.process.title} intro={item.process.intro} />
+            <div className="mt-20 md:mt-28">
+              <ProcessGrid steps={item.sections} />
+            </div>
+          </div>
+        </section>
+
+        {kind === "rental" && <RentalCatalogue id={id} locale={locale} dict={dict} formHref={formHref} />}
+
+        {item.comparison && <ServiceComparison comparison={item.comparison} />}
+        {item.documents && <ServiceDocuments documents={item.documents} />}
+
+        {/* Trust: the one number, and who is behind it. */}
+        {kind === "purchase" && (
+          <section className={SECTION}>
+            <div className={`${FRAME} grid grid-cols-12 items-end gap-x-5 gap-y-10 md:gap-x-8`}>
+              <p className="col-span-12 flex items-end gap-4 md:col-span-7" data-m="fade">
+                <span data-m="count" data-to="40" data-pad="2" className={`${DISPLAY_SANS} tnum text-[clamp(7rem,17vw,17rem)] leading-[0.78]`}>
+                  40
+                </span>
+                <span className="pb-[0.4em]">
+                  <span className={`${ACCENT} block text-[clamp(2rem,3.4vw,3.5rem)] leading-none`}>{common.brand.yearsLabel}</span>
+                  <span className="label mt-3 block text-ink-soft">{common.brand.yearsCaption}</span>
+                </span>
+              </p>
+              <div className="col-span-12 md:col-span-5" data-m="fade" data-delay="0.15">
+                <p className="label text-ink-soft">{common.brand.family}</p>
+                <p className={`${DISPLAY_QUIET} mt-4 text-3xl`}>{dict.about.leader.body}</p>
+                <p className={`${ACCENT} mt-8 text-2xl`}>{dict.about.leader.name}</p>
+                <p className="label mt-1 text-ink-soft">{dict.about.leader.role}</p>
               </div>
-            </section>
-          </>
+            </div>
+          </section>
         )}
 
-        {id === "rental" && <RentalCatalogue locale={locale} dict={dict} formHref={formHref} />}
+        <ServiceFaq title={services.detail.faqTitle} items={item.faq} />
 
         {/* The other service, as one large link. */}
         <section className="border-t border-line">
@@ -190,8 +208,8 @@ export default async function ServicePage(props: Props) {
         </section>
 
         <ClosingBand
-          title={id === "purchase" ? common.closing.title : common.catalogue.empty.title}
-          body={id === "purchase" ? common.closing.body : common.catalogue.empty.body}
+          title={item.closing.title}
+          body={item.closing.body}
           image={{ src: "/cta/sell.webp", alt: common.closing.imageAlt }}
         >
           {ctas("white")}
@@ -200,7 +218,14 @@ export default async function ServicePage(props: Props) {
 
       <JsonLd
         data={[
-          serviceSchema(locale, { name: item.title, description: item.metaDescription, path: servicePaths(id)[locale] }),
+          serviceSchema(locale, {
+            name: item.title,
+            description: item.metaDescription,
+            path: servicePaths(id)[locale],
+            serviceType: item.shortTitle,
+            local: kind === "rental",
+          }),
+          faqSchema(item.faq),
           breadcrumbSchema([
             { name: common.nav.home, path: localeHref(locale) },
             { name: services.meta.title, path: localeHref(locale, "services") },
@@ -212,18 +237,27 @@ export default async function ServicePage(props: Props) {
   );
 }
 
-/** The rental catalogue: filterable grid, or the availability block in production without listings. */
+/**
+ * The listings of this rental page (naves or homes): a filterable grid, or
+ * the availability block in production while there are no listings. The
+ * page's own closing band asks the same question in other words, so the two
+ * never repeat each other.
+ */
 async function RentalCatalogue({
+  id,
   locale,
   dict,
   formHref,
 }: {
+  id: ServiceId;
   locale: string;
   dict: Awaited<ReturnType<typeof getDictionary>>;
   formHref: string;
 }) {
   const copy = dict.common.catalogue;
-  const { items, sample } = catalogue();
+  const own = RENTAL_TYPES[id] ?? PROPERTY_TYPES;
+  const { items: all, sample } = catalogue();
+  const items = all.filter((p) => own.includes(p.type));
   const types = PROPERTY_TYPES.filter((type) => items.some((p) => p.type === type));
 
   return (
@@ -254,7 +288,7 @@ async function RentalCatalogue({
             />
           ) : (
             <CatalogueEmpty title={copy.empty.title} body={copy.empty.body}>
-              <PillButton href={formHref} cta="form" service="rental">
+              <PillButton href={formHref} cta="form" service={id}>
                 {copy.empty.cta}
               </PillButton>
             </CatalogueEmpty>

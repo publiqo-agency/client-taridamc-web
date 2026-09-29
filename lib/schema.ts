@@ -1,5 +1,6 @@
 import { HTML_LANG, LOCALES, type Locale } from "./i18n/config";
 import { localeHref, type RouteKey } from "./routes";
+import { PLACE } from "@/components/site/place";
 import {
   ORG,
   SAME_AS,
@@ -121,7 +122,14 @@ export function itemListSchema(items: { name: string; url: string }[]) {
  */
 export function serviceSchema(
   locale: Locale,
-  opts: { name: string; description: string; path: string },
+  opts: {
+    name: string;
+    description: string;
+    path: string;
+    serviceType?: string;
+    /** Served in the home town only (the rental portfolio), not nationwide. */
+    local?: boolean;
+  },
 ) {
   return {
     "@context": "https://schema.org",
@@ -129,8 +137,13 @@ export function serviceSchema(
     name: opts.name,
     description: opts.description,
     url: absoluteUrl(`/${locale}${opts.path}`),
+    ...(opts.serviceType ? { serviceType: opts.serviceType } : {}),
     provider: { "@id": ORG_ID },
-    ...(ORG.areaServed ? { areaServed: ORG.areaServed } : {}),
+    ...(opts.local
+      ? { areaServed: { "@type": "City", name: PLACE } }
+      : ORG.areaServed
+        ? { areaServed: { "@type": "Country", name: ORG.areaServed } }
+        : {}),
     inLanguage: HTML_LANG[locale],
   };
 }

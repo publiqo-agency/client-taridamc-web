@@ -2,6 +2,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 import { formatArea, type Property } from "@/lib/properties";
 import type { CommonDict } from "@/lib/i18n/types";
 import { DISPLAY_QUIET } from "@/lib/styles";
+import { rentalServiceFor } from "@/lib/services";
 import { Media } from "./media";
 import { Arrow } from "./pill-button";
 import { PendingData } from "./pending";
@@ -71,7 +72,7 @@ export function PropertyCard({ property, locale, copy, sample = false, formHref,
       <a
         href={wa ?? formHref}
         {...(wa ? { target: "_blank", rel: "noopener noreferrer", "data-cta": "whatsapp" } : { "data-cta": "form" })}
-        data-service="rental"
+        data-service={rentalServiceFor(property.type)}
         className="group/btn mt-1 flex items-center justify-between border-y border-ink py-3 text-sm font-medium transition-colors duration-500 hover:bg-ink hover:px-4 hover:text-stock"
       >
         <span>{copy.enquire}</span>

@@ -27,8 +27,10 @@ export const home: HomeDict = {
     title: "Dues maneres\nde *treballar amb vostè*",
     purchaseKicker: "Per a propietaris",
     purchaseTitle: "Comprem\n*el seu immoble*",
+    purchaseBody: "Comprem pisos, cases i naus industrials a tota Espanya. Estudiem cada operació i, si encaixa, l'hi comprem directament.",
     rentalKicker: "Per a empreses i particulars",
     rentalTitle: "Naus i habitatges\n*de lloguer*",
+    rentalBody: "Naus industrials i habitatges a Castelldefels, de la nostra pròpia cartera i amb tracte directe amb la propietat.",
   },
   process: {
     title: "Un procés\n*clar i directe*",

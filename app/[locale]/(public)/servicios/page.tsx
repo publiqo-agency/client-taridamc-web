@@ -4,7 +4,6 @@ import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { pageMetadata } from "@/lib/i18n/metadata";
 import { localeHref, routePaths, serviceHref } from "@/lib/routes";
 import { SERVICE_IDS, SERVICE_IMAGES } from "@/lib/services";
-import { PROPERTY_TYPES } from "@/lib/properties";
 import { proposalFormHref } from "@/lib/whatsapp";
 import { absoluteUrl } from "@/lib/seo";
 import { itemListSchema, routeBreadcrumb } from "@/lib/schema";
@@ -33,21 +32,8 @@ export default async function ServicesPage(props: PageProps<"/[locale]/servicios
   const { locale: raw } = await props.params;
   const locale = toLocale(raw);
   const dict = await getDictionary(locale);
-  const { services, common, home } = dict;
+  const { services, common } = dict;
   const contactHref = localeHref(locale, "contact");
-
-  const panels = {
-    purchase: {
-      kicker: home.lines.purchaseKicker,
-      title: home.lines.purchaseTitle,
-      specs: services.items.purchase.includes.slice(0, 3),
-    },
-    rental: {
-      kicker: home.lines.rentalKicker,
-      title: home.lines.rentalTitle,
-      specs: PROPERTY_TYPES.map((type) => common.catalogue.types[type]),
-    },
-  };
 
   return (
     <PageTransition>
@@ -63,12 +49,12 @@ export default async function ServicesPage(props: PageProps<"/[locale]/servicios
         <ServicePanel
           key={id}
           id={id}
-          kicker={panels[id].kicker}
-          title={panels[id].title}
+          kicker={services.items[id].kicker}
+          title={services.items[id].heroTitle}
           teaser={services.items[id].teaser}
-          specs={panels[id].specs}
+          specs={services.items[id].includes.slice(0, 3)}
           href={serviceHref(locale, id)}
-          cta={common.cta.learnMore}
+          cta={services.items[id].learnMore}
           cursor={common.catalogue.view}
           image={{ src: SERVICE_IMAGES[id], alt: services.items[id].imageAlt }}
           tone={i % 2 === 0 ? "light" : "dark"}

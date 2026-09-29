@@ -27,8 +27,10 @@ export const home: HomeDict = {
     title: "Deux façons\nde *travailler avec vous*",
     purchaseKicker: "Pour les propriétaires",
     purchaseTitle: "Nous achetons\n*votre bien*",
+    purchaseBody: "Nous achetons appartements, maisons et entrepôts partout en Espagne. Nous étudions chaque opération et, si elle convient, achetons directement.",
     rentalKicker: "Pour les entreprises et les particuliers",
     rentalTitle: "Entrepôts et logements\n*à louer*",
+    rentalBody: "Entrepôts et logements à Castelldefels, issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
   },
   process: {
     title: "Un processus\n*clair et direct*",

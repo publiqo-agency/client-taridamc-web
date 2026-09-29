@@ -43,7 +43,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
   const { home, common, services } = dict;
 
   const sellHref = serviceHref(locale, "purchase");
-  const rentHref = serviceHref(locale, "rental");
+  const rentHref = serviceHref(locale, "rental-warehouses");
   const contactHref = localeHref(locale, "contact");
   const { items: listings, sample } = catalogue();
 
@@ -85,9 +85,13 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
             id: "purchase",
             kicker: home.lines.purchaseKicker,
             title: home.lines.purchaseTitle,
-            body: services.items.purchase.teaser,
+            body: home.lines.purchaseBody,
             href: sellHref,
-            cta: common.cta.learnMore,
+            cta: services.items.purchase.learnMore,
+            secondary: {
+              href: serviceHref(locale, "purchase-warehouses"),
+              label: services.items["purchase-warehouses"].title,
+            },
             image: { src: SERVICE_IMAGES.purchase, alt: services.items.purchase.imageAlt },
             tone: "light",
           },
@@ -95,10 +99,14 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
             id: "rental",
             kicker: home.lines.rentalKicker,
             title: home.lines.rentalTitle,
-            body: services.items.rental.teaser,
+            body: home.lines.rentalBody,
             href: rentHref,
-            cta: common.cta.learnMore,
-            image: { src: SERVICE_IMAGES.rental, alt: services.items.rental.imageAlt },
+            cta: services.items["rental-warehouses"].learnMore,
+            secondary: {
+              href: serviceHref(locale, "rental-homes"),
+              label: services.items["rental-homes"].learnMore,
+            },
+            image: { src: SERVICE_IMAGES["rental-homes"], alt: services.items["rental-homes"].imageAlt },
             tone: "dark",
           },
         ]}
@@ -130,8 +138,8 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
           sample={sample}
           locale={locale}
           copy={common.catalogue}
-          catalogueHref={rentHref}
-          formHref={proposalFormHref(contactHref, "rental")}
+          catalogueHref={localeHref(locale, "services")}
+          formHref={contactHref}
         />
       ) : (
         <section data-placement="home-catalogue" className={SECTION}>
@@ -139,7 +147,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
             <SectionHeader title={common.catalogue.title} intro={common.catalogue.intro} />
             <div className="mt-16">
               <CatalogueEmpty title={common.catalogue.empty.title} body={common.catalogue.empty.body}>
-                <PillButton href={proposalFormHref(contactHref, "rental")} cta="form" service="rental">
+                <PillButton href={contactHref} cta="form">
                   {common.catalogue.empty.cta}
                 </PillButton>
               </CatalogueEmpty>

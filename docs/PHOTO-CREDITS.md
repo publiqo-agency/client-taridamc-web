@@ -18,7 +18,6 @@ These are provisional stock placeholders, to be replaced once the client deliver
 | `public/properties/vivienda-1.webp` | Oriol Pascual | https://unsplash.com/photos/pgqeeVO3WGs | Unsplash License |
 | `public/properties/vivienda-2.webp` | Elvira Blumfelde | https://unsplash.com/photos/Gnld2hZ3a2g | Unsplash License |
 | `public/properties/vivienda-3.webp` | Planet Volumes | https://unsplash.com/photos/kQdH0Aal8ts | Unsplash License |
-| `public/properties/local-1.webp` | Loegunn Lai | https://unsplash.com/photos/od0SFwlPXLA | Unsplash License |
 
 `about/castelldefels.webp` is Platja de Castelldefels (location tagged by the photographer); every other photo is generic. Rule for any replacement: it must look plausible on the Barcelona coast (beaches, pine woods, the Garraf, Catalan houses, the Eixample, industrial estates). No cliffs, Greek or Andalusian white villages, tropical resorts.
 

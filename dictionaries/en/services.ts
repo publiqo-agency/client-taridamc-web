@@ -4,35 +4,39 @@ import type { ServicesDict } from "@/lib/i18n/types";
 export const services: ServicesDict = {
   meta: {
     title: "Services",
-    seoTitle: "Property purchase and rentals in Castelldefels · Tarida MC",
+    seoTitle: "Property purchase and letting: services | Tarida MC",
     description:
-      "We buy properties directly from their owners and let industrial units and homes in Castelldefels.",
+      "We buy flats, houses and industrial units anywhere in Spain, and let industrial units and homes from our own portfolio in Castelldefels.",
   },
   index: {
     eyebrow: "Services",
     title: "Buying and letting,\n*with the same judgement*",
     intro:
-      "Two activities, one way of working: studying every property carefully and treating every client with candour.",
+      "We buy flats, houses and industrial units anywhere in Spain, and let industrial units and homes from our own portfolio. Four services, one way of working: studying every property carefully and treating every client with candour.",
     imageAlt: "White wall with a wooden door and an olive tree",
     allServices: "All services",
   },
   detail: {
-    includesTitle: "What we assess",
-    faqTitle: "Frequently asked questions",
-    otherServices: "Other service",
+    faqTitle: "Frequently\n*asked questions*",
+    otherServices: "Related",
     requestBody: "Tell us what you need and we will reply to you personally.",
   },
   items: {
     purchase: {
-      title: "We buy your property",
-      shortTitle: "Sell a property",
+      title: "We buy your flat or house",
+      shortTitle: "Sell a flat or a house",
+      kicker: "For owners",
+      heroTitle: "We buy\n*your flat or house*",
+      seoTitle: "We buy your flat or house anywhere in Spain | Tarida MC",
       teaser:
-        "If you own a property and wish to sell it, we study the transaction and, if it is a good fit, we buy it from you.",
+        "If you own a flat or a house and wish to sell it, we study the transaction and, if it is a good fit, we buy it from you directly, anywhere in Spain.",
       metaDescription:
-        "Tarida MC buys properties directly from their owners in Castelldefels. We analyse every asset and, if the opportunity fits, present you with a purchase offer.",
+        "We buy flats and houses directly from their owners anywhere in Spain. We analyse every property and, if it fits, make you a purchase offer.",
       intro:
-        "We buy properties directly from their owners. We analyse every asset in detail and, when the opportunity matches what we are looking for, we present a purchase offer. With the integrity of a family business with forty years in the sector.",
+        "We buy flats and houses directly from their owners, anywhere in Spain. We analyse every property in detail and, when the transaction makes sense, we present you with a purchase offer. No intermediaries, with the integrity of a family business with forty years in the sector.",
       imageAlt: "Tiled eave and shutter of a Mediterranean house in warm light",
+      learnMore: "How we buy",
+      includesTitle: "What we assess",
       includes: [
         "Location and surroundings",
         "Property type and floor area",
@@ -40,6 +44,10 @@ export const services: ServicesDict = {
         "Land registry and planning status",
         "Potential of the asset",
       ],
+      process: {
+        title: "How a direct\n*purchase works*",
+        intro: "Once you offer us a property, you always know what stage the transaction has reached.",
+      },
       sections: [
         {
           heading: "You present the property",
@@ -51,28 +59,342 @@ export const services: ServicesDict = {
         },
         {
           heading: "We give you an answer",
-          body: ["If the opportunity interests us, we present you with a purchase offer. If not, we tell you just as clearly."],
+          body: ["If the transaction interests us, we present you with a purchase offer. If not, we tell you just as clearly."],
         },
         {
           heading: "We complete the transaction",
-          body: ["We guide you through every step until signing, with complete transparency."],
+          body: ["We guide you through every step until signing before a notary, with complete transparency."],
         },
       ],
+      scope: {
+        title: "What we buy",
+        body: [
+          "Flats, houses and industrial units, anywhere in Spain. Our head office is in Castelldefels, but we consider properties across the whole country.",
+          "Also when the property is let, inherited, in need of renovation or carries a mortgage or charges: we study it all the same, and its situation is reflected in the offer.",
+        ],
+      },
+      comparison: {
+        title: "A direct sale\n*or an agency*",
+        intro: "They are two different routes, and each has its moment. This is how they differ.",
+        columns: ["Direct sale to Tarida MC", "Sale through an agency"],
+        rows: [
+          { label: "Who buys", values: ["We do, directly", "A buyer the agency finds on the market"] },
+          { label: "Who you deal with", values: ["The buyer, from start to finish", "The agency, between you and each party"] },
+          { label: "Viewings", values: ["Those needed to assess the property", "One for each prospective buyer"] },
+          { label: "Price", values: ["An offer based on our analysis of the asset", "Whatever a buyer on the market accepts"] },
+          { label: "When it suits you", values: ["If you prefer certainty and one counterpart", "If you want the market price and can wait"] },
+        ],
+      },
+      documents: {
+        title: "Documents\n*for selling*",
+        intro:
+          "You do not need them to write to us: to begin, simply tell us about the property. Later on, these are the usual documents in a sale.",
+        items: [
+          "Title deed",
+          "Land Registry extract (nota simple)",
+          "Latest property tax (IBI) receipt",
+          "Energy performance certificate",
+          "Habitability certificate, where the region requires it",
+          "Certificate from the owners' association that fees are paid up",
+          "If there is a mortgage, a statement of the outstanding debt",
+          "If the property is let, the current tenancy agreement",
+        ],
+        note: "If one is missing, that is no obstacle to getting started: we will go through it with you.",
+      },
+      faq: [
+        {
+          question: "What kind of properties do you buy?",
+          answer:
+            "Flats, houses and industrial units. If you have another kind of property, tell us anyway and we will say candidly whether it fits.",
+        },
+        {
+          question: "Where do you buy?",
+          answer:
+            "Anywhere in Spain. Our head office is in Castelldefels, but we consider properties across the whole country.",
+        },
+        {
+          question: "Do you buy let, inherited or run-down properties, or ones with charges?",
+          answer:
+            "Yes. We study them like any other property: their situation is part of the analysis and is reflected in the offer.",
+        },
+        {
+          question: "How do you value a property?",
+          answer:
+            "We look at the location and surroundings, the property type and floor area, its condition, its land registry and planning status, and the potential of the asset.",
+        },
+        {
+          question: "Do you always make an offer?",
+          answer:
+            "No. Only when the transaction fits what we are looking for. If it does not, we tell you just as clearly, without wasting your time.",
+        },
+        {
+          question: "Are you an agency or an intermediary?",
+          answer:
+            "No. If we reach an agreement, the buyer is Tarida MC. You deal directly with us from start to finish.",
+        },
+        {
+          question: "How long does the transaction take?",
+          answer:
+            "It depends on the property, its paperwork and its situation. We will not give you a deadline we cannot keep: we will tell you at every moment what stage the transaction has reached.",
+        },
+        {
+          question: "How do I start?",
+          answer:
+            "Write to us through the form or on WhatsApp with the property type, its location, floor area and situation. We will study it and reply to you personally.",
+        },
+      ],
+      closing: {
+        title: "Thinking of selling\n*your flat or house?*",
+        body: "Tell us about your property. We will study it carefully and give you a clear answer.",
+      },
       whatsappMessage: "Hello, I would like you to consider purchasing my property.",
       cta: "Offer my property",
     },
-    rental: {
-      title: "Industrial units and homes to let",
-      shortTitle: "Rent a property",
-      teaser: "Industrial units and homes in Castelldefels, from our own portfolio.",
+    "purchase-warehouses": {
+      title: "We buy industrial units",
+      shortTitle: "Sell an industrial unit",
+      kicker: "For owners of industrial units",
+      heroTitle: "We buy\n*industrial units*",
+      seoTitle: "We buy industrial units anywhere in Spain | Tarida MC",
+      teaser:
+        "If you own an industrial unit and wish to sell it, vacant or let, we study it and, if it is a good fit, we buy it from you directly.",
       metaDescription:
-        "Industrial units and homes to let in Castelldefels for businesses and individuals. Properties from Tarida MC's own portfolio, dealt with directly.",
+        "We buy industrial units from their owners anywhere in Spain, vacant or let. We analyse every unit and, if it fits, make you an offer.",
       intro:
-        "We let industrial units and homes in Castelldefels to businesses and individuals. They are properties from our own portfolio: we know them well and you deal with us directly.",
+        "We buy industrial units directly from their owners, anywhere in Spain, vacant or with a tenant. We know this kind of asset because we also let units from our own portfolio: we analyse each one in detail and, when the transaction makes sense, we present you with a purchase offer.",
+      imageAlt: "Open-plan interior of an industrial unit with a steel frame and skylights",
+      learnMore: "How we buy industrial units",
+      includesTitle: "What we assess\n*in a unit*",
+      includes: [
+        "Location and access",
+        "Built area and plot size",
+        "Condition of the building and services",
+        "Land registry and planning status",
+        "Whether it is vacant or let",
+      ],
+      process: {
+        title: "How the purchase\n*of your unit works*",
+        intro: "A clear process, with a single counterpart from start to finish.",
+      },
+      sections: [
+        {
+          heading: "You present the unit",
+          body: ["Location, floor area, condition and whether it is vacant or let. Via the form or on WhatsApp."],
+        },
+        {
+          heading: "We analyse the asset",
+          body: ["We study the unit, its surroundings and its potential with the experience of forty years in the sector."],
+        },
+        {
+          heading: "We give you an answer",
+          body: ["If the transaction interests us, we present you with a purchase offer. If not, we tell you just as clearly."],
+        },
+        {
+          heading: "We complete the transaction",
+          body: ["We guide you through every step until signing before a notary, with complete transparency."],
+        },
+      ],
+      scope: {
+        title: "Which units we buy",
+        body: [
+          "Industrial units anywhere in Spain, vacant or with a tenant. Our head office is in Castelldefels, but we consider units across the whole country.",
+          "Also when the unit needs renovation or carries a mortgage or charges: its situation is part of the analysis and is reflected in the offer.",
+        ],
+      },
+      documents: {
+        title: "Documents for selling\n*an industrial unit*",
+        intro:
+          "To begin, simply tell us about the unit. Later on, these are the usual documents in the sale of an industrial unit.",
+        items: [
+          "Title deed",
+          "Land Registry extract (nota simple)",
+          "Latest property tax (IBI) receipt",
+          "If it is let, the current lease",
+          "If there is a mortgage, a statement of the outstanding debt",
+          "Plans and floor areas of the unit, if you have them",
+        ],
+        note: "If one is missing, that is no obstacle to getting started: we will go through it with you.",
+      },
+      faq: [
+        {
+          question: "Do you buy units that are let?",
+          answer:
+            "Yes. If the unit has a tenant, the current lease is part of the analysis and is reflected in the offer.",
+        },
+        {
+          question: "Where do you buy industrial units?",
+          answer:
+            "Anywhere in Spain. Our head office is in Castelldefels, but we consider units across the whole country.",
+        },
+        {
+          question: "What do you assess in an industrial unit?",
+          answer:
+            "Location and access, built area and plot size, the condition of the building and services, its land registry and planning status, and whether it is vacant or let.",
+        },
+        {
+          question: "Do you always make an offer?",
+          answer:
+            "No. Only when the transaction fits what we are looking for. If it does not, we tell you just as clearly, without wasting your time.",
+        },
+        {
+          question: "Are you an agency or an intermediary?",
+          answer:
+            "No. If we reach an agreement, the buyer of the unit is Tarida MC. You deal directly with us from start to finish.",
+        },
+        {
+          question: "How long does the transaction take?",
+          answer:
+            "It depends on the unit, its paperwork and its situation. We will not give you a deadline we cannot keep: we will tell you at every moment what stage the transaction has reached.",
+        },
+        {
+          question: "How do I start?",
+          answer:
+            "Write to us through the form or on WhatsApp with the location of the unit, its floor area, its condition and whether it is vacant or let. We will study it and reply to you personally.",
+        },
+      ],
+      closing: {
+        title: "Thinking of selling\n*your unit?*",
+        body: "Tell us about it. We will study it carefully and give you a clear answer.",
+      },
+      whatsappMessage: "Hello, I would like you to consider purchasing my industrial unit.",
+      cta: "Offer my unit",
+    },
+    "rental-warehouses": {
+      title: "Industrial units to let",
+      shortTitle: "Rent an industrial unit",
+      kicker: "For businesses",
+      heroTitle: "Industrial units\n*to let*",
+      seoTitle: "Industrial units to let in Castelldefels | Tarida MC",
+      teaser: "Industrial units in Castelldefels from our own portfolio, dealt with directly by the owner.",
+      metaDescription:
+        "Industrial units to let in Castelldefels, from Tarida MC's own portfolio. Deal directly with the owner, with no intermediaries.",
+      intro:
+        "We let industrial units from our own portfolio in Castelldefels. We know them well because they are ours: we tell you clearly what is available and you deal directly with the owner, with no intermediaries.",
+      imageAlt: "Bright, open-plan industrial unit with a white steel frame",
+      learnMore: "See units to let",
+      includesTitle: "What we offer",
+      includes: [
+        "Units from our own portfolio",
+        "Direct dealings with the owner",
+        "Clear information on availability",
+        "A personal reply to every enquiry",
+      ],
+      process: {
+        title: "How to rent\n*a unit*",
+        intro: "No intermediaries: you speak with the owner from the first enquiry.",
+      },
+      sections: [
+        {
+          heading: "Tell us what you need",
+          body: ["Approximate floor area, intended use and when you need it. Via the form or on WhatsApp."],
+        },
+        {
+          heading: "We tell you what is available",
+          body: ["We tell you clearly which of our units match what you are looking for."],
+        },
+        {
+          heading: "You view the unit",
+          body: ["We show you the unit and answer your questions about the property."],
+        },
+        {
+          heading: "We sign the lease",
+          body: ["Once everything is clear, we formalise the lease directly with you."],
+        },
+      ],
+      faq: [
+        {
+          question: "Do you let directly, without an agency?",
+          answer: "Yes. The units belong to our own portfolio: you deal directly with the owner, with no intermediaries.",
+        },
+        {
+          question: "Where are the units?",
+          answer: "In Castelldefels. If you are looking in another area, tell us anyway and we will let you know what we have.",
+        },
+        {
+          question: "What information do you need to start?",
+          answer:
+            "The approximate floor area, what you will use the unit for and when you need it. With that we can tell you what is available.",
+        },
+        {
+          question: "How do I find out which units are available?",
+          answer:
+            "Our portfolio changes often. Write to us through the form or on WhatsApp and we will reply personally with what we have.",
+        },
+      ],
+      closing: {
+        title: "Looking for\n*a unit to rent?*",
+        body: "Tell us what you need (floor area, use and date) and we will let you know what we have available.",
+      },
+      whatsappMessage: "Hello, I am looking for an industrial unit to rent.",
+      cta: "Ask about availability",
+    },
+    "rental-homes": {
+      title: "Flats and houses to let",
+      shortTitle: "Rent a home",
+      kicker: "For individuals",
+      heroTitle: "Flats and houses\n*to let*",
+      seoTitle: "Flats and houses to let in Castelldefels | Tarida MC",
+      teaser: "Flats and houses in Castelldefels from our own portfolio, dealt with directly by the owner.",
+      metaDescription:
+        "Flats and houses to let in Castelldefels, from Tarida MC's own portfolio. Deal directly with the owner, with no intermediaries.",
+      intro:
+        "We let flats and houses from our own portfolio in Castelldefels. We know them well because they are ours: we tell you clearly what is available and you deal directly with the owner, with no intermediaries.",
       imageAlt: "Whitewashed Mediterranean house among cypresses",
-      includes: [],
-      sections: [],
-      whatsappMessage: "Hello, I would like information about your properties to let.",
+      learnMore: "See homes to let",
+      includesTitle: "What we offer",
+      includes: [
+        "Homes from our own portfolio",
+        "Direct dealings with the owner",
+        "Clear information on availability",
+        "A personal reply to every enquiry",
+      ],
+      process: {
+        title: "How to rent\n*a home*",
+        intro: "No intermediaries: you speak with the owner from the first enquiry.",
+      },
+      sections: [
+        {
+          heading: "Tell us what you need",
+          body: ["Type of home, number of bedrooms and when you need it. Via the form or on WhatsApp."],
+        },
+        {
+          heading: "We tell you what is available",
+          body: ["We tell you clearly which of our homes match what you are looking for."],
+        },
+        {
+          heading: "You view the home",
+          body: ["We show you the home and answer your questions."],
+        },
+        {
+          heading: "We sign the lease",
+          body: ["Once everything is clear, we formalise the lease directly with you."],
+        },
+      ],
+      faq: [
+        {
+          question: "Do you let directly, without an agency?",
+          answer: "Yes. The homes belong to our own portfolio: you deal directly with the owner, with no intermediaries.",
+        },
+        {
+          question: "Where are the homes?",
+          answer: "In Castelldefels. If you are looking in another area, tell us anyway and we will let you know what we have.",
+        },
+        {
+          question: "What information do you need to start?",
+          answer:
+            "The type of home you are looking for, the number of bedrooms and when you need it. With that we can tell you what is available.",
+        },
+        {
+          question: "How do I find out which homes are available?",
+          answer:
+            "Our portfolio changes often. Write to us through the form or on WhatsApp and we will reply personally with what we have.",
+        },
+      ],
+      closing: {
+        title: "Looking for\n*a home to rent?*",
+        body: "Tell us what you need (type of home, bedrooms and date) and we will let you know what we have available.",
+      },
+      whatsappMessage: "Hello, I am looking for a home to rent.",
       cta: "Ask about availability",
     },
   },

@@ -24,8 +24,10 @@ export const home = {
     title: "Dos maneras\nde *trabajar con usted*",
     purchaseKicker: "Para propietarios",
     purchaseTitle: "Compramos\n*su inmueble*",
+    purchaseBody: "Compramos pisos, casas y naves industriales en toda España. Estudiamos cada operación y, si encaja, se la compramos directamente.",
     rentalKicker: "Para empresas y particulares",
     rentalTitle: "Naves y viviendas\n*en alquiler*",
+    rentalBody: "Naves industriales y viviendas en Castelldefels, de nuestra propia cartera y con trato directo con la propiedad.",
   },
   process: {
     title: "Un proceso\n*claro y directo*",
