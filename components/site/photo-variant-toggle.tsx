@@ -101,8 +101,8 @@ export function PhotoVariantToggle() {
       type="button"
       onClick={() => setVariant(value)}
       aria-pressed={variant === value}
-      className={`grid size-8 place-items-center rounded-full text-xs font-semibold transition-colors ${
-        variant === value ? "bg-white text-[#0b0b0c]" : "text-white/70 hover:text-white"
+      className={`grid size-6 place-items-center rounded-full text-[0.625rem] font-medium transition-colors ${
+        variant === value ? "bg-white text-[#0b0b0c]" : "text-white/60 hover:text-white"
       }`}
     >
       {value.toUpperCase()}
@@ -113,9 +113,8 @@ export function PhotoVariantToggle() {
     <div
       role="group"
       aria-label="Photo set"
-      className="fixed right-5 bottom-24 z-40 flex items-center gap-1 rounded-full border border-white/20 bg-[#0b0b0c]/85 py-1 pr-1 pl-3 text-white shadow-lg backdrop-blur-sm md:right-8 md:bottom-28"
+      className="fixed bottom-5 left-5 z-40 flex items-center gap-0.5 rounded-full bg-[#0b0b0c]/70 p-0.5 backdrop-blur-sm md:bottom-8 md:left-8"
     >
-      <span className="mr-1 text-[0.625rem] font-semibold tracking-[0.14em] uppercase">Fotos</span>
       {button("a")}
       {button("b")}
     </div>
