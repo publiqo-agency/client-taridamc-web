@@ -79,13 +79,16 @@ export function logoTimeline(el: Element, delay = 0) {
   const waves = el.querySelectorAll("[data-logo-wave]");
   const glyphs = el.querySelectorAll("[data-logo-glyph]");
   const sub = el.querySelectorAll("[data-logo-sub]");
-  tl.fromTo(
-    waves,
-    { opacity: 1, clipPath: "inset(0% 100% 0% 0%)" },
-    { clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: CURTAIN, stagger: 0.14 },
-  )
-    .fromTo(glyphs, { opacity: 1, y: 90 }, { y: 0, duration: 1.1, ease: EXPO, stagger: 0.045 }, 0.35)
-    .fromTo(sub, { opacity: 1, y: 48 }, { y: 0, duration: 0.9, ease: EXPO, stagger: 0.03 }, 0.75);
+  // The compact and mark variants have no subtitle (or title); skip what is absent.
+  if (waves.length) {
+    tl.fromTo(
+      waves,
+      { opacity: 1, clipPath: "inset(0% 100% 0% 0%)" },
+      { clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: CURTAIN, stagger: 0.14 },
+    );
+  }
+  if (glyphs.length) tl.fromTo(glyphs, { opacity: 1, y: 90 }, { y: 0, duration: 1.1, ease: EXPO, stagger: 0.045 }, 0.35);
+  if (sub.length) tl.fromTo(sub, { opacity: 1, y: 48 }, { y: 0, duration: 0.9, ease: EXPO, stagger: 0.03 }, 0.75);
   return tl;
 }
 
@@ -100,6 +103,7 @@ export function mount(): () => void {
 
     all('[data-m="lines"]').forEach((el) => {
       const spans = el.querySelectorAll(".mask > span");
+      if (!spans.length) return;
       disposers.push(
         onEnter(el, () =>
           gsap.fromTo(
@@ -113,6 +117,7 @@ export function mount(): () => void {
 
     all('[data-m="chars"]').forEach((el) => {
       const spans = el.querySelectorAll(".mask-inline > span");
+      if (!spans.length) return;
       disposers.push(
         onEnter(el, () =>
           gsap.fromTo(
@@ -210,7 +215,8 @@ export function mount(): () => void {
             el,
             { clipPath: `inset(0px ${side}px 0px ${side}px)` },
             { clipPath: "inset(0px 0px 0px 0px)", duration: 0.7, ease: CURTAIN, delay: 0.15 },
-          ).fromTo(el.children, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.2");
+          );
+          if (el.children.length) tl.fromTo(el.children, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.2");
           return tl;
         }),
       );
@@ -237,8 +243,10 @@ export function mount(): () => void {
     });
 
     all('[data-m="words"]').forEach((el) => {
+      const words = el.querySelectorAll(".w");
+      if (!words.length) return;
       gsap.fromTo(
-        el.querySelectorAll(".w"),
+        words,
         { opacity: 0.14 },
         {
           opacity: 1,
@@ -311,8 +319,10 @@ export function mount(): () => void {
     });
 
     all('[data-m="stroke"]').forEach((el) => {
+      const paths = el.querySelectorAll("path");
+      if (!paths.length) return;
       gsap.fromTo(
-        el.querySelectorAll("path"),
+        paths,
         { strokeDashoffset: 1 },
         {
           strokeDashoffset: 0,
