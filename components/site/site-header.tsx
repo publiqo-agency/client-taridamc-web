@@ -142,12 +142,21 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
         // Tailwind v4 moves it with `translate`, not `transform`: that is the
         // property to transition. It drops in on a long expo-out and leaves
         // on a shorter, even ease so hiding never feels like a snap.
-        className={`fixed inset-x-0 top-0 z-50 transition-[translate,background-color] ${
+        className={`fixed inset-x-0 top-0 z-50 transition-[translate] ${
           hidden && !open
             ? "-translate-y-full duration-500 ease-[cubic-bezier(0.65,0,0.35,1)]"
             : "translate-y-0 duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-        } ${dark ? "band-dark bg-transparent text-ink" : "bg-stock/90 text-ink backdrop-blur-md"}`}
+        } ${dark ? "band-dark text-ink" : "text-ink"}`}
       >
+        {/* The frosted fill lives on this layer, not on <header>: a
+            backdrop-filter on the header would make it the backdrop root of
+            the dropdown, whose own blur would then see nothing of the page. */}
+        <span
+          aria-hidden
+          className={`absolute inset-0 -z-10 transition-colors duration-500 ${
+            dark ? "bg-transparent" : "bg-stock/90 backdrop-blur-md"
+          }`}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-stock"
@@ -206,7 +215,7 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
                       expanded ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
                     }`}
                   >
-                    <ul className="band-light min-w-[17rem] border border-t-0 border-line bg-stock py-2 text-ink shadow-[0_18px_40px_-20px_rgba(6,26,42,0.35)]">
+                    <ul className="band-light min-w-[17rem] border border-t-0 border-line bg-stock/90 py-2 backdrop-blur-md text-ink shadow-[0_18px_40px_-20px_rgba(6,26,42,0.35)]">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
