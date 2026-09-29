@@ -52,9 +52,16 @@ const num = (value: string | undefined, fallback: number) => {
 
 const pad = (n: number, width: number) => String(Math.round(n)).padStart(width, "0");
 
-/** Plays `build()` when `el` enters the viewport, once. */
+/**
+ * Plays `build()` when `el` enters the viewport, once. Anything already on
+ * screen at mount plays straight away: the hero's intro and CTAs sit below
+ * the `start` line of a full-height opener and would otherwise wait for a
+ * scroll to appear.
+ */
 function onEnter(el: Element, build: () => gsap.core.Animation, start = "top 88%") {
   const anim = build();
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) return () => {};
   anim.pause();
   ScrollTrigger.create({ trigger: el, start, once: true, onEnter: () => anim.play() });
   return () => {};
