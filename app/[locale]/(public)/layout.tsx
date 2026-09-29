@@ -10,6 +10,8 @@ import { ConsentBanner } from "@/components/site/consent-banner";
 import { RevealObserver } from "@/components/site/reveal-observer";
 import { MotionRoot } from "@/components/site/motion/motion-root";
 import { Cursor } from "@/components/site/motion/cursor";
+import { PhotoVariantToggle } from "@/components/site/photo-variant-toggle";
+import { SHOW_PENDING } from "@/lib/pending";
 
 /**
  * Public site chrome. All copy is resolved HERE, on the server, and goes
@@ -104,6 +106,9 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
       />
 
       <WhatsAppBubble aria={whatsapp.aria} message={whatsapp.messages.general} />
+
+      {/* Preview-only: lets the client compare the two photo sets. */}
+      {SHOW_PENDING && <PhotoVariantToggle />}
 
       {/* Without a container there is nothing to consent to: asking permission
           for not measuring would be pure noise. */}
