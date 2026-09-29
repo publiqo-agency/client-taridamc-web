@@ -2,19 +2,43 @@ import type { ServicesDict } from "@/lib/i18n/types";
 
 /** English services copy. Same shape as dictionaries/es/services.ts. */
 export const services: ServicesDict = {
-  meta: {
-    title: "Services",
-    seoTitle: "Property purchase and letting: services | Tarida MC",
-    description:
-      "We buy flats, houses and industrial units anywhere in Spain, and let industrial units and homes from our own portfolio in Castelldefels.",
-  },
-  index: {
-    eyebrow: "Services",
-    title: "Buying and letting,\n*with the same judgement*",
-    intro:
-      "We buy flats, houses and industrial units anywhere in Spain, and let industrial units and homes from our own portfolio. Four services, one way of working: studying every property carefully and treating every client with candour.",
-    imageAlt: "White wall with a wooden door and an olive tree",
-    allServices: "All services",
+  hubs: {
+    sale: {
+      title: "Sell",
+      seoTitle: "Sell your flat, house or unit in Spain | Tarida MC",
+      description:
+        "We buy flats, houses and industrial units anywhere in Spain. We study every property carefully and give you a clear answer.",
+      eyebrow: "Sell",
+      heroTitle: "Sell your property\n*directly*",
+      imageAlt: "White wall with a wooden door and an olive tree",
+      introLabel: "We buy property",
+      intro:
+        "We buy flats, houses and industrial units anywhere in Spain. We study every property carefully and treat every owner with candour: a clear answer, without detours.",
+      closing: {
+        title: "Thinking of selling\n*your property?*",
+        body: "Tell us about your property. We will study it carefully and give you a clear answer.",
+      },
+      cta: "Offer my property",
+      whatsappMessage: "Hello, I would like you to consider purchasing my property.",
+    },
+    rental: {
+      title: "To let",
+      seoTitle: "Units and homes to let in Castelldefels | Tarida MC",
+      description:
+        "Industrial units and homes to let in Castelldefels, from our own portfolio. Dealt with directly by the owner.",
+      eyebrow: "To let",
+      heroTitle: "Industrial units\n*and homes to let*",
+      imageAlt: "Whitewashed Mediterranean house among cypresses",
+      introLabel: "Our portfolio",
+      intro:
+        "We let industrial units and homes from our own portfolio in Castelldefels. You deal directly with the owner, with the seriousness of forty years in the sector.",
+      closing: {
+        title: "Looking for a unit\n*or a home?*",
+        body: "Tell us what you are looking for — approximate size and area — and we will let you know what we have available.",
+      },
+      cta: "Ask about availability",
+      whatsappMessage: "Hello, I am looking for a property to rent.",
+    },
   },
   detail: {
     faqTitle: "Frequently\n*asked questions*",

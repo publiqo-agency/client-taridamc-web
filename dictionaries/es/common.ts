@@ -18,9 +18,8 @@ export const common = {
   },
   nav: {
     home: "Inicio",
-    services: "Servicios",
-    sell: "Vender su inmueble",
-    rent: "Alquiler",
+    sale: "Venta",
+    rental: "Alquiler",
     about: "Nosotros",
     contact: "Contacto",
     menu: "Menú",
@@ -32,7 +31,6 @@ export const common = {
     contact: "Contactar",
     whatsapp: "Escríbanos por WhatsApp",
     back: "Volver al inicio",
-    allServices: "Ver todos los servicios",
     learnMore: "Saber más",
   },
   brand: {

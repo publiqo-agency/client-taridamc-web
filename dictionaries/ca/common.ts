@@ -12,9 +12,8 @@ export const common: CommonDict = {
   },
   nav: {
     home: "Inici",
-    services: "Serveis",
-    sell: "Vendre el seu immoble",
-    rent: "Lloguer",
+    sale: "Venda",
+    rental: "Lloguer",
     about: "Nosaltres",
     contact: "Contacte",
     menu: "Menú",
@@ -26,7 +25,6 @@ export const common: CommonDict = {
     contact: "Contactar",
     whatsapp: "Escrigui'ns per WhatsApp",
     back: "Tornar a l'inici",
-    allServices: "Veure tots els serveis",
     learnMore: "Més informació",
   },
   brand: {

@@ -145,7 +145,7 @@ export function websiteSchema() {
   };
 }
 
-/** Ordered list of links (the services index). */
+/** Ordered list of links (a hub's service pages). */
 export function itemListSchema(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",

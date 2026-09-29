@@ -30,26 +30,22 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
   const homeHref = localeHref(locale, "home");
   const contactHref = localeHref(locale, "contact");
   const aboutHref = localeHref(locale, "about");
-  const sellHref = serviceHref(locale, "purchase");
-  const servicesHref = localeHref(locale, "services");
+  const saleHref = localeHref(locale, "sale");
+  const rentalHref = localeHref(locale, "rental");
 
-  // The header's inline links: the seller lead first, it is what the site
-  // pushes; contact is the button beside them. Three links fit the bar down
-  // to 1024 px; "Alquiler" opens the services index, where both rental
-  // pages (naves, homes) sit side by side.
+  // The header's inline links: the two sides of the business, the seller
+  // lead first (it is what the site pushes); contact is the button beside
+  // them. Each hub lists its own service pages.
   const navItems = [
-    { href: sellHref, label: nav.sell },
-    { href: servicesHref, label: nav.rent },
+    { href: saleHref, label: nav.sale },
+    { href: rentalHref, label: nav.rental },
     { href: aboutHref, label: nav.about },
   ];
 
-  // The full-screen menu has room for every page, so rentals go direct.
+  // The full-screen menu: the same pages, home and contact included.
   const menuItems = [
     { href: homeHref, label: nav.home },
-    { href: sellHref, label: nav.sell },
-    { href: serviceHref(locale, "rental-warehouses"), label: dict.services.items["rental-warehouses"].shortTitle },
-    { href: serviceHref(locale, "rental-homes"), label: dict.services.items["rental-homes"].shortTitle },
-    { href: aboutHref, label: nav.about },
+    ...navItems,
     { href: contactHref, label: nav.contact },
   ];
 
@@ -92,7 +88,8 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
             title: footer.navTitle,
             links: [
               { href: homeHref, label: nav.home },
-              { href: localeHref(locale, "services"), label: nav.services },
+              { href: saleHref, label: nav.sale },
+              { href: rentalHref, label: nav.rental },
               { href: aboutHref, label: nav.about },
               { href: contactHref, label: nav.contact },
             ],
