@@ -1,14 +1,15 @@
 export const contact = {
   meta: {
     title: "Contacto",
+    seoTitle: "Contacto: vender o alquilar un inmueble | Tarida MC",
     description:
-      "Contacte con Tarida MC en Castelldefels: proponga un inmueble para su compra o consulte naves y viviendas en alquiler.",
+      "Contacte con Tarida MC: proponga su piso, casa o nave para que lo compremos, o consulte nuestras naves y viviendas en alquiler.",
   },
   hero: {
     eyebrow: "Contacto",
     title: "Hablemos de\n*su inmueble*",
     intro:
-      "Cuéntenos qué necesita: vender una propiedad o alquilar una nave o una vivienda. Le responderemos personalmente.",
+      "Cuéntenos qué necesita: vender un piso, una casa o una nave, o alquilar una nave o una vivienda. Le responderemos personalmente.",
     imageAlt: "Porche de arcos abierto al mar Mediterráneo",
   },
   aside: {

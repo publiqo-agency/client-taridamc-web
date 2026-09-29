@@ -4,21 +4,21 @@ import type { HomeDict } from "@/lib/i18n/types";
 export const home: HomeDict = {
   meta: {
     title: "Home",
-    seoTitle: "Tarida MC · Property purchase and rentals in Castelldefels",
+    seoTitle: "Tarida MC · We buy flats, houses and units across Spain",
     description:
-      "A family business in Castelldefels with forty years in the sector. We buy properties directly from their owners and let industrial units and homes.",
+      "A family business with forty years in real estate. We buy flats, houses and industrial units from owners across Spain, and let our own units and homes.",
   },
   hero: {
     titleTop: "Property",
     titleBottom: "with judgement",
     intro:
-      "Forty years buying and letting property. We study every property with care and answer with clarity.",
+      "We buy flats, houses and industrial units anywhere in Spain and let properties from our own portfolio. Forty years studying every property with care and answering with clarity.",
     ctaPrimary: "Sell your property",
     ctaSecondary: "Properties to let",
     imageAlt: "Contemporary architecture facing the sea at sunset",
   },
   manifesto: {
-    text: "We are a family business in Castelldefels. For forty years we have bought and let property by one rule: *integrity, honesty and transparency* in every transaction.",
+    text: "We are a family business. For forty years we have bought and let property by one rule: *integrity, honesty and transparency* in every transaction.",
     signature: "Ramon Seva",
     role: "Head of Tarida MC",
     cta: "About us",

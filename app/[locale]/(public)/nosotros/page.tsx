@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { pageMetadata } from "@/lib/i18n/metadata";
-import { localeHref, routePaths } from "@/lib/routes";
+import Link from "next/link";
+import { localeHref, routePaths, serviceHref } from "@/lib/routes";
+import { SERVICE_IDS } from "@/lib/services";
 import { routeBreadcrumb } from "@/lib/schema";
 import { proposalFormHref } from "@/lib/whatsapp";
 import { DISPLAY, DISPLAY_QUIET, DISPLAY_SANS, FRAME, ACCENT, SECTION } from "@/lib/styles";
@@ -14,7 +16,7 @@ import { Media } from "@/components/site/media";
 import { Sundial } from "@/components/site/sundial";
 import { ValuesGrid } from "@/components/site/values-grid";
 import { ClosingBand } from "@/components/site/closing-band";
-import { PillButton } from "@/components/site/pill-button";
+import { Arrow, PillButton } from "@/components/site/pill-button";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 import { Lines } from "@/components/site/motion/split";
 
@@ -26,6 +28,7 @@ export async function generateMetadata(props: PageProps<"/[locale]/nosotros">): 
     locale,
     paths: routePaths("about"),
     title: dict.about.meta.title,
+    seoTitle: dict.about.meta.seoTitle,
     description: dict.about.meta.description,
   });
 }
@@ -74,6 +77,25 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
                 ))}
               </div>
             ))}
+
+            {/* What the company does, linked: the about page is where AI
+                answers and searchers land to check who is behind the offer. */}
+            <nav aria-label={about.servicesTitle} data-m="fade">
+              <p className="label text-ink-soft">{about.servicesTitle}</p>
+              <ul className="mt-5 border-t border-line">
+                {SERVICE_IDS.map((id) => (
+                  <li key={id}>
+                    <Link
+                      href={serviceHref(locale, id)}
+                      className="group flex items-center justify-between gap-6 border-b border-line py-4 text-lg transition-colors hover:text-accent"
+                    >
+                      {services.items[id].title}
+                      <Arrow />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
             <p className="flex items-end gap-4 border-t border-line pt-10" data-m="fade">
               <span data-m="count" data-to="40" data-pad="2" className={`${DISPLAY_SANS} tnum text-[clamp(6rem,12vw,12rem)] leading-[0.78]`}>

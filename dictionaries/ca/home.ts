@@ -4,21 +4,21 @@ import type { HomeDict } from "@/lib/i18n/types";
 export const home: HomeDict = {
   meta: {
     title: "Inici",
-    seoTitle: "Tarida MC · Compra i lloguer d'immobles a Castelldefels",
+    seoTitle: "Tarida MC · Comprem pisos, cases i naus a tota Espanya",
     description:
-      "Empresa familiar de Castelldefels amb quaranta anys al sector. Comprem immobles als seus propietaris i lloguem naus industrials i habitatges.",
+      "Empresa familiar amb quaranta anys al sector. Comprem pisos, cases i naus als seus propietaris a tota Espanya i lloguem naus i habitatges propis.",
   },
   hero: {
     titleTop: "Immobles",
     titleBottom: "amb criteri",
     intro:
-      "Quaranta anys comprant i llogant propietats. Estudiem cada immoble amb calma i responem amb claredat.",
+      "Comprem pisos, cases i naus industrials a tota Espanya i lloguem immobles de la nostra pròpia cartera. Quaranta anys estudiant cada immoble amb calma i responent amb claredat.",
     ctaPrimary: "Vendre el seu immoble",
     ctaSecondary: "Immobles de lloguer",
     imageAlt: "Arquitectura contemporània davant del mar a la posta de sol",
   },
   manifesto: {
-    text: "Som una empresa familiar de Castelldefels. Des de fa quaranta anys comprem i lloguem immobles amb una mateixa regla: *serietat, honestedat i transparència* en cada operació.",
+    text: "Som una empresa familiar. Des de fa quaranta anys comprem i lloguem immobles amb una mateixa regla: *serietat, honestedat i transparència* en cada operació.",
     signature: "Ramon Seva",
     role: "Al capdavant de Tarida MC",
     cta: "Coneixe'ns",

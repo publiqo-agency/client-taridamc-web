@@ -1,21 +1,21 @@
 export const home = {
   meta: {
     title: "Inicio",
-    seoTitle: "Tarida MC · Compra y alquiler de inmuebles en Castelldefels",
+    seoTitle: "Tarida MC · Compramos pisos, casas y naves en toda España",
     description:
-      "Empresa familiar de Castelldefels con cuarenta años en el sector. Compramos inmuebles a sus propietarios y alquilamos naves industriales y viviendas.",
+      "Empresa familiar con cuarenta años en el sector. Compramos pisos, casas y naves a sus propietarios en toda España y alquilamos naves y viviendas propias.",
   },
   hero: {
     titleTop: "Inmuebles",
     titleBottom: "con criterio",
     intro:
-      "Cuarenta años comprando y alquilando propiedades. Estudiamos cada inmueble con calma y respondemos con claridad.",
+      "Compramos pisos, casas y naves industriales en toda España y alquilamos inmuebles de nuestra propia cartera. Cuarenta años estudiando cada inmueble con calma y respondiendo con claridad.",
     ctaPrimary: "Vender su inmueble",
     ctaSecondary: "Inmuebles en alquiler",
     imageAlt: "Arquitectura contemporánea frente al mar al atardecer",
   },
   manifesto: {
-    text: "Somos una empresa familiar de Castelldefels. Desde hace cuarenta años compramos y alquilamos inmuebles con una misma regla: *seriedad, honestidad y transparencia* en cada operación.",
+    text: "Somos una empresa familiar. Desde hace cuarenta años compramos y alquilamos inmuebles con una misma regla: *seriedad, honestidad y transparencia* en cada operación.",
     signature: "Ramon Seva",
     role: "Al frente de Tarida MC",
     cta: "Conózcanos",

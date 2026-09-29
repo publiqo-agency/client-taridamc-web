@@ -4,21 +4,21 @@ import type { HomeDict } from "@/lib/i18n/types";
 export const home: HomeDict = {
   meta: {
     title: "Accueil",
-    seoTitle: "Tarida MC · Achat et location de biens immobiliers à Castelldefels",
+    seoTitle: "Tarida MC · Achat de logements et d’entrepôts en Espagne",
     description:
-      "Entreprise familiale de Castelldefels forte de quarante ans d’expérience. Nous achetons des biens directement à leurs propriétaires et louons des locaux industriels et des logements.",
+      "Entreprise familiale forte de quarante ans d’expérience. Nous achetons appartements, maisons et entrepôts partout en Espagne et louons nos propres biens.",
   },
   hero: {
     titleTop: "L’immobilier",
     titleBottom: "avec discernement",
     intro:
-      "Quarante ans à acheter et louer des biens. Nous étudions chaque bien sans précipitation et répondons avec clarté.",
+      "Nous achetons appartements, maisons et entrepôts partout en Espagne et louons des biens de notre propre patrimoine. Quarante ans à étudier chaque bien sans précipitation et à répondre avec clarté.",
     ctaPrimary: "Vendre votre bien",
     ctaSecondary: "Biens à louer",
     imageAlt: "Architecture contemporaine face à la mer au coucher du soleil",
   },
   manifesto: {
-    text: "Nous sommes une entreprise familiale de Castelldefels. Depuis quarante ans, nous achetons et louons des biens immobiliers selon une même règle : *sérieux, honnêteté et transparence* à chaque opération.",
+    text: "Nous sommes une entreprise familiale. Depuis quarante ans, nous achetons et louons des biens immobiliers selon une même règle : *sérieux, honnêteté et transparence* à chaque opération.",
     signature: "Ramon Seva",
     role: "À la tête de Tarida MC",
     cta: "Mieux nous connaître",

@@ -4,14 +4,15 @@ import type { ContactDict } from "@/lib/i18n/types";
 export const contact: ContactDict = {
   meta: {
     title: "Contact",
+    seoTitle: "Contact: sell your property or ask about rentals | Tarida MC",
     description:
-      "Contact Tarida MC in Castelldefels: offer us a property to buy, or enquire about industrial units and homes to let.",
+      "Contact Tarida MC: offer us your flat, house or industrial unit to buy, or ask about our industrial units and homes to let.",
   },
   hero: {
     eyebrow: "Contact",
     title: "Let's talk about\n*your property*",
     intro:
-      "Tell us what you need: to sell a property, or to rent an industrial unit or a home. We will reply to you personally.",
+      "Tell us what you need: to sell a flat, a house or an industrial unit, or to rent a unit or a home. We will reply to you personally.",
     imageAlt: "Arched porch open to the Mediterranean Sea",
   },
   aside: {

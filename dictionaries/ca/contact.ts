@@ -4,14 +4,15 @@ import type { ContactDict } from "@/lib/i18n/types";
 export const contact: ContactDict = {
   meta: {
     title: "Contacte",
+    seoTitle: "Contacte: vendre o llogar un immoble | Tarida MC",
     description:
-      "Contacti amb Tarida MC a Castelldefels: proposi un immoble perquè el comprem o consulti naus i habitatges de lloguer.",
+      "Contacti amb Tarida MC: proposi el seu pis, casa o nau perquè el comprem, o consulti les nostres naus i habitatges de lloguer.",
   },
   hero: {
     eyebrow: "Contacte",
     title: "Parlem del\n*seu immoble*",
     intro:
-      "Expliqui'ns què necessita: vendre una propietat o llogar una nau o un habitatge. Li respondrem personalment.",
+      "Expliqui'ns què necessita: vendre un pis, una casa o una nau, o llogar una nau o un habitatge. Li respondrem personalment.",
     imageAlt: "Porxo d'arcs obert al mar Mediterrani",
   },
   aside: {

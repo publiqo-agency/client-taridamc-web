@@ -8,7 +8,7 @@ export const common: CommonDict = {
   meta: {
     defaultTitle: "Tarida MC",
     description:
-      "Tarida MC, empresa familiar de Castelldefels amb quaranta anys al sector immobiliari. Comprem immobles i lloguem naus industrials i habitatges.",
+      "Tarida MC, empresa familiar amb quaranta anys al sector immobiliari. Comprem pisos, cases i naus a tota Espanya i lloguem naus i habitatges propis.",
   },
   nav: {
     home: "Inici",
@@ -83,7 +83,7 @@ export const common: CommonDict = {
   closing: {
     title: "Pensa a vendre\n*la seva propietat?*",
     body: "Expliqui'ns quin immoble té. L'estudiarem amb atenció i li donarem una resposta clara.",
-    imageAlt: "Balcó d'una finca de l'Eixample de Barcelona",
+    imageAlt: "Balcó de ferro forjat a la façana d'una finca clàssica",
   },
   whatsapp: {
     aria: "Obrir WhatsApp",
@@ -92,7 +92,7 @@ export const common: CommonDict = {
     },
   },
   footer: {
-    tagline: "Empresa familiar a Castelldefels. Quaranta anys comprant i llogant immobles.",
+    tagline: "Empresa familiar amb quaranta anys comprant i llogant immobles a tota Espanya.",
     navTitle: "Seccions",
     servicesTitle: "Serveis",
     contactTitle: "Contacte",

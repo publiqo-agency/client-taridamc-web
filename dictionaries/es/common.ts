@@ -5,14 +5,16 @@
  * Copy conventions shared by every dictionary: "\n" is a line break the
  * design relies on (headlines rise line by line) and *asterisks* mark the
  * italic serif accent phrase. Facts only from the brief: a family business
- * in Castelldefels, forty years in the sector, run by Ramon Seva; they buy
- * properties after analysing them and rent industrial units and homes.
+ * based in Castelldefels, forty years in the sector, run by Ramon Seva; they
+ * buy flats, houses and naves anywhere in Spain after analysing them, and let
+ * naves and homes of their own in Castelldefels. The copy leads with Spain,
+ * not with the town: Castelldefels is the base, not the market.
  */
 export const common = {
   meta: {
     defaultTitle: "Tarida MC",
     description:
-      "Tarida MC, empresa familiar de Castelldefels con cuarenta años en el sector inmobiliario. Compramos inmuebles y alquilamos naves industriales y viviendas.",
+      "Tarida MC, empresa familiar con cuarenta años en el sector inmobiliario. Compramos pisos, casas y naves en toda España y alquilamos naves y viviendas propias.",
   },
   nav: {
     home: "Inicio",
@@ -87,7 +89,7 @@ export const common = {
   closing: {
     title: "¿Piensa en vender\n*su propiedad?*",
     body: "Cuéntenos qué inmueble tiene. Lo estudiaremos con atención y le daremos una respuesta clara.",
-    imageAlt: "Balcón de una finca del Eixample de Barcelona",
+    imageAlt: "Balcón de hierro forjado en la fachada de una finca clásica",
   },
   whatsapp: {
     aria: "Abrir WhatsApp",
@@ -96,7 +98,7 @@ export const common = {
     },
   },
   footer: {
-    tagline: "Empresa familiar en Castelldefels. Cuarenta años comprando y alquilando inmuebles.",
+    tagline: "Empresa familiar con cuarenta años comprando y alquilando inmuebles en toda España.",
     navTitle: "Secciones",
     servicesTitle: "Servicios",
     contactTitle: "Contacto",

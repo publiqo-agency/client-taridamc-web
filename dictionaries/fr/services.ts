@@ -4,7 +4,7 @@ import type { ServicesDict } from "@/lib/i18n/types";
 export const services: ServicesDict = {
   meta: {
     title: "Services",
-    seoTitle: "Achat et location de biens : nos services | Tarida MC",
+    seoTitle: "Achat et location de biens : nos services | Tarida MC",
     description:
       "Nous achetons appartements, maisons et entrepôts partout en Espagne et louons entrepôts et logements de notre patrimoine à Castelldefels.",
   },
@@ -12,7 +12,7 @@ export const services: ServicesDict = {
     eyebrow: "Services",
     title: "Acheter et louer,\n*avec la même exigence*",
     intro:
-      "Nous achetons appartements, maisons et entrepôts partout en Espagne et louons entrepôts et logements de notre propre patrimoine. Quatre services, une seule façon de travailler : étudier chaque bien avec attention et traiter chaque client avec franchise.",
+      "Nous achetons appartements, maisons et entrepôts partout en Espagne et louons entrepôts et logements de notre propre patrimoine. Quatre services, une seule façon de travailler : étudier chaque bien avec attention et traiter chaque client avec franchise.",
     imageAlt: "Mur blanc avec une porte en bois et un olivier",
     allServices: "Tous les services",
   },
@@ -29,9 +29,9 @@ export const services: ServicesDict = {
       heroTitle: "Nous achetons\n*votre appartement ou maison*",
       seoTitle: "Nous achetons votre logement en Espagne | Tarida MC",
       teaser:
-        "Vous possédez un appartement ou une maison et souhaitez le vendre ? Nous étudions l’opération et, si elle nous convient, nous l’achetons directement, partout en Espagne.",
+        "Vous possédez un appartement ou une maison et souhaitez le vendre ? Nous étudions l’opération et, si elle nous convient, nous l’achetons directement, partout en Espagne.",
       metaDescription:
-        "Nous achetons appartements et maisons directement à leurs propriétaires, partout en Espagne. Nous étudions chaque bien et, s’il convient, faisons une offre.",
+        "Nous achetons appartements et maisons à leurs propriétaires, partout en Espagne. Nous étudions chaque bien et, s’il convient, faisons une offre.",
       intro:
         "Nous achetons appartements et maisons directement à leurs propriétaires, partout en Espagne. Nous analysons chaque bien en détail et, lorsque l’opération a du sens, nous vous présentons une proposition d’achat. Sans intermédiaire, avec le sérieux d’une entreprise familiale forte de quarante ans d’expérience dans le secteur.",
       imageAlt: "Avant-toit en tuiles et volet d’une maison méditerranéenne dans une lumière chaude",
@@ -51,7 +51,7 @@ export const services: ServicesDict = {
       sections: [
         {
           heading: "Vous nous présentez le bien",
-          body: ["Dites-nous de quel bien il s’agit : type, emplacement, surface et situation. Par formulaire ou par WhatsApp."],
+          body: ["Dites-nous de quel bien il s’agit : type, emplacement, surface et situation. Par formulaire ou par WhatsApp."],
         },
         {
           heading: "Nous analysons l’actif",
@@ -70,7 +70,7 @@ export const services: ServicesDict = {
         title: "Ce que nous achetons",
         body: [
           "Appartements, maisons et entrepôts, partout en Espagne. Notre siège est à Castelldefels, mais nous étudions des biens dans tout le pays.",
-          "Y compris lorsque le bien est loué, issu d’une succession, à rénover ou grevé d’une hypothèque ou de charges : nous l’étudions de la même façon, et sa situation est prise en compte dans la proposition.",
+          "Y compris lorsque le bien est loué, issu d’une succession, à rénover ou grevé d’une hypothèque ou de charges : nous l’étudions de la même façon, et sa situation est prise en compte dans la proposition.",
         ],
       },
       comparison: {
@@ -88,7 +88,7 @@ export const services: ServicesDict = {
       documents: {
         title: "Documents\n*pour vendre*",
         intro:
-          "Vous n’en avez pas besoin pour nous écrire : pour commencer, il suffit de nous décrire le bien. Par la suite, voici les documents habituels d’une vente.",
+          "Vous n’en avez pas besoin pour nous écrire : pour commencer, il suffit de nous décrire le bien. Par la suite, voici les documents habituels d’une vente.",
         items: [
           "Titre de propriété",
           "Extrait du Registre de la propriété (nota simple)",
@@ -99,52 +99,52 @@ export const services: ServicesDict = {
           "En cas d’hypothèque, un certificat du capital restant dû",
           "Si le bien est loué, le bail en cours",
         ],
-        note: "S’il en manque un, ce n’est pas un obstacle pour commencer : nous le vérifions avec vous.",
+        note: "S’il en manque un, ce n’est pas un obstacle pour commencer : nous le vérifions avec vous.",
       },
       faq: [
         {
-          question: "Quels types de biens achetez-vous ?",
+          question: "Quels types de biens achetez-vous ?",
           answer:
-            "Des appartements, des maisons et des entrepôts. Si vous avez un autre type de bien, parlez-nous-en quand même : nous vous dirons franchement s’il nous convient.",
+            "Des appartements, des maisons et des entrepôts. Si vous avez un autre type de bien, parlez-nous-en quand même : nous vous dirons franchement s’il nous convient.",
         },
         {
-          question: "Dans quelles zones achetez-vous ?",
+          question: "Dans quelles zones achetez-vous ?",
           answer:
             "Partout en Espagne. Notre siège est à Castelldefels, mais nous étudions des biens dans tout le pays.",
         },
         {
-          question: "Achetez-vous des biens loués, hérités, à rénover ou grevés de charges ?",
+          question: "Achetez-vous des biens loués, hérités, à rénover ou grevés de charges ?",
           answer:
-            "Oui. Nous les étudions comme n’importe quel autre bien : leur situation fait partie de l’analyse et est prise en compte dans la proposition.",
+            "Oui. Nous les étudions comme n’importe quel autre bien : leur situation fait partie de l’analyse et est prise en compte dans la proposition.",
         },
         {
-          question: "Comment évaluez-vous un bien ?",
+          question: "Comment évaluez-vous un bien ?",
           answer:
             "Nous étudions l’emplacement et l’environnement, le type de bien et sa surface, son état de conservation, sa situation juridique et urbanistique et le potentiel de l’actif.",
         },
         {
-          question: "Faites-vous toujours une proposition d’achat ?",
+          question: "Faites-vous toujours une proposition d’achat ?",
           answer:
             "Non. Seulement lorsque l’opération correspond à ce que nous recherchons. Sinon, nous vous le disons avec la même clarté, sans vous faire perdre de temps.",
         },
         {
-          question: "Êtes-vous une agence ou un intermédiaire ?",
+          question: "Êtes-vous une agence ou un intermédiaire ?",
           answer:
             "Non. Si nous parvenons à un accord, l’acheteur est Tarida MC. Vous traitez directement avec nous du début à la fin.",
         },
         {
-          question: "Combien de temps dure l’opération ?",
+          question: "Combien de temps dure l’opération ?",
           answer:
-            "Cela dépend du bien, de ses documents et de sa situation. Nous ne vous donnerons pas de délai que nous ne pourrions pas tenir : nous vous dirons à tout moment où en est l’opération.",
+            "Cela dépend du bien, de ses documents et de sa situation. Nous ne vous donnerons pas de délai que nous ne pourrions pas tenir : nous vous dirons à tout moment où en est l’opération.",
         },
         {
-          question: "Comment commencer ?",
+          question: "Comment commencer ?",
           answer:
             "Écrivez-nous par le formulaire ou par WhatsApp en indiquant le type de bien, son emplacement, sa surface et sa situation. Nous l’étudierons et vous répondrons personnellement.",
         },
       ],
       closing: {
-        title: "Vous pensez vendre\n*votre logement ?*",
+        title: "Vous pensez vendre\n*votre logement ?*",
         body: "Présentez-nous votre bien. Nous l’étudierons avec attention et vous donnerons une réponse claire.",
       },
       whatsappMessage: "Bonjour, je souhaiterais vous proposer l’achat de mon bien.",
@@ -157,11 +157,11 @@ export const services: ServicesDict = {
       heroTitle: "Nous achetons\n*des entrepôts*",
       seoTitle: "Nous achetons des entrepôts en Espagne | Tarida MC",
       teaser:
-        "Vous possédez un entrepôt et souhaitez le vendre, libre ou loué ? Nous l’étudions et, s’il nous convient, nous l’achetons directement.",
+        "Vous possédez un entrepôt et souhaitez le vendre, libre ou loué ? Nous l’étudions et, s’il nous convient, nous l’achetons directement.",
       metaDescription:
         "Nous achetons des entrepôts à leurs propriétaires partout en Espagne, libres ou loués. Nous étudions chaque bien et, s’il convient, faisons une offre.",
       intro:
-        "Nous achetons des entrepôts et bâtiments industriels directement à leurs propriétaires, partout en Espagne, libres ou loués. Nous connaissons ce type d’actif car nous louons aussi des entrepôts de notre propre patrimoine : nous analysons chacun en détail et, lorsque l’opération a du sens, nous vous présentons une proposition d’achat.",
+        "Nous achetons des entrepôts et bâtiments industriels directement à leurs propriétaires, partout en Espagne, libres ou loués. Nous connaissons ce type d’actif car nous louons aussi des entrepôts de notre propre patrimoine : nous analysons chacun en détail et, lorsque l’opération a du sens, nous vous présentons une proposition d’achat.",
       imageAlt: "Intérieur dégagé d’un entrepôt à structure en acier avec des verrières",
       learnMore: "Comment nous achetons les entrepôts",
       includesTitle: "Ce que nous évaluons\n*dans un entrepôt*",
@@ -198,7 +198,7 @@ export const services: ServicesDict = {
         title: "Les entrepôts que nous achetons",
         body: [
           "Entrepôts et bâtiments industriels partout en Espagne, libres ou loués. Notre siège est à Castelldefels, mais nous étudions des entrepôts dans tout le pays.",
-          "Y compris lorsque l’entrepôt est à rénover ou grevé d’une hypothèque ou de charges : sa situation fait partie de l’analyse et est prise en compte dans la proposition.",
+          "Y compris lorsque l’entrepôt est à rénover ou grevé d’une hypothèque ou de charges : sa situation fait partie de l’analyse et est prise en compte dans la proposition.",
         ],
       },
       documents: {
@@ -213,47 +213,47 @@ export const services: ServicesDict = {
           "En cas d’hypothèque, un certificat du capital restant dû",
           "Plans et surfaces de l’entrepôt, si vous les avez",
         ],
-        note: "S’il en manque un, ce n’est pas un obstacle pour commencer : nous le vérifions avec vous.",
+        note: "S’il en manque un, ce n’est pas un obstacle pour commencer : nous le vérifions avec vous.",
       },
       faq: [
         {
-          question: "Achetez-vous des entrepôts loués ?",
+          question: "Achetez-vous des entrepôts loués ?",
           answer:
             "Oui. Si l’entrepôt a un locataire, le bail en cours fait partie de l’analyse et est pris en compte dans la proposition.",
         },
         {
-          question: "Dans quelles zones achetez-vous des entrepôts ?",
+          question: "Dans quelles zones achetez-vous des entrepôts ?",
           answer:
             "Partout en Espagne. Notre siège est à Castelldefels, mais nous étudions des entrepôts dans tout le pays.",
         },
         {
-          question: "Qu’évaluez-vous dans un entrepôt ?",
+          question: "Qu’évaluez-vous dans un entrepôt ?",
           answer:
             "L’emplacement et les accès, la surface bâtie et celle du terrain, l’état du bâtiment et des installations, la situation juridique et urbanistique et s’il est libre ou loué.",
         },
         {
-          question: "Faites-vous toujours une proposition d’achat ?",
+          question: "Faites-vous toujours une proposition d’achat ?",
           answer:
             "Non. Seulement lorsque l’opération correspond à ce que nous recherchons. Sinon, nous vous le disons avec la même clarté, sans vous faire perdre de temps.",
         },
         {
-          question: "Êtes-vous une agence ou un intermédiaire ?",
+          question: "Êtes-vous une agence ou un intermédiaire ?",
           answer:
             "Non. Si nous parvenons à un accord, l’acheteur de l’entrepôt est Tarida MC. Vous traitez directement avec nous du début à la fin.",
         },
         {
-          question: "Combien de temps dure l’opération ?",
+          question: "Combien de temps dure l’opération ?",
           answer:
-            "Cela dépend de l’entrepôt, de ses documents et de sa situation. Nous ne vous donnerons pas de délai que nous ne pourrions pas tenir : nous vous dirons à tout moment où en est l’opération.",
+            "Cela dépend de l’entrepôt, de ses documents et de sa situation. Nous ne vous donnerons pas de délai que nous ne pourrions pas tenir : nous vous dirons à tout moment où en est l’opération.",
         },
         {
-          question: "Comment commencer ?",
+          question: "Comment commencer ?",
           answer:
             "Écrivez-nous par le formulaire ou par WhatsApp en indiquant l’emplacement de l’entrepôt, sa surface, son état et s’il est libre ou loué. Nous l’étudierons et vous répondrons personnellement.",
         },
       ],
       closing: {
-        title: "Vous pensez vendre\n*votre entrepôt ?*",
+        title: "Vous pensez vendre\n*votre entrepôt ?*",
         body: "Présentez-le-nous. Nous l’étudierons avec attention et vous donnerons une réponse claire.",
       },
       whatsappMessage: "Bonjour, je souhaiterais vous proposer l’achat de mon entrepôt.",
@@ -269,7 +269,7 @@ export const services: ServicesDict = {
       metaDescription:
         "Location d’entrepôts à Castelldefels, issus du patrimoine de Tarida MC. Vous traitez directement avec le propriétaire, sans intermédiaire.",
       intro:
-        "Nous louons des entrepôts de notre propre patrimoine à Castelldefels. Nous les connaissons bien, car ils sont à nous : nous vous indiquons clairement ce qui est disponible et vous traitez directement avec le propriétaire, sans intermédiaire.",
+        "Nous louons des entrepôts de notre propre patrimoine à Castelldefels. Nous les connaissons bien, car ils sont à nous : nous vous indiquons clairement ce qui est disponible et vous traitez directement avec le propriétaire, sans intermédiaire.",
       imageAlt: "Entrepôt lumineux et dégagé, à structure métallique blanche",
       learnMore: "Voir les entrepôts à louer",
       includesTitle: "Ce que nous proposons",
@@ -281,7 +281,7 @@ export const services: ServicesDict = {
       ],
       process: {
         title: "Comment louer\n*un entrepôt*",
-        intro: "Sans intermédiaire : vous parlez avec le propriétaire dès la première demande.",
+        intro: "Sans intermédiaire : vous parlez avec le propriétaire dès la première demande.",
       },
       sections: [
         {
@@ -303,27 +303,27 @@ export const services: ServicesDict = {
       ],
       faq: [
         {
-          question: "Louez-vous directement, sans agence ?",
-          answer: "Oui. Les entrepôts font partie de notre propre patrimoine : vous traitez directement avec le propriétaire, sans intermédiaire.",
+          question: "Louez-vous directement, sans agence ?",
+          answer: "Oui. Les entrepôts font partie de notre propre patrimoine : vous traitez directement avec le propriétaire, sans intermédiaire.",
         },
         {
-          question: "Où se trouvent les entrepôts ?",
+          question: "Où se trouvent les entrepôts ?",
           answer:
             "À Castelldefels. Si vous cherchez dans une autre zone, dites-le-nous quand même et nous vous indiquerons ce que nous avons.",
         },
         {
-          question: "De quelles informations avez-vous besoin pour commencer ?",
+          question: "De quelles informations avez-vous besoin pour commencer ?",
           answer:
             "La surface approximative, l’usage que vous ferez de l’entrepôt et la date souhaitée. Avec cela, nous vous indiquons ce qui est disponible.",
         },
         {
-          question: "Comment savoir quels entrepôts sont disponibles ?",
+          question: "Comment savoir quels entrepôts sont disponibles ?",
           answer:
             "Notre patrimoine évolue souvent. Écrivez-nous par le formulaire ou par WhatsApp et nous vous répondrons personnellement avec ce que nous avons.",
         },
       ],
       closing: {
-        title: "Vous cherchez\n*un entrepôt à louer ?*",
+        title: "Vous cherchez\n*un entrepôt à louer ?*",
         body: "Dites-nous ce dont vous avez besoin (surface, usage et date) et nous vous indiquerons ce que nous avons de disponible.",
       },
       whatsappMessage: "Bonjour, je cherche un entrepôt à louer.",
@@ -339,7 +339,7 @@ export const services: ServicesDict = {
       metaDescription:
         "Location d’appartements et de maisons à Castelldefels, issus du patrimoine de Tarida MC. Vous traitez directement avec le propriétaire.",
       intro:
-        "Nous louons des appartements et des maisons de notre propre patrimoine à Castelldefels. Nous les connaissons bien, car ils sont à nous : nous vous indiquons clairement ce qui est disponible et vous traitez directement avec le propriétaire, sans intermédiaire.",
+        "Nous louons des appartements et des maisons de notre propre patrimoine à Castelldefels. Nous les connaissons bien, car ils sont à nous : nous vous indiquons clairement ce qui est disponible et vous traitez directement avec le propriétaire, sans intermédiaire.",
       imageAlt: "Maison méditerranéenne blanchie à la chaux parmi les cyprès",
       learnMore: "Voir les logements à louer",
       includesTitle: "Ce que nous proposons",
@@ -351,7 +351,7 @@ export const services: ServicesDict = {
       ],
       process: {
         title: "Comment louer\n*un logement*",
-        intro: "Sans intermédiaire : vous parlez avec le propriétaire dès la première demande.",
+        intro: "Sans intermédiaire : vous parlez avec le propriétaire dès la première demande.",
       },
       sections: [
         {
@@ -373,27 +373,27 @@ export const services: ServicesDict = {
       ],
       faq: [
         {
-          question: "Louez-vous directement, sans agence ?",
-          answer: "Oui. Les logements font partie de notre propre patrimoine : vous traitez directement avec le propriétaire, sans intermédiaire.",
+          question: "Louez-vous directement, sans agence ?",
+          answer: "Oui. Les logements font partie de notre propre patrimoine : vous traitez directement avec le propriétaire, sans intermédiaire.",
         },
         {
-          question: "Où se trouvent les logements ?",
+          question: "Où se trouvent les logements ?",
           answer:
             "À Castelldefels. Si vous cherchez dans une autre zone, dites-le-nous quand même et nous vous indiquerons ce que nous avons.",
         },
         {
-          question: "De quelles informations avez-vous besoin pour commencer ?",
+          question: "De quelles informations avez-vous besoin pour commencer ?",
           answer:
             "Le type de logement recherché, le nombre de chambres et la date souhaitée. Avec cela, nous vous indiquons ce qui est disponible.",
         },
         {
-          question: "Comment savoir quels logements sont disponibles ?",
+          question: "Comment savoir quels logements sont disponibles ?",
           answer:
             "Notre patrimoine évolue souvent. Écrivez-nous par le formulaire ou par WhatsApp et nous vous répondrons personnellement avec ce que nous avons.",
         },
       ],
       closing: {
-        title: "Vous cherchez\n*un logement à louer ?*",
+        title: "Vous cherchez\n*un logement à louer ?*",
         body: "Dites-nous ce dont vous avez besoin (type de logement, chambres et date) et nous vous indiquerons ce que nous avons de disponible.",
       },
       whatsappMessage: "Bonjour, je cherche un logement à louer.",
