@@ -45,7 +45,9 @@ export function pageMetadata(opts: {
     openGraph: {
       type: "website",
       siteName: ORG.name,
-      title: opts.title,
+      // The SERP title, or the page title with the brand: shared links
+      // otherwise read "Inicio" or "Servicios" with no brand at all.
+      title: opts.seoTitle ?? `${opts.title} | ${ORG.name}`,
       description: opts.description,
       url: self,
       locale: OG_LOCALE[opts.locale],
