@@ -59,11 +59,17 @@ export function Lines({
   return (
     <>
       {text.split("\n").map((line, i) => (
-        <span key={i} className={`mask ${lineClassName}`}>
-          <span>
-            <Rich text={line} emClassName={emClassName} />
+        <Fragment key={i}>
+          {/* A space between the block masks: invisible on screen, but it
+              keeps "Compramos" + "su inmueble" apart in the HTML text that
+              crawlers and AI readers extract. */}
+          {i > 0 && " "}
+          <span className={`mask ${lineClassName}`}>
+            <span>
+              <Rich text={line} emClassName={emClassName} />
+            </span>
           </span>
-        </span>
+        </Fragment>
       ))}
     </>
   );
@@ -71,7 +77,9 @@ export function Lines({
 
 /**
  * Letter by letter, for the two wordmarks only. The visual letters are
- * aria-hidden and the word is said once.
+ * aria-hidden and the word is said once. Each letter is painted by CSS from
+ * `data-c` (globals.css), so the HTML text holds the word once, not twice:
+ * crawlers and AI readers would otherwise read "InmueblesInmuebles".
  */
 export function Chars({ text, className = "" }: { text: string; className?: string }) {
   return (
@@ -80,7 +88,7 @@ export function Chars({ text, className = "" }: { text: string; className?: stri
       <span aria-hidden>
         {Array.from(text).map((char, i) => (
           <span key={i} className="mask-inline">
-            <span>{char === " " ? " " : char}</span>
+            <span data-c={char === " " ? "\u00a0" : char} />
           </span>
         ))}
       </span>
