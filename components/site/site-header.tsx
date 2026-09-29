@@ -288,7 +288,7 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
         id="site-menu"
         aria-hidden={!open}
         inert={!open}
-        className={`band-dark grain fixed inset-0 z-40 flex flex-col bg-stock text-ink transition-[clip-path] duration-[900ms] ease-[cubic-bezier(0.76,0,0.24,1)] lg:hidden ${
+        className={`band-dark grain fixed inset-0 z-40 flex flex-col overflow-y-auto overscroll-contain bg-stock text-ink transition-[clip-path] duration-[900ms] ease-[cubic-bezier(0.76,0,0.24,1)] lg:hidden ${
           open ? "[clip-path:inset(0_0_0_0)]" : "[clip-path:inset(0_0_100%_0)]"
         }`}
       >

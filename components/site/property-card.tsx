@@ -19,6 +19,8 @@ type Props = {
   sizes?: string;
   /** "none" inside the filterable grid, whose cards mount after the engine ran. */
   reveal?: "img" | "none";
+  /** Photo ratio classes. The grid goes landscape on phones, where a card is full width. */
+  aspect?: string;
 };
 
 /**
@@ -27,7 +29,7 @@ type Props = {
  * WhatsApp with the reference prefilled, or the form when there is no
  * number yet.
  */
-export function PropertyCard({ property, locale, copy, sample = false, formHref, className = "", sizes, reveal = "img" }: Props) {
+export function PropertyCard({ property, locale, copy, sample = false, formHref, className = "", sizes, reveal = "img", aspect = "aspect-[4/5]" }: Props) {
   const type = copy.types[property.type];
   const message = copy.whatsappMessage.replace("{ref}", property.ref);
   const wa = whatsappUrl(message);
@@ -37,7 +39,7 @@ export function PropertyCard({ property, locale, copy, sample = false, formHref,
       <Media
         src={property.image}
         alt={`${type} · ${property.zone}`}
-        className="aspect-[4/5] w-full"
+        className={`${aspect} w-full`}
         reveal={reveal}
         cursor={copy.view}
         sizes={sizes ?? "(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 80vw"}

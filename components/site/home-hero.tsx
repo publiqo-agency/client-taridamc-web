@@ -74,7 +74,8 @@ export function HomeHero({ titleTop, titleBottom, intro, image, children }: Prop
           <p className="max-w-md text-ink-2 md:max-w-[26rem] lg:max-w-[30rem]" data-m="fade" data-delay="0.9">
             {intro}
           </p>
-          <div className="flex shrink-0 flex-wrap gap-3 md:justify-end">{children}</div>
+          {/* pr-16 below md keeps the buttons clear of the WhatsApp bubble. */}
+          <div className="flex shrink-0 flex-wrap gap-3 pr-16 md:justify-end md:pr-0">{children}</div>
         </div>
       </div>
     </section>

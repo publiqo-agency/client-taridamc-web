@@ -281,15 +281,18 @@ export function mount(): () => void {
       });
     });
 
+    /* Panels only stick from md up (see ServiceStack); below that they just scroll. */
     all('[data-m="stack"]').forEach((el) => {
       const items = Array.from(el.querySelectorAll<HTMLElement>("[data-stack-item]"));
-      items.slice(0, -1).forEach((item, i) => {
-        const next = items[i + 1];
-        const inner = item.querySelector("[data-stack-inner]") ?? item;
-        const shade = item.querySelector("[data-stack-shade]");
-        const scroll = { trigger: next, start: "top bottom", end: "top top", scrub: true };
-        gsap.to(inner, { scale: 0.93, yPercent: -4, ease: "none", scrollTrigger: scroll });
-        if (shade) gsap.fromTo(shade, { opacity: 0 }, { opacity: 0.65, ease: "none", scrollTrigger: scroll });
+      mm.add("(min-width: 768px)", () => {
+        items.slice(0, -1).forEach((item, i) => {
+          const next = items[i + 1];
+          const inner = item.querySelector("[data-stack-inner]") ?? item;
+          const shade = item.querySelector("[data-stack-shade]");
+          const scroll = { trigger: next, start: "top bottom", end: "top top", scrub: true };
+          gsap.to(inner, { scale: 0.93, yPercent: -4, ease: "none", scrollTrigger: scroll });
+          if (shade) gsap.fromTo(shade, { opacity: 0 }, { opacity: 0.65, ease: "none", scrollTrigger: scroll });
+        });
       });
     });
 

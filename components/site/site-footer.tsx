@@ -110,7 +110,9 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
         </div>
       </div>
 
-      <div className={`${FRAME} relative z-[1] flex flex-col gap-4 border-t border-line py-6 text-sm text-ink-soft md:flex-row md:items-center md:justify-between`}>
+      {/* pb-24 below md: the WhatsApp bubble is fixed to the bottom-right
+          corner and would otherwise sit on the legal links and languages. */}
+      <div className={`${FRAME} relative z-[1] flex flex-col gap-4 border-t border-line pt-6 pb-24 text-sm text-ink-soft md:flex-row md:items-center md:justify-between md:pb-6`}>
         <div className="flex flex-wrap gap-x-6 gap-y-1">
           <p>
             © {year} {ORG.legalName || ORG.name}
@@ -126,7 +128,7 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
             </a>
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 md:gap-y-2">
           {legalLinks.map((link) => (
             <Link key={link.href} href={link.href} className="link-line hover:text-ink">
               {link.label}

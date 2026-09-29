@@ -54,6 +54,7 @@ export function RentalCatalogue({
                     sample={sample}
                     formHref={formHref}
                     reveal="none"
+                    aspect="aspect-[4/3] sm:aspect-[4/5]"
                     sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 100vw"
                   />
                 ),

@@ -51,7 +51,8 @@ export function PropertyRail({ items, sample, locale, copy, catalogueHref, formH
 
         <div
           data-track
-          className="snap-row flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 md:gap-8 md:px-10 lg:mt-8 lg:snap-none lg:overflow-visible xl:px-14"
+          // scroll-px matches px so a snapped card lines up with the frame, not the screen edge.
+          className="snap-row flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 md:scroll-px-10 md:gap-8 md:px-10 lg:mt-8 lg:snap-none lg:overflow-visible xl:scroll-px-14 xl:px-14"
         >
           {items.map((property, i) => (
             <div
