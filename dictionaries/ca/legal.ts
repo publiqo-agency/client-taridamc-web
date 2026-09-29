@@ -5,6 +5,13 @@ export const legal: LegalDict = {
     label: "Pendent",
     body: "Falten les dades registrals del titular (raó social, NIF, domicili). Aquest avís desapareix en omplir-les a lib/site.ts.",
   },
+  ownerLabels: {
+    name: "Raó social",
+    taxId: "NIF",
+    address: "Domicili social",
+    email: "Correu electrònic",
+    phone: "Telèfon",
+  },
   updated: "Darrera actualització: setembre de 2026.",
   notice: {
     title: "Avís legal",
@@ -13,8 +20,9 @@ export const legal: LegalDict = {
       {
         heading: "Titular",
         body: [
-          "Aquest lloc web és titularitat de l'entitat identificada al peu de pàgina, amb les dades de contacte que hi figuren.",
+          "En compliment de l'article 10 de la Llei 34/2002 (LSSI-CE), l'informem que aquest lloc web és titularitat de:",
         ],
+        owner: true,
       },
       {
         heading: "Ús del lloc",
@@ -42,7 +50,8 @@ export const legal: LegalDict = {
     sections: [
       {
         heading: "Responsable del tractament",
-        body: ["El titular identificat a l'avís legal i al peu de pàgina."],
+        body: ["El responsable del tractament de les seves dades és:"],
+        owner: true,
       },
       {
         heading: "Quines dades tractem i per a què",
@@ -66,7 +75,7 @@ export const legal: LegalDict = {
       {
         heading: "Els seus drets",
         body: [
-          "Pot exercir els drets d'accés, rectificació, supressió, oposició, limitació i portabilitat escrivint a l'email del peu de pàgina. També pot reclamar davant l'Agència Espanyola de Protecció de Dades.",
+          "Pot exercir els drets d'accés, rectificació, supressió, oposició, limitació i portabilitat escrivint a l'adreça electrònica indicada més amunt, a «Responsable del tractament». També pot reclamar davant l'Agència Espanyola de Protecció de Dades.",
         ],
       },
     ],
@@ -75,6 +84,11 @@ export const legal: LegalDict = {
     title: "Política de galetes",
     intro: "Quines galetes i emmagatzematge local utilitza aquest lloc i com pot decidir sobre elles.",
     sections: [
+      {
+        heading: "Responsable",
+        body: ["El responsable de les galetes que utilitza aquest lloc és:"],
+        owner: true,
+      },
       {
         heading: "Què utilitzem",
         body: [

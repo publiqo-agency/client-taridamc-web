@@ -26,7 +26,8 @@ What is wired, what the consoles hold and what is pending. Filled by the
 
 Placements in use (`data-placement`): `header`, `home-hero`, `home-services`,
 `home-process`, `home-catalogue`, `service-purchase`, `service-rental`,
-`catalogue`, `closing`, `contact-page`, `footer`, `bubble`. A catalogue card's
+`catalogue`, `closing`, `contact-page`, `footer`, `bubble`, `legal` (the owner's
+email and phone on the legal pages). A catalogue card's
 enquiry is a `whatsapp` (or `form`, while there is no number) CTA with
 `service=rental`.
 

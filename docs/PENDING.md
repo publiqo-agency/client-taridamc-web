@@ -17,8 +17,10 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
    `www`). Who manages the domain and hosting is not stated in the brief.
 3. **Legal data.** Done: `Tarida MC S.L.`, NIF B67987420, registered office
    Calle Còrsega 270, entresuelo, puerta 4, 08008 Barcelona (GoFeed client
-   record). The footer shows the NIF and the office; the lawyer still reviews
-   the legal copy.
+   record). The footer and the three legal pages show them (read from
+   `lib/site.ts`). Still missing: the Registro Mercantil entry (volume, folio,
+   sheet), which the LSSI requires of an S.L.; ask the client. The lawyer
+   still reviews the legal copy.
 4. **Contact data.** Done: email `rs@taridamc.com`; phone +34 659 35 97 76,
    the same number as WhatsApp (confirmed by the agency, 2026-09-29).
 5. **Resend key** (`RESEND_API_KEY`, send-only, scoped to `web.publiqo.es`) and
