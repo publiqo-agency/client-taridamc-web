@@ -90,7 +90,7 @@ export default async function ServicePage(props: Props) {
 
         {/* Intro: the promise of the page in one large paragraph. */}
         <section className={SECTION}>
-          <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-10`}>
+          <div className={`${FRAME} grid grid-cols-12 gap-x-5 gap-y-10 md:gap-x-8`}>
             <div className="col-span-12 md:col-span-3" data-m="fade">
               <span className="label text-ink-soft">{item.title}</span>
             </div>
@@ -107,7 +107,7 @@ export default async function ServicePage(props: Props) {
           <>
             {/* What we look at: a hairline index, the image held beside it. */}
             <section className="pb-20 md:pb-28">
-              <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-14`}>
+              <div className={`${FRAME} grid grid-cols-12 gap-x-5 gap-y-14 md:gap-x-8`}>
                 <div className="col-span-12 lg:col-span-5">
                   <div className="lg:sticky lg:top-28">
                     <h2 className={`${DISPLAY} text-[clamp(2.75rem,5vw,5.5rem)]`} data-m="lines">
@@ -151,7 +151,7 @@ export default async function ServicePage(props: Props) {
 
             {/* Trust: the one number, and who is behind it. */}
             <section className={SECTION}>
-              <div className={`${FRAME} grid grid-cols-12 items-end gap-x-8 gap-y-10`}>
+              <div className={`${FRAME} grid grid-cols-12 items-end gap-x-5 gap-y-10 md:gap-x-8`}>
                 <p className="col-span-12 flex items-end gap-4 md:col-span-7" data-m="fade">
                   <span data-m="count" data-to="40" data-pad="2" className={`${DISPLAY_SANS} tnum text-[clamp(7rem,17vw,17rem)] leading-[0.78]`}>
                     40
@@ -177,7 +177,7 @@ export default async function ServicePage(props: Props) {
         {/* The other service, as one large link. */}
         <section className="border-t border-line">
           <Link href={serviceHref(locale, other)} className="group block">
-            <div className={`${FRAME} grid grid-cols-12 items-center gap-x-8 gap-y-8 py-16 md:py-24`}>
+            <div className={`${FRAME} grid grid-cols-12 items-center gap-x-5 gap-y-8 md:gap-x-8 py-16 md:py-24`}>
               <span className="label col-span-12 text-ink-soft md:col-span-3">{services.detail.otherServices}</span>
               <span className={`${DISPLAY} col-span-10 text-[clamp(2.5rem,6vw,6.5rem)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-4 md:col-span-7`}>
                 {services.items[other].title}

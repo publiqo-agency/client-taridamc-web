@@ -58,7 +58,7 @@ export function HomeHero({ titleTop, titleBottom, intro, image, scroll, children
             </span>
           </span>
           <span
-            className={`${ACCENT} mt-[0.12em] block text-right text-[clamp(3.25rem,12vw,14rem)] leading-[0.9]`}
+            className={`${ACCENT} mt-[0.12em] block text-right text-[clamp(2.75rem,12vw,14rem)] leading-[0.9]`}
             data-m="drift"
             data-x="7"
             data-opacity="0.2"
@@ -69,7 +69,7 @@ export function HomeHero({ titleTop, titleBottom, intro, image, scroll, children
           </span>
         </h1>
 
-        <div className="grid grid-cols-12 items-end gap-x-8 gap-y-6">
+        <div className="grid grid-cols-12 items-end gap-x-5 gap-y-6 md:gap-x-8">
           <p className="col-span-12 max-w-sm text-ink-2 md:col-span-5 lg:col-span-4" data-m="fade" data-delay="0.9">
             {intro}
           </p>

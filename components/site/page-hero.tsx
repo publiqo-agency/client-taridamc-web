@@ -60,7 +60,7 @@ export function PageHero({ eyebrow, title, intro, image, transitionName, compact
           {eyebrow && <p className="label">{eyebrow}</p>}
         </div>
 
-        <div className="grid grid-cols-12 items-end gap-x-8 gap-y-8 pt-24">
+        <div className="grid grid-cols-12 items-end gap-x-5 gap-y-8 md:gap-x-8 pt-24">
           <h1 className={`${DISPLAY} col-span-12 text-[clamp(3rem,8.4vw,9.5rem)] lg:col-span-8`} data-m="lines" data-delay="0.25">
             <Lines text={title} />
           </h1>

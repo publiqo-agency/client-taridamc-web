@@ -26,7 +26,7 @@ export function PropertyRail({ items, sample, locale, copy, catalogueHref, formH
   const total = String(items.length).padStart(2, "0");
   return (
     <section data-m="hscroll" data-placement="home-catalogue" className="relative overflow-hidden py-20 md:py-24">
-      <div className={`${FRAME} grid grid-cols-12 items-end gap-x-8 gap-y-8`}>
+      <div className={`${FRAME} grid grid-cols-12 items-end gap-x-5 gap-y-8 md:gap-x-8`}>
         <h2 className={`${DISPLAY} col-span-12 text-[clamp(2.75rem,5.6vw,6rem)] md:col-span-8`} data-m="lines">
           <Lines text={copy.title} />
         </h2>

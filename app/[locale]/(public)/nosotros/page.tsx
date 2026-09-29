@@ -51,7 +51,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
 
       {/* History: the photo held while the text scrolls past it. */}
       <section className={SECTION}>
-        <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-16`}>
+        <div className={`${FRAME} grid grid-cols-12 gap-x-5 gap-y-16 md:gap-x-8`}>
           <div className="col-span-12 md:col-span-5">
             <div className="md:sticky md:top-28">
               <Media
@@ -92,7 +92,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
 
       {/* The person behind it: his portrait, then the name carries the block. */}
       <section className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
-        <div className={`${FRAME} grid grid-cols-12 items-end gap-x-8 gap-y-10`}>
+        <div className={`${FRAME} grid grid-cols-12 items-end gap-x-5 gap-y-10 md:gap-x-8`}>
           <div className="col-span-12 sm:col-span-8 md:col-span-4">
             <Media
               src="/about/ramon-seva.webp"
@@ -121,7 +121,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
       {/* Castelldefels: the signature sundial reveal. */}
       <section className={`${SECTION} overflow-hidden`}>
         <div className={FRAME}>
-          <div className="grid grid-cols-12 items-center gap-x-8 gap-y-24">
+          <div className="grid grid-cols-12 items-center gap-x-5 gap-y-24 md:gap-x-8">
             <div className="col-span-12 md:col-span-6 md:pr-8">
               <Sundial src="/about/castelldefels.webp" alt={about.place.imageAlt} />
             </div>
