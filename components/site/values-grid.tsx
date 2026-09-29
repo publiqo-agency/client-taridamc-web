@@ -31,7 +31,7 @@ export function ValuesGrid({ items }: { items: Value[] }) {
           <div
             data-m="fade"
             data-delay={String(0.12 * i)}
-            className="@container flex min-h-[22rem] flex-col justify-between gap-16 px-0 py-10 transition-colors duration-500 group-hover:text-stock md:px-8 lg:min-h-[30rem] lg:px-10"
+            className="@container flex min-h-[16rem] flex-col justify-between gap-10 px-0 py-8 transition-colors duration-500 group-hover:text-stock md:px-8 lg:min-h-[20rem] lg:px-10"
           >
             <span className="label tnum text-ink-soft transition-colors duration-500 group-hover:text-stock/60">
               {String(i + 1).padStart(2, "0")}
