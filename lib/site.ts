@@ -39,6 +39,20 @@ export const SITE = {
     /** ISO 3166-1 alpha-2. */
     country: "ES",
   },
+  /**
+   * The person who runs the company, for the Person entity. The brief says he
+   * runs it ("lo lleva"), not that he founded it: never emit `founder`.
+   */
+  leader: { name: "Ramon Seva", image: "/about/ramon-seva.webp" },
+
+  /** Topics the company is an authority on (`knowsAbout`), default locale. */
+  knowsAbout: [
+    "Compra de pisos y casas",
+    "Compra de naves industriales",
+    "Alquiler de naves industriales",
+    "Alquiler de viviendas",
+  ],
+
   /** Where the business operates, for `areaServed`. Empty = omitted. */
   areaServed: "España",
 
