@@ -51,7 +51,7 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
       />
 
       <section data-placement="contact-page" className={SECTION}>
-        <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-16`}>
+        <div className={`${FRAME} grid grid-cols-12 gap-x-5 gap-y-16 md:gap-x-8`}>
           <div className="form-skin col-span-12 lg:col-span-7" data-m="fade">
             <Suspense fallback={null}>
               <ContactFormPrefill

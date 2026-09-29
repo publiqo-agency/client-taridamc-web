@@ -24,7 +24,7 @@ export function Manifesto({ text, years, yearsLabel, yearsCaption, signature, ro
       <div className={FRAME}>
         <span aria-hidden data-m="draw-x" data-origin="0% 50%" className="block h-px w-full bg-line" />
 
-        <div className="mt-10 grid grid-cols-12 gap-x-8 gap-y-10">
+        <div className="mt-10 grid grid-cols-12 gap-x-5 gap-y-10 md:gap-x-8">
           <p
             data-m="words"
             className={`${DISPLAY} col-span-12 text-[clamp(2rem,4.3vw,4.5rem)] leading-[1.08] md:col-span-9 md:col-start-4`}
@@ -33,7 +33,7 @@ export function Manifesto({ text, years, yearsLabel, yearsCaption, signature, ro
           </p>
         </div>
 
-        <div className="mt-20 grid grid-cols-12 items-end gap-x-8 gap-y-12 md:mt-28">
+        <div className="mt-20 grid grid-cols-12 items-end gap-x-5 gap-y-12 md:gap-x-8 md:mt-28">
           <div className="col-span-12 md:col-span-6 md:col-start-4">
             <p className="flex items-end gap-4" data-m="fade">
               <span
