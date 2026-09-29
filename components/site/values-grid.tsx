@@ -14,6 +14,8 @@ type Value = { title: string; body: string };
  *
  * From lg the cells share the list's rows through subgrid (number, free space,
  * word, text), so the words line up even when one text is a line shorter.
+ * The container sits on the word's own wrapper, never on the cell: a query
+ * container is layout-contained, and a contained box cannot be a subgrid.
  */
 export function ValuesGrid({ items }: { items: Value[] }) {
   return (
@@ -34,12 +36,14 @@ export function ValuesGrid({ items }: { items: Value[] }) {
           <div
             data-m="fade"
             data-delay={String(0.12 * i)}
-            className="@container flex min-h-[16rem] flex-col px-0 py-8 transition-colors duration-500 group-hover:text-stock md:px-8 lg:row-span-4 lg:grid lg:min-h-0 lg:grid-rows-subgrid lg:px-10"
+            className="flex min-h-[16rem] flex-col px-0 py-8 transition-colors duration-500 group-hover:text-stock md:px-8 lg:row-span-4 lg:grid lg:min-h-0 lg:grid-rows-subgrid lg:px-10"
           >
             <span className="label tnum text-ink-soft transition-colors duration-500 group-hover:text-stock/60">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <p className={`${ACCENT} mt-auto pt-10 text-[length:min(15cqi,5.25rem)] leading-none lg:row-start-3`}>{item.title}</p>
+            <div className="@container mt-auto pt-10 lg:row-start-3">
+              <p className={`${ACCENT} text-[length:min(15cqi,5.25rem)] leading-none`}>{item.title}</p>
+            </div>
             <p className="mt-6 max-w-xs text-ink-soft transition-colors duration-500 group-hover:text-stock/75 lg:row-start-4">{item.body}</p>
           </div>
         </li>
