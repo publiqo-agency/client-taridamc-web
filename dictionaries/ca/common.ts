@@ -36,7 +36,6 @@ export const common: CommonDict = {
     family: "Empresa familiar",
   },
   catalogue: {
-    eyebrow: "Catàleg",
     title: "Immobles\n*de lloguer*",
     intro:
       "Naus industrials i habitatges a Castelldefels, de la nostra pròpia cartera. L'atenem directament.",
@@ -68,7 +67,6 @@ export const common: CommonDict = {
     },
   },
   values: {
-    eyebrow: "Com treballem",
     title: "Tres paraules\n*que ens defineixen*",
     items: [
       {
@@ -86,7 +84,6 @@ export const common: CommonDict = {
     ],
   },
   closing: {
-    eyebrow: "Parlem-ne",
     title: "Pensa a vendre\n*la seva propietat?*",
     body: "Expliqui'ns quin immoble té. L'estudiarem amb atenció i li donarem una resposta clara.",
     imageAlt: "Terrassa d'un habitatge mediterrani al capvespre, amb l'interior il·luminat",

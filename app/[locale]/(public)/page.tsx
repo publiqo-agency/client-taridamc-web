@@ -67,8 +67,6 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       </div>
 
       <Manifesto
-        index="01"
-        eyebrow={home.manifesto.eyebrow}
         text={home.manifesto.text}
         years={40}
         yearsLabel={common.brand.yearsLabel}
@@ -79,14 +77,13 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       />
 
       <section className="pb-16 md:pb-24">
-        <SectionHeader index="02" eyebrow={home.lines.eyebrow} title={home.lines.title} className={FRAME} />
+        <SectionHeader title={home.lines.title} className={FRAME} />
       </section>
       <ServiceStack
         cursor={common.catalogue.view}
         items={[
           {
             id: "purchase",
-            index: "01",
             kicker: home.lines.purchaseKicker,
             title: home.lines.purchaseTitle,
             body: services.items.purchase.teaser,
@@ -97,7 +94,6 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
           },
           {
             id: "rental",
-            index: "02",
             kicker: home.lines.rentalKicker,
             title: home.lines.rentalTitle,
             body: services.items.rental.teaser,
@@ -111,7 +107,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
 
       <section data-placement="home-process" className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
         <div className={FRAME}>
-          <SectionHeader index="03" eyebrow={home.process.eyebrow} title={home.process.title} intro={home.process.intro} />
+          <SectionHeader title={home.process.title} intro={home.process.intro} />
           <div className="mt-20 md:mt-28">
             <ProcessGrid steps={services.items.purchase.sections} />
           </div>
@@ -131,7 +127,6 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
 
       {listings.length > 0 ? (
         <PropertyRail
-          index="04"
           items={listings}
           sample={sample}
           locale={locale}
@@ -142,7 +137,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       ) : (
         <section data-placement="home-catalogue" className={SECTION}>
           <div className={FRAME}>
-            <SectionHeader index="04" eyebrow={common.catalogue.eyebrow} title={common.catalogue.title} intro={common.catalogue.intro} />
+            <SectionHeader title={common.catalogue.title} intro={common.catalogue.intro} />
             <div className="mt-16">
               <CatalogueEmpty title={common.catalogue.empty.title} body={common.catalogue.empty.body}>
                 <PillButton href={proposalFormHref(contactHref, "rental")} cta="form" service="rental">
@@ -156,7 +151,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
 
       <section className={`${SECTION} bg-stock-2`}>
         <div className={FRAME}>
-          <SectionHeader index="05" eyebrow={common.values.eyebrow} title={common.values.title} />
+          <SectionHeader title={common.values.title} />
           <div className="mt-20 md:mt-28">
             <ValuesGrid items={common.values.items} />
           </div>
@@ -164,7 +159,6 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       </section>
 
       <ClosingBand
-        eyebrow={common.closing.eyebrow}
         title={common.closing.title}
         body={common.closing.body}
         image={{ src: CLOSING_IMAGE, alt: common.closing.imageAlt }}

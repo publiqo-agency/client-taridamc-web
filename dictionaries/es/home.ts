@@ -15,14 +15,12 @@ export const home = {
     imageAlt: "Villa mediterránea contemporánea al atardecer",
   },
   manifesto: {
-    eyebrow: "Quiénes somos",
     text: "Somos una empresa familiar de Castelldefels. Desde hace cuarenta años compramos y alquilamos inmuebles con una misma regla: *seriedad, honestidad y transparencia* en cada operación.",
     signature: "Ramon Seva",
     role: "Al frente de Tarida MC",
     cta: "Conózcanos",
   },
   lines: {
-    eyebrow: "Qué hacemos",
     title: "Dos maneras\nde *trabajar con usted*",
     purchaseKicker: "Para propietarios",
     purchaseTitle: "Compramos\n*su inmueble*",
@@ -30,7 +28,6 @@ export const home = {
     rentalTitle: "Naves y viviendas\n*en alquiler*",
   },
   process: {
-    eyebrow: "Cómo compramos",
     title: "Un proceso\n*claro y directo*",
     intro:
       "Cuando nos propone un inmueble, sabe en todo momento en qué punto está la operación.",

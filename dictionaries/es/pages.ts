@@ -28,7 +28,6 @@ export const about = {
   ],
   storyImageAlt: "Muro encalado y contraventanas de madera bajo la luz mediterránea",
   leader: {
-    eyebrow: "Al frente",
     name: "Ramon Seva",
     portraitAlt: "Retrato de Ramon Seva",
     role: "Al frente de Tarida MC",

@@ -7,7 +7,6 @@ import { PropertyCard } from "./property-card";
 import { Arrow } from "./pill-button";
 
 type Props = {
-  index: string;
   items: Property[];
   sample: boolean;
   locale: string;
@@ -23,16 +22,12 @@ type Props = {
  * an "01 / 06" index and a progress hairline. On touch it is a native snap
  * row you swipe.
  */
-export function PropertyRail({ index, items, sample, locale, copy, catalogueHref, formHref }: Props) {
+export function PropertyRail({ items, sample, locale, copy, catalogueHref, formHref }: Props) {
   const total = String(items.length).padStart(2, "0");
   return (
     <section data-m="hscroll" data-placement="home-catalogue" className="relative overflow-hidden py-20 md:py-24">
       <div className={`${FRAME} grid grid-cols-12 items-end gap-x-8 gap-y-8`}>
-        <div className="col-span-12 md:col-span-3" data-m="fade">
-          <span className="label tnum text-ink-soft">({index})</span>
-          <span className="label ml-4 md:ml-0 md:mt-2 md:block">{copy.eyebrow}</span>
-        </div>
-        <h2 className={`${DISPLAY} col-span-12 text-[clamp(2.75rem,5.6vw,6rem)] md:col-span-5`} data-m="lines">
+        <h2 className={`${DISPLAY} col-span-12 text-[clamp(2.75rem,5.6vw,6rem)] md:col-span-8`} data-m="lines">
           <Lines text={copy.title} />
         </h2>
         <div className="col-span-12 flex md:col-span-4 md:justify-end" data-m="fade" data-delay="0.2">

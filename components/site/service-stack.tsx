@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { DISPLAY, DISPLAY_SANS, FRAME } from "@/lib/styles";
+import { DISPLAY, FRAME } from "@/lib/styles";
 import { Lines } from "./motion/split";
 import { Media } from "./media";
 import { PillButton } from "./pill-button";
 
 export type StackItem = {
   id: string;
-  index: string;
+  /** Who the line is for: says what the title does not. */
   kicker: string;
   title: string;
   body: string;
@@ -49,12 +49,9 @@ export function ServiceStack({ items, cursor }: { items: StackItem[]; cursor: st
               </Link>
 
               <div className={`${FRAME} flex flex-col justify-center py-10 md:px-12 md:py-16 lg:px-16 xl:px-20`}>
-                <div className="mb-8 flex items-baseline justify-between gap-6 md:mb-12" data-m="fade">
-                  <span className="label">{item.kicker}</span>
-                  <span aria-hidden className={`${DISPLAY_SANS} tnum -mr-[0.04em] text-[clamp(3rem,4.5vw,5rem)] leading-[0.78] text-ink-soft`}>
-                    {Number(item.index)}
-                  </span>
-                </div>
+                <p className="label mb-8 md:mb-12" data-m="fade">
+                  {item.kicker}
+                </p>
 
                 <div>
                   <h3 className={`${DISPLAY} text-[clamp(2.75rem,5.6vw,6rem)]`} data-m="lines">

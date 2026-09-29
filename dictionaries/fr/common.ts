@@ -33,7 +33,6 @@ export const common: CommonDict = {
     family: "Entreprise familiale",
   },
   catalogue: {
-    eyebrow: "Catalogue",
     title: "Biens\n*à louer*",
     intro:
       "Locaux industriels et logements à Castelldefels, issus de notre propre patrimoine. Vous traitez directement avec nous.",
@@ -65,7 +64,6 @@ export const common: CommonDict = {
     },
   },
   values: {
-    eyebrow: "Notre façon de travailler",
     title: "Trois mots\n*qui nous définissent*",
     items: [
       {
@@ -83,7 +81,6 @@ export const common: CommonDict = {
     ],
   },
   closing: {
-    eyebrow: "Parlons-en",
     title: "Vous pensez à vendre\n*votre bien ?*",
     body: "Dites-nous de quel bien il s’agit. Nous l’étudierons avec attention et vous donnerons une réponse claire.",
     imageAlt: "Terrasse d’une maison méditerranéenne à la tombée de la nuit, intérieur éclairé",
