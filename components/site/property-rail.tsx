@@ -26,7 +26,7 @@ type Props = {
 export function PropertyRail({ index, items, sample, locale, copy, catalogueHref, formHref }: Props) {
   const total = String(items.length).padStart(2, "0");
   return (
-    <section data-m="hscroll" data-placement="home-catalogue" className="relative overflow-hidden py-24 md:py-32">
+    <section data-m="hscroll" data-placement="home-catalogue" className="relative overflow-hidden py-20 md:py-24">
       <div className={`${FRAME} grid grid-cols-12 items-end gap-x-8 gap-y-8`}>
         <div className="col-span-12 md:col-span-3" data-m="fade">
           <span className="label tnum text-ink-soft">({index})</span>

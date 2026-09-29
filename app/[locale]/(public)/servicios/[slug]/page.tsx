@@ -106,7 +106,7 @@ export default async function ServicePage(props: Props) {
         {id === "purchase" && (
           <>
             {/* What we look at: a hairline index, the image held beside it. */}
-            <section className="pb-24 md:pb-36">
+            <section className="pb-20 md:pb-28">
               <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-14`}>
                 <div className="col-span-12 lg:col-span-5">
                   <div className="lg:sticky lg:top-28">
@@ -228,7 +228,7 @@ async function RentalCatalogue({
   const types = PROPERTY_TYPES.filter((type) => items.some((p) => p.type === type));
 
   return (
-    <section data-placement="catalogue" className="pb-24 md:pb-36">
+    <section data-placement="catalogue" className="pb-20 md:pb-28">
       <div className={FRAME}>
         <SectionHeader eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} />
         <div className="mt-16 md:mt-24">
