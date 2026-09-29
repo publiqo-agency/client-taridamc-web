@@ -43,7 +43,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
   const { home, common, services } = dict;
 
   const sellHref = serviceHref(locale, "purchase");
-  const rentHref = serviceHref(locale, "rental");
+  const rentHref = serviceHref(locale, "rental-warehouses");
   const contactHref = localeHref(locale, "contact");
   const { items: listings, sample } = catalogue();
 
@@ -51,12 +51,10 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
     <PageTransition>
       <div data-placement="home-hero">
         <HomeHero
-          eyebrow={home.hero.eyebrow}
           titleTop={home.hero.titleTop}
           titleBottom={home.hero.titleBottom}
           intro={home.hero.intro}
           image={{ src: HERO_IMAGE, alt: home.hero.imageAlt }}
-          scroll={common.cta.scroll}
         >
           <PillButton href={sellHref} tone="white" seed delay={1}>
             {home.hero.ctaPrimary}
@@ -68,8 +66,6 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       </div>
 
       <Manifesto
-        index="01"
-        eyebrow={home.manifesto.eyebrow}
         text={home.manifesto.text}
         years={40}
         yearsLabel={common.brand.yearsLabel}
@@ -80,31 +76,37 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       />
 
       <section className="pb-16 md:pb-24">
-        <SectionHeader index="02" eyebrow={home.lines.eyebrow} title={home.lines.title} className={FRAME} />
+        <SectionHeader title={home.lines.title} className={FRAME} align="start" />
       </section>
       <ServiceStack
         cursor={common.catalogue.view}
         items={[
           {
             id: "purchase",
-            index: "01",
             kicker: home.lines.purchaseKicker,
             title: home.lines.purchaseTitle,
-            body: services.items.purchase.teaser,
+            body: home.lines.purchaseBody,
             href: sellHref,
-            cta: common.cta.learnMore,
+            cta: services.items.purchase.learnMore,
+            secondary: {
+              href: serviceHref(locale, "purchase-warehouses"),
+              label: services.items["purchase-warehouses"].title,
+            },
             image: { src: SERVICE_IMAGES.purchase, alt: services.items.purchase.imageAlt },
             tone: "light",
           },
           {
             id: "rental",
-            index: "02",
             kicker: home.lines.rentalKicker,
             title: home.lines.rentalTitle,
-            body: services.items.rental.teaser,
+            body: home.lines.rentalBody,
             href: rentHref,
-            cta: common.cta.learnMore,
-            image: { src: SERVICE_IMAGES.rental, alt: services.items.rental.imageAlt },
+            cta: services.items["rental-warehouses"].learnMore,
+            secondary: {
+              href: serviceHref(locale, "rental-homes"),
+              label: services.items["rental-homes"].learnMore,
+            },
+            image: { src: SERVICE_IMAGES["rental-homes"], alt: services.items["rental-homes"].imageAlt },
             tone: "dark",
           },
         ]}
@@ -112,7 +114,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
 
       <section data-placement="home-process" className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
         <div className={FRAME}>
-          <SectionHeader index="03" eyebrow={home.process.eyebrow} title={home.process.title} intro={home.process.intro} />
+          <SectionHeader title={home.process.title} intro={home.process.intro} />
           <div className="mt-20 md:mt-28">
             <ProcessGrid steps={services.items.purchase.sections} />
           </div>
@@ -132,21 +134,20 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
 
       {listings.length > 0 ? (
         <PropertyRail
-          index="04"
           items={listings}
           sample={sample}
           locale={locale}
           copy={common.catalogue}
-          catalogueHref={rentHref}
-          formHref={proposalFormHref(contactHref, "rental")}
+          catalogueHref={localeHref(locale, "rental")}
+          formHref={contactHref}
         />
       ) : (
         <section data-placement="home-catalogue" className={SECTION}>
           <div className={FRAME}>
-            <SectionHeader index="04" eyebrow={common.catalogue.eyebrow} title={common.catalogue.title} intro={common.catalogue.intro} />
+            <SectionHeader title={common.catalogue.title} intro={common.catalogue.intro} />
             <div className="mt-16">
               <CatalogueEmpty title={common.catalogue.empty.title} body={common.catalogue.empty.body}>
-                <PillButton href={proposalFormHref(contactHref, "rental")} cta="form" service="rental">
+                <PillButton href={contactHref} cta="form">
                   {common.catalogue.empty.cta}
                 </PillButton>
               </CatalogueEmpty>
@@ -157,15 +158,14 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
 
       <section className={`${SECTION} bg-stock-2`}>
         <div className={FRAME}>
-          <SectionHeader index="05" eyebrow={common.values.eyebrow} title={common.values.title} />
-          <div className="mt-20 md:mt-28">
+          <SectionHeader title={common.values.title} align="start" />
+          <div className="mt-12 md:mt-16">
             <ValuesGrid items={common.values.items} />
           </div>
         </div>
       </section>
 
       <ClosingBand
-        eyebrow={common.closing.eyebrow}
         title={common.closing.title}
         body={common.closing.body}
         image={{ src: CLOSING_IMAGE, alt: common.closing.imageAlt }}

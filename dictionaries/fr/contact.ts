@@ -4,19 +4,34 @@ import type { ContactDict } from "@/lib/i18n/types";
 export const contact: ContactDict = {
   meta: {
     title: "Contact",
+    seoTitle: "Contact : vendre votre bien ou louer | Tarida MC",
     description:
-      "Contactez Tarida MC à Castelldefels : proposez-nous un bien à l’achat ou renseignez-vous sur nos entrepôts et logements à louer.",
+      "Contactez Tarida MC : proposez-nous votre appartement, maison ou entrepôt, ou renseignez-vous sur nos entrepôts et logements à louer.",
   },
   hero: {
     eyebrow: "Contact",
     title: "Parlons de\n*votre bien*",
     intro:
-      "Dites-nous ce dont vous avez besoin : vendre un bien, louer un entrepôt ou un logement. Nous vous répondrons personnellement.",
+      "Dites-nous ce dont vous avez besoin : vendre un appartement, une maison ou un entrepôt, ou louer un entrepôt ou un logement. Nous vous répondrons personnellement.",
+    imageAlt: "Porche à arcades ouvert sur la Méditerranée",
   },
   aside: {
     title: "Vous préférez nous parler directement ?",
     body: "WhatsApp est le moyen le plus rapide. Si vous préférez l’e-mail ou le téléphone, vous les trouverez ici.",
     whatsappCta: "Ouvrir WhatsApp",
+  },
+  /** First-layer data protection notice under the form (LOPDGDD art. 11). */
+  dataNotice: {
+    title: "Informations de base sur la protection des données",
+    controller: "Responsable",
+    rows: [
+      ["Finalité", "répondre à votre demande"],
+      ["Base juridique", "votre consentement"],
+      ["Destinataires", "aucune donnée n'est communiquée à des tiers, sauf obligation légale"],
+      ["Droits", "accès, rectification, effacement, opposition, limitation et portabilité"],
+    ],
+    more: "Plus d'informations dans la",
+    link: "politique de confidentialité",
   },
   form: {
     name: "Nom",

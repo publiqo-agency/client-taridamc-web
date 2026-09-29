@@ -31,8 +31,6 @@ gsap.registerPlugin(ScrollTrigger, CustomEase);
 const CURTAIN = CustomEase.create("curtain", "0.76,0,0.24,1");
 const EXPO = "expo.out";
 
-export const INTRO_DONE_EVENT = "tarida:intro-done";
-
 let lenis: Lenis | null = null;
 
 /** One Lenis for the whole visit; routes come and go under it. */
@@ -42,7 +40,6 @@ export function startLenis() {
   lenis.on("scroll", ScrollTrigger.update);
   gsap.ticker.add((time) => lenis?.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
-  if (document.documentElement.hasAttribute("data-intro")) lenis.stop();
   return lenis;
 }
 
@@ -55,29 +52,44 @@ const num = (value: string | undefined, fallback: number) => {
 
 const pad = (n: number, width: number) => String(Math.round(n)).padStart(width, "0");
 
-/** Runs `start` once the first-visit intro has lifted (immediately otherwise). */
-function afterIntro(start: () => void) {
-  if (document.documentElement.getAttribute("data-intro") !== "on") {
-    start();
-    return () => {};
-  }
-  const handler = () => start();
-  window.addEventListener(INTRO_DONE_EVENT, handler, { once: true });
-  return () => window.removeEventListener(INTRO_DONE_EVENT, handler);
-}
-
 /**
- * Plays `build()` when `el` enters the viewport, once. Elements inside a
- * `[data-after-intro]` block (the heroes) wait for the intro instead.
+ * Plays `build()` when `el` enters the viewport, once. Anything already on
+ * screen at mount plays straight away: the hero's intro and CTAs sit below
+ * the `start` line of a full-height opener and would otherwise wait for a
+ * scroll to appear.
  */
 function onEnter(el: Element, build: () => gsap.core.Animation, start = "top 88%") {
   const anim = build();
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) return () => {};
   anim.pause();
-  if (el.closest("[data-after-intro]")) {
-    return afterIntro(() => anim.play());
-  }
   ScrollTrigger.create({ trigger: el, start, once: true, onEnter: () => anim.play() });
   return () => {};
+}
+
+/**
+ * The logo draws itself: each wave wipes in from the left, then the letters
+ * of TARIDA MC rise through their line, then REAL ESTATE. SVG transforms are
+ * in viewBox units (the letters are ~72 units tall), and the hidden state in
+ * CSS is only opacity, because a CSS transform on an SVG element would beat
+ * the transform attribute GSAP writes.
+ */
+export function logoTimeline(el: Element, delay = 0) {
+  const tl = gsap.timeline({ delay });
+  const waves = el.querySelectorAll("[data-logo-wave]");
+  const glyphs = el.querySelectorAll("[data-logo-glyph]");
+  const sub = el.querySelectorAll("[data-logo-sub]");
+  // The compact and mark variants have no subtitle (or title); skip what is absent.
+  if (waves.length) {
+    tl.fromTo(
+      waves,
+      { opacity: 1, clipPath: "inset(0% 100% 0% 0%)" },
+      { clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: CURTAIN, stagger: 0.14 },
+    );
+  }
+  if (glyphs.length) tl.fromTo(glyphs, { opacity: 1, y: 90 }, { y: 0, duration: 1.1, ease: EXPO, stagger: 0.045 }, 0.35);
+  if (sub.length) tl.fromTo(sub, { opacity: 1, y: 48 }, { y: 0, duration: 0.9, ease: EXPO, stagger: 0.03 }, 0.75);
+  return tl;
 }
 
 /** Mounts every effect found in the document. Returns the cleanup. */
@@ -91,6 +103,7 @@ export function mount(): () => void {
 
     all('[data-m="lines"]').forEach((el) => {
       const spans = el.querySelectorAll(".mask > span");
+      if (!spans.length) return;
       disposers.push(
         onEnter(el, () =>
           gsap.fromTo(
@@ -104,15 +117,20 @@ export function mount(): () => void {
 
     all('[data-m="chars"]').forEach((el) => {
       const spans = el.querySelectorAll(".mask-inline > span");
+      if (!spans.length) return;
       disposers.push(
         onEnter(el, () =>
           gsap.fromTo(
             spans,
-            { y: 0, yPercent: 115 },
+            { y: 0, yPercent: 145 },
             { yPercent: 0, duration: 1.2, ease: EXPO, stagger: num(el.dataset.stagger, 0.035), delay: delayOf(el) },
           ),
         ),
       );
+    });
+
+    all('[data-m="logo"]').forEach((el) => {
+      disposers.push(onEnter(el, () => logoTimeline(el, delayOf(el))));
     });
 
     all('[data-m="fade"]').forEach((el) => {
@@ -197,7 +215,8 @@ export function mount(): () => void {
             el,
             { clipPath: `inset(0px ${side}px 0px ${side}px)` },
             { clipPath: "inset(0px 0px 0px 0px)", duration: 0.7, ease: CURTAIN, delay: 0.15 },
-          ).fromTo(el.children, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.2");
+          );
+          if (el.children.length) tl.fromTo(el.children, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.2");
           return tl;
         }),
       );
@@ -224,8 +243,10 @@ export function mount(): () => void {
     });
 
     all('[data-m="words"]').forEach((el) => {
+      const words = el.querySelectorAll(".w");
+      if (!words.length) return;
       gsap.fromTo(
-        el.querySelectorAll(".w"),
+        words,
         { opacity: 0.14 },
         {
           opacity: 1,
@@ -260,15 +281,18 @@ export function mount(): () => void {
       });
     });
 
+    /* Panels only stick from md up (see ServiceStack); below that they just scroll. */
     all('[data-m="stack"]').forEach((el) => {
       const items = Array.from(el.querySelectorAll<HTMLElement>("[data-stack-item]"));
-      items.slice(0, -1).forEach((item, i) => {
-        const next = items[i + 1];
-        const inner = item.querySelector("[data-stack-inner]") ?? item;
-        const shade = item.querySelector("[data-stack-shade]");
-        const scroll = { trigger: next, start: "top bottom", end: "top top", scrub: true };
-        gsap.to(inner, { scale: 0.93, yPercent: -4, ease: "none", scrollTrigger: scroll });
-        if (shade) gsap.fromTo(shade, { opacity: 0 }, { opacity: 0.65, ease: "none", scrollTrigger: scroll });
+      mm.add("(min-width: 768px)", () => {
+        items.slice(0, -1).forEach((item, i) => {
+          const next = items[i + 1];
+          const inner = item.querySelector("[data-stack-inner]") ?? item;
+          const shade = item.querySelector("[data-stack-shade]");
+          const scroll = { trigger: next, start: "top bottom", end: "top top", scrub: true };
+          gsap.to(inner, { scale: 0.93, yPercent: -4, ease: "none", scrollTrigger: scroll });
+          if (shade) gsap.fromTo(shade, { opacity: 0 }, { opacity: 0.65, ease: "none", scrollTrigger: scroll });
+        });
       });
     });
 
@@ -298,8 +322,10 @@ export function mount(): () => void {
     });
 
     all('[data-m="stroke"]').forEach((el) => {
+      const paths = el.querySelectorAll("path");
+      if (!paths.length) return;
       gsap.fromTo(
-        el.querySelectorAll("path"),
+        paths,
         { strokeDashoffset: 1 },
         {
           strokeDashoffset: 0,
@@ -313,40 +339,29 @@ export function mount(): () => void {
     all('[data-m="hscroll"]').forEach((section) => {
       const track = section.querySelector<HTMLElement>("[data-track]");
       if (!track) return;
+      // Only the rail pins; the heading above it scrolls past normally.
+      const pinned = section.querySelector<HTMLElement>("[data-pin]") ?? section;
       const progress = section.querySelector<HTMLElement>("[data-progress]");
       const current = section.querySelector<HTMLElement>("[data-current]");
-      const cards = Array.from(track.children) as HTMLElement[];
+      const cards = Array.from(track.children).filter((c) => !c.hasAttribute("aria-hidden"));
 
       mm.add("(min-width: 1024px) and (pointer: fine)", () => {
         const distance = () => Math.max(0, track.scrollWidth - track.clientWidth);
-        const tween = gsap.to(track, {
+        gsap.to(track, {
           x: () => -distance(),
           ease: "none",
           scrollTrigger: {
-            trigger: section,
+            trigger: pinned,
             start: "top top",
             end: () => `+=${distance()}`,
             pin: true,
-            scrub: 0.9,
+            scrub: 0.6,
             invalidateOnRefresh: true,
             onUpdate: (self) => {
               if (progress) progress.style.transform = `scaleX(${self.progress})`;
               if (current) current.textContent = pad(Math.min(cards.length, Math.floor(self.progress * cards.length) + 1), 2);
             },
           },
-        });
-        cards.forEach((card) => {
-          const depth = num(card.dataset.depth, 0);
-          if (!depth) return;
-          gsap.fromTo(
-            card,
-            { y: depth },
-            {
-              y: -depth,
-              ease: "none",
-              scrollTrigger: { trigger: card, containerAnimation: tween, start: "left right", end: "right left", scrub: true },
-            },
-          );
         });
       });
     });

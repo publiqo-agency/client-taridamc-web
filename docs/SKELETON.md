@@ -108,3 +108,13 @@ a compile error. `ServicesDict` is the explicit exception: it needs
 - **Data that does not exist is not rendered.** `hasPhone()`, `hasWhatsApp()`…
 - **No `new Date()` in the sitemap or the legal pages.** A `lastmod` that changes every deploy lies.
 - **Copy stays out of client components.** Header and footer receive props.
+
+## Design rules
+
+- **No numbered section labels, and no eyebrow as a pattern.** A `(02)`
+  index or a small label ("What we do", "How we work") over every section
+  heading reads as AI-generated. Section headings carry the section on
+  their own. A short label is fine now and then, when it says something the
+  heading does not (who a service is for, the place a section is about);
+  never one per section. Numbers stay only where they are content: the
+  steps of a process, a spec list, a carousel's `01 / 06` progress.

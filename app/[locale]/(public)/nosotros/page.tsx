@@ -2,23 +2,23 @@ import type { Metadata } from "next";
 import { toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { pageMetadata } from "@/lib/i18n/metadata";
-import { localeHref, routePaths } from "@/lib/routes";
-import { routeBreadcrumb } from "@/lib/schema";
+import Link from "next/link";
+import { localeHref, routePaths, serviceHref } from "@/lib/routes";
+import { SERVICE_IDS } from "@/lib/services";
+import { aboutPageSchema, routeBreadcrumb } from "@/lib/schema";
 import { proposalFormHref } from "@/lib/whatsapp";
-import { DISPLAY, DISPLAY_QUIET, DISPLAY_SANS, FRAME, ITALIC, SECTION } from "@/lib/styles";
+import { DISPLAY, DISPLAY_QUIET, DISPLAY_SANS, FRAME, ACCENT, SECTION } from "@/lib/styles";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageTransition } from "@/components/site/page-transition";
 import { PageHero } from "@/components/site/page-hero";
 import { SectionHeader } from "@/components/site/section-header";
 import { Media } from "@/components/site/media";
 import { Sundial } from "@/components/site/sundial";
-import { Coastline } from "@/components/site/coastline";
 import { ValuesGrid } from "@/components/site/values-grid";
 import { ClosingBand } from "@/components/site/closing-band";
-import { PillButton } from "@/components/site/pill-button";
+import { Arrow, PillButton } from "@/components/site/pill-button";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 import { Lines } from "@/components/site/motion/split";
-import { PLACE } from "@/components/site/coords";
 
 export async function generateMetadata(props: PageProps<"/[locale]/nosotros">): Promise<Metadata> {
   const { locale: raw } = await props.params;
@@ -28,6 +28,7 @@ export async function generateMetadata(props: PageProps<"/[locale]/nosotros">): 
     locale,
     paths: routePaths("about"),
     title: dict.about.meta.title,
+    seoTitle: dict.about.meta.seoTitle,
     description: dict.about.meta.description,
   });
 }
@@ -51,7 +52,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
 
       {/* History: the photo held while the text scrolls past it. */}
       <section className={SECTION}>
-        <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-16`}>
+        <div className={`${FRAME} grid grid-cols-12 gap-x-5 gap-y-16 md:gap-x-8`}>
           <div className="col-span-12 md:col-span-5">
             <div className="md:sticky md:top-28">
               <Media
@@ -64,12 +65,9 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
             </div>
           </div>
           <div className="col-span-12 flex flex-col gap-24 md:col-span-6 md:col-start-7 md:pt-24">
-            {[story, method].filter(Boolean).map((section, i) => (
+            {[story, method].filter(Boolean).map((section) => (
               <div key={section.heading}>
-                <p className="label tnum text-ink-soft" data-m="fade">
-                  ({String(i + 1).padStart(2, "0")})
-                </p>
-                <h2 className={`${DISPLAY} mt-4 text-[clamp(2.5rem,4.4vw,4.5rem)]`} data-m="lines">
+                <h2 className={`${DISPLAY} text-[clamp(2.5rem,4.4vw,4.5rem)]`} data-m="lines">
                   <Lines text={section.heading} />
                 </h2>
                 {section.body.map((paragraph) => (
@@ -80,12 +78,31 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
               </div>
             ))}
 
+            {/* What the company does, linked: the about page is where AI
+                answers and searchers land to check who is behind the offer. */}
+            <nav aria-label={about.servicesTitle} data-m="fade">
+              <p className="label text-ink-soft">{about.servicesTitle}</p>
+              <ul className="mt-5 border-t border-line">
+                {SERVICE_IDS.map((id) => (
+                  <li key={id}>
+                    <Link
+                      href={serviceHref(locale, id)}
+                      className="group flex items-center justify-between gap-6 border-b border-line py-4 text-lg transition-colors hover:text-accent"
+                    >
+                      {services.items[id].title}
+                      <Arrow />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
             <p className="flex items-end gap-4 border-t border-line pt-10" data-m="fade">
               <span data-m="count" data-to="40" data-pad="2" className={`${DISPLAY_SANS} tnum text-[clamp(6rem,12vw,12rem)] leading-[0.78]`}>
                 40
               </span>
               <span className="pb-[0.4em]">
-                <span className={`${ITALIC} block text-[clamp(1.75rem,2.8vw,3rem)] leading-none`}>{common.brand.yearsLabel}</span>
+                <span className={`${ACCENT} block text-[clamp(1.75rem,2.8vw,3rem)] leading-none`}>{common.brand.yearsLabel}</span>
                 <span className="label mt-3 block text-ink-soft">{common.brand.yearsCaption}</span>
               </span>
             </p>
@@ -93,14 +110,20 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
         </div>
       </section>
 
-      {/* The person behind it. No portrait yet: the name carries the block. */}
+      {/* The person behind it: his portrait, then the name carries the block. */}
       <section className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
-        <div className={`${FRAME} grid grid-cols-12 items-end gap-x-8 gap-y-10`}>
-          <div className="col-span-12 md:col-span-3" data-m="fade">
-            <span className="label text-ink-soft">{about.leader.eyebrow}</span>
+        <div className={`${FRAME} grid grid-cols-12 items-end gap-x-5 gap-y-10 md:gap-x-8`}>
+          <div className="col-span-12 sm:col-span-8 md:col-span-4">
+            <Media
+              src="/about/ramon-seva.webp"
+              alt={about.leader.portraitAlt}
+              className="aspect-[4/5] w-full"
+              parallax={6}
+              sizes="(min-width: 768px) 33vw, (min-width: 640px) 66vw, 100vw"
+            />
           </div>
-          <div className="col-span-12 md:col-span-9">
-            <p className={`${ITALIC} text-[clamp(4rem,11vw,12rem)] leading-[0.9]`} data-m="lines">
+          <div className="col-span-12 md:col-span-8">
+            <p className={`${ACCENT} text-[clamp(4rem,8vw,9rem)] leading-[0.9]`} data-m="lines">
               <Lines text={about.leader.name} />
             </p>
             <div className="mt-12 grid gap-8 border-t border-line pt-8 md:grid-cols-2">
@@ -118,7 +141,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
       {/* Castelldefels: the signature sundial reveal. */}
       <section className={`${SECTION} overflow-hidden`}>
         <div className={FRAME}>
-          <div className="grid grid-cols-12 items-center gap-x-8 gap-y-24">
+          <div className="grid grid-cols-12 items-center gap-x-5 gap-y-24 md:gap-x-8">
             <div className="col-span-12 md:col-span-6 md:pr-8">
               <Sundial src="/about/castelldefels.webp" alt={about.place.imageAlt} />
             </div>
@@ -134,23 +157,19 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
               </p>
             </div>
           </div>
-          <div className="mt-28 md:mt-36">
-            <Coastline sea={about.place.sea} place={PLACE} />
-          </div>
         </div>
       </section>
 
       <section className={`${SECTION} bg-stock-2`}>
         <div className={FRAME}>
-          <SectionHeader eyebrow={common.values.eyebrow} title={common.values.title} />
-          <div className="mt-20 md:mt-28">
+          <SectionHeader title={common.values.title} align="start" />
+          <div className="mt-12 md:mt-16">
             <ValuesGrid items={common.values.items} />
           </div>
         </div>
       </section>
 
       <ClosingBand
-        eyebrow={common.closing.eyebrow}
         title={common.closing.title}
         body={common.closing.body}
         image={{ src: "/cta/sell.webp", alt: common.closing.imageAlt }}
@@ -161,7 +180,12 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
         <WhatsAppCta label={common.cta.whatsapp} message={services.items.purchase.whatsappMessage} service="purchase" tone="outline" />
       </ClosingBand>
 
-      <JsonLd data={routeBreadcrumb(locale, { homeLabel: common.nav.home, name: about.meta.title, key: "about" })} />
+      <JsonLd
+        data={[
+          aboutPageSchema(locale, { name: about.meta.title, path: routePaths("about")[locale] }),
+          routeBreadcrumb(locale, { homeLabel: common.nav.home, name: about.meta.title, key: "about" }),
+        ]}
+      />
     </PageTransition>
   );
 }

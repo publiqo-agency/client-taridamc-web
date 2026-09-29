@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import { toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -14,7 +15,6 @@ import { ContactFormPrefill } from "@/components/site/contact-form-prefill";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 import { PageTransition } from "@/components/site/page-transition";
 import { LocalTime } from "@/components/site/local-time";
-import { COORDS, PLACE } from "@/components/site/coords";
 import { Lines } from "@/components/site/motion/split";
 import { sendContact } from "./actions";
 
@@ -26,6 +26,7 @@ export async function generateMetadata(props: PageProps<"/[locale]/contacto">): 
     locale,
     paths: routePaths("contact"),
     title: dict.contact.meta.title,
+    seoTitle: dict.contact.meta.seoTitle,
     description: dict.contact.meta.description,
   });
 }
@@ -43,10 +44,16 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
 
   return (
     <PageTransition>
-      <PageHero eyebrow={contact.hero.eyebrow} title={contact.hero.title} intro={contact.hero.intro} compact />
+      <PageHero
+        eyebrow={contact.hero.eyebrow}
+        title={contact.hero.title}
+        intro={contact.hero.intro}
+        image={{ src: "/contact/hero.webp", alt: contact.hero.imageAlt }}
+        compact
+      />
 
       <section data-placement="contact-page" className={SECTION}>
-        <div className={`${FRAME} grid grid-cols-12 gap-x-8 gap-y-16`}>
+        <div className={`${FRAME} grid grid-cols-12 gap-x-5 gap-y-16 md:gap-x-8`}>
           <div className="form-skin col-span-12 lg:col-span-7" data-m="fade">
             <Suspense fallback={null}>
               <ContactFormPrefill
@@ -57,6 +64,18 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
                 privacyHref={localeHref(locale, "privacy")}
               />
             </Suspense>
+            <div className="mt-10 border-t border-line pt-5 text-xs leading-relaxed text-ink-soft">
+              <p className="font-medium text-ink">{contact.dataNotice.title}</p>
+              <p className="mt-2">
+                {contact.dataNotice.controller}: {ORG.legalName.replace(/\.$/, "")}.{" "}
+                {contact.dataNotice.rows.map(([label, text]) => `${label}: ${text}.`).join(" ")}{" "}
+                {contact.dataNotice.more}{" "}
+                <Link href={localeHref(locale, "privacy")} className="link-line text-ink">
+                  {contact.dataNotice.link}
+                </Link>
+                .
+              </p>
+            </div>
           </div>
 
           <aside className="col-span-12 lg:col-span-4 lg:col-start-9">
@@ -92,10 +111,6 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
                     </dd>
                   </div>
                 )}
-                <div className="flex justify-between gap-6 border-t border-line py-3">
-                  <dt className="text-ink-soft">{PLACE}</dt>
-                  <dd className="tnum">{COORDS}</dd>
-                </div>
                 <div className="flex justify-between gap-6 border-y border-line py-3">
                   <dt className="text-ink-soft">{common.footer.localTime}</dt>
                   <dd>

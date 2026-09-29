@@ -1,22 +1,21 @@
 import { toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { LEGAL_KEYS, localeHref, overlayPathsFor, serviceHref } from "@/lib/routes";
-import { SERVICE_IDS } from "@/lib/services";
+import { SERVICE_IDS, serviceIdsOf, type ServiceKind } from "@/lib/services";
 import { GTM_ID } from "@/lib/analytics";
-import { ORG } from "@/lib/seo";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { WhatsAppBubble } from "@/components/site/whatsapp";
 import { ConsentBanner } from "@/components/site/consent-banner";
 import { RevealObserver } from "@/components/site/reveal-observer";
 import { MotionRoot } from "@/components/site/motion/motion-root";
-import { Intro } from "@/components/site/motion/intro";
 import { Cursor } from "@/components/site/motion/cursor";
-import { COORDS, PLACE } from "@/components/site/coords";
+import { PhotoVariantToggle } from "@/components/site/photo-variant-toggle";
+import { SHOW_PENDING } from "@/lib/pending";
 
 /**
  * Public site chrome. All copy is resolved HERE, on the server, and goes
- * down to header, footer and intro as props: they are client components and
+ * down to header and footer as props: they are client components and
  * if they read the dictionary every language would end up in the bundle.
  *
  * The 404 needs no entry: not-found.tsx hangs from [locale], outside this
@@ -26,22 +25,29 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
   const { locale: raw } = await props.params;
   const locale = toLocale(raw);
   const dict = await getDictionary(locale);
-  const { nav, cta, whatsapp, footer, localeSwitcher, consent, brand } = dict.common;
+  const { nav, cta, whatsapp, footer, localeSwitcher, consent } = dict.common;
 
   const homeHref = localeHref(locale, "home");
   const contactHref = localeHref(locale, "contact");
   const aboutHref = localeHref(locale, "about");
-  const sellHref = serviceHref(locale, "purchase");
-  const rentHref = serviceHref(locale, "rental");
+  const saleHref = localeHref(locale, "sale");
+  const rentalHref = localeHref(locale, "rental");
 
-  // The header's inline links: the seller lead first, it is what the site
-  // pushes; contact is the button beside them.
+  // The header's inline links: the two sides of the business, the seller
+  // lead first (it is what the site pushes); contact is the button beside
+  // them. Each hub drops down its own service pages.
+  const hubPages = (kind: ServiceKind) =>
+    serviceIdsOf(kind).map((id) => ({
+      href: serviceHref(locale, id),
+      label: dict.services.items[id].shortTitle,
+    }));
   const navItems = [
-    { href: sellHref, label: nav.sell },
-    { href: rentHref, label: nav.rent },
+    { href: saleHref, label: nav.sale, children: hubPages("purchase") },
+    { href: rentalHref, label: nav.rental, children: hubPages("rental") },
     { href: aboutHref, label: nav.about },
   ];
 
+  // The full-screen menu: the same pages, home and contact included.
   const menuItems = [
     { href: homeHref, label: nav.home },
     ...navItems,
@@ -60,8 +66,6 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
 
   return (
     <>
-      <Intro wordmark={ORG.name} years={40} yearsLabel={brand.yearsLabel} place={PLACE} coords={COORDS} />
-
       <SiteHeader
         locale={locale}
         overlayPaths={overlayPathsFor(locale)}
@@ -73,6 +77,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
           menu: nav.menu,
           close: nav.close,
           mainNavAria: nav.mainNavAria,
+          submenu: nav.submenu,
           localeAria: localeSwitcher.aria,
           skipToContent: nav.skipToContent,
         }}
@@ -89,7 +94,8 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
             title: footer.navTitle,
             links: [
               { href: homeHref, label: nav.home },
-              { href: localeHref(locale, "services"), label: nav.services },
+              { href: saleHref, label: nav.sale },
+              { href: rentalHref, label: nav.rental },
               { href: aboutHref, label: nav.about },
               { href: contactHref, label: nav.contact },
             ],
@@ -102,7 +108,6 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
           contactTitle: footer.contactTitle,
           followTitle: footer.followTitle,
           localeAria: localeSwitcher.aria,
-          localTime: footer.localTime,
           cookieSettings: footer.cookieSettings,
           rights: footer.rights,
           credit: footer.credit,
@@ -110,6 +115,9 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
       />
 
       <WhatsAppBubble aria={whatsapp.aria} message={whatsapp.messages.general} />
+
+      {/* Preview-only: lets the client compare the two photo sets. */}
+      {SHOW_PENDING && <PhotoVariantToggle />}
 
       {/* Without a container there is nothing to consent to: asking permission
           for not measuring would be pure noise. */}

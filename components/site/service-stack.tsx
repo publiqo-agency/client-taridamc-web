@@ -6,12 +6,14 @@ import { PillButton } from "./pill-button";
 
 export type StackItem = {
   id: string;
-  index: string;
+  /** Who the line is for: says what the title does not. */
   kicker: string;
   title: string;
   body: string;
   href: string;
   cta: string;
+  /** A second page of the same line (naves beside homes), as a quiet link. */
+  secondary?: { href: string; label: string };
   image: { src: string; alt: string };
   /** Light (cream) or dark (espresso) panel. */
   tone: "light" | "dark";
@@ -21,22 +23,26 @@ export type StackItem = {
  * Sticky stacked panels: each business line fills the screen, and the next
  * one slides up over it while the one underneath recedes (scales down and
  * darkens, scrubbed). On reduced motion they are simply consecutive panels.
+ *
+ * Below md they are consecutive panels too: stacked vertically, the copy sits
+ * in the panel's lower half, which is exactly what the next panel covers
+ * first, and a phone screen is too short for photo and copy together.
  */
 export function ServiceStack({ items, cursor }: { items: StackItem[]; cursor: string }) {
   return (
     <div data-m="stack" data-placement="home-services" className="relative">
       {items.map((item) => (
-        <article key={item.id} data-stack-item className="sticky top-0 h-[100svh] min-h-[680px] overflow-hidden">
+        <article key={item.id} data-stack-item className="relative md:sticky md:top-0 md:h-[100svh] md:min-h-[680px] md:overflow-hidden">
           <div
             data-stack-inner
             className={`${item.tone === "dark" ? "band-dark" : "band-light"} grain relative h-full origin-top bg-stock-2 text-ink`}
           >
-            <div className="grid h-full grid-rows-[45%_1fr] md:grid-cols-2 md:grid-rows-1">
+            <div className="grid h-full md:grid-cols-2">
               <Link
                 href={item.href}
                 tabIndex={-1}
                 aria-hidden
-                className={`relative block h-full ${item.tone === "dark" ? "md:order-2" : ""}`}
+                className={`relative block aspect-[4/3] md:aspect-auto md:h-full ${item.tone === "dark" ? "md:order-2" : ""}`}
               >
                 <Media
                   src={item.image.src}
@@ -48,11 +54,10 @@ export function ServiceStack({ items, cursor }: { items: StackItem[]; cursor: st
                 />
               </Link>
 
-              <div className={`${FRAME} flex flex-col justify-between py-10 md:px-12 md:py-16 lg:px-16 xl:px-20`}>
-                <div className="flex items-baseline justify-between gap-6" data-m="fade">
-                  <span className="label">{item.kicker}</span>
-                  <span className="label tnum text-ink-soft">{item.index} / 0{items.length}</span>
-                </div>
+              <div className={`${FRAME} flex flex-col justify-center py-14 md:px-12 md:py-16 lg:px-16 xl:px-20`}>
+                <p className="label mb-8 md:mb-12" data-m="fade">
+                  {item.kicker}
+                </p>
 
                 <div>
                   <h3 className={`${DISPLAY} text-[clamp(2.75rem,5.6vw,6rem)]`} data-m="lines">
@@ -61,15 +66,20 @@ export function ServiceStack({ items, cursor }: { items: StackItem[]; cursor: st
                   <p className="mt-6 max-w-md text-lg text-ink-soft md:mt-8" data-m="fade" data-delay="0.2">
                     {item.body}
                   </p>
-                  <div className="mt-8 md:mt-10">
+                  <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 md:mt-10">
                     <PillButton href={item.href} tone={item.tone === "dark" ? "white" : "ink"} seed>
                       {item.cta}
                     </PillButton>
+                    {item.secondary && (
+                      <Link href={item.secondary.href} className="link-line text-sm font-medium">
+                        {item.secondary.label}
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
-            <div data-stack-shade aria-hidden className="pointer-events-none absolute inset-0 z-[3] bg-[#120e0b] opacity-0" />
+            <div data-stack-shade aria-hidden className="pointer-events-none absolute inset-0 z-[3] bg-[#051726] opacity-0" />
           </div>
         </article>
       ))}

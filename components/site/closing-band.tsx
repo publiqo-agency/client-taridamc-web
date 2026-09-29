@@ -3,7 +3,6 @@ import { Lines } from "./motion/split";
 import { Media } from "./media";
 
 type Props = {
-  eyebrow: string;
   title: string;
   body: string;
   image: { src: string; alt: string };
@@ -15,15 +14,12 @@ type Props = {
  * framed like a window that opens as it arrives, and the question in large
  * serif. The buttons come in as seeds.
  */
-export function ClosingBand({ eyebrow, title, body, image, children }: Props) {
+export function ClosingBand({ title, body, image, children }: Props) {
   return (
     <section data-placement="closing" className="band-dark grain relative overflow-hidden bg-stock text-ink">
-      <div className={`${FRAME} grid grid-cols-12 items-center gap-x-8 gap-y-14 py-24 md:py-36`}>
+      <div className={`${FRAME} grid grid-cols-12 items-center gap-x-5 gap-y-14 md:gap-x-8 py-20 md:py-28`}>
         <div className="col-span-12 lg:col-span-7">
-          <p className="label text-ink-soft" data-m="fade">
-            {eyebrow}
-          </p>
-          <h2 className={`${DISPLAY} mt-8 text-[clamp(3rem,7vw,8rem)]`} data-m="lines">
+          <h2 className={`${DISPLAY} text-[clamp(3rem,7vw,8rem)]`} data-m="lines">
             <Lines text={title} />
           </h2>
           <p className="mt-8 max-w-lg text-lg text-ink-soft" data-m="fade" data-delay="0.25">
@@ -37,7 +33,8 @@ export function ClosingBand({ eyebrow, title, body, image, children }: Props) {
             alt={image.alt}
             reveal="window"
             parallax={8}
-            className="aspect-[4/5] w-full"
+            // Full width until lg: a 4:5 plate there is taller than the screen.
+            className="aspect-[4/3] w-full lg:aspect-[4/5]"
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
         </div>

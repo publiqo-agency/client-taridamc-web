@@ -5,27 +5,25 @@ export const common: CommonDict = {
   meta: {
     defaultTitle: "Tarida MC",
     description:
-      "Tarida MC, entreprise familiale de Castelldefels forte de quarante ans d’expérience dans l’immobilier. Nous achetons des biens immobiliers et louons des locaux industriels et des logements.",
+      "Tarida MC, entreprise familiale forte de quarante ans d’expérience dans l’immobilier. Nous achetons partout en Espagne et louons entrepôts et logements.",
   },
   nav: {
     home: "Accueil",
-    services: "Services",
-    sell: "Vendre votre bien",
-    rent: "Location",
+    sale: "Vente",
+    rental: "Location",
     about: "À propos",
     contact: "Contact",
     menu: "Menu",
     close: "Fermer",
     mainNavAria: "Navigation principale",
+    submenu: "Pages de la rubrique {label}",
     skipToContent: "Aller au contenu",
   },
   cta: {
     contact: "Nous contacter",
     whatsapp: "Écrivez-nous sur WhatsApp",
     back: "Retour à l’accueil",
-    allServices: "Voir tous les services",
     learnMore: "En savoir plus",
-    scroll: "Défiler",
   },
   brand: {
     yearsLabel: "ans",
@@ -33,7 +31,6 @@ export const common: CommonDict = {
     family: "Entreprise familiale",
   },
   catalogue: {
-    eyebrow: "Catalogue",
     title: "Biens\n*à louer*",
     intro:
       "Locaux industriels et logements à Castelldefels, issus de notre propre patrimoine. Vous traitez directement avec nous.",
@@ -42,12 +39,10 @@ export const common: CommonDict = {
       all: "Tous",
       warehouse: "Entrepôts",
       home: "Logements",
-      commercial: "Commerces",
     },
     types: {
       warehouse: "Local industriel",
       home: "Logement",
-      commercial: "Local commercial",
     },
     specs: {
       ref: "Réf.",
@@ -65,7 +60,6 @@ export const common: CommonDict = {
     },
   },
   values: {
-    eyebrow: "Notre façon de travailler",
     title: "Trois mots\n*qui nous définissent*",
     items: [
       {
@@ -83,10 +77,9 @@ export const common: CommonDict = {
     ],
   },
   closing: {
-    eyebrow: "Parlons-en",
     title: "Vous pensez à vendre\n*votre bien ?*",
     body: "Dites-nous de quel bien il s’agit. Nous l’étudierons avec attention et vous donnerons une réponse claire.",
-    imageAlt: "Terrasse d’une maison méditerranéenne à la tombée de la nuit, intérieur éclairé",
+    imageAlt: "Balcon en fer forgé sur la façade d’un immeuble classique",
   },
   whatsapp: {
     aria: "Ouvrir WhatsApp",
@@ -95,7 +88,7 @@ export const common: CommonDict = {
     },
   },
   footer: {
-    tagline: "Entreprise familiale à Castelldefels. Quarante ans à acheter et louer des biens immobiliers.",
+    tagline: "Entreprise familiale : quarante ans à acheter et louer des biens immobiliers partout en Espagne.",
     navTitle: "Rubriques",
     servicesTitle: "Services",
     contactTitle: "Contact",

@@ -25,10 +25,24 @@ What is wired, what the consoles hold and what is pending. Filled by the
 - `components/site/contact-form.tsx`: `generate_lead` on a successful send.
 
 Placements in use (`data-placement`): `header`, `home-hero`, `home-services`,
-`home-process`, `home-catalogue`, `service-purchase`, `service-rental`,
-`catalogue`, `closing`, `contact-page`, `footer`, `bubble`. A catalogue card's
-enquiry is a `whatsapp` (or `form`, while there is no number) CTA with
-`service=rental`.
+`home-process`, `home-catalogue`, `sale-hub`, `rental-hub` (the white
+introduction of each hub), `service-purchase`,
+`service-purchase-warehouses`, `service-rental-warehouses`,
+`service-rental-homes`, `catalogue`, `closing`, `contact-page`, `footer`,
+`bubble`, `legal` (the owner's email and phone on the legal pages).
+
+Values of `service` (the ids in `lib/services.ts`, also the contact form's
+select): `purchase` (flats and houses), `purchase-warehouses`,
+`rental-warehouses`, `rental-homes`. Since 2026-09-29 the old `rental` value
+no longer exists: the rental page was split into naves and homes. A catalogue
+card's enquiry is a `whatsapp` (or `form`, while there is no number) CTA whose
+`service` follows the listing's type (`rental-warehouses` or `rental-homes`). The rental hub's own CTAs (intro,
+closing, empty catalogue) carry no `service`: they cover naves and homes at
+once; the sale hub's carry `purchase`.
+
+Page paths changed on 2026-09-29 (before any data existed): the services
+index is gone; hubs `/venta` and `/alquiler`, service pages under them. Build
+any page-path report or audience on the new paths.
 
 Events: `cta_click`, `contact_click`, `generate_lead`. Parameters that need a
 GA4 custom dimension: `placement`, `method`, `service`, `form`, `site_language`.
@@ -36,6 +50,10 @@ GA4 custom dimension: `placement`, `method`, `service`, `form`, `site_language`.
 ## Pending
 
 - Everything: the container does not exist yet.
+- When building GA4 reports and the Ads conversions, segment the seller lead
+  by `service` in (`purchase`, `purchase-warehouses`), not `purchase` alone.
+  No report or audience filters on `service=rental` yet; if one is created
+  from an old note, use `rental-warehouses` / `rental-homes` instead.
 - Decide whether catalogue enquiries need the listing reference as a
   parameter (`property_ref`). If yes: add it to `contact_click` in
   `lib/analytics.ts` + a `data-property` attribute on the card, and create the

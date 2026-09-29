@@ -43,9 +43,9 @@ export function WhatsAppBubble({ aria, message }: { aria: string; message: strin
         rel="noopener noreferrer"
         aria-label={aria}
         data-cta="whatsapp"
-        className={`band-dark fixed right-5 bottom-5 z-40 grid size-14 place-items-center rounded-full border border-line bg-stock text-ink transition-[translate,background-color] duration-500 ${EASE_OUT} hover:-translate-y-1 hover:bg-accent md:right-8 md:bottom-8`}
+        className={`band-dark fixed right-5 bottom-5 z-40 grid size-14 place-items-center rounded-full border border-line bg-stock text-ink transition-[translate,background-color] duration-500 ${EASE_OUT} hover:-translate-y-1 hover:bg-accent hover:text-accent-ink md:right-8 md:bottom-8 md:size-16`}
       >
-        <WhatsAppIcon className="size-7" />
+        <WhatsAppIcon className="size-7 md:size-8" />
       </a>
     </div>
   );

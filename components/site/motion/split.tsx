@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { ITALIC } from "@/lib/styles";
+import { ACCENT } from "@/lib/styles";
 
 /**
  * Server-side text splitting for the motion engine. The markup is split
@@ -8,7 +8,7 @@ import { ITALIC } from "@/lib/styles";
  * one sentence.
  *
  * Copy conventions (dictionaries): "\n" is a line break the design relies
- * on, and *asterisks* mark the italic serif accent phrase.
+ * on, and *asterisks* mark the accent phrase (thin sans, brand blue).
  */
 
 /** "*a* b" → [{text:"a", em:true}, {text:" b", em:false}] */
@@ -23,13 +23,16 @@ function segments(text: string) {
     );
 }
 
-/** Renders *italic* accents without any splitting. */
-export function Rich({ text, emClassName = "" }: { text: string; emClassName?: string }) {
+/** Accent phrases wear the logo's blue (a lighter sea blue inside dark bands). */
+const EM = "text-accent";
+
+/** Renders *accent* phrases without any splitting. */
+export function Rich({ text, emClassName = EM }: { text: string; emClassName?: string }) {
   return (
     <>
       {segments(text).map((s, i) =>
         s.em ? (
-          <em key={i} className={`${ITALIC} ${emClassName}`}>
+          <em key={i} className={`${ACCENT} ${emClassName}`}>
             {s.text}
           </em>
         ) : (
@@ -47,7 +50,7 @@ export function Rich({ text, emClassName = "" }: { text: string; emClassName?: s
 export function Lines({
   text,
   lineClassName = "",
-  emClassName = "",
+  emClassName = EM,
 }: {
   text: string;
   lineClassName?: string;
@@ -56,11 +59,17 @@ export function Lines({
   return (
     <>
       {text.split("\n").map((line, i) => (
-        <span key={i} className={`mask ${lineClassName}`}>
-          <span>
-            <Rich text={line} emClassName={emClassName} />
+        <Fragment key={i}>
+          {/* A space between the block masks: invisible on screen, but it
+              keeps "Compramos" + "su inmueble" apart in the HTML text that
+              crawlers and AI readers extract. */}
+          {i > 0 && " "}
+          <span className={`mask ${lineClassName}`}>
+            <span>
+              <Rich text={line} emClassName={emClassName} />
+            </span>
           </span>
-        </span>
+        </Fragment>
       ))}
     </>
   );
@@ -68,7 +77,9 @@ export function Lines({
 
 /**
  * Letter by letter, for the two wordmarks only. The visual letters are
- * aria-hidden and the word is said once.
+ * aria-hidden and the word is said once. Each letter is painted by CSS from
+ * `data-c` (globals.css), so the HTML text holds the word once, not twice:
+ * crawlers and AI readers would otherwise read "InmueblesInmuebles".
  */
 export function Chars({ text, className = "" }: { text: string; className?: string }) {
   return (
@@ -77,7 +88,7 @@ export function Chars({ text, className = "" }: { text: string; className?: stri
       <span aria-hidden>
         {Array.from(text).map((char, i) => (
           <span key={i} className="mask-inline">
-            <span>{char === " " ? " " : char}</span>
+            <span data-c={char === " " ? "\u00a0" : char} />
           </span>
         ))}
       </span>
@@ -89,7 +100,7 @@ export function Chars({ text, className = "" }: { text: string; className?: stri
  * Word spans for the scroll-lit manifesto. Words stay in the accessibility
  * tree (they ARE the paragraph); only their opacity is animated.
  */
-export function Words({ text, emClassName = "" }: { text: string; emClassName?: string }) {
+export function Words({ text, emClassName = EM }: { text: string; emClassName?: string }) {
   return (
     <>
       {segments(text).flatMap((s, si) =>
@@ -100,7 +111,7 @@ export function Words({ text, emClassName = "" }: { text: string; emClassName?: 
             /^\s+$/.test(word) ? (
               <Fragment key={`${si}-${wi}`}>{word}</Fragment>
             ) : (
-              <span key={`${si}-${wi}`} className={s.em ? `w ${ITALIC} ${emClassName}` : "w"}>
+              <span key={`${si}-${wi}`} className={s.em ? `w ${ACCENT} ${emClassName}` : "w"}>
                 {word}
               </span>
             ),

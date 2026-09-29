@@ -3,11 +3,11 @@ import { ViewTransition } from "react";
 import { FRAME, DISPLAY } from "@/lib/styles";
 import { hasPublicImage } from "@/lib/images";
 import { Lines } from "./motion/split";
-import { COORDS } from "./coords";
+import { MORPH_SHARE } from "./page-transition";
 
 type Props = {
   eyebrow?: string;
-  /** Supports "\n" line breaks and *italic* accents. */
+  /** Supports "\n" line breaks and *accent* phrases. */
   title: string;
   intro?: string;
   image?: { src: string; alt: string };
@@ -37,33 +37,33 @@ export function PageHero({ eyebrow, title, intro, image, transitionName, compact
 
   return (
     <section
-      data-after-intro
       className={`band-dark grain relative flex overflow-hidden bg-stock text-ink ${
         compact ? "min-h-[72svh]" : "min-h-[92svh]"
       }`}
     >
       {picture &&
         (transitionName ? (
-          <ViewTransition name={transitionName} share="morph" default="none">
+          <ViewTransition name={transitionName} share={MORPH_SHARE} default="none">
             {picture}
           </ViewTransition>
         ) : (
           picture
         ))}
+      {/* On a phone the headline and intro fill the lower half of the photo,
+          not just its foot, so the wash darkens from a third of the way down. */}
       {photo && (
         <div
           aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,18,14,0.55)_0%,rgba(24,18,14,0.15)_35%,rgba(24,18,14,0.35)_60%,rgba(24,18,14,0.88)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,26,42,0.55)_0%,rgba(6,26,42,0.2)_28%,rgba(6,26,42,0.62)_52%,rgba(6,26,42,0.9)_100%)] md:bg-[linear-gradient(180deg,rgba(6,26,42,0.55)_0%,rgba(6,26,42,0.15)_35%,rgba(6,26,42,0.35)_60%,rgba(6,26,42,0.88)_100%)]"
         />
       )}
 
       <div className={`${FRAME} relative z-[2] flex flex-1 flex-col justify-between pt-32 pb-10 md:pb-14`}>
         <div className="flex items-start justify-between gap-6" data-m="fade" data-delay="0.2">
           {eyebrow && <p className="label">{eyebrow}</p>}
-          <p className="label tnum hidden text-ink-soft sm:block">{COORDS}</p>
         </div>
 
-        <div className="grid grid-cols-12 items-end gap-x-8 gap-y-8 pt-24">
+        <div className="grid grid-cols-12 items-end gap-x-5 gap-y-8 md:gap-x-8 pt-24">
           <h1 className={`${DISPLAY} col-span-12 text-[clamp(3rem,8.4vw,9.5rem)] lg:col-span-8`} data-m="lines" data-delay="0.25">
             <Lines text={title} />
           </h1>

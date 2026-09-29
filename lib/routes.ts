@@ -1,13 +1,17 @@
 import type { Locale } from "@/lib/i18n/config";
-import { SERVICE_SLUGS, type ServiceId } from "@/lib/services";
+import { SERVICE_KIND, SERVICE_SLUGS, type ServiceId } from "@/lib/services";
 
 /**
  * Internal routes per language.
  *
  * The app/ folders are named after the DEFAULT locale's slugs and are the
  * CANONICAL route. The public URL of every other language is served by the
- * proxy rewrite: /en/services renders app/[locale]/(public)/servicios/. One
+ * proxy rewrite: /en/to-let renders app/[locale]/(public)/alquiler/. One
  * page tree for every language.
+ *
+ * Two hubs, no services index: `sale` (what Tarida buys from owners) and
+ * `rental` (what it lets). Each service page hangs from the hub of its kind:
+ * /es/venta/naves-industriales, /es/alquiler/viviendas.
  *
  * Slugs are ASCII ALWAYS (ü→ue, ä→a, ö→o). A slug with diacritics gets
  * percent-encoded when copied and turns unreadable in the one channel a small
@@ -21,7 +25,8 @@ import { SERVICE_SLUGS, type ServiceId } from "@/lib/services";
  */
 export const ROUTES = {
   home: { es: "", en: "", fr: "", ca: "" },
-  services: { es: "/servicios", en: "/services", fr: "/services", ca: "/serveis" },
+  sale: { es: "/venta", en: "/sell", fr: "/vente", ca: "/venda" },
+  rental: { es: "/alquiler", en: "/to-let", fr: "/location", ca: "/lloguer" },
   about: { es: "/nosotros", en: "/about-us", fr: "/qui-sommes-nous", ca: "/qui-som" },
   contact: { es: "/contacto", en: "/contact", fr: "/contact", ca: "/contacte" },
   legalNotice: { es: "/aviso-legal", en: "/legal-notice", fr: "/mentions-legales", ca: "/avis-legal" },
@@ -40,7 +45,7 @@ export const ROUTE_KEYS = Object.keys(ROUTES) as RouteKey[];
  * app/[locale]/(public)/layout.tsx because it is a client decision (which
  * entries, which order, what goes into the CTA button).
  */
-export const NAV_KEYS = ["services", "about"] as const satisfies readonly RouteKey[];
+export const NAV_KEYS = ["sale", "rental", "about"] as const satisfies readonly RouteKey[];
 
 /** Legal pages, which the footer prints in a second row. */
 export const LEGAL_KEYS = ["legalNotice", "privacy", "cookies"] as const satisfies readonly RouteKey[];
@@ -48,14 +53,17 @@ export const LEGAL_KEYS = ["legalNotice", "privacy", "cookies"] as const satisfi
 /** A route's cluster in every locale — what the alternates need. */
 export const routePaths = (key: RouteKey): Record<Locale, string> => ROUTES[key];
 
+/** The hub a service page hangs from: buying pages under sale, lets under rental. */
+export const hubKey = (id: ServiceId): "sale" | "rental" =>
+  SERVICE_KIND[id] === "purchase" ? "sale" : "rental";
+
 /** A service page's cluster in every locale. */
-export const servicePaths = (id: ServiceId): Record<Locale, string> =>
-  Object.fromEntries(
-    (Object.keys(ROUTES.services) as Locale[]).map((l) => [
-      l,
-      `${ROUTES.services[l]}${SERVICE_SLUGS[id][l]}`,
-    ]),
+export const servicePaths = (id: ServiceId): Record<Locale, string> => {
+  const hub = ROUTES[hubKey(id)];
+  return Object.fromEntries(
+    (Object.keys(hub) as Locale[]).map((l) => [l, `${hub[l]}${SERVICE_SLUGS[id][l]}`]),
   ) as Record<Locale, string>;
+};
 
 export const localeHref = (locale: Locale, key: RouteKey = "home") =>
   `/${locale}${ROUTES[key][locale]}`;

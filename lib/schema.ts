@@ -1,5 +1,6 @@
 import { HTML_LANG, LOCALES, type Locale } from "./i18n/config";
 import { localeHref, type RouteKey } from "./routes";
+import { PLACE } from "@/components/site/place";
 import {
   ORG,
   SAME_AS,
@@ -19,6 +20,7 @@ import {
 /** Stable, locale-independent @ids: the entities are unique. */
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
+const PERSON_ID = `${SITE_URL}/#leader`;
 
 const contactFields = () => ({
   ...(hasPhone() ? { telephone: ORG.telephone } : {}),
@@ -45,32 +47,32 @@ const contactFields = () => ({
           },
         }
       : {}),
-  ...(ORG.areaServed
-    ? {
-        areaServed: {
-          "@type": "AdministrativeArea",
-          name: ORG.areaServed,
-          containedInPlace: { "@type": "Country", name: ORG.address.country },
-        },
-      }
-    : {}),
+  // The whole country: they buy anywhere in Spain (the rental portfolio,
+  // local to Castelldefels, says so on its own Service node).
+  ...(ORG.areaServed ? { areaServed: { "@type": "Country", name: ORG.areaServed } } : {}),
   ...(SAME_AS.length ? { sameAs: SAME_AS } : {}),
 });
 
 /**
- * The business as an entity. `Organization` + `LocalBusiness` in one node:
- * same @id, both types, so the local card and the publisher reference point
- * at the same thing. Drop `LocalBusiness` if the client has no physical
- * premises to be found at.
+ * The business as an entity. `RealEstateAgent` is a LocalBusiness subtype, so
+ * the one node serves as the local card and as the publisher. It is emitted
+ * once per page with a locale-independent @id, so the texts passed in come
+ * from the DEFAULT locale: two languages describing the same @id differently
+ * would contradict each other.
  */
-export function organizationSchema() {
+export function organizationSchema(opts: {
+  description?: string;
+  knowsAbout?: string[];
+  services?: { name: string; url: string }[];
+} = {}) {
   return {
     "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness"],
+    "@type": ["Organization", "RealEstateAgent"],
     "@id": ORG_ID,
     name: ORG.name,
     ...(ORG.shortName !== ORG.name ? { alternateName: ORG.shortName } : {}),
     ...(ORG.claim ? { slogan: ORG.claim } : {}),
+    ...(opts.description ? { description: opts.description } : {}),
     ...(ORG.legalName ? { legalName: ORG.legalName } : {}),
     ...(ORG.taxId ? { taxID: ORG.taxId } : {}),
     url: SITE_URL,
@@ -78,7 +80,50 @@ export function organizationSchema() {
     // process SVG reliably, so this is not the favicon.
     logo: absoluteUrl("/logo/logo-512.png"),
     availableLanguage: [...LOCALES],
+    ...(ORG.leader.name ? { employee: { "@id": PERSON_ID } } : {}),
+    ...(opts.knowsAbout?.length ? { knowsAbout: opts.knowsAbout } : {}),
+    ...(opts.services?.length
+      ? {
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: ORG.name,
+            itemListElement: opts.services.map((service) => ({
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: service.name, url: service.url },
+            })),
+          },
+        }
+      : {}),
     ...contactFields(),
+  };
+}
+
+/**
+ * The person who runs the company. Linked both ways (Organization.employee,
+ * Person.worksFor) so AI answers and Google can tie the name to the firm.
+ */
+export function personSchema(opts: { description?: string } = {}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": PERSON_ID,
+    name: ORG.leader.name,
+    ...(opts.description ? { description: opts.description } : {}),
+    image: absoluteUrl(ORG.leader.image),
+    worksFor: { "@id": ORG_ID },
+  };
+}
+
+/** The about page, pointing at the organisation it describes. */
+export function aboutPageSchema(locale: Locale, opts: { name: string; path: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: opts.name,
+    url: absoluteUrl(`/${locale}${opts.path}`),
+    inLanguage: HTML_LANG[locale],
+    about: { "@id": ORG_ID },
+    mainEntity: { "@id": ORG_ID },
   };
 }
 
@@ -100,7 +145,7 @@ export function websiteSchema() {
   };
 }
 
-/** Ordered list of links (the services index). */
+/** Ordered list of links (a hub's service pages). */
 export function itemListSchema(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",
@@ -121,7 +166,14 @@ export function itemListSchema(items: { name: string; url: string }[]) {
  */
 export function serviceSchema(
   locale: Locale,
-  opts: { name: string; description: string; path: string },
+  opts: {
+    name: string;
+    description: string;
+    path: string;
+    serviceType?: string;
+    /** Served in the home town only (the rental portfolio), not nationwide. */
+    local?: boolean;
+  },
 ) {
   return {
     "@context": "https://schema.org",
@@ -129,8 +181,13 @@ export function serviceSchema(
     name: opts.name,
     description: opts.description,
     url: absoluteUrl(`/${locale}${opts.path}`),
+    ...(opts.serviceType ? { serviceType: opts.serviceType } : {}),
     provider: { "@id": ORG_ID },
-    ...(ORG.areaServed ? { areaServed: ORG.areaServed } : {}),
+    ...(opts.local
+      ? { areaServed: { "@type": "City", name: PLACE } }
+      : ORG.areaServed
+        ? { areaServed: { "@type": "Country", name: ORG.areaServed } }
+        : {}),
     inLanguage: HTML_LANG[locale],
   };
 }

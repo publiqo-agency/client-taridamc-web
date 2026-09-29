@@ -19,24 +19,40 @@ export const SITE = {
 
   /** Registered company name and tax id, for the legal pages and JSON-LD. */
   legalName: "Tarida MC S.L.",
-  taxId: "",
+  taxId: "B67987420",
 
   /** E.164 digits only, no "+" — what wa.me expects. Empty = no WhatsApp CTAs. */
-  whatsapp: "",
+  whatsapp: "34659359776",
   /** E.164 with "+", for tel: links. Empty = no phone anywhere. */
-  telephone: "",
+  telephone: "+34659359776",
   /** Human-formatted phone, e.g. "+34 600 000 000". */
-  telephoneDisplay: "",
-  email: "",
+  telephoneDisplay: "+34 659 35 97 76",
+  email: "rs@taridamc.com",
 
+  /** Registered office (Barcelona). The business itself works from
+   *  Castelldefels: that is PLACE (components/site/place.ts), not this. */
   address: {
-    street: "",
-    postalCode: "",
-    city: "Castelldefels",
+    street: "Calle Còrsega, 270, entresuelo, puerta 4",
+    postalCode: "08008",
+    city: "Barcelona",
     region: "Barcelona",
     /** ISO 3166-1 alpha-2. */
     country: "ES",
   },
+  /**
+   * The person who runs the company, for the Person entity. The brief says he
+   * runs it ("lo lleva"), not that he founded it: never emit `founder`.
+   */
+  leader: { name: "Ramon Seva", image: "/about/ramon-seva.webp" },
+
+  /** Topics the company is an authority on (`knowsAbout`), default locale. */
+  knowsAbout: [
+    "Compra de pisos y casas",
+    "Compra de naves industriales",
+    "Alquiler de naves industriales",
+    "Alquiler de viviendas",
+  ],
+
   /** Where the business operates, for `areaServed`. Empty = omitted. */
   areaServed: "España",
 

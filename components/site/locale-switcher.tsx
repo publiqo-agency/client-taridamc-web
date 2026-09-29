@@ -10,6 +10,7 @@ import {
   type Locale,
 } from "@/lib/i18n/config";
 import { translatePath } from "@/lib/i18n/localized-paths";
+import { LOCALE_TRANSITION } from "./page-transition";
 
 /**
  * Language switcher. Not a prefix swap: every language has its own slug, so
@@ -18,7 +19,8 @@ import { translatePath } from "@/lib/i18n/localized-paths";
  * language change is the fastest way to lose a visitor who had already found
  * what they were looking for.
  *
- * On click it writes the cookie the proxy reads.
+ * On click it writes the cookie the proxy reads. The navigation is tagged
+ * LOCALE_TRANSITION so the shared photos do not morph into themselves.
  */
 export function LocaleSwitcher({
   current,
@@ -40,6 +42,7 @@ export function LocaleSwitcher({
             key={locale}
             href={translatePath(pathname, locale)}
             hrefLang={locale}
+            transitionTypes={[LOCALE_TRANSITION]}
             lang={locale}
             onClick={() => rememberLocale(locale)}
             aria-current={active ? "true" : undefined}

@@ -2,6 +2,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 import { formatArea, type Property } from "@/lib/properties";
 import type { CommonDict } from "@/lib/i18n/types";
 import { DISPLAY_QUIET } from "@/lib/styles";
+import { rentalServiceFor } from "@/lib/services";
 import { Media } from "./media";
 import { Arrow } from "./pill-button";
 import { PendingData } from "./pending";
@@ -18,6 +19,8 @@ type Props = {
   sizes?: string;
   /** "none" inside the filterable grid, whose cards mount after the engine ran. */
   reveal?: "img" | "none";
+  /** Photo ratio classes. The grid goes landscape on phones, where a card is full width. */
+  aspect?: string;
 };
 
 /**
@@ -26,7 +29,7 @@ type Props = {
  * WhatsApp with the reference prefilled, or the form when there is no
  * number yet.
  */
-export function PropertyCard({ property, locale, copy, sample = false, formHref, className = "", sizes, reveal = "img" }: Props) {
+export function PropertyCard({ property, locale, copy, sample = false, formHref, className = "", sizes, reveal = "img", aspect = "aspect-[4/5]" }: Props) {
   const type = copy.types[property.type];
   const message = copy.whatsappMessage.replace("{ref}", property.ref);
   const wa = whatsappUrl(message);
@@ -36,7 +39,7 @@ export function PropertyCard({ property, locale, copy, sample = false, formHref,
       <Media
         src={property.image}
         alt={`${type} · ${property.zone}`}
-        className="aspect-[4/5] w-full"
+        className={`${aspect} w-full`}
         reveal={reveal}
         cursor={copy.view}
         sizes={sizes ?? "(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 80vw"}
@@ -71,7 +74,7 @@ export function PropertyCard({ property, locale, copy, sample = false, formHref,
       <a
         href={wa ?? formHref}
         {...(wa ? { target: "_blank", rel: "noopener noreferrer", "data-cta": "whatsapp" } : { "data-cta": "form" })}
-        data-service="rental"
+        data-service={rentalServiceFor(property.type)}
         className="group/btn mt-1 flex items-center justify-between border-y border-ink py-3 text-sm font-medium transition-colors duration-500 hover:bg-ink hover:px-4 hover:text-stock"
       >
         <span>{copy.enquire}</span>

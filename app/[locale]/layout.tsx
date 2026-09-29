@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Inter_Tight } from "next/font/google";
-import { LOCALES, HTML_LANG, OG_LOCALE, toLocale } from "@/lib/i18n/config";
+import { Instrument_Serif, Montserrat } from "next/font/google";
+import { DEFAULT_LOCALE, LOCALES, HTML_LANG, OG_LOCALE, toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
-import { IS_INDEXABLE, ORG, OG_IMAGE, SITE_URL } from "@/lib/seo";
-import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { IS_INDEXABLE, ORG, OG_IMAGE, SITE_URL, absoluteUrl } from "@/lib/seo";
+import { serviceHref } from "@/lib/routes";
+import { SERVICE_IDS } from "@/lib/services";
+import { organizationSchema, personSchema, websiteSchema } from "@/lib/schema";
 import { REVEAL_INIT_SCRIPT } from "@/lib/motion";
 import { GTM_ID, GTM_INIT_SCRIPT } from "@/lib/analytics";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -17,7 +19,9 @@ import "../globals.css";
  * Fonts. CLIENT-SKIN: swap the families, keep the two CSS variables that
  * globals.css maps to --font-display / --font-sans.
  */
-const sans = Inter_Tight({
+/* Montserrat is the logo's typeface: labels in tracked capitals echo its
+   "REAL ESTATE" line, and the thin weights carry the big sans headlines. */
+const sans = Montserrat({
   subsets: ["latin", "latin-ext"],
   weight: "variable",
   variable: "--font-sans-family",
@@ -25,7 +29,7 @@ const sans = Inter_Tight({
 const display = Instrument_Serif({
   subsets: ["latin", "latin-ext"],
   weight: "400",
-  style: ["normal", "italic"],
+  style: ["normal"],
   variable: "--font-display-family",
 });
 
@@ -37,7 +41,7 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 export const viewport: Viewport = {
-  themeColor: "#211a15",
+  themeColor: "#0a2438",
   colorScheme: "light",
 };
 
@@ -71,6 +75,21 @@ export async function generateMetadata(props: LayoutProps<"/[locale]">): Promise
 export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
   const { locale: raw } = await props.params;
   const locale = toLocale(raw);
+  // The entity nodes carry one @id for every locale: describe them in the
+  // default language only (see organizationSchema).
+  const base = await getDictionary(DEFAULT_LOCALE);
+  const entities = [
+    organizationSchema({
+      description: base.common.meta.description,
+      knowsAbout: [...ORG.knowsAbout],
+      services: SERVICE_IDS.map((id) => ({
+        name: base.services.items[id].title,
+        url: absoluteUrl(serviceHref(DEFAULT_LOCALE, id)),
+      })),
+    }),
+    personSchema({ description: base.about.leader.role }),
+    websiteSchema(),
+  ];
 
   return (
     <html
@@ -87,7 +106,7 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
         {GTM_ID && <InlineScript html={GTM_INIT_SCRIPT} />}
       </head>
       <body className="flex min-h-full flex-col">
-        <JsonLd data={[organizationSchema(), websiteSchema()]} />
+        <JsonLd data={entities} />
         {props.children}
         <RootAttributes />
         <AnalyticsListener />

@@ -12,11 +12,12 @@ import Link from "next/link";
 export type PillTone = "ink" | "accent" | "outline" | "white" | "whatsapp" | "whatsapp-outline";
 
 const TONE: Record<PillTone, string> = {
-  ink: "bg-ink text-stock hover:bg-ink-2",
+  /* The primary button wears the logo's blue; it deepens to navy on hover. */
+  ink: "bg-accent text-accent-ink hover:bg-ink hover:text-stock",
   accent: "bg-accent text-accent-ink hover:bg-accent-2",
   outline: "border border-ink/30 text-ink hover:border-ink hover:bg-ink hover:text-stock",
-  white: "bg-surface text-ink hover:bg-stock-2",
-  whatsapp: "bg-ink text-stock hover:bg-ink-2",
+  white: "bg-surface text-ink hover:bg-accent hover:text-accent-ink",
+  whatsapp: "bg-accent text-accent-ink hover:bg-ink hover:text-stock",
   "whatsapp-outline": "border border-ink/30 text-ink hover:border-ink hover:bg-ink hover:text-stock",
 };
 

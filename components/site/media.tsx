@@ -43,9 +43,12 @@ export function Media({
   children,
 }: Props) {
   const exists = hasPublicImage(src);
+  // `.relative` is emitted after `.absolute` in the stylesheet, so adding it
+  // to a frame the caller positions would win and collapse it to zero height.
+  const positioned = /(^|\s)(absolute|fixed|sticky)(\s|$)/.test(className);
   return (
     <div
-      className={`relative overflow-hidden bg-stock-2 ${className}`}
+      className={`${positioned ? "" : "relative "}overflow-hidden bg-stock-2 ${className}`}
       {...(reveal !== "none" && exists ? { "data-m": reveal } : {})}
       {...(delay ? { "data-delay": String(delay) } : {})}
       {...(cursor ? { "data-cursor": cursor } : {})}

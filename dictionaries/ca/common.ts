@@ -8,27 +8,25 @@ export const common: CommonDict = {
   meta: {
     defaultTitle: "Tarida MC",
     description:
-      "Tarida MC, empresa familiar de Castelldefels amb quaranta anys al sector immobiliari. Comprem immobles i lloguem naus industrials i habitatges.",
+      "Tarida MC, empresa familiar amb quaranta anys al sector immobiliari. Comprem pisos, cases i naus a tota Espanya i lloguem naus i habitatges propis.",
   },
   nav: {
     home: "Inici",
-    services: "Serveis",
-    sell: "Vendre el seu immoble",
-    rent: "Lloguer",
+    sale: "Venda",
+    rental: "Lloguer",
     about: "Nosaltres",
     contact: "Contacte",
     menu: "Menú",
     close: "Tancar",
     mainNavAria: "Navegació principal",
+    submenu: "Pàgines de {label}",
     skipToContent: "Saltar al contingut",
   },
   cta: {
     contact: "Contactar",
     whatsapp: "Escrigui'ns per WhatsApp",
     back: "Tornar a l'inici",
-    allServices: "Veure tots els serveis",
     learnMore: "Més informació",
-    scroll: "Desplaçar",
   },
   brand: {
     yearsLabel: "anys",
@@ -36,7 +34,6 @@ export const common: CommonDict = {
     family: "Empresa familiar",
   },
   catalogue: {
-    eyebrow: "Catàleg",
     title: "Immobles\n*de lloguer*",
     intro:
       "Naus industrials i habitatges a Castelldefels, de la nostra pròpia cartera. L'atenem directament.",
@@ -45,12 +42,10 @@ export const common: CommonDict = {
       all: "Tots",
       warehouse: "Naus",
       home: "Habitatges",
-      commercial: "Locals",
     },
     types: {
       warehouse: "Nau industrial",
       home: "Habitatge",
-      commercial: "Local",
     },
     specs: {
       ref: "Ref.",
@@ -68,7 +63,6 @@ export const common: CommonDict = {
     },
   },
   values: {
-    eyebrow: "Com treballem",
     title: "Tres paraules\n*que ens defineixen*",
     items: [
       {
@@ -86,10 +80,9 @@ export const common: CommonDict = {
     ],
   },
   closing: {
-    eyebrow: "Parlem-ne",
     title: "Pensa a vendre\n*la seva propietat?*",
     body: "Expliqui'ns quin immoble té. L'estudiarem amb atenció i li donarem una resposta clara.",
-    imageAlt: "Terrassa d'un habitatge mediterrani al capvespre, amb l'interior il·luminat",
+    imageAlt: "Balcó de ferro forjat a la façana d'una finca clàssica",
   },
   whatsapp: {
     aria: "Obrir WhatsApp",
@@ -98,7 +91,7 @@ export const common: CommonDict = {
     },
   },
   footer: {
-    tagline: "Empresa familiar a Castelldefels. Quaranta anys comprant i llogant immobles.",
+    tagline: "Empresa familiar amb quaranta anys comprant i llogant immobles a tota Espanya.",
     navTitle: "Seccions",
     servicesTitle: "Serveis",
     contactTitle: "Contacte",

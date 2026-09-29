@@ -4,19 +4,34 @@ import type { ContactDict } from "@/lib/i18n/types";
 export const contact: ContactDict = {
   meta: {
     title: "Contacte",
+    seoTitle: "Contacte: vendre o llogar un immoble | Tarida MC",
     description:
-      "Contacti amb Tarida MC a Castelldefels: proposi un immoble perquè el comprem o consulti naus i habitatges de lloguer.",
+      "Contacti amb Tarida MC: proposi el seu pis, casa o nau perquè el comprem, o consulti les nostres naus i habitatges de lloguer.",
   },
   hero: {
     eyebrow: "Contacte",
     title: "Parlem del\n*seu immoble*",
     intro:
-      "Expliqui'ns què necessita: vendre una propietat o llogar una nau o un habitatge. Li respondrem personalment.",
+      "Expliqui'ns què necessita: vendre un pis, una casa o una nau, o llogar una nau o un habitatge. Li respondrem personalment.",
+    imageAlt: "Porxo d'arcs obert al mar Mediterrani",
   },
   aside: {
     title: "Prefereix parlar directament?",
     body: "WhatsApp és la via més ràpida. Si prefereix el correu o el telèfon, els trobarà aquí.",
     whatsappCta: "Obrir WhatsApp",
+  },
+  /** First-layer data protection notice under the form (LOPDGDD art. 11). */
+  dataNotice: {
+    title: "Informació bàsica sobre protecció de dades",
+    controller: "Responsable",
+    rows: [
+      ["Finalitat", "respondre la seva consulta"],
+      ["Legitimació", "el seu consentiment"],
+      ["Destinataris", "no es cedeixen dades a tercers, excepte per obligació legal"],
+      ["Drets", "accés, rectificació, supressió, oposició, limitació i portabilitat"],
+    ],
+    more: "Més informació a la",
+    link: "política de privacitat",
   },
   form: {
     name: "Nom",

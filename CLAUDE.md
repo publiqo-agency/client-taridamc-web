@@ -23,12 +23,24 @@ not code.
 
 ## This client
 
-Tarida MC S.L.: a small family real-estate business in Castelldefels, run by
-Ramon Seva, 40 years in the sector. The site presents them as a buyer of
-properties (sellers are the main lead) and shows the properties they rent
+Tarida MC S.L.: a small family real-estate business based in Castelldefels,
+run by Ramon Seva, 40 years in the sector. The site presents them as a buyer
+of properties (sellers are the main lead) and shows the properties they rent
 (industrial units and homes). Tone: serious, elegant, minimalist; the visitor
 is addressed formally (usted / vous / vostè). Languages: es (default), en, fr,
 ca. The brief lives in GoFeed (see `docs/PENDING.md`).
+
+Scope, confirmed 2026-09-29: they buy **flats, houses and industrial units
+(naves) anywhere in Spain**, also let, inherited, in need of renovation or
+with a mortgage or charges. They let naves and homes of their own portfolio
+in Castelldefels. Castelldefels is the base, not the market: copy, titles and
+schema lead with Spain; the town appears as the head office and as the place
+of the rental portfolio. They buy selectively (opportunities) but the site
+never says "chollos", and it never promises timings, percentages, cash or
+"sin comisiones" (none has been confirmed). Always "Tarida MC", never
+"Tarida" alone (Cala Tarida and another "Tarida" firm in Ibiza own that word).
+Ramon Seva runs the company; the brief does not say he founded it (schema:
+`employee`, never `founder`).
 
 ## Branch flow
 
@@ -42,8 +54,7 @@ tracked file in this repo.**
 
 `main` is never reached from here. The `dev` → `main` merge is done by Martí by
 PR on GitHub, or through the `release` skill when he asks for a release; this
-project's strategy and deploy targets are recorded in `.claude/release.md` once
-the first release has run. **Client projects have NO `preview` branch.**
+project's strategy and deploy targets are recorded in `.claude/release.md`. **Client projects have NO `preview` branch.**
 
 ## Martí runs the dev server
 

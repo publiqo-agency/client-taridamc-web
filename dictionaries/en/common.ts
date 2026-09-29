@@ -8,27 +8,25 @@ export const common: CommonDict = {
   meta: {
     defaultTitle: "Tarida MC",
     description:
-      "Tarida MC is a family business in Castelldefels with forty years in real estate. We buy properties and let industrial units and homes.",
+      "Tarida MC is a family business with forty years in real estate. We buy flats, houses and industrial units across Spain, and let our own units and homes.",
   },
   nav: {
     home: "Home",
-    services: "Services",
-    sell: "Sell your property",
-    rent: "To let",
+    sale: "Sell",
+    rental: "To let",
     about: "About us",
     contact: "Contact",
     menu: "Menu",
     close: "Close",
     mainNavAria: "Main navigation",
+    submenu: "{label} pages",
     skipToContent: "Skip to content",
   },
   cta: {
     contact: "Get in touch",
     whatsapp: "Message us on WhatsApp",
     back: "Back to home",
-    allServices: "View all services",
     learnMore: "Learn more",
-    scroll: "Scroll",
   },
   brand: {
     yearsLabel: "years",
@@ -36,7 +34,6 @@ export const common: CommonDict = {
     family: "Family business",
   },
   catalogue: {
-    eyebrow: "Catalogue",
     title: "Properties\n*to let*",
     intro:
       "Industrial units and homes in Castelldefels, from our own portfolio. You deal with us directly.",
@@ -45,12 +42,10 @@ export const common: CommonDict = {
       all: "All",
       warehouse: "Industrial units",
       home: "Homes",
-      commercial: "Retail premises",
     },
     types: {
       warehouse: "Industrial unit",
       home: "Home",
-      commercial: "Retail premises",
     },
     specs: {
       ref: "Ref.",
@@ -68,7 +63,6 @@ export const common: CommonDict = {
     },
   },
   values: {
-    eyebrow: "How we work",
     title: "Three words\n*that define us*",
     items: [
       {
@@ -86,10 +80,9 @@ export const common: CommonDict = {
     ],
   },
   closing: {
-    eyebrow: "Let's talk",
     title: "Thinking of selling\n*your property?*",
     body: "Tell us about your property. We will study it carefully and give you a clear answer.",
-    imageAlt: "Terrace of a Mediterranean home at dusk, with the interior lit",
+    imageAlt: "Wrought-iron balcony on the façade of a classic apartment building",
   },
   whatsapp: {
     aria: "Open WhatsApp",
@@ -98,7 +91,7 @@ export const common: CommonDict = {
     },
   },
   footer: {
-    tagline: "A family business in Castelldefels. Forty years buying and letting property.",
+    tagline: "A family business with forty years buying and letting property across Spain.",
     navTitle: "Sections",
     servicesTitle: "Services",
     contactTitle: "Contact",

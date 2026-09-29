@@ -1,4 +1,4 @@
-import { ITALIC } from "@/lib/styles";
+import { ACCENT } from "@/lib/styles";
 
 type Value = { title: string; body: string };
 
@@ -6,18 +6,28 @@ type Value = { title: string; body: string };
  * Three values in a hairline grid. On hover the cell fills with espresso and
  * the type inverts (after the OrnaVillas services grid); the text is always
  * visible, so touch loses nothing.
+ *
+ * The word is sized off its own cell (container query), not the viewport:
+ * "Transparencia" / "Transparència" is ~6.3em wide, so 15cqi keeps the
+ * longest one inside the cell at every width. Below lg the cells stack,
+ * because three columns at tablet width leave no room for the word.
+ *
+ * From lg the cells share the list's rows through subgrid (number, free space,
+ * word, text), so the words line up even when one text is a line shorter.
+ * The container sits on the word's own wrapper, never on the cell: a query
+ * container is layout-contained, and a contained box cannot be a subgrid.
  */
 export function ValuesGrid({ items }: { items: Value[] }) {
   return (
-    <ul className="relative grid border-line md:grid-cols-3">
+    <ul className="relative grid border-line lg:min-h-[20rem] lg:grid-cols-3 lg:grid-rows-[auto_1fr_auto_auto]">
       <span aria-hidden data-m="draw-x" className="absolute inset-x-0 top-0 h-px bg-line" />
       {items.map((item, i) => (
         <li
           key={item.title}
-          className="group relative isolate border-b border-line md:border-b-0"
+          className="group relative isolate border-b border-line lg:row-span-4 lg:grid lg:grid-rows-subgrid lg:border-b-0"
         >
           {i > 0 && (
-            <span aria-hidden data-m="draw-y" data-origin="50% 0%" className="absolute inset-y-0 left-0 hidden w-px bg-line md:block" />
+            <span aria-hidden data-m="draw-y" data-origin="50% 0%" className="absolute inset-y-0 left-0 hidden w-px bg-line lg:block" />
           )}
           <span
             aria-hidden
@@ -26,15 +36,15 @@ export function ValuesGrid({ items }: { items: Value[] }) {
           <div
             data-m="fade"
             data-delay={String(0.12 * i)}
-            className="flex min-h-[22rem] flex-col justify-between gap-16 px-0 py-10 transition-colors duration-500 group-hover:text-stock md:min-h-[30rem] md:px-8 lg:px-10"
+            className="flex min-h-[16rem] flex-col px-0 py-8 transition-colors duration-500 group-hover:text-stock md:px-8 lg:row-span-4 lg:grid lg:min-h-0 lg:grid-rows-subgrid lg:px-10"
           >
             <span className="label tnum text-ink-soft transition-colors duration-500 group-hover:text-stock/60">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <div>
-              <p className={`${ITALIC} text-[clamp(3rem,5vw,5.25rem)] leading-none`}>{item.title}</p>
-              <p className="mt-6 max-w-xs text-ink-soft transition-colors duration-500 group-hover:text-stock/75">{item.body}</p>
+            <div className="@container mt-auto pt-10 lg:row-start-3">
+              <p className={`${ACCENT} text-[length:min(15cqi,5.25rem)] leading-none`}>{item.title}</p>
             </div>
+            <p className="mt-6 max-w-xs text-ink-soft transition-colors duration-500 group-hover:text-stock/75 lg:row-start-4">{item.body}</p>
           </div>
         </li>
       ))}

@@ -29,6 +29,7 @@ export default async function Page(props: PageProps<"/[locale]/politica-de-cooki
       title={page.title}
       intro={page.intro}
       sections={page.sections}
+      ownerLabels={dict.legal.ownerLabels}
       pending={hasLegalData() ? undefined : dict.legal.pending}
       updated={dict.legal.updated}
     />
