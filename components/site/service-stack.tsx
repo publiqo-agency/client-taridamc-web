@@ -12,6 +12,8 @@ export type StackItem = {
   body: string;
   href: string;
   cta: string;
+  /** A second page of the same line (naves beside homes), as a quiet link. */
+  secondary?: { href: string; label: string };
   image: { src: string; alt: string };
   /** Light (cream) or dark (espresso) panel. */
   tone: "light" | "dark";
@@ -60,10 +62,15 @@ export function ServiceStack({ items, cursor }: { items: StackItem[]; cursor: st
                   <p className="mt-6 max-w-md text-lg text-ink-soft md:mt-8" data-m="fade" data-delay="0.2">
                     {item.body}
                   </p>
-                  <div className="mt-8 md:mt-10">
+                  <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 md:mt-10">
                     <PillButton href={item.href} tone={item.tone === "dark" ? "white" : "ink"} seed>
                       {item.cta}
                     </PillButton>
+                    {item.secondary && (
+                      <Link href={item.secondary.href} className="link-line text-sm font-medium">
+                        {item.secondary.label}
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

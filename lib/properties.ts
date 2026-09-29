@@ -10,7 +10,8 @@ import { SHOW_PENDING } from "@/lib/pending";
  * real listings, and the site then renders a sober "ask for availability"
  * block instead of a grid. Never fill it with plausible values.
  */
-export type PropertyType = "warehouse" | "home" | "commercial";
+/** Naves and homes: what the brief says Tarida MC lets. */
+export type PropertyType = "warehouse" | "home";
 
 export type Property = {
   /** The client's own reference; goes into the prefilled WhatsApp message. */
@@ -37,7 +38,6 @@ const SAMPLE_PROPERTIES: Property[] = [
   { ref: "EJ-02", type: "home", area: 210, zone: "Castelldefels", image: "/properties/vivienda-1.webp" },
   { ref: "EJ-03", type: "warehouse", area: 1400, zone: "Castelldefels", image: "/properties/nave-2.webp" },
   { ref: "EJ-04", type: "home", area: 95, zone: "Castelldefels", image: "/properties/vivienda-2.webp" },
-  { ref: "EJ-05", type: "commercial", area: 160, zone: "Castelldefels", image: "/properties/local-1.webp" },
   { ref: "EJ-06", type: "home", area: 180, zone: "Castelldefels", image: "/properties/vivienda-3.webp" },
 ];
 
@@ -48,7 +48,7 @@ export function catalogue(): { items: Property[]; sample: boolean } {
   return { items: [], sample: false };
 }
 
-export const PROPERTY_TYPES: PropertyType[] = ["warehouse", "home", "commercial"];
+export const PROPERTY_TYPES: PropertyType[] = ["warehouse", "home"];
 
 /** Area as the locale writes it: "1.400 m²" / "1,400 m²". */
 export const formatArea = (area: number, locale: string) =>

@@ -33,18 +33,45 @@ export type Section = {
   body: string[];
 };
 
+export type Faq = { question: string; answer: string };
+
 export type ServiceCopy = {
-  /** Feeds the h1, the <title>, the JSON-LD name and the breadcrumb. */
+  /** Feeds the JSON-LD name, the breadcrumb and the links to the page. */
   title: string;
-  /** Short form for navigation and cards. */
+  /** Short form for navigation, the footer and the form's service select. */
   shortTitle: string;
+  /** Who the page is for, above the h1 ("Para propietarios"). */
+  kicker: string;
+  /** The h1: "\n" breaks and *accent* marks, like every display title. */
+  heroTitle: string;
+  /** Complete <title> (brand included), ≤ 60 characters. */
+  seoTitle: string;
   teaser: string;
+  /** ≤ 155 characters. */
   metaDescription: string;
   intro: string;
   imageAlt: string;
+  /** Descriptive anchor for links to this page: never "Saber más". */
+  learnMore: string;
+  includesTitle: string;
   includes: string[];
+  process: { title: string; intro: string };
+  /** The process steps. */
   sections: Section[];
-  faq?: { question: string; answer: string }[];
+  /** "What we buy": asset types and the situations we also consider. */
+  scope?: { title: string; body: string[] };
+  /** Direct sale vs. an agency: neutral, no figures. */
+  comparison?: {
+    title: string;
+    intro: string;
+    columns: [string, string];
+    rows: { label: string; values: [string, string] }[];
+  };
+  /** Documents a seller usually gathers. Public information, not advice. */
+  documents?: { title: string; intro: string; items: string[]; note: string };
+  /** Visible on the page AND emitted as FAQPage: the two must match. */
+  faq: Faq[];
+  closing: { title: string; body: string };
   /**
    * Prefilled WhatsApp message for this service. Required: a chat that opens
    * blank forces the visitor to explain everything and loses half the leads.
@@ -63,7 +90,6 @@ export type ServicesDict = {
     allServices: string;
   };
   detail: {
-    includesTitle: string;
     faqTitle: string;
     otherServices: string;
     requestBody: string;

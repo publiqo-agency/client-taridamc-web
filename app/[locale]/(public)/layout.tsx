@@ -31,19 +31,25 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
   const contactHref = localeHref(locale, "contact");
   const aboutHref = localeHref(locale, "about");
   const sellHref = serviceHref(locale, "purchase");
-  const rentHref = serviceHref(locale, "rental");
+  const servicesHref = localeHref(locale, "services");
 
   // The header's inline links: the seller lead first, it is what the site
-  // pushes; contact is the button beside them.
+  // pushes; contact is the button beside them. Three links fit the bar down
+  // to 1024 px; "Alquiler" opens the services index, where both rental
+  // pages (naves, homes) sit side by side.
   const navItems = [
     { href: sellHref, label: nav.sell },
-    { href: rentHref, label: nav.rent },
+    { href: servicesHref, label: nav.rent },
     { href: aboutHref, label: nav.about },
   ];
 
+  // The full-screen menu has room for every page, so rentals go direct.
   const menuItems = [
     { href: homeHref, label: nav.home },
-    ...navItems,
+    { href: sellHref, label: nav.sell },
+    { href: serviceHref(locale, "rental-warehouses"), label: dict.services.items["rental-warehouses"].shortTitle },
+    { href: serviceHref(locale, "rental-homes"), label: dict.services.items["rental-homes"].shortTitle },
+    { href: aboutHref, label: nav.about },
     { href: contactHref, label: nav.contact },
   ];
 

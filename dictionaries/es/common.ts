@@ -47,12 +47,10 @@ export const common = {
       all: "Todos",
       warehouse: "Naves",
       home: "Viviendas",
-      commercial: "Locales",
     },
     types: {
       warehouse: "Nave industrial",
       home: "Vivienda",
-      commercial: "Local",
     },
     specs: {
       ref: "Ref.",
