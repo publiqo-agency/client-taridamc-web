@@ -150,7 +150,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
 
       <section className={`${SECTION} bg-stock-2`}>
         <div className={FRAME}>
-          <SectionHeader title={common.values.title} />
+          <SectionHeader title={common.values.title} align="start" />
           <div className="mt-12 md:mt-16">
             <ValuesGrid items={common.values.items} />
           </div>
