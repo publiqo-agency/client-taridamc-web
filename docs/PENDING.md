@@ -19,9 +19,8 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
    Calle Còrsega 270, entresuelo, puerta 4, 08008 Barcelona (GoFeed client
    record). The footer shows the NIF and the office; the lawyer still reviews
    the legal copy.
-4. **Contact data.** Email set (`rs@taridamc.com`). Phone still missing:
-   WhatsApp is set (+34 659 35 97 76); confirm whether it is also the phone
-   for calls. Until then the site shows no phone.
+4. **Contact data.** Done: email `rs@taridamc.com`; phone +34 659 35 97 76,
+   the same number as WhatsApp (confirmed by the agency, 2026-09-29).
 5. **Resend key** (`RESEND_API_KEY`, send-only, scoped to `web.publiqo.es`) and
    `CONTACT_EMAIL` in Vercel Production. Without them the form errors in production.
 6. **Translations reviewed.** `dictionaries/fr` and `dictionaries/ca` are
