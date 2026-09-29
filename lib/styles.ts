@@ -8,7 +8,7 @@
 export const FRAME = "mx-auto w-full max-w-[1680px] px-5 md:px-10 xl:px-14";
 export const FRAME_NARROW = "mx-auto w-full max-w-3xl px-5 md:px-10";
 
-export const SECTION = "py-24 md:py-36";
+export const SECTION = "py-20 md:py-28";
 
 /** A plate. Square corners and a hairline: no shadows, no radii. */
 export const CARD = "relative border border-line bg-surface";

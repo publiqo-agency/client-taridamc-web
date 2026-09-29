@@ -18,7 +18,7 @@ type Props = {
 export function ClosingBand({ eyebrow, title, body, image, children }: Props) {
   return (
     <section data-placement="closing" className="band-dark grain relative overflow-hidden bg-stock text-ink">
-      <div className={`${FRAME} grid grid-cols-12 items-center gap-x-8 gap-y-14 py-24 md:py-36`}>
+      <div className={`${FRAME} grid grid-cols-12 items-center gap-x-8 gap-y-14 py-20 md:py-28`}>
         <div className="col-span-12 lg:col-span-7">
           <p className="label text-ink-soft" data-m="fade">
             {eyebrow}
