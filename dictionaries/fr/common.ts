@@ -25,7 +25,6 @@ export const common: CommonDict = {
     back: "Retour à l’accueil",
     allServices: "Voir tous les services",
     learnMore: "En savoir plus",
-    scroll: "Défiler",
   },
   brand: {
     yearsLabel: "ans",

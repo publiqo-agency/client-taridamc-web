@@ -8,7 +8,6 @@ type Props = {
   titleBottom: string;
   intro: string;
   image: { src: string; alt: string };
-  scroll: string;
   children: React.ReactNode;
 };
 
@@ -19,7 +18,7 @@ type Props = {
  * thin accent phrase answers from the right, and on scroll the two halves drift
  * apart while the photo sinks with parallax.
  */
-export function HomeHero({ titleTop, titleBottom, intro, image, scroll, children }: Props) {
+export function HomeHero({ titleTop, titleBottom, intro, image, children }: Props) {
   const photo = hasPublicImage(image.src);
 
   return (
@@ -69,17 +68,13 @@ export function HomeHero({ titleTop, titleBottom, intro, image, scroll, children
           </span>
         </h1>
 
-        <div className="grid grid-cols-12 items-end gap-x-5 gap-y-6 md:gap-x-8">
-          <p className="col-span-12 max-w-sm text-ink-2 md:col-span-5 lg:col-span-4" data-m="fade" data-delay="0.9">
+        {/* Intro and CTAs share one bottom edge: the paragraph's last line and
+            the buttons sit on the same line, pinned to the frame's two sides. */}
+        <div className="flex flex-col gap-7 md:flex-row md:items-end md:justify-between md:gap-12">
+          <p className="max-w-md text-ink-2 md:max-w-[26rem] lg:max-w-[30rem]" data-m="fade" data-delay="0.9">
             {intro}
           </p>
-          <div className="col-span-12 flex flex-wrap gap-3 md:col-span-7 md:justify-end lg:col-span-6 lg:col-start-7">
-            {children}
-          </div>
-          <div className="col-span-2 hidden flex-col items-end gap-3 justify-self-end lg:flex" data-m="fade" data-delay="1.2">
-            <span className="label text-ink-soft">{scroll}</span>
-            <span aria-hidden className="scroll-hint relative block h-14 w-px overflow-hidden bg-ink/20" />
-          </div>
+          <div className="flex shrink-0 flex-wrap gap-3 md:justify-end">{children}</div>
         </div>
       </div>
     </section>

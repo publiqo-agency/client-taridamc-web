@@ -274,25 +274,6 @@ html.lenis body {
   transform: none;
 }
 
-/* The hero's scroll hint: a short light that runs down a hairline. */
-.scroll-hint::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--ink);
-  transform: translateY(-100%);
-  animation: scroll-hint 2.4s var(--ease-curtain) infinite;
-}
-@keyframes scroll-hint {
-  0% {
-    transform: translateY(-100%);
-  }
-  55%,
-  100% {
-    transform: translateY(100%);
-  }
-}
-
 /*
   The contact form (CORE component) dressed for this site without forking
   it: editorial underline fields, square corners, a sober success plate.
