@@ -109,8 +109,13 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
       <header
         data-placement="header"
         style={{ viewTransitionName: "site-header" }}
-        className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          hidden && !open ? "-translate-y-full" : "translate-y-0"
+        // Tailwind v4 moves it with `translate`, not `transform`: that is the
+        // property to transition. It drops in on a long expo-out and leaves
+        // on a shorter, even ease so hiding never feels like a snap.
+        className={`fixed inset-x-0 top-0 z-50 transition-[translate,background-color] ${
+          hidden && !open
+            ? "-translate-y-full duration-500 ease-[cubic-bezier(0.65,0,0.35,1)]"
+            : "translate-y-0 duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
         } ${dark ? "band-dark bg-transparent text-ink" : "bg-stock/90 text-ink backdrop-blur-md"}`}
       >
         <a
