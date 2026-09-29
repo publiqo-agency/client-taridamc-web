@@ -68,7 +68,7 @@ export const services: ServicesDict = {
         "Alquiler de naves industriales y viviendas en Castelldefels para empresas y particulares. Inmuebles de la propia cartera de Tarida MC, con trato directo.",
       intro:
         "Alquilamos naves industriales y viviendas en Castelldefels, a empresas y a particulares. Son inmuebles de nuestra propia cartera: los conocemos bien y le atendemos directamente.",
-      imageAlt: "Nave industrial diáfana con pilares de ladrillo y grandes ventanales",
+      imageAlt: "Casa mediterránea encalada entre cipreses",
       includes: [],
       sections: [],
       whatsappMessage: "Hola, me interesa información sobre sus inmuebles en alquiler.",
