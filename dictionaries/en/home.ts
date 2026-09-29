@@ -15,7 +15,7 @@ export const home: HomeDict = {
       "Forty years buying and letting property. We study every property with care and answer with clarity.",
     ctaPrimary: "Sell your property",
     ctaSecondary: "Properties to let",
-    imageAlt: "Contemporary Mediterranean villa at sunset",
+    imageAlt: "Contemporary architecture facing the sea at sunset",
   },
   manifesto: {
     eyebrow: "Who we are",

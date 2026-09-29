@@ -15,7 +15,7 @@ export const home: HomeDict = {
       "Quarante ans à acheter et louer des biens. Nous étudions chaque bien sans précipitation et répondons avec clarté.",
     ctaPrimary: "Vendre votre bien",
     ctaSecondary: "Biens à louer",
-    imageAlt: "Villa méditerranéenne contemporaine au coucher du soleil",
+    imageAlt: "Architecture contemporaine face à la mer au coucher du soleil",
   },
   manifesto: {
     eyebrow: "Qui sommes-nous",

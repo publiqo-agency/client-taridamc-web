@@ -9,7 +9,7 @@ export const about = {
     title: "Una empresa familiar,\n*cuarenta años después*",
     intro:
       "Compramos y alquilamos inmuebles en Castelldefels con la misma forma de trabajar de siempre: seriedad, honestidad y transparencia.",
-    imageAlt: "Interior mediterráneo sereno con grandes ventanales",
+    imageAlt: "Sucesión de arcos encalados que conducen a una antigua puerta de madera",
   },
   sections: [
     {
@@ -26,7 +26,7 @@ export const about = {
       ],
     },
   ],
-  storyImageAlt: "Muro encalado y contraventanas de madera bajo la luz mediterránea",
+  storyImageAlt: "Fachada encalada con una puerta verde en arco y un olivo",
   leader: {
     eyebrow: "Al frente",
     name: "Ramon Seva",
@@ -38,7 +38,7 @@ export const about = {
     eyebrow: "Castelldefels",
     title: "Nuestro *lugar*",
     body: "Trabajamos desde Castelldefels, entre el mar y el macizo del Garraf. Conocemos su mercado inmobiliario porque llevamos cuarenta años formando parte de él.",
-    imageAlt: "Costa mediterránea con pinos al atardecer",
+    imageAlt: "Playa de Castelldefels al atardecer, con el macizo del Garraf al fondo",
     sea: "Mar Mediterráneo",
   },
 };

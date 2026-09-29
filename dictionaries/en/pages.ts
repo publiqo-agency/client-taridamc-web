@@ -12,7 +12,7 @@ export const about: AboutDict = {
     title: "A family business,\n*forty years on*",
     intro:
       "We buy and let property in Castelldefels the way we always have: with integrity, honesty and transparency.",
-    imageAlt: "Serene Mediterranean interior with large windows",
+    imageAlt: "A run of whitewashed arches leading to an old wooden door",
   },
   sections: [
     {
@@ -29,7 +29,7 @@ export const about: AboutDict = {
       ],
     },
   ],
-  storyImageAlt: "Whitewashed wall and wooden shutters in Mediterranean light",
+  storyImageAlt: "Whitewashed façade with an arched green door and an olive tree",
   leader: {
     eyebrow: "At the helm",
     name: "Ramon Seva",
@@ -41,7 +41,7 @@ export const about: AboutDict = {
     eyebrow: "Castelldefels",
     title: "Our *place*",
     body: "We work from Castelldefels, between the sea and the Garraf massif. We know its property market because we have been part of it for forty years.",
-    imageAlt: "Mediterranean coastline with pine trees at sunset",
+    imageAlt: "Castelldefels beach at sunset, with the Garraf massif beyond",
     sea: "Mediterranean Sea",
   },
 };

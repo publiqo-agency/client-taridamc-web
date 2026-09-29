@@ -15,7 +15,7 @@ export const home: HomeDict = {
       "Quaranta anys comprant i llogant propietats. Estudiem cada immoble amb calma i responem amb claredat.",
     ctaPrimary: "Vendre el seu immoble",
     ctaSecondary: "Immobles de lloguer",
-    imageAlt: "Vil·la mediterrània contemporània a la posta de sol",
+    imageAlt: "Arquitectura contemporània davant del mar a la posta de sol",
   },
   manifesto: {
     eyebrow: "Qui som",

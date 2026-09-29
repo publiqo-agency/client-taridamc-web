@@ -93,7 +93,7 @@ export const common = {
     eyebrow: "Hablemos",
     title: "¿Piensa en vender\n*su propiedad?*",
     body: "Cuéntenos qué inmueble tiene. Lo estudiaremos con atención y le daremos una respuesta clara.",
-    imageAlt: "Terraza de una vivienda mediterránea al anochecer, con el interior iluminado",
+    imageAlt: "Estancia abierta al mar al atardecer",
   },
   whatsapp: {
     aria: "Abrir WhatsApp",

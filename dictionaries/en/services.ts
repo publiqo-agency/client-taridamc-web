@@ -13,7 +13,7 @@ export const services: ServicesDict = {
     title: "Buying and letting,\n*with the same judgement*",
     intro:
       "Two activities, one way of working: studying every property carefully and treating every client with candour.",
-    imageAlt: "White facade with blue shutters",
+    imageAlt: "White wall with a wooden door and an olive tree",
     allServices: "All services",
   },
   detail: {
@@ -33,7 +33,7 @@ export const services: ServicesDict = {
         "Tarida MC buys properties directly from their owners in Castelldefels. We analyse every asset and, if the opportunity fits, present you with a purchase offer.",
       intro:
         "We buy properties directly from their owners. We analyse every asset in detail and, when the opportunity matches what we are looking for, we present a purchase offer. With the integrity of a family business with forty years in the sector.",
-      imageAlt: "Façade of a Mediterranean home in warm light",
+      imageAlt: "Tiled eave and shutter of a Mediterranean house in warm light",
       includes: [
         "Location and surroundings",
         "Property type and floor area",
@@ -70,7 +70,7 @@ export const services: ServicesDict = {
         "Industrial units and homes to let in Castelldefels for businesses and individuals. Properties from Tarida MC's own portfolio, dealt with directly.",
       intro:
         "We let industrial units and homes in Castelldefels to businesses and individuals. They are properties from our own portfolio: we know them well and you deal with us directly.",
-      imageAlt: "Bright, open-plan industrial unit",
+      imageAlt: "Open-plan industrial unit with brick pillars and tall windows",
       includes: [],
       sections: [],
       whatsappMessage: "Hello, I would like information about your properties to let.",

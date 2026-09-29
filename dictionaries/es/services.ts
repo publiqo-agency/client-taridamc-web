@@ -12,7 +12,7 @@ export const services: ServicesDict = {
     title: "Comprar y alquilar,\n*con el mismo criterio*",
     intro:
       "Dos actividades, una sola manera de trabajar: estudiar cada inmueble con atención y tratar a cada cliente con franqueza.",
-    imageAlt: "Fachada blanca con contraventanas azules",
+    imageAlt: "Muro blanco con una puerta de madera y un olivo",
     allServices: "Todos los servicios",
   },
   detail: {
@@ -32,7 +32,7 @@ export const services: ServicesDict = {
         "Tarida MC compra inmuebles directamente a sus propietarios en Castelldefels. Analizamos cada activo y, si la oportunidad encaja, le presentamos una propuesta de compra.",
       intro:
         "Compramos inmuebles directamente a sus propietarios. Analizamos cada activo con detenimiento y, cuando la oportunidad encaja con lo que buscamos, presentamos una propuesta de compra. Con la seriedad de una empresa familiar con cuarenta años en el sector.",
-      imageAlt: "Fachada de una vivienda mediterránea con luz cálida",
+      imageAlt: "Alero de teja y contraventana de una casa mediterránea con luz cálida",
       includes: [
         "Ubicación y entorno",
         "Tipo de inmueble y superficie",
@@ -69,7 +69,7 @@ export const services: ServicesDict = {
         "Alquiler de naves industriales y viviendas en Castelldefels para empresas y particulares. Inmuebles de la propia cartera de Tarida MC, con trato directo.",
       intro:
         "Alquilamos naves industriales y viviendas en Castelldefels, a empresas y a particulares. Son inmuebles de nuestra propia cartera: los conocemos bien y le atendemos directamente.",
-      imageAlt: "Nave industrial diáfana y luminosa",
+      imageAlt: "Nave industrial diáfana con pilares de ladrillo y grandes ventanales",
       includes: [],
       sections: [],
       whatsappMessage: "Hola, me interesa información sobre sus inmuebles en alquiler.",

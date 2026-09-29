@@ -9,7 +9,7 @@ export const contact = {
     title: "Hablemos de\n*su inmueble*",
     intro:
       "Cuéntenos qué necesita: vender una propiedad o alquilar una nave o una vivienda. Le responderemos personalmente.",
-    imageAlt: "Vista aérea de un puerto deportivo en la costa mediterránea",
+    imageAlt: "Porche de arcos abierto al mar Mediterráneo",
   },
   aside: {
     title: "¿Prefiere hablar directamente?",

@@ -89,7 +89,7 @@ export const common: CommonDict = {
     eyebrow: "Parlem-ne",
     title: "Pensa a vendre\n*la seva propietat?*",
     body: "Expliqui'ns quin immoble té. L'estudiarem amb atenció i li donarem una resposta clara.",
-    imageAlt: "Terrassa d'un habitatge mediterrani al capvespre, amb l'interior il·luminat",
+    imageAlt: "Estança oberta al mar a la posta de sol",
   },
   whatsapp: {
     aria: "Obrir WhatsApp",
