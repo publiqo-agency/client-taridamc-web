@@ -147,7 +147,7 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
               href={contactHref}
               tone={dark ? "white" : "ink"}
               cta="form"
-              className="hidden h-10 px-5 md:inline-flex"
+              className="max-md:hidden"
             >
               {copy.contact}
             </PillButton>
