@@ -9,19 +9,43 @@ import type { ServicesDict } from "@/lib/i18n/types";
  * given. Every FAQ answer must stay true without one.
  */
 export const services: ServicesDict = {
-  meta: {
-    title: "Servicios",
-    seoTitle: "Compra y alquiler de inmuebles: servicios | Tarida MC",
-    description:
-      "Compramos pisos, casas y naves industriales en toda España y alquilamos naves y viviendas de nuestra propia cartera en Castelldefels.",
-  },
-  index: {
-    eyebrow: "Servicios",
-    title: "Comprar y alquilar,\n*con el mismo criterio*",
-    intro:
-      "Compramos pisos, casas y naves industriales en toda España y alquilamos naves y viviendas de nuestra propia cartera. Cuatro servicios y una sola manera de trabajar: estudiar cada inmueble con atención y tratar a cada cliente con franqueza.",
-    imageAlt: "Muro blanco con una puerta de madera y un olivo",
-    allServices: "Todos los servicios",
+  hubs: {
+    sale: {
+      title: "Venta",
+      seoTitle: "Venda su piso, casa o nave en toda España | Tarida MC",
+      description:
+        "Compramos pisos, casas y naves industriales en toda España. Estudiamos cada inmueble con atención y le damos una respuesta clara.",
+      eyebrow: "Venta",
+      heroTitle: "Venda su inmueble\n*de forma directa*",
+      imageAlt: "Muro blanco con una puerta de madera y un olivo",
+      introLabel: "Compramos inmuebles",
+      intro:
+        "Compramos pisos, casas y naves industriales en toda España. Estudiamos cada inmueble con atención y tratamos a cada propietario con franqueza: una respuesta clara, sin rodeos.",
+      closing: {
+        title: "¿Piensa en vender\n*su propiedad?*",
+        body: "Cuéntenos qué inmueble tiene. Lo estudiaremos con atención y le daremos una respuesta clara.",
+      },
+      cta: "Proponer mi inmueble",
+      whatsappMessage: "Hola, quisiera que valorasen la compra de mi inmueble.",
+    },
+    rental: {
+      title: "Alquiler",
+      seoTitle: "Naves y viviendas en alquiler en Castelldefels | Tarida MC",
+      description:
+        "Naves industriales y viviendas en alquiler en Castelldefels, de nuestra propia cartera. Trato directo con la propiedad.",
+      eyebrow: "Alquiler",
+      heroTitle: "Naves y viviendas\n*en alquiler*",
+      imageAlt: "Casa mediterránea encalada entre cipreses",
+      introLabel: "Nuestra cartera",
+      intro:
+        "Alquilamos naves industriales y viviendas de nuestra propia cartera en Castelldefels. Le atiende directamente la propiedad, con la seriedad de cuarenta años en el sector.",
+      closing: {
+        title: "¿Busca una nave\n*o una vivienda?*",
+        body: "Díganos qué busca —superficie aproximada y zona— y le informaremos de lo que tengamos disponible.",
+      },
+      cta: "Consultar disponibilidad",
+      whatsappMessage: "Hola, busco un inmueble en alquiler.",
+    },
   },
   detail: {
     faqTitle: "Preguntas\n*frecuentes*",

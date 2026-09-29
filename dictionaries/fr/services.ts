@@ -2,19 +2,43 @@ import type { ServicesDict } from "@/lib/i18n/types";
 
 /** French copy for the services. Same shape as dictionaries/es/services.ts. */
 export const services: ServicesDict = {
-  meta: {
-    title: "Services",
-    seoTitle: "Achat et location de biens : nos services | Tarida MC",
-    description:
-      "Nous achetons appartements, maisons et entrepôts partout en Espagne et louons entrepôts et logements de notre patrimoine à Castelldefels.",
-  },
-  index: {
-    eyebrow: "Services",
-    title: "Acheter et louer,\n*avec la même exigence*",
-    intro:
-      "Nous achetons appartements, maisons et entrepôts partout en Espagne et louons entrepôts et logements de notre propre patrimoine. Quatre services, une seule façon de travailler : étudier chaque bien avec attention et traiter chaque client avec franchise.",
-    imageAlt: "Mur blanc avec une porte en bois et un olivier",
-    allServices: "Tous les services",
+  hubs: {
+    sale: {
+      title: "Vente",
+      seoTitle: "Vendez votre logement ou entrepôt en Espagne | Tarida MC",
+      description:
+        "Nous achetons appartements, maisons et entrepôts partout en Espagne. Nous étudions chaque bien avec attention et vous répondons clairement.",
+      eyebrow: "Vente",
+      heroTitle: "Vendez votre bien\n*en direct*",
+      imageAlt: "Mur blanc avec une porte en bois et un olivier",
+      introLabel: "Nous achetons",
+      intro:
+        "Nous achetons appartements, maisons et entrepôts partout en Espagne. Nous étudions chaque bien avec attention et traitons chaque propriétaire avec franchise : une réponse claire, sans détour.",
+      closing: {
+        title: "Vous pensez à vendre\n*votre bien ?*",
+        body: "Dites-nous de quel bien il s’agit. Nous l’étudierons avec attention et vous donnerons une réponse claire.",
+      },
+      cta: "Proposer mon bien",
+      whatsappMessage: "Bonjour, je souhaiterais vous proposer l’achat de mon bien.",
+    },
+    rental: {
+      title: "Location",
+      seoTitle: "Entrepôts et logements à louer à Castelldefels | Tarida MC",
+      description:
+        "Entrepôts et logements à louer à Castelldefels, issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
+      eyebrow: "Location",
+      heroTitle: "Entrepôts et logements\n*à louer*",
+      imageAlt: "Maison méditerranéenne blanchie à la chaux parmi les cyprès",
+      introLabel: "Notre patrimoine",
+      intro:
+        "Nous louons des entrepôts et des logements de notre propre patrimoine à Castelldefels. Vous traitez directement avec le propriétaire, avec le sérieux de quarante ans dans le secteur.",
+      closing: {
+        title: "Vous cherchez un entrepôt\n*ou un logement ?*",
+        body: "Dites-nous ce que vous recherchez — surface approximative et secteur — et nous vous informerons des biens disponibles.",
+      },
+      cta: "Connaître les disponibilités",
+      whatsappMessage: "Bonjour, je cherche un bien à louer.",
+    },
   },
   detail: {
     faqTitle: "Questions\n*fréquentes*",

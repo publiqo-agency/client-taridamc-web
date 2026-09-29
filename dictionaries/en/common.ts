@@ -12,9 +12,8 @@ export const common: CommonDict = {
   },
   nav: {
     home: "Home",
-    services: "Services",
-    sell: "Sell your property",
-    rent: "To let",
+    sale: "Sell",
+    rental: "To let",
     about: "About us",
     contact: "Contact",
     menu: "Menu",
@@ -26,7 +25,6 @@ export const common: CommonDict = {
     contact: "Get in touch",
     whatsapp: "Message us on WhatsApp",
     back: "Back to home",
-    allServices: "View all services",
     learnMore: "Learn more",
   },
   brand: {

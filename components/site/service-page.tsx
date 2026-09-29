@@ -1,59 +1,54 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { LOCALES, toLocale } from "@/lib/i18n/config";
+import { LOCALES, toLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { pageMetadata } from "@/lib/i18n/metadata";
-import { localeHref, serviceHref, servicePaths } from "@/lib/routes";
+import { hubKey, localeHref, serviceHref, servicePaths } from "@/lib/routes";
 import {
-  RENTAL_TYPES,
-  SERVICE_IDS,
   SERVICE_IMAGES,
-  SERVICE_KIND,
   SERVICE_RELATED,
   canonicalServiceSlug,
   serviceFromCanonicalSlug,
-  type ServiceId,
+  serviceIdsOf,
+  type ServiceKind,
 } from "@/lib/services";
-import { catalogue, PROPERTY_TYPES } from "@/lib/properties";
 import { proposalFormHref } from "@/lib/whatsapp";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { DISPLAY, DISPLAY_QUIET, DISPLAY_SANS, FRAME, ACCENT, SECTION } from "@/lib/styles";
 import { JsonLd } from "@/components/seo/json-ld";
-import { PageTransition } from "@/components/site/page-transition";
-import { PageHero } from "@/components/site/page-hero";
-import { SectionHeader } from "@/components/site/section-header";
-import { ProcessGrid } from "@/components/site/process-grid";
-import { PropertyCard } from "@/components/site/property-card";
-import { PropertyCatalogue } from "@/components/site/property-catalogue";
-import { CatalogueEmpty } from "@/components/site/catalogue-empty";
-import { ClosingBand } from "@/components/site/closing-band";
-import { Media } from "@/components/site/media";
-import { Arrow, PillButton } from "@/components/site/pill-button";
-import { WhatsAppCta } from "@/components/site/whatsapp";
-import { Lines } from "@/components/site/motion/split";
-import { ServiceComparison, ServiceFaq, ServiceScope } from "@/components/site/service-sections";
+import { PageTransition } from "./page-transition";
+import { PageHero } from "./page-hero";
+import { SectionHeader } from "./section-header";
+import { ProcessGrid } from "./process-grid";
+import { ClosingBand } from "./closing-band";
+import { Media } from "./media";
+import { Arrow, PillButton } from "./pill-button";
+import { WhatsAppCta } from "./whatsapp";
+import { Lines } from "./motion/split";
+import { RentalCatalogue } from "./rental-catalogue";
+import { ServiceComparison, ServiceFaq, ServiceScope } from "./service-sections";
 
-type Props = PageProps<"/[locale]/servicios/[slug]">;
+type Params = Promise<{ locale: string; slug: string }>;
 
 /**
+ * One service page, shared by the two hubs' `[slug]` routes
+ * (app/[locale]/(public)/venta/[slug], .../alquiler/[slug]).
+ *
  * Emits the CANONICAL slug for every locale: the proxy rewrites every public
  * URL to the default-locale folder, so `[slug]` always receives the
  * canonical one. Emitting the translated slug would prerender a route the
  * proxy never asks for (a 404 in every non-default language).
  */
-export function generateStaticParams() {
-  return LOCALES.flatMap((locale) =>
-    SERVICE_IDS.map((id) => ({ locale, slug: canonicalServiceSlug(id) })),
+export const serviceStaticParams = (kind: ServiceKind) =>
+  LOCALES.flatMap((locale) =>
+    serviceIdsOf(kind).map((id) => ({ locale, slug: canonicalServiceSlug(id) })),
   );
-}
 
-export const dynamicParams = false;
-
-export async function generateMetadata(props: Props): Promise<Metadata> {
-  const { locale: raw, slug } = await props.params;
+export async function serviceMetadata(kind: ServiceKind, params: Params): Promise<Metadata> {
+  const { locale: raw, slug } = await params;
   const locale = toLocale(raw);
-  const id = serviceFromCanonicalSlug(slug);
+  const id = serviceFromCanonicalSlug(kind, slug);
   if (!id) notFound();
   const dict = await getDictionary(locale);
   const item = dict.services.items[id];
@@ -66,16 +61,15 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   });
 }
 
-export default async function ServicePage(props: Props) {
-  const { locale: raw, slug } = await props.params;
-  const locale = toLocale(raw);
-  const id = serviceFromCanonicalSlug(slug);
+export async function ServicePage({ kind, params }: { kind: ServiceKind; params: Params }) {
+  const { locale: raw, slug } = await params;
+  const locale: Locale = toLocale(raw);
+  const id = serviceFromCanonicalSlug(kind, slug);
   if (!id) notFound();
 
   const dict = await getDictionary(locale);
   const { services, common } = dict;
   const item = services.items[id];
-  const kind = SERVICE_KIND[id];
   const contactHref = localeHref(locale, "contact");
   const formHref = proposalFormHref(contactHref, id);
   const other = SERVICE_RELATED[id];
@@ -227,73 +221,11 @@ export default async function ServicePage(props: Props) {
           faqSchema(item.faq),
           breadcrumbSchema([
             { name: common.nav.home, path: localeHref(locale) },
-            { name: services.meta.title, path: localeHref(locale, "services") },
+            { name: services.hubs[hubKey(id)].title, path: localeHref(locale, hubKey(id)) },
             { name: item.title, path: serviceHref(locale, id) },
           ]),
         ]}
       />
     </PageTransition>
-  );
-}
-
-/**
- * The listings of this rental page (naves or homes): a filterable grid, or
- * the availability block in production while there are no listings. The
- * page's own closing band asks the same question in other words, so the two
- * never repeat each other.
- */
-async function RentalCatalogue({
-  id,
-  locale,
-  dict,
-  formHref,
-}: {
-  id: ServiceId;
-  locale: string;
-  dict: Awaited<ReturnType<typeof getDictionary>>;
-  formHref: string;
-}) {
-  const copy = dict.common.catalogue;
-  const own = RENTAL_TYPES[id] ?? PROPERTY_TYPES;
-  const { items: all, sample } = catalogue();
-  const items = all.filter((p) => own.includes(p.type));
-  const types = PROPERTY_TYPES.filter((type) => items.some((p) => p.type === type));
-
-  return (
-    <section data-placement="catalogue" className="pb-20 md:pb-28">
-      <div className={FRAME}>
-        <SectionHeader title={copy.title} intro={copy.intro} />
-        <div className="mt-16 md:mt-24">
-          {items.length > 0 ? (
-            <PropertyCatalogue
-              aria={copy.filtersAria}
-              labels={copy.filters}
-              types={types}
-              cards={items.map((property) => ({
-                key: property.ref,
-                type: property.type,
-                node: (
-                  <PropertyCard
-                    property={property}
-                    locale={locale}
-                    copy={copy}
-                    sample={sample}
-                    formHref={formHref}
-                    reveal="none"
-                    sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 100vw"
-                  />
-                ),
-              }))}
-            />
-          ) : (
-            <CatalogueEmpty title={copy.empty.title} body={copy.empty.body}>
-              <PillButton href={formHref} cta="form" service={id}>
-                {copy.empty.cta}
-              </PillButton>
-            </CatalogueEmpty>
-          )}
-        </div>
-      </div>
-    </section>
   );
 }

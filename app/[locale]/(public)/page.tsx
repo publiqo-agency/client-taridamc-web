@@ -138,7 +138,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
           sample={sample}
           locale={locale}
           copy={common.catalogue}
-          catalogueHref={localeHref(locale, "services")}
+          catalogueHref={localeHref(locale, "rental")}
           formHref={contactHref}
         />
       ) : (

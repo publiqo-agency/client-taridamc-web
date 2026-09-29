@@ -78,15 +78,31 @@ export type ServiceCopy = {
   cta: string;
 };
 
+/**
+ * A hub page (Venta or Alquiler). Each speaks only of its own side of the
+ * business: the sale hub never mentions renting, the rental hub never buying.
+ */
+export type HubCopy = {
+  /** Breadcrumb and JSON-LD name. */
+  title: string;
+  /** Complete <title> (brand included), ≤ 60 characters. */
+  seoTitle: string;
+  /** ≤ 155 characters. */
+  description: string;
+  eyebrow: string;
+  /** The h1: "\n" breaks and *accent* marks. */
+  heroTitle: string;
+  imageAlt: string;
+  /** The label beside the white introduction under the hero. */
+  introLabel: string;
+  intro: string;
+  closing: { title: string; body: string };
+  cta: string;
+  whatsappMessage: string;
+};
+
 export type ServicesDict = {
-  meta: { title: string; seoTitle?: string; description: string };
-  index: {
-    eyebrow: string;
-    title: string;
-    intro: string;
-    imageAlt: string;
-    allServices: string;
-  };
+  hubs: { sale: HubCopy; rental: HubCopy };
   detail: {
     faqTitle: string;
     otherServices: string;

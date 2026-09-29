@@ -2,19 +2,43 @@
 import type { ServicesDict } from "@/lib/i18n/types";
 
 export const services: ServicesDict = {
-  meta: {
-    title: "Serveis",
-    seoTitle: "Compra i lloguer d'immobles: serveis | Tarida MC",
-    description:
-      "Comprem pisos, cases i naus industrials a tota Espanya i lloguem naus i habitatges de la nostra pròpia cartera a Castelldefels.",
-  },
-  index: {
-    eyebrow: "Serveis",
-    title: "Comprar i llogar,\n*amb el mateix criteri*",
-    intro:
-      "Comprem pisos, cases i naus industrials a tota Espanya i lloguem naus i habitatges de la nostra pròpia cartera. Quatre serveis i una sola manera de treballar: estudiar cada immoble amb atenció i tractar cada client amb franquesa.",
-    imageAlt: "Mur blanc amb una porta de fusta i una olivera",
-    allServices: "Tots els serveis",
+  hubs: {
+    sale: {
+      title: "Venda",
+      seoTitle: "Vengui el seu pis, casa o nau a tota Espanya | Tarida MC",
+      description:
+        "Comprem pisos, cases i naus industrials a tota Espanya. Estudiem cada immoble amb atenció i li donem una resposta clara.",
+      eyebrow: "Venda",
+      heroTitle: "Vengui el seu immoble\n*de manera directa*",
+      imageAlt: "Mur blanc amb una porta de fusta i una olivera",
+      introLabel: "Comprem immobles",
+      intro:
+        "Comprem pisos, cases i naus industrials a tota Espanya. Estudiem cada immoble amb atenció i tractem cada propietari amb franquesa: una resposta clara, sense embuts.",
+      closing: {
+        title: "Pensa a vendre\n*la seva propietat?*",
+        body: "Expliqui'ns quin immoble té. L'estudiarem amb atenció i li donarem una resposta clara.",
+      },
+      cta: "Proposar el meu immoble",
+      whatsappMessage: "Hola, voldria que valoressin la compra del meu immoble.",
+    },
+    rental: {
+      title: "Lloguer",
+      seoTitle: "Naus i habitatges de lloguer a Castelldefels | Tarida MC",
+      description:
+        "Naus industrials i habitatges de lloguer a Castelldefels, de la nostra pròpia cartera. Tracte directe amb la propietat.",
+      eyebrow: "Lloguer",
+      heroTitle: "Naus i habitatges\n*de lloguer*",
+      imageAlt: "Casa mediterrània emblanquinada entre xiprers",
+      introLabel: "La nostra cartera",
+      intro:
+        "Lloguem naus industrials i habitatges de la nostra pròpia cartera a Castelldefels. L'atén directament la propietat, amb la serietat de quaranta anys al sector.",
+      closing: {
+        title: "Busca una nau\n*o un habitatge?*",
+        body: "Digui'ns què busca —superfície aproximada i zona— i l'informarem del que tinguem disponible.",
+      },
+      cta: "Consultar disponibilitat",
+      whatsappMessage: "Hola, busco un immoble de lloguer.",
+    },
   },
   detail: {
     faqTitle: "Preguntes\n*freqüents*",
