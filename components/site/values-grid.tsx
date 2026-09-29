@@ -11,15 +11,18 @@ type Value = { title: string; body: string };
  * "Transparencia" / "Transparència" is ~6.3em wide, so 15cqi keeps the
  * longest one inside the cell at every width. Below lg the cells stack,
  * because three columns at tablet width leave no room for the word.
+ *
+ * From lg the cells share the list's rows through subgrid (number, free space,
+ * word, text), so the words line up even when one text is a line shorter.
  */
 export function ValuesGrid({ items }: { items: Value[] }) {
   return (
-    <ul className="relative grid border-line lg:grid-cols-3">
+    <ul className="relative grid border-line lg:min-h-[20rem] lg:grid-cols-3 lg:grid-rows-[auto_1fr_auto_auto]">
       <span aria-hidden data-m="draw-x" className="absolute inset-x-0 top-0 h-px bg-line" />
       {items.map((item, i) => (
         <li
           key={item.title}
-          className="group relative isolate border-b border-line lg:border-b-0"
+          className="group relative isolate border-b border-line lg:row-span-4 lg:grid lg:grid-rows-subgrid lg:border-b-0"
         >
           {i > 0 && (
             <span aria-hidden data-m="draw-y" data-origin="50% 0%" className="absolute inset-y-0 left-0 hidden w-px bg-line lg:block" />
@@ -31,15 +34,13 @@ export function ValuesGrid({ items }: { items: Value[] }) {
           <div
             data-m="fade"
             data-delay={String(0.12 * i)}
-            className="@container flex min-h-[16rem] flex-col justify-between gap-10 px-0 py-8 transition-colors duration-500 group-hover:text-stock md:px-8 lg:min-h-[20rem] lg:px-10"
+            className="@container flex min-h-[16rem] flex-col px-0 py-8 transition-colors duration-500 group-hover:text-stock md:px-8 lg:row-span-4 lg:grid lg:min-h-0 lg:grid-rows-subgrid lg:px-10"
           >
             <span className="label tnum text-ink-soft transition-colors duration-500 group-hover:text-stock/60">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <div>
-              <p className={`${ACCENT} text-[length:min(15cqi,5.25rem)] leading-none`}>{item.title}</p>
-              <p className="mt-6 max-w-xs text-ink-soft transition-colors duration-500 group-hover:text-stock/75">{item.body}</p>
-            </div>
+            <p className={`${ACCENT} mt-auto pt-10 text-[length:min(15cqi,5.25rem)] leading-none lg:row-start-3`}>{item.title}</p>
+            <p className="mt-6 max-w-xs text-ink-soft transition-colors duration-500 group-hover:text-stock/75 lg:row-start-4">{item.body}</p>
           </div>
         </li>
       ))}
