@@ -85,22 +85,6 @@ export const services: ServicesDict = {
           { label: "When it suits you", values: ["If you prefer certainty and one counterpart", "If you want the market price and can wait"] },
         ],
       },
-      documents: {
-        title: "Documents\n*for selling*",
-        intro:
-          "You do not need them to write to us: to begin, simply tell us about the property. Later on, these are the usual documents in a sale.",
-        items: [
-          "Title deed",
-          "Land Registry extract (nota simple)",
-          "Latest property tax (IBI) receipt",
-          "Energy performance certificate",
-          "Habitability certificate, where the region requires it",
-          "Certificate from the owners' association that fees are paid up",
-          "If there is a mortgage, a statement of the outstanding debt",
-          "If the property is let, the current tenancy agreement",
-        ],
-        note: "If one is missing, that is no obstacle to getting started: we will go through it with you.",
-      },
       faq: [
         {
           question: "What kind of properties do you buy?",
@@ -200,20 +184,6 @@ export const services: ServicesDict = {
           "Industrial units anywhere in Spain, vacant or with a tenant. Our head office is in Castelldefels, but we consider units across the whole country.",
           "Also when the unit needs renovation or carries a mortgage or charges: its situation is part of the analysis and is reflected in the offer.",
         ],
-      },
-      documents: {
-        title: "Documents for selling\n*an industrial unit*",
-        intro:
-          "To begin, simply tell us about the unit. Later on, these are the usual documents in the sale of an industrial unit.",
-        items: [
-          "Title deed",
-          "Land Registry extract (nota simple)",
-          "Latest property tax (IBI) receipt",
-          "If it is let, the current lease",
-          "If there is a mortgage, a statement of the outstanding debt",
-          "Plans and floor areas of the unit, if you have them",
-        ],
-        note: "If one is missing, that is no obstacle to getting started: we will go through it with you.",
       },
       faq: [
         {

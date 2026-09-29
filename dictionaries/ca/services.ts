@@ -85,22 +85,6 @@ export const services: ServicesDict = {
           { label: "Quan convé", values: ["Si prefereix certesa i un sol interlocutor", "Si busca el preu de mercat i pot esperar"] },
         ],
       },
-      documents: {
-        title: "Documents\n*per vendre*",
-        intro:
-          "No els necessita per escriure'ns: per començar n'hi ha prou que ens expliqui com és l'immoble. Més endavant, aquests són els documents habituals en una compravenda.",
-        items: [
-          "Escriptura de propietat",
-          "Nota simple del Registre de la Propietat",
-          "Últim rebut de l'IBI",
-          "Certificat d'eficiència energètica",
-          "Cèdula d'habitabilitat, on la comunitat autònoma l'exigeixi",
-          "Certificat de la comunitat de propietaris d'estar al corrent de pagament",
-          "Si hi ha hipoteca, certificat del deute pendent",
-          "Si està llogat, el contracte d'arrendament vigent",
-        ],
-        note: "Si li'n falta algun, no és un obstacle per començar: el revisem amb vostè.",
-      },
       faq: [
         {
           question: "Quin tipus d'immobles compren?",
@@ -200,20 +184,6 @@ export const services: ServicesDict = {
           "Naus industrials a qualsevol punt d'Espanya, lliures o amb llogater. Tenim la seu a Castelldefels, però estudiem naus a tot el país.",
           "També quan la nau necessita una reforma o té hipoteca o càrregues: la seva situació forma part de l'anàlisi i es té en compte en la proposta.",
         ],
-      },
-      documents: {
-        title: "Documents per vendre\n*una nau*",
-        intro:
-          "Per començar n'hi ha prou que ens expliqui com és la nau. Més endavant, aquests són els documents habituals en la venda d'una nau.",
-        items: [
-          "Escriptura de propietat",
-          "Nota simple del Registre de la Propietat",
-          "Últim rebut de l'IBI",
-          "Si està llogada, el contracte d'arrendament vigent",
-          "Si hi ha hipoteca, certificat del deute pendent",
-          "Plànols i superfícies de la nau, si en té",
-        ],
-        note: "Si li'n falta algun, no és un obstacle per començar: el revisem amb vostè.",
       },
       faq: [
         {

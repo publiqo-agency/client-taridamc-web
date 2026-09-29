@@ -80,39 +80,6 @@ export function ServiceComparison({ comparison }: { comparison: NonNullable<Serv
   );
 }
 
-/** The usual documents of a sale, as a numbered hairline list. */
-export function ServiceDocuments({ documents }: { documents: NonNullable<ServiceCopy["documents"]> }) {
-  return (
-    <section className={SECTION}>
-      <div className={`${FRAME} grid grid-cols-12 gap-x-5 gap-y-12 md:gap-x-8`}>
-        <div className="col-span-12 lg:col-span-5">
-          <div className="lg:sticky lg:top-28">
-            <h2 className={`${DISPLAY} text-[clamp(2.75rem,5vw,5.5rem)]`} data-m="lines">
-              <Lines text={documents.title} />
-            </h2>
-            <p className="mt-8 max-w-md text-lg text-ink-soft" data-m="fade" data-delay="0.2">
-              {documents.intro}
-            </p>
-          </div>
-        </div>
-        <div className="col-span-12 lg:col-span-7">
-          <ol className="border-t border-line">
-            {documents.items.map((item, i) => (
-              <li key={item} className="flex items-baseline gap-6 border-b border-line py-5 md:gap-10" data-m="fade" data-delay={String(i * 0.04)}>
-                <span className="label tnum w-8 shrink-0 text-ink-soft">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-lg">{item}</span>
-              </li>
-            ))}
-          </ol>
-          <p className="mt-8 max-w-lg text-ink-soft" data-m="fade">
-            {documents.note}
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /**
  * Questions and answers, all open. The same list feeds the FAQPage markup
  * (lib/schema.ts `faqSchema`), so what the page shows and what the markup
