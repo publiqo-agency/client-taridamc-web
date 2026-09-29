@@ -76,7 +76,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
       />
 
       <section className="pb-16 md:pb-24">
-        <SectionHeader title={home.lines.title} className={FRAME} />
+        <SectionHeader title={home.lines.title} className={FRAME} align="start" />
       </section>
       <ServiceStack
         cursor={common.catalogue.view}
