@@ -24,9 +24,9 @@ export const SITE = {
   /** E.164 digits only, no "+" — what wa.me expects. Empty = no WhatsApp CTAs. */
   whatsapp: "34659359776",
   /** E.164 with "+", for tel: links. Empty = no phone anywhere. */
-  telephone: "",
+  telephone: "+34659359776",
   /** Human-formatted phone, e.g. "+34 600 000 000". */
-  telephoneDisplay: "",
+  telephoneDisplay: "+34 659 35 97 76",
   email: "rs@taridamc.com",
 
   /** Registered office (Barcelona). The business itself works from
