@@ -10,5 +10,11 @@
  * and keep it: entries are cheap and inbound links live for years.
  */
 export const LEGACY_REDIRECTS: Record<string, string> = {
-  // "/old-services-page": "/es/servicios",
+  // The single rental page was split into naves and homes (2026-09-29). It
+  // was only ever on preview deployments, but links to it may have been
+  // shared: the services index lists both new pages.
+  "/es/servicios/alquiler": "/es/servicios",
+  "/en/services/rentals": "/en/services",
+  "/fr/services/location": "/fr/services",
+  "/ca/serveis/lloguer": "/ca/serveis",
 };
