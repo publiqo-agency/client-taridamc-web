@@ -28,7 +28,6 @@ export const common: CommonDict = {
     back: "Back to home",
     allServices: "View all services",
     learnMore: "Learn more",
-    scroll: "Scroll",
   },
   brand: {
     yearsLabel: "years",

@@ -28,7 +28,6 @@ export const common: CommonDict = {
     back: "Tornar a l'inici",
     allServices: "Veure tots els serveis",
     learnMore: "Més informació",
-    scroll: "Desplaçar",
   },
   brand: {
     yearsLabel: "anys",

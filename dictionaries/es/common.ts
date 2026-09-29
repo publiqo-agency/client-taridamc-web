@@ -32,7 +32,6 @@ export const common = {
     back: "Volver al inicio",
     allServices: "Ver todos los servicios",
     learnMore: "Saber más",
-    scroll: "Desplazar",
   },
   brand: {
     yearsLabel: "años",
