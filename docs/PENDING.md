@@ -27,6 +27,23 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
    `CONTACT_EMAIL` in Vercel Production. Without them the form errors in production.
 6. **Translations reviewed.** `dictionaries/fr` and `dictionaries/ca` are
    machine-drafted from the Spanish; a native speaker signs them off before launch.
+7. **Legal review (2026-09-29).** Legal notice, privacy and cookie policies
+   now carry the owner's data, recipients (Vercel, Resend, Google, WhatsApp),
+   international transfers, retention, withdrawal of consent, the cookie list
+   with durations, and applicable law; the contact form has the first-layer
+   data notice. Still open:
+   - Registro Mercantil entry (see 3).
+   - Ask the client whether Tarida MC ever acts as an intermediary for third
+     parties. If so, Catalan law requires registration in the Registre
+     d'Agents Immobiliaris de Catalunya (AICAT) and the number on the site.
+   - Cookie consent (CORE, `lib/consent.ts`): "Accept" also grants
+     `ad_storage`, `ad_user_data` and `ad_personalization`, but the banner
+     and the cookie policy only mention measurement. Harmless while no Ads tag
+     runs; before Ads goes live, either say so in the banner and the policy or
+     grant only `analytics_storage`. Consent Mode is "advanced" (Google tags
+     load before consent and send cookieless pings); some Spanish lawyers ask
+     for "basic" mode. Decide at template level.
+   - A lawyer signs off the final wording.
 
 ## Client material
 
