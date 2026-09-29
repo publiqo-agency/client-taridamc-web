@@ -12,7 +12,7 @@ export const contact: ContactDict = {
     title: "Let's talk about\n*your property*",
     intro:
       "Tell us what you need: to sell a property, or to rent an industrial unit or a home. We will reply to you personally.",
-    imageAlt: "Aerial view of a marina on the Mediterranean coast",
+    imageAlt: "Arched porch open to the Mediterranean Sea",
   },
   aside: {
     title: "Would you rather speak to us directly?",

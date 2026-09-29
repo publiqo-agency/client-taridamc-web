@@ -13,7 +13,7 @@ export const services: ServicesDict = {
     title: "Comprar i llogar,\n*amb el mateix criteri*",
     intro:
       "Dues activitats, una sola manera de treballar: estudiar cada immoble amb atenció i tractar cada client amb franquesa.",
-    imageAlt: "Façana blanca amb finestrons blaus",
+    imageAlt: "Mur blanc amb una porta de fusta i una olivera",
     allServices: "Tots els serveis",
   },
   detail: {
@@ -33,7 +33,7 @@ export const services: ServicesDict = {
         "Tarida MC compra immobles directament als seus propietaris a Castelldefels. Analitzem cada actiu i, si l'oportunitat encaixa, li presentem una proposta de compra.",
       intro:
         "Comprem immobles directament als seus propietaris. Analitzem cada actiu amb deteniment i, quan l'oportunitat encaixa amb el que busquem, presentem una proposta de compra. Amb la serietat d'una empresa familiar amb quaranta anys al sector.",
-      imageAlt: "Façana d'un habitatge mediterrani amb llum càlida",
+      imageAlt: "Ràfec de teula i finestró d'una casa mediterrània amb llum càlida",
       includes: [
         "Ubicació i entorn",
         "Tipus d'immoble i superfície",
@@ -70,7 +70,7 @@ export const services: ServicesDict = {
         "Lloguer de naus industrials i habitatges a Castelldefels per a empreses i particulars. Immobles de la cartera pròpia de Tarida MC, amb tracte directe.",
       intro:
         "Lloguem naus industrials i habitatges a Castelldefels, a empreses i a particulars. Són immobles de la nostra pròpia cartera: els coneixem bé i l'atenem directament.",
-      imageAlt: "Nau industrial diàfana i lluminosa",
+      imageAlt: "Nau industrial diàfana amb pilars de maó i grans finestrals",
       includes: [],
       sections: [],
       whatsappMessage: "Hola, m'interessa informació sobre els seus immobles de lloguer.",

@@ -31,10 +31,10 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
 - Logo (transparent PNG or SVG) → `brand/`, then `npm run brand:build`. The
   brief does not say whether a logo or brand manual exists.
 - Photos: every photo on the site is a **provisional** free-licence stock
-  image (Unsplash/Pexels), listed with its credit in `docs/PHOTO-CREDITS.md`.
+  image (Unsplash), listed with its credit in `docs/PHOTO-CREDITS.md`.
   Replace them file by file, same path and aspect ratio, with the client's own
-  photography or renders. Weakest picks to replace first: `about/interior.webp`
-  and `cta/sell.webp`. One photo came with the brief (IMG_1421.JPG, in GoFeed).
+  photography or renders. Only `about/castelldefels.webp` shows Castelldefels
+  itself; the rest are generic. One photo came with the brief (IMG_1421.JPG, in GoFeed).
 - Logo: received only as a 640 px JPEG (`brand/IMG_1421.JPG`). The site uses
   a vector REBUILD of it (`brand/logo.svg`, `components/site/logo-paths.ts`):
   waves fitted to the raster, lettering set in Montserrat. Ask the client for

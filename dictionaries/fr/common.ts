@@ -86,7 +86,7 @@ export const common: CommonDict = {
     eyebrow: "Parlons-en",
     title: "Vous pensez à vendre\n*votre bien ?*",
     body: "Dites-nous de quel bien il s’agit. Nous l’étudierons avec attention et vous donnerons une réponse claire.",
-    imageAlt: "Terrasse d’une maison méditerranéenne à la tombée de la nuit, intérieur éclairé",
+    imageAlt: "Pièce ouverte sur la mer au coucher du soleil",
   },
   whatsapp: {
     aria: "Ouvrir WhatsApp",

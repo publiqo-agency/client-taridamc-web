@@ -12,7 +12,7 @@ export const about: AboutDict = {
     title: "Une entreprise familiale,\n*quarante ans après*",
     intro:
       "Nous achetons et louons des biens immobiliers à Castelldefels avec la même façon de travailler qu’à nos débuts : sérieux, honnêteté et transparence.",
-    imageAlt: "Intérieur méditerranéen serein aux grandes baies vitrées",
+    imageAlt: "Enfilade d’arcs blanchis à la chaux menant à une vieille porte en bois",
   },
   sections: [
     {
@@ -29,7 +29,7 @@ export const about: AboutDict = {
       ],
     },
   ],
-  storyImageAlt: "Mur blanchi à la chaux et volets en bois sous la lumière méditerranéenne",
+  storyImageAlt: "Façade blanchie à la chaux avec une porte verte cintrée et un olivier",
   leader: {
     eyebrow: "Direction",
     name: "Ramon Seva",
@@ -41,7 +41,7 @@ export const about: AboutDict = {
     eyebrow: "Castelldefels",
     title: "Notre *territoire*",
     body: "Nous travaillons depuis Castelldefels, entre la mer et le massif du Garraf. Nous connaissons son marché immobilier, car nous en faisons partie depuis quarante ans.",
-    imageAlt: "Côte méditerranéenne bordée de pins au coucher du soleil",
+    imageAlt: "Plage de Castelldefels au coucher du soleil, avec le massif du Garraf au loin",
     sea: "Mer Méditerranée",
   },
 };

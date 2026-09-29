@@ -13,7 +13,7 @@ export const services: ServicesDict = {
     title: "Acheter et louer,\n*avec la même exigence*",
     intro:
       "Deux activités, une seule façon de travailler : étudier chaque bien avec attention et traiter chaque client avec franchise.",
-    imageAlt: "Façade blanche aux volets bleus",
+    imageAlt: "Mur blanc avec une porte en bois et un olivier",
     allServices: "Tous les services",
   },
   detail: {
@@ -33,7 +33,7 @@ export const services: ServicesDict = {
         "Tarida MC achète des biens immobiliers directement à leurs propriétaires à Castelldefels. Nous analysons chaque actif et, si l’opportunité nous convient, nous vous présentons une proposition d’achat.",
       intro:
         "Nous achetons des biens immobiliers directement à leurs propriétaires. Nous analysons chaque actif en détail et, lorsque l’opportunité correspond à ce que nous recherchons, nous présentons une proposition d’achat. Avec le sérieux d’une entreprise familiale forte de quarante ans d’expérience dans le secteur.",
-      imageAlt: "Façade d’une maison méditerranéenne baignée d’une lumière chaude",
+      imageAlt: "Avant-toit en tuiles et volet d’une maison méditerranéenne dans une lumière chaude",
       includes: [
         "Emplacement et environnement",
         "Type de bien et surface",
@@ -70,7 +70,7 @@ export const services: ServicesDict = {
         "Location de locaux industriels et de logements à Castelldefels, pour les entreprises et les particuliers. Des biens du propre patrimoine de Tarida MC, avec un interlocuteur direct.",
       intro:
         "Nous louons des locaux industriels et des logements à Castelldefels, aux entreprises comme aux particuliers. Ces biens font partie de notre propre patrimoine : nous les connaissons bien et vous traitez directement avec nous.",
-      imageAlt: "Entrepôt industriel ouvert et lumineux",
+      imageAlt: "Entrepôt industriel ouvert aux piliers de brique et aux hautes fenêtres",
       includes: [],
       sections: [],
       whatsappMessage: "Bonjour, je souhaiterais des informations sur vos biens à louer.",

@@ -12,7 +12,7 @@ export const about: AboutDict = {
     title: "Una empresa familiar,\n*quaranta anys després*",
     intro:
       "Comprem i lloguem immobles a Castelldefels amb la mateixa manera de treballar de sempre: serietat, honestedat i transparència.",
-    imageAlt: "Interior mediterrani serè amb grans finestrals",
+    imageAlt: "Successió d'arcs emblanquinats que porten a una antiga porta de fusta",
   },
   sections: [
     {
@@ -29,7 +29,7 @@ export const about: AboutDict = {
       ],
     },
   ],
-  storyImageAlt: "Mur emblanquinat i finestrons de fusta sota la llum mediterrània",
+  storyImageAlt: "Façana emblanquinada amb una porta verda en arc i una olivera",
   leader: {
     eyebrow: "Al capdavant",
     name: "Ramon Seva",
@@ -41,7 +41,7 @@ export const about: AboutDict = {
     eyebrow: "Castelldefels",
     title: "El nostre *lloc*",
     body: "Treballem des de Castelldefels, entre el mar i el massís del Garraf. Coneixem el seu mercat immobiliari perquè fa quaranta anys que en formem part.",
-    imageAlt: "Costa mediterrània amb pins a la posta de sol",
+    imageAlt: "Platja de Castelldefels a la posta de sol, amb el massís del Garraf al fons",
     sea: "Mar Mediterrània",
   },
 };

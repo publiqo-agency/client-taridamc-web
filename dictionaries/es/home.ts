@@ -12,7 +12,7 @@ export const home = {
       "Cuarenta años comprando y alquilando propiedades. Estudiamos cada inmueble con calma y respondemos con claridad.",
     ctaPrimary: "Vender su inmueble",
     ctaSecondary: "Inmuebles en alquiler",
-    imageAlt: "Villa mediterránea contemporánea al atardecer",
+    imageAlt: "Arquitectura contemporánea frente al mar al atardecer",
   },
   manifesto: {
     eyebrow: "Quiénes somos",
