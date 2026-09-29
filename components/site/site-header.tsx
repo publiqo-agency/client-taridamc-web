@@ -178,7 +178,7 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
               return (
                 <div
                   key={item.href}
-                  className="relative flex items-center gap-1.5"
+                  className="relative flex h-20 items-center gap-1.5"
                   onMouseEnter={() => setDropdown(item.href)}
                   onMouseLeave={() => setDropdown(null)}
                 >
@@ -195,16 +195,18 @@ export function SiteHeader({ locale, overlayPaths, nav, menu, contactHref, copy 
                     <Chevron open={expanded} />
                   </button>
 
-                  {/* The hover bridge (pt-4) keeps the panel open while the
-                      pointer crosses the gap under the bar. */}
+                  {/* The entry is as tall as the bar, so the panel hangs
+                      exactly from the header's hairline: that line is its top
+                      edge (no border-t of its own, or the two read double),
+                      and there is no gap for the pointer to fall through. */}
                   <div
                     id={panelId}
                     inert={!expanded}
-                    className={`absolute top-full -left-5 pt-4 transition-[opacity,translate] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    className={`absolute top-full -left-5 transition-[opacity,translate] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                       expanded ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
                     }`}
                   >
-                    <ul className="band-light min-w-[17rem] border border-line bg-stock py-2 text-ink shadow-[0_18px_40px_-20px_rgba(6,26,42,0.35)]">
+                    <ul className="band-light min-w-[17rem] border border-t-0 border-line bg-stock py-2 text-ink shadow-[0_18px_40px_-20px_rgba(6,26,42,0.35)]">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
