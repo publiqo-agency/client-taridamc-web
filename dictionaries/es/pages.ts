@@ -38,6 +38,5 @@ export const about = {
     title: "Nuestro *lugar*",
     body: "Trabajamos desde Castelldefels, entre el mar y el macizo del Garraf. Conocemos su mercado inmobiliario porque llevamos cuarenta años formando parte de él.",
     imageAlt: "Playa de Castelldefels al atardecer, con el macizo del Garraf al fondo",
-    sea: "Mar Mediterráneo",
   },
 };

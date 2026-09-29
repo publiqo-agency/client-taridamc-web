@@ -12,13 +12,11 @@ import { PageHero } from "@/components/site/page-hero";
 import { SectionHeader } from "@/components/site/section-header";
 import { Media } from "@/components/site/media";
 import { Sundial } from "@/components/site/sundial";
-import { Coastline } from "@/components/site/coastline";
 import { ValuesGrid } from "@/components/site/values-grid";
 import { ClosingBand } from "@/components/site/closing-band";
 import { PillButton } from "@/components/site/pill-button";
 import { WhatsAppCta } from "@/components/site/whatsapp";
 import { Lines } from "@/components/site/motion/split";
-import { PLACE } from "@/components/site/place";
 
 export async function generateMetadata(props: PageProps<"/[locale]/nosotros">): Promise<Metadata> {
   const { locale: raw } = await props.params;
@@ -136,9 +134,6 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
                 {about.place.body}
               </p>
             </div>
-          </div>
-          <div className="mt-28 md:mt-36">
-            <Coastline sea={about.place.sea} place={PLACE} />
           </div>
         </div>
       </section>

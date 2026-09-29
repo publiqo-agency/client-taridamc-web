@@ -41,6 +41,5 @@ export const about: AboutDict = {
     title: "Notre *territoire*",
     body: "Nous travaillons depuis Castelldefels, entre la mer et le massif du Garraf. Nous connaissons son marché immobilier, car nous en faisons partie depuis quarante ans.",
     imageAlt: "Plage de Castelldefels au coucher du soleil, avec le massif du Garraf au loin",
-    sea: "Mer Méditerranée",
   },
 };
