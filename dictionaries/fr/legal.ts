@@ -5,6 +5,13 @@ export const legal: LegalDict = {
     label: "En attente",
     body: "Les données d'immatriculation du titulaire (raison sociale, numéro fiscal, adresse) sont manquantes. Cet avis disparaît une fois lib/site.ts complété.",
   },
+  ownerLabels: {
+    name: "Raison sociale",
+    taxId: "NIF",
+    address: "Siège social",
+    email: "Email",
+    phone: "Téléphone",
+  },
   updated: "Dernière mise à jour : septembre 2026.",
   notice: {
     title: "Mentions légales",
@@ -13,8 +20,9 @@ export const legal: LegalDict = {
       {
         heading: "Titulaire",
         body: [
-          "Ce site web est la propriété de l'entité identifiée dans le pied de page, avec les coordonnées qui y figurent.",
+          "Conformément à l'article 10 de la loi espagnole 34/2002 (LSSI-CE), ce site web appartient à :",
         ],
+        owner: true,
       },
       {
         heading: "Utilisation du site",
@@ -42,7 +50,8 @@ export const legal: LegalDict = {
     sections: [
       {
         heading: "Responsable du traitement",
-        body: ["Le titulaire identifié dans les mentions légales et dans le pied de page."],
+        body: ["Le responsable du traitement de vos données est :"],
+        owner: true,
       },
       {
         heading: "Quelles données nous traitons et pourquoi",
@@ -66,7 +75,7 @@ export const legal: LegalDict = {
       {
         heading: "Vos droits",
         body: [
-          "Vous pouvez exercer vos droits d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité en écrivant à l'adresse email indiquée dans le pied de page. Vous pouvez également déposer une réclamation auprès de l'Agencia Española de Protección de Datos.",
+          "Vous pouvez exercer vos droits d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité en écrivant à l'adresse email indiquée ci-dessus, sous « Responsable du traitement ». Vous pouvez également déposer une réclamation auprès de l'Agencia Española de Protección de Datos.",
         ],
       },
     ],
@@ -75,6 +84,11 @@ export const legal: LegalDict = {
     title: "Politique de cookies",
     intro: "Quels cookies et quel stockage local ce site utilise et comment vous pouvez en décider.",
     sections: [
+      {
+        heading: "Responsable",
+        body: ["Le responsable des cookies utilisés sur ce site est :"],
+        owner: true,
+      },
       {
         heading: "Ce que nous utilisons",
         body: [

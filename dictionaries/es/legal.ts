@@ -9,6 +9,13 @@ export const legal = {
     label: "Pendiente",
     body: "Faltan los datos registrales del titular (razón social, NIF, domicilio). Este aviso desaparece al rellenarlos en lib/site.ts.",
   },
+  ownerLabels: {
+    name: "Razón social",
+    taxId: "NIF",
+    address: "Domicilio social",
+    email: "Email",
+    phone: "Teléfono",
+  },
   updated: "Última actualización: septiembre de 2026.",
   notice: {
     title: "Aviso legal",
@@ -17,8 +24,9 @@ export const legal = {
       {
         heading: "Titular",
         body: [
-          "Este sitio web es titularidad de la entidad identificada en el pie de página, con los datos de contacto que figuran en él.",
+          "En cumplimiento del artículo 10 de la Ley 34/2002 (LSSI-CE), le informamos de que este sitio web es titularidad de:",
         ],
+        owner: true,
       },
       {
         heading: "Uso del sitio",
@@ -46,7 +54,8 @@ export const legal = {
     sections: [
       {
         heading: "Responsable del tratamiento",
-        body: ["El titular identificado en el aviso legal y en el pie de página."],
+        body: ["El responsable del tratamiento de sus datos es:"],
+        owner: true,
       },
       {
         heading: "Qué datos tratamos y para qué",
@@ -70,7 +79,7 @@ export const legal = {
       {
         heading: "Tus derechos",
         body: [
-          "Puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo al email del pie de página. También puede reclamar ante la Agencia Española de Protección de Datos.",
+          "Puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo al email indicado más arriba, en «Responsable del tratamiento». También puede reclamar ante la Agencia Española de Protección de Datos.",
         ],
       },
     ],
@@ -79,6 +88,11 @@ export const legal = {
     title: "Política de cookies",
     intro: "Qué cookies y almacenamiento local usa este sitio y cómo puede decidir sobre ellos.",
     sections: [
+      {
+        heading: "Responsable",
+        body: ["El responsable de las cookies que utiliza este sitio es:"],
+        owner: true,
+      },
       {
         heading: "Qué usamos",
         body: [

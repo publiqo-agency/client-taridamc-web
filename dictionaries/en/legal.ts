@@ -5,6 +5,13 @@ export const legal: LegalDict = {
     label: "Pending",
     body: "The owner's registration data (legal name, tax id, address) is missing. This notice disappears once lib/site.ts is filled in.",
   },
+  ownerLabels: {
+    name: "Company name",
+    taxId: "Tax ID (NIF)",
+    address: "Registered office",
+    email: "Email",
+    phone: "Phone",
+  },
   updated: "Last updated: September 2026.",
   notice: {
     title: "Legal notice",
@@ -13,8 +20,9 @@ export const legal: LegalDict = {
       {
         heading: "Owner",
         body: [
-          "This website is owned by the entity identified in the footer, with the contact details shown there.",
+          "In accordance with Article 10 of Spanish Law 34/2002 (LSSI-CE), this website is owned by:",
         ],
+        owner: true,
       },
       {
         heading: "Use of the site",
@@ -42,7 +50,8 @@ export const legal: LegalDict = {
     sections: [
       {
         heading: "Data controller",
-        body: ["The owner identified in the legal notice and in the footer."],
+        body: ["The controller of your personal data is:"],
+        owner: true,
       },
       {
         heading: "What data we process and why",
@@ -66,7 +75,7 @@ export const legal: LegalDict = {
       {
         heading: "Your rights",
         body: [
-          "You may exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to the email address in the footer. You may also lodge a complaint with the Spanish Data Protection Agency.",
+          "You may exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to the email address given above, under “Data controller”. You may also lodge a complaint with the Spanish Data Protection Agency.",
         ],
       },
     ],
@@ -75,6 +84,11 @@ export const legal: LegalDict = {
     title: "Cookie policy",
     intro: "Which cookies and local storage this site uses and how you can decide about them.",
     sections: [
+      {
+        heading: "Responsible party",
+        body: ["The party responsible for the cookies used on this site is:"],
+        owner: true,
+      },
       {
         heading: "What we use",
         body: [
