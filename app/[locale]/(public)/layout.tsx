@@ -1,7 +1,7 @@
 import { toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { LEGAL_KEYS, localeHref, overlayPathsFor, serviceHref } from "@/lib/routes";
-import { SERVICE_IDS } from "@/lib/services";
+import { SERVICE_IDS, serviceIdsOf, type ServiceKind } from "@/lib/services";
 import { GTM_ID } from "@/lib/analytics";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
@@ -35,10 +35,15 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
 
   // The header's inline links: the two sides of the business, the seller
   // lead first (it is what the site pushes); contact is the button beside
-  // them. Each hub lists its own service pages.
+  // them. Each hub drops down its own service pages.
+  const hubPages = (kind: ServiceKind) =>
+    serviceIdsOf(kind).map((id) => ({
+      href: serviceHref(locale, id),
+      label: dict.services.items[id].shortTitle,
+    }));
   const navItems = [
-    { href: saleHref, label: nav.sale },
-    { href: rentalHref, label: nav.rental },
+    { href: saleHref, label: nav.sale, children: hubPages("purchase") },
+    { href: rentalHref, label: nav.rental, children: hubPages("rental") },
     { href: aboutHref, label: nav.about },
   ];
 
@@ -72,6 +77,7 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
           menu: nav.menu,
           close: nav.close,
           mainNavAria: nav.mainNavAria,
+          submenu: nav.submenu,
           localeAria: localeSwitcher.aria,
           skipToContent: nav.skipToContent,
         }}
