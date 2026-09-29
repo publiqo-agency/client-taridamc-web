@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/i18n/metadata";
 import Link from "next/link";
 import { localeHref, routePaths, serviceHref } from "@/lib/routes";
 import { SERVICE_IDS } from "@/lib/services";
-import { routeBreadcrumb } from "@/lib/schema";
+import { aboutPageSchema, routeBreadcrumb } from "@/lib/schema";
 import { proposalFormHref } from "@/lib/whatsapp";
 import { DISPLAY, DISPLAY_QUIET, DISPLAY_SANS, FRAME, ACCENT, SECTION } from "@/lib/styles";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -180,7 +180,12 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
         <WhatsAppCta label={common.cta.whatsapp} message={services.items.purchase.whatsappMessage} service="purchase" tone="outline" />
       </ClosingBand>
 
-      <JsonLd data={routeBreadcrumb(locale, { homeLabel: common.nav.home, name: about.meta.title, key: "about" })} />
+      <JsonLd
+        data={[
+          aboutPageSchema(locale, { name: about.meta.title, path: routePaths("about")[locale] }),
+          routeBreadcrumb(locale, { homeLabel: common.nav.home, name: about.meta.title, key: "about" }),
+        ]}
+      />
     </PageTransition>
   );
 }

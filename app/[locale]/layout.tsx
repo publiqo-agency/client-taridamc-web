@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, Montserrat } from "next/font/google";
-import { LOCALES, HTML_LANG, OG_LOCALE, toLocale } from "@/lib/i18n/config";
+import { DEFAULT_LOCALE, LOCALES, HTML_LANG, OG_LOCALE, toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
-import { IS_INDEXABLE, ORG, OG_IMAGE, SITE_URL } from "@/lib/seo";
-import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { IS_INDEXABLE, ORG, OG_IMAGE, SITE_URL, absoluteUrl } from "@/lib/seo";
+import { serviceHref } from "@/lib/routes";
+import { SERVICE_IDS } from "@/lib/services";
+import { organizationSchema, personSchema, websiteSchema } from "@/lib/schema";
 import { REVEAL_INIT_SCRIPT } from "@/lib/motion";
 import { GTM_ID, GTM_INIT_SCRIPT } from "@/lib/analytics";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -73,6 +75,21 @@ export async function generateMetadata(props: LayoutProps<"/[locale]">): Promise
 export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
   const { locale: raw } = await props.params;
   const locale = toLocale(raw);
+  // The entity nodes carry one @id for every locale: describe them in the
+  // default language only (see organizationSchema).
+  const base = await getDictionary(DEFAULT_LOCALE);
+  const entities = [
+    organizationSchema({
+      description: base.common.meta.description,
+      knowsAbout: [...ORG.knowsAbout],
+      services: SERVICE_IDS.map((id) => ({
+        name: base.services.items[id].title,
+        url: absoluteUrl(serviceHref(DEFAULT_LOCALE, id)),
+      })),
+    }),
+    personSchema({ description: base.about.leader.role }),
+    websiteSchema(),
+  ];
 
   return (
     <html
@@ -89,7 +106,7 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
         {GTM_ID && <InlineScript html={GTM_INIT_SCRIPT} />}
       </head>
       <body className="flex min-h-full flex-col">
-        <JsonLd data={[organizationSchema(), websiteSchema()]} />
+        <JsonLd data={entities} />
         {props.children}
         <RootAttributes />
         <AnalyticsListener />
