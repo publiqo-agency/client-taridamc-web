@@ -1,3 +1,5 @@
+"use client";
+
 type Props = {
   html: string;
 };
@@ -19,6 +21,10 @@ type Props = {
  * The scripts that use this (reveal, consent defaults) only set an attribute
  * or a default once, so losing the execution on soft navigation is correct.
  * suppressHydrationWarning covers the intentional `type` difference.
+ *
+ * It has to be a client component: as a server component the `typeof window`
+ * check only ever ran on the server, the RSC payload always carried
+ * "text/javascript", and the client-side remount still warned.
  */
 export function InlineScript({ html }: Props) {
   return (
