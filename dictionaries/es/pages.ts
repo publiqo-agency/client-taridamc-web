@@ -26,7 +26,7 @@ export const about = {
       ],
     },
   ],
-  storyImageAlt: "Fachada encalada con una puerta verde en arco y un olivo",
+  storyImageAlt: "Portón de madera abierto bajo un arco de piedra",
   leader: {
     name: "Ramon Seva",
     portraitAlt: "Retrato de Ramon Seva",

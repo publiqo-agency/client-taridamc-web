@@ -29,7 +29,7 @@ export const about: AboutDict = {
       ],
     },
   ],
-  storyImageAlt: "Façana emblanquinada amb una porta verda en arc i una olivera",
+  storyImageAlt: "Portalada de fusta oberta sota un arc de pedra",
   leader: {
     name: "Ramon Seva",
     portraitAlt: "Retrat de Ramon Seva",

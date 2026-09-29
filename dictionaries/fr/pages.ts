@@ -29,7 +29,7 @@ export const about: AboutDict = {
       ],
     },
   ],
-  storyImageAlt: "Façade blanchie à la chaux avec une porte verte cintrée et un olivier",
+  storyImageAlt: "Porte cochère en bois ouverte sous un arc en pierre",
   leader: {
     name: "Ramon Seva",
     portraitAlt: "Portrait de Ramon Seva",

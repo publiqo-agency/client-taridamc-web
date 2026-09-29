@@ -89,7 +89,7 @@ export const common = {
   closing: {
     title: "¿Piensa en vender\n*su propiedad?*",
     body: "Cuéntenos qué inmueble tiene. Lo estudiaremos con atención y le daremos una respuesta clara.",
-    imageAlt: "Estancia abierta al mar al atardecer",
+    imageAlt: "Balcón de una finca del Eixample de Barcelona",
   },
   whatsapp: {
     aria: "Abrir WhatsApp",
