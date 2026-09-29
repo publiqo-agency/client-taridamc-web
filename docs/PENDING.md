@@ -54,6 +54,9 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
   Replace them file by file, same path and aspect ratio, with the client's own
   photography or renders. Only `about/castelldefels.webp` shows Castelldefels
   itself; the rest are generic. One photo came with the brief (IMG_1421.JPG, in GoFeed).
+  The rental hub's hero (`/alquiler`) reuses the homes panel photo
+  (`services/rental/hero.webp`): it needs a photo of its own, ideally one of
+  their naves or homes.
 - Logo: received only as a 640 px JPEG (`brand/IMG_1421.JPG`). The site uses
   a vector REBUILD of it (`brand/logo.svg`, `components/site/logo-paths.ts`):
   waves fitted to the raster, lettering set in Montserrat. Ask the client for
@@ -116,6 +119,12 @@ readable heading text, branded og:title. Still open:
 - (empty)
 
 ## Resolved
+
+- 2026-09-29 — No services index: the header opens two hubs, **Venta**
+  (`/venta`, what they buy) and **Alquiler** (`/alquiler`, what they let),
+  each with a white introduction under the hero and the split panels of its
+  two service pages, which now hang from them (`/venta/pisos-y-casas`,
+  `/alquiler/viviendas`…). The old preview URLs 308 to the new ones.
 
 - 2026-09-24 — Logo delivered (raster) and applied: palette re-based on its
   blue (navy ink, salt-white paper, deep-sea dark bands), Montserrat as the
