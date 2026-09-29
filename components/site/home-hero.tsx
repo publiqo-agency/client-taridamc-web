@@ -55,7 +55,7 @@ export function HomeHero({ titleTop, titleBottom, intro, image, children }: Prop
             <span data-m="chars" data-delay="0.05" className="block">
               <Chars text={titleTop} />
             </span>
-          </span>
+          </span>{" "}
           <span
             className={`${ACCENT} mt-[0.12em] block text-right text-[clamp(2.75rem,12vw,14rem)] leading-[0.9]`}
             data-m="drift"

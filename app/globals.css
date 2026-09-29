@@ -233,6 +233,11 @@ html.lenis body {
 .mask-inline > span {
   display: inline-block;
 }
+/* Chars (motion/split.tsx): the letter is generated content, so the word
+   exists once in the HTML text (the sr-only copy), not twice. */
+.mask-inline > span[data-c]::before {
+  content: attr(data-c);
+}
 
 /* Underline that draws in from the left and leaves to the right. */
 .link-line {
