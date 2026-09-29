@@ -113,8 +113,9 @@ export function PhotoVariantToggle() {
     <div
       role="group"
       aria-label="Photo set"
-      className="fixed bottom-5 left-5 z-40 flex items-center gap-0.5 rounded-full bg-[#0b0b0c]/70 p-0.5 backdrop-blur-sm md:bottom-8 md:left-8"
+      className="fixed bottom-5 left-5 z-40 flex items-center gap-0.5 rounded-full bg-[#0b0b0c]/70 py-0.5 pr-0.5 pl-2.5 text-white backdrop-blur-sm md:bottom-8 md:left-8"
     >
+      <span className="mr-1 text-[0.5625rem] font-medium tracking-[0.14em] text-white/60 uppercase">Fotos</span>
       {button("a")}
       {button("b")}
     </div>
