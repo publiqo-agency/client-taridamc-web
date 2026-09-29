@@ -31,7 +31,6 @@ export const about: AboutDict = {
   ],
   storyImageAlt: "Whitewashed façade with an arched green door and an olive tree",
   leader: {
-    eyebrow: "At the helm",
     name: "Ramon Seva",
     portraitAlt: "Portrait of Ramon Seva",
     role: "Head of Tarida MC",

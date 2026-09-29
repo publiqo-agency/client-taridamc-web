@@ -20,7 +20,6 @@ export const services: ServicesDict = {
     includesTitle: "What we assess",
     faqTitle: "Frequently asked questions",
     otherServices: "Other service",
-    requestTitle: "Interested?",
     requestBody: "Tell us what you need and we will reply to you personally.",
   },
   items: {

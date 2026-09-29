@@ -40,7 +40,6 @@ export const common = {
     family: "Empresa familiar",
   },
   catalogue: {
-    eyebrow: "Catálogo",
     title: "Inmuebles\n*en alquiler*",
     intro:
       "Naves industriales y viviendas en Castelldefels, de nuestra propia cartera. Le atendemos directamente.",
@@ -72,7 +71,6 @@ export const common = {
     },
   },
   values: {
-    eyebrow: "Cómo trabajamos",
     title: "Tres palabras\n*que nos definen*",
     items: [
       {
@@ -90,7 +88,6 @@ export const common = {
     ],
   },
   closing: {
-    eyebrow: "Hablemos",
     title: "¿Piensa en vender\n*su propiedad?*",
     body: "Cuéntenos qué inmueble tiene. Lo estudiaremos con atención y le daremos una respuesta clara.",
     imageAlt: "Estancia abierta al mar al atardecer",

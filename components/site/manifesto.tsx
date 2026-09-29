@@ -4,8 +4,6 @@ import { Words } from "./motion/split";
 import { Arrow } from "./pill-button";
 
 type Props = {
-  index: string;
-  eyebrow: string;
   text: string;
   years: number;
   yearsLabel: string;
@@ -20,20 +18,16 @@ type Props = {
  * scrolls through the viewport (scrubbed, so the reader sets the pace), then
  * the one number the brief gives us, counted once, and the signature.
  */
-export function Manifesto({ index, eyebrow, text, years, yearsLabel, yearsCaption, signature, role, cta }: Props) {
+export function Manifesto({ text, years, yearsLabel, yearsCaption, signature, role, cta }: Props) {
   return (
     <section className={`${SECTION} relative`}>
       <div className={FRAME}>
         <span aria-hidden data-m="draw-x" data-origin="0% 50%" className="block h-px w-full bg-line" />
 
         <div className="mt-10 grid grid-cols-12 gap-x-8 gap-y-10">
-          <div className="col-span-12 flex gap-4 md:col-span-3 md:flex-col md:gap-2" data-m="fade">
-            <span className="label tnum text-ink-soft">({index})</span>
-            <span className="label">{eyebrow}</span>
-          </div>
           <p
             data-m="words"
-            className={`${DISPLAY} col-span-12 text-[clamp(2rem,4.3vw,4.5rem)] leading-[1.08] md:col-span-9`}
+            className={`${DISPLAY} col-span-12 text-[clamp(2rem,4.3vw,4.5rem)] leading-[1.08] md:col-span-9 md:col-start-4`}
           >
             <Words text={text} />
           </p>

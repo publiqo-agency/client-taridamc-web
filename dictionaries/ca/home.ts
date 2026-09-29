@@ -18,14 +18,12 @@ export const home: HomeDict = {
     imageAlt: "Arquitectura contemporània davant del mar a la posta de sol",
   },
   manifesto: {
-    eyebrow: "Qui som",
     text: "Som una empresa familiar de Castelldefels. Des de fa quaranta anys comprem i lloguem immobles amb una mateixa regla: *serietat, honestedat i transparència* en cada operació.",
     signature: "Ramon Seva",
     role: "Al capdavant de Tarida MC",
     cta: "Coneixe'ns",
   },
   lines: {
-    eyebrow: "Què fem",
     title: "Dues maneres\nde *treballar amb vostè*",
     purchaseKicker: "Per a propietaris",
     purchaseTitle: "Comprem\n*el seu immoble*",
@@ -33,7 +31,6 @@ export const home: HomeDict = {
     rentalTitle: "Naus i habitatges\n*de lloguer*",
   },
   process: {
-    eyebrow: "Com comprem",
     title: "Un procés\n*clar i directe*",
     intro:
       "Quan ens proposa un immoble, sap en tot moment en quin punt es troba l'operació.",

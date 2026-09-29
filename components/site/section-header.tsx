@@ -2,9 +2,6 @@ import { DISPLAY } from "@/lib/styles";
 import { Lines } from "./motion/split";
 
 type Props = {
-  /** "(02)" style index; optional. */
-  index?: string;
-  eyebrow?: string;
   title: string;
   intro?: string;
   className?: string;
@@ -13,13 +10,12 @@ type Props = {
 };
 
 /**
- * The head of a content section on the 12-column plan: index and eyebrow
- * in the narrow left column, the serif headline rising line by line on the
- * right, the intro fading in after it.
+ * The head of a content section on the 12-column plan: the serif headline
+ * rising line by line in the right nine columns, the intro fading in after
+ * it. No index or eyebrow above it: the headline carries the section on its
+ * own (docs/SKELETON.md, design rules).
  */
 export function SectionHeader({
-  index,
-  eyebrow,
   title,
   intro,
   className = "",
@@ -28,11 +24,7 @@ export function SectionHeader({
 }: Props) {
   return (
     <div className={`grid grid-cols-12 gap-x-5 gap-y-6 md:gap-x-8 ${className}`}>
-      <div className="col-span-12 flex gap-4 md:col-span-3 md:flex-col md:gap-2 md:pt-4" data-m="fade">
-        {index && <span className="label tnum text-ink-soft">({index})</span>}
-        {eyebrow && <span className="label text-ink">{eyebrow}</span>}
-      </div>
-      <div className="col-span-12 md:col-span-9">
+      <div className="col-span-12 md:col-span-9 md:col-start-4">
         <Tag className={`${DISPLAY} ${titleClassName}`} data-m="lines">
           <Lines text={title} />
         </Tag>

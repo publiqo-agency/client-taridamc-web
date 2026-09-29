@@ -36,7 +36,6 @@ export const common: CommonDict = {
     family: "Family business",
   },
   catalogue: {
-    eyebrow: "Catalogue",
     title: "Properties\n*to let*",
     intro:
       "Industrial units and homes in Castelldefels, from our own portfolio. You deal with us directly.",
@@ -68,7 +67,6 @@ export const common: CommonDict = {
     },
   },
   values: {
-    eyebrow: "How we work",
     title: "Three words\n*that define us*",
     items: [
       {
@@ -86,7 +84,6 @@ export const common: CommonDict = {
     ],
   },
   closing: {
-    eyebrow: "Let's talk",
     title: "Thinking of selling\n*your property?*",
     body: "Tell us about your property. We will study it carefully and give you a clear answer.",
     imageAlt: "A room open to the sea at sunset",

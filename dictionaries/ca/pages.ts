@@ -31,7 +31,6 @@ export const about: AboutDict = {
   ],
   storyImageAlt: "Façana emblanquinada amb una porta verda en arc i una olivera",
   leader: {
-    eyebrow: "Al capdavant",
     name: "Ramon Seva",
     portraitAlt: "Retrat de Ramon Seva",
     role: "Al capdavant de Tarida MC",

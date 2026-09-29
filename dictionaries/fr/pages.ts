@@ -31,7 +31,6 @@ export const about: AboutDict = {
   ],
   storyImageAlt: "Façade blanchie à la chaux avec une porte verte cintrée et un olivier",
   leader: {
-    eyebrow: "Direction",
     name: "Ramon Seva",
     portraitAlt: "Portrait de Ramon Seva",
     role: "À la tête de Tarida MC",

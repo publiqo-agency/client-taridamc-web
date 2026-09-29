@@ -28,7 +28,6 @@ export const about = {
   ],
   storyImageAlt: "Fachada encalada con una puerta verde en arco y un olivo",
   leader: {
-    eyebrow: "Al frente",
     name: "Ramon Seva",
     portraitAlt: "Retrato de Ramon Seva",
     role: "Al frente de Tarida MC",

@@ -64,12 +64,9 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
             </div>
           </div>
           <div className="col-span-12 flex flex-col gap-24 md:col-span-6 md:col-start-7 md:pt-24">
-            {[story, method].filter(Boolean).map((section, i) => (
+            {[story, method].filter(Boolean).map((section) => (
               <div key={section.heading}>
-                <p className="label tnum text-ink-soft" data-m="fade">
-                  ({String(i + 1).padStart(2, "0")})
-                </p>
-                <h2 className={`${DISPLAY} mt-4 text-[clamp(2.5rem,4.4vw,4.5rem)]`} data-m="lines">
+                <h2 className={`${DISPLAY} text-[clamp(2.5rem,4.4vw,4.5rem)]`} data-m="lines">
                   <Lines text={section.heading} />
                 </h2>
                 {section.body.map((paragraph) => (
@@ -106,10 +103,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
             />
           </div>
           <div className="col-span-12 md:col-span-8">
-            <span className="label block text-ink-soft" data-m="fade">
-              {about.leader.eyebrow}
-            </span>
-            <p className={`${ACCENT} mt-6 text-[clamp(4rem,8vw,9rem)] leading-[0.9]`} data-m="lines">
+            <p className={`${ACCENT} text-[clamp(4rem,8vw,9rem)] leading-[0.9]`} data-m="lines">
               <Lines text={about.leader.name} />
             </p>
             <div className="mt-12 grid gap-8 border-t border-line pt-8 md:grid-cols-2">
@@ -151,7 +145,7 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
 
       <section className={`${SECTION} bg-stock-2`}>
         <div className={FRAME}>
-          <SectionHeader eyebrow={common.values.eyebrow} title={common.values.title} />
+          <SectionHeader title={common.values.title} />
           <div className="mt-20 md:mt-28">
             <ValuesGrid items={common.values.items} />
           </div>
@@ -159,7 +153,6 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
       </section>
 
       <ClosingBand
-        eyebrow={common.closing.eyebrow}
         title={common.closing.title}
         body={common.closing.body}
         image={{ src: "/cta/sell.webp", alt: common.closing.imageAlt }}

@@ -142,7 +142,7 @@ export default async function ServicePage(props: Props) {
 
             <section className={`band-dark grain relative bg-stock text-ink ${SECTION}`}>
               <div className={FRAME}>
-                <SectionHeader index="01" eyebrow={home.process.eyebrow} title={home.process.title} intro={home.process.intro} />
+                <SectionHeader title={home.process.title} intro={home.process.intro} />
                 <div className="mt-20 md:mt-28">
                   <ProcessGrid steps={item.sections} />
                 </div>
@@ -190,7 +190,6 @@ export default async function ServicePage(props: Props) {
         </section>
 
         <ClosingBand
-          eyebrow={services.detail.requestTitle}
           title={id === "purchase" ? common.closing.title : common.catalogue.empty.title}
           body={id === "purchase" ? common.closing.body : common.catalogue.empty.body}
           image={{ src: "/cta/sell.webp", alt: common.closing.imageAlt }}
@@ -230,7 +229,7 @@ async function RentalCatalogue({
   return (
     <section data-placement="catalogue" className="pb-20 md:pb-28">
       <div className={FRAME}>
-        <SectionHeader eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} />
+        <SectionHeader title={copy.title} intro={copy.intro} />
         <div className="mt-16 md:mt-24">
           {items.length > 0 ? (
             <PropertyCatalogue

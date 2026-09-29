@@ -66,7 +66,6 @@ export type ServicesDict = {
     includesTitle: string;
     faqTitle: string;
     otherServices: string;
-    requestTitle: string;
     requestBody: string;
   };
   items: Record<ServiceId, ServiceCopy>;
