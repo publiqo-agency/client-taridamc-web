@@ -82,7 +82,7 @@ export const common: CommonDict = {
   closing: {
     title: "Vous pensez à vendre\n*votre bien ?*",
     body: "Dites-nous de quel bien il s’agit. Nous l’étudierons avec attention et vous donnerons une réponse claire.",
-    imageAlt: "Pièce ouverte sur la mer au coucher du soleil",
+    imageAlt: "Balcon d’un immeuble de l’Eixample, à Barcelone",
   },
   whatsapp: {
     aria: "Ouvrir WhatsApp",

@@ -85,7 +85,7 @@ export const common: CommonDict = {
   closing: {
     title: "Thinking of selling\n*your property?*",
     body: "Tell us about your property. We will study it carefully and give you a clear answer.",
-    imageAlt: "A room open to the sea at sunset",
+    imageAlt: "Balcony of an apartment building in Barcelona's Eixample",
   },
   whatsapp: {
     aria: "Open WhatsApp",

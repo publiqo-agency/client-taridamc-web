@@ -29,7 +29,7 @@ export const about: AboutDict = {
       ],
     },
   ],
-  storyImageAlt: "Whitewashed façade with an arched green door and an olive tree",
+  storyImageAlt: "Wooden double door standing open under a stone arch",
   leader: {
     name: "Ramon Seva",
     portraitAlt: "Portrait of Ramon Seva",
