@@ -42,6 +42,12 @@ export const legal: LegalDict = {
           "The owner is not liable for damages arising from the use of the information on this site, nor for the contents of linked third-party sites.",
         ],
       },
+      {
+        heading: "Applicable law",
+        body: [
+          "This legal notice is governed by Spanish law. Any dispute will be submitted to the courts that have jurisdiction under the law; if you are a consumer, to those of your place of residence.",
+        ],
+      },
     ],
   },
   privacy: {
@@ -50,32 +56,51 @@ export const legal: LegalDict = {
     sections: [
       {
         heading: "Data controller",
-        body: ["The controller of your personal data is:"],
+        body: [
+          "The controller of your personal data is:",
+        ],
         owner: true,
       },
       {
         heading: "What data we process and why",
         body: [
-          "The data you send through the contact form or WhatsApp (name, email, phone and the content of your message) is used solely to answer your request.",
-          "With your consent, we use measurement cookies to understand how the site is used. See the cookie policy.",
+          "The data you send through the contact form or WhatsApp (name, email, phone and the content of your message) is used solely to answer your request and, if you wish, to handle the transaction you put to us.",
+          "Your name, email and message are needed for us to reply; the phone number is optional. We do not make automated decisions or build profiles with your data.",
+          "With your consent, we use measurement cookies to understand how the site is used, in aggregate. See the cookie policy.",
         ],
       },
       {
-        heading: "Legal basis and retention",
+        heading: "Legal basis",
         body: [
-          "The legal basis is your consent and, where applicable, pre-contractual measures. Contact data is kept for as long as the relationship lasts or until you request its deletion.",
+          "Your consent, given when you send the form or write to us, and, when you ask about a transaction, steps taken at your request before entering into a contract.",
+          "You may withdraw your consent at any time, without affecting the lawfulness of the processing carried out before.",
+        ],
+      },
+      {
+        heading: "Retention",
+        body: [
+          "We keep your data for as long as needed to handle your request or for as long as the relationship lasts, and then blocked for the periods during which legal liabilities may arise. We delete it earlier if you ask us to.",
         ],
       },
       {
         heading: "Recipients",
         body: [
-          "Form messages are delivered through a transactional email provider (Resend) and the site is hosted on Vercel. Both act as data processors.",
+          "We do not disclose your data to third parties unless required by law.",
+          "The following process data on our behalf, as processors: Vercel Inc. (site hosting), Resend (delivery of form messages) and, only if you accept measurement cookies, Google Ireland Ltd. (Google Tag Manager and Google Analytics).",
+          "If you write to us on WhatsApp, WhatsApp (Meta) processes your data as an independent controller, under its own privacy policy.",
+        ],
+      },
+      {
+        heading: "International transfers",
+        body: [
+          "Some of these providers may process data in the United States. Those transfers rely on the EU-US Data Privacy Framework or on the standard contractual clauses approved by the European Commission.",
         ],
       },
       {
         heading: "Your rights",
         body: [
-          "You may exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to the email address given above, under “Data controller”. You may also lodge a complaint with the Spanish Data Protection Agency.",
+          "You may exercise your rights of access, rectification, erasure, objection, restriction of processing and portability by writing to the email address given above, under “Data controller”, stating which right you are exercising.",
+          "If you believe we have not handled your request properly, you may lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).",
         ],
       },
     ],
@@ -86,20 +111,37 @@ export const legal: LegalDict = {
     sections: [
       {
         heading: "Responsible party",
-        body: ["The party responsible for the cookies used on this site is:"],
+        body: [
+          "The party responsible for the cookies used on this site is:",
+        ],
         owner: true,
       },
       {
-        heading: "What we use",
+        heading: "What they are",
         body: [
-          "Technical storage: your language choice (the \"locale\" cookie) and your answer to the cookie notice (localStorage). Both are needed for the site to remember your decisions.",
-          "Measurement: with your consent, Google Tag Manager loads Google Analytics 4 to measure site usage in aggregate. Without consent no measurement cookie is set.",
+          "Cookies and local storage are small files or pieces of data the site keeps in your browser to remember information between visits.",
+        ],
+      },
+      {
+        heading: "Technical cookies (always on)",
+        body: [
+          "“locale” — first party. Remembers the language you chose. Duration: 1 year.",
+          "“consent” (local storage) — first party. Stores your answer to the cookie notice. Duration: until you clear the site data.",
+          "They are needed for the site to work and to remember your decisions, so they do not require consent.",
+        ],
+      },
+      {
+        heading: "Measurement cookies (only if you accept them)",
+        body: [
+          "“_ga” — Google Analytics (Google Ireland Ltd.). Tells visitors apart anonymously to produce aggregate statistics. Duration: 2 years.",
+          "“_ga_<ID>” — Google Analytics. Keeps the state of the visit. Duration: 2 years.",
+          "Google may process this data in the United States, under the EU-US Data Privacy Framework. More information at policies.google.com/privacy.",
         ],
       },
       {
         heading: "Changing your decision",
         body: [
-          "You can change your decision at any time from \"Cookie preferences\" in the footer, or by clearing the site data in your browser.",
+          "You can change your decision at any time from “Cookie preferences” in the footer, or by clearing the site data in your browser.",
         ],
       },
     ],
