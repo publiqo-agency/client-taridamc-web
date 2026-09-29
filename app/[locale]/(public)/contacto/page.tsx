@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import { toLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -62,6 +63,18 @@ export default async function ContactPage(props: PageProps<"/[locale]/contacto">
                 privacyHref={localeHref(locale, "privacy")}
               />
             </Suspense>
+            <div className="mt-10 border-t border-line pt-5 text-xs leading-relaxed text-ink-soft">
+              <p className="font-medium text-ink">{contact.dataNotice.title}</p>
+              <p className="mt-2">
+                {contact.dataNotice.controller}: {ORG.legalName.replace(/\.$/, "")}.{" "}
+                {contact.dataNotice.rows.map(([label, text]) => `${label}: ${text}.`).join(" ")}{" "}
+                {contact.dataNotice.more}{" "}
+                <Link href={localeHref(locale, "privacy")} className="link-line text-ink">
+                  {contact.dataNotice.link}
+                </Link>
+                .
+              </p>
+            </div>
           </div>
 
           <aside className="col-span-12 lg:col-span-4 lg:col-start-9">

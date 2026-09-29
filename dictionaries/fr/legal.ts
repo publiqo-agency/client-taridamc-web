@@ -42,6 +42,12 @@ export const legal: LegalDict = {
           "Le titulaire n'est pas responsable des dommages découlant de l'utilisation des informations contenues sur ce site, ni des contenus de sites tiers liés.",
         ],
       },
+      {
+        heading: "Droit applicable",
+        body: [
+          "Les présentes mentions légales sont régies par le droit espagnol. Tout litige sera soumis aux juridictions compétentes selon la loi ; si vous êtes consommateur, à celles de votre domicile.",
+        ],
+      },
     ],
   },
   privacy: {
@@ -50,32 +56,51 @@ export const legal: LegalDict = {
     sections: [
       {
         heading: "Responsable du traitement",
-        body: ["Le responsable du traitement de vos données est :"],
+        body: [
+          "Le responsable du traitement de vos données est :",
+        ],
         owner: true,
       },
       {
         heading: "Quelles données nous traitons et pourquoi",
         body: [
-          "Les données que vous envoyez via le formulaire de contact ou par WhatsApp (nom, email, téléphone et le contenu de votre message) sont utilisées uniquement pour répondre à votre demande.",
-          "Avec votre consentement, nous utilisons des cookies de mesure d'audience pour comprendre l'utilisation du site. Voir la politique de cookies.",
+          "Les données que vous envoyez via le formulaire de contact ou WhatsApp (nom, email, téléphone et contenu du message) servent uniquement à répondre à votre demande et, si vous le souhaitez, à gérer l'opération que vous nous proposez.",
+          "Le nom, l'email et le message sont nécessaires pour vous répondre ; le téléphone est facultatif. Nous ne prenons aucune décision automatisée et n'établissons aucun profil à partir de vos données.",
+          "Avec votre consentement, nous utilisons des cookies de mesure pour connaître l'usage du site de manière agrégée. Voir la politique de cookies.",
         ],
       },
       {
-        heading: "Base légale et conservation",
+        heading: "Base juridique",
         body: [
-          "La base légale est votre consentement et, le cas échéant, l'exécution de mesures précontractuelles. Les données de contact sont conservées pendant la durée de la relation ou jusqu'à ce que vous en demandiez la suppression.",
+          "Votre consentement, donné en envoyant le formulaire ou en nous écrivant, et, lorsque vous nous interrogez sur une opération, l'exécution de mesures précontractuelles prises à votre demande.",
+          "Vous pouvez retirer votre consentement à tout moment, sans que cela affecte la licéité du traitement effectué auparavant.",
+        ],
+      },
+      {
+        heading: "Conservation",
+        body: [
+          "Nous conservons vos données le temps nécessaire pour traiter votre demande ou pendant toute la durée de la relation, puis bloquées pendant les délais au cours desquels des responsabilités légales peuvent être engagées. Nous les supprimons plus tôt si vous le demandez.",
         ],
       },
       {
         heading: "Destinataires",
         body: [
-          "Les messages du formulaire sont transmis via un prestataire d'emails transactionnels (Resend) et le site est hébergé sur Vercel. Les deux agissent en qualité de sous-traitants.",
+          "Nous ne communiquons pas vos données à des tiers, sauf obligation légale.",
+          "Traitent des données pour notre compte, en tant que sous-traitants : Vercel Inc. (hébergement du site), Resend (envoi des messages du formulaire) et, uniquement si vous acceptez les cookies de mesure, Google Ireland Ltd. (Google Tag Manager et Google Analytics).",
+          "Si vous nous écrivez sur WhatsApp, WhatsApp (Meta) traite vos données en tant que responsable indépendant, selon sa propre politique de confidentialité.",
+        ],
+      },
+      {
+        heading: "Transferts internationaux",
+        body: [
+          "Certains de ces prestataires peuvent traiter des données aux États-Unis. Ces transferts reposent sur le cadre de protection des données UE-États-Unis ou sur les clauses contractuelles types approuvées par la Commission européenne.",
         ],
       },
       {
         heading: "Vos droits",
         body: [
-          "Vous pouvez exercer vos droits d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité en écrivant à l'adresse email indiquée ci-dessus, sous « Responsable du traitement ». Vous pouvez également déposer une réclamation auprès de l'Agencia Española de Protección de Datos.",
+          "Vous pouvez exercer vos droits d'accès, de rectification, d'effacement, d'opposition, de limitation du traitement et de portabilité en écrivant à l'adresse email indiquée ci-dessus, sous « Responsable du traitement », en précisant le droit que vous exercez.",
+          "Si vous estimez que votre demande n'a pas été correctement traitée, vous pouvez déposer une réclamation auprès de l'Agencia Española de Protección de Datos (www.aepd.es).",
         ],
       },
     ],
@@ -86,14 +111,31 @@ export const legal: LegalDict = {
     sections: [
       {
         heading: "Responsable",
-        body: ["Le responsable des cookies utilisés sur ce site est :"],
+        body: [
+          "Le responsable des cookies utilisés sur ce site est :",
+        ],
         owner: true,
       },
       {
-        heading: "Ce que nous utilisons",
+        heading: "De quoi s'agit-il",
         body: [
-          "Stockage technique : le choix de langue (le cookie « locale ») et votre réponse à l'avis sur les cookies (localStorage). Les deux sont nécessaires pour que le site se souvienne de vos décisions.",
-          "Mesure d'audience : avec votre consentement, Google Tag Manager charge Google Analytics 4 pour mesurer l'utilisation du site de façon agrégée. Sans consentement, aucun cookie de mesure n'est activé.",
+          "Les cookies et le stockage local sont de petits fichiers ou données que le site conserve dans votre navigateur pour se souvenir d'informations d'une visite à l'autre.",
+        ],
+      },
+      {
+        heading: "Cookies techniques (toujours actifs)",
+        body: [
+          "« locale » — propre. Mémorise la langue choisie. Durée : 1 an.",
+          "« consent » (stockage local) — propre. Conserve votre réponse au bandeau cookies. Durée : jusqu'à ce que vous effaciez les données du site.",
+          "Ils sont nécessaires au fonctionnement du site et à la mémorisation de vos choix ; ils ne requièrent donc pas de consentement.",
+        ],
+      },
+      {
+        heading: "Cookies de mesure (uniquement si vous les acceptez)",
+        body: [
+          "« _ga » — Google Analytics (Google Ireland Ltd.). Distingue les visiteurs de manière anonyme pour établir des statistiques agrégées. Durée : 2 ans.",
+          "« _ga_<ID> » — Google Analytics. Conserve l'état de la visite. Durée : 2 ans.",
+          "Google peut traiter ces données aux États-Unis, dans le cadre de protection des données UE-États-Unis. Plus d'informations sur policies.google.com/privacy.",
         ],
       },
       {

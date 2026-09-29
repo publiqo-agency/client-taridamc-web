@@ -46,6 +46,12 @@ export const legal = {
           "El titular no se hace responsable de los daños derivados del uso de la información contenida en este sitio ni de los contenidos de sitios de terceros enlazados.",
         ],
       },
+      {
+        heading: "Legislación aplicable",
+        body: [
+          "Este aviso legal se rige por la legislación española. Cualquier controversia se someterá a los juzgados y tribunales que correspondan conforme a la ley; si usted es consumidor, a los de su domicilio.",
+        ],
+      },
     ],
   },
   privacy: {
@@ -54,32 +60,51 @@ export const legal = {
     sections: [
       {
         heading: "Responsable del tratamiento",
-        body: ["El responsable del tratamiento de sus datos es:"],
+        body: [
+          "El responsable del tratamiento de sus datos es:",
+        ],
         owner: true,
       },
       {
         heading: "Qué datos tratamos y para qué",
         body: [
-          "Los datos que envía por el formulario de contacto o por WhatsApp (nombre, email, teléfono y el contenido del mensaje) se usan únicamente para responder a su solicitud.",
-          "Con su consentimiento, usamos cookies de medición para conocer el uso del sitio. Ver la política de cookies.",
+          "Los datos que envía por el formulario de contacto o por WhatsApp (nombre, email, teléfono y el contenido del mensaje) se usan únicamente para responder a su solicitud y, si usted lo desea, para gestionar la operación que nos plantee.",
+          "El nombre, el email y el mensaje son necesarios para poder responderle; el teléfono es opcional. No tomamos decisiones automatizadas ni elaboramos perfiles con sus datos.",
+          "Con su consentimiento, usamos cookies de medición para conocer el uso del sitio de forma agregada. Ver la política de cookies.",
         ],
       },
       {
-        heading: "Base legal y conservación",
+        heading: "Base legal",
         body: [
-          "La base legal es su consentimiento y, en su caso, la ejecución de medidas precontractuales. Los datos de contacto se conservan mientras dure la relación o hasta que solicite su supresión.",
+          "Su consentimiento, que da al enviar el formulario o al escribirnos, y, cuando nos pide información sobre una operación, la aplicación de medidas precontractuales a petición suya.",
+          "Puede retirar su consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento anterior.",
+        ],
+      },
+      {
+        heading: "Conservación",
+        body: [
+          "Conservamos sus datos mientras sean necesarios para atender su solicitud o mientras dure la relación y, después, bloqueados durante los plazos en que puedan exigirse responsabilidades legales. Los eliminamos antes si nos lo pide.",
         ],
       },
       {
         heading: "Destinatarios",
         body: [
-          "Los mensajes del formulario se envían a través de un proveedor de correo transaccional (Resend) y el sitio se aloja en Vercel. Ambos actúan como encargados del tratamiento.",
+          "No cedemos sus datos a terceros, salvo obligación legal.",
+          "Tratan datos por cuenta nuestra, como encargados del tratamiento: Vercel Inc. (alojamiento del sitio), Resend (envío de los mensajes del formulario) y, solo si acepta las cookies de medición, Google Ireland Ltd. (Google Tag Manager y Google Analytics).",
+          "Si nos escribe por WhatsApp, WhatsApp (Meta) trata sus datos como responsable independiente, según su propia política de privacidad.",
         ],
       },
       {
-        heading: "Tus derechos",
+        heading: "Transferencias internacionales",
         body: [
-          "Puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo al email indicado más arriba, en «Responsable del tratamiento». También puede reclamar ante la Agencia Española de Protección de Datos.",
+          "Algunos de estos proveedores pueden tratar datos en Estados Unidos. Esas transferencias se amparan en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo aprobadas por la Comisión Europea.",
+        ],
+      },
+      {
+        heading: "Sus derechos",
+        body: [
+          "Puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo al email indicado más arriba, en «Responsable del tratamiento», e indicando qué derecho ejerce.",
+          "Si considera que no hemos atendido correctamente su solicitud, puede presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).",
         ],
       },
     ],
@@ -90,14 +115,31 @@ export const legal = {
     sections: [
       {
         heading: "Responsable",
-        body: ["El responsable de las cookies que utiliza este sitio es:"],
+        body: [
+          "El responsable de las cookies que utiliza este sitio es:",
+        ],
         owner: true,
       },
       {
-        heading: "Qué usamos",
+        heading: "Qué son",
         body: [
-          "Almacenamiento técnico: la elección de idioma (cookie «locale») y su respuesta al aviso de cookies (localStorage). Son necesarios para que el sitio recuerde sus decisiones.",
-          "Medición: con su consentimiento, Google Tag Manager carga Google Analytics 4 para medir el uso del sitio de forma agregada. Sin consentimiento no se activa ninguna cookie de medición.",
+          "Las cookies y el almacenamiento local son pequeños ficheros o datos que el sitio guarda en su navegador para recordar información entre visitas.",
+        ],
+      },
+      {
+        heading: "Cookies técnicas (siempre activas)",
+        body: [
+          "«locale» — propia. Recuerda el idioma que ha elegido. Duración: 1 año.",
+          "«consent» (almacenamiento local) — propio. Guarda su respuesta al aviso de cookies. Duración: hasta que borre los datos del sitio.",
+          "Son necesarias para que el sitio funcione y recuerde sus decisiones, por lo que no requieren consentimiento.",
+        ],
+      },
+      {
+        heading: "Cookies de medición (solo si las acepta)",
+        body: [
+          "«_ga» — Google Analytics (Google Ireland Ltd.). Distingue visitantes de forma anónima para obtener estadísticas agregadas. Duración: 2 años.",
+          "«_ga_<ID>» — Google Analytics. Mantiene el estado de la visita. Duración: 2 años.",
+          "Google puede tratar estos datos en Estados Unidos, al amparo del Marco de Privacidad de Datos UE-EE. UU. Más información en policies.google.com/privacy.",
         ],
       },
       {
