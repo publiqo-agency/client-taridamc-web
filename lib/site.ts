@@ -19,7 +19,7 @@ export const SITE = {
 
   /** Registered company name and tax id, for the legal pages and JSON-LD. */
   legalName: "Tarida MC S.L.",
-  taxId: "",
+  taxId: "B67987420",
 
   /** E.164 digits only, no "+" — what wa.me expects. Empty = no WhatsApp CTAs. */
   whatsapp: "34659359776",
@@ -27,12 +27,14 @@ export const SITE = {
   telephone: "",
   /** Human-formatted phone, e.g. "+34 600 000 000". */
   telephoneDisplay: "",
-  email: "",
+  email: "rs@taridamc.com",
 
+  /** Registered office (Barcelona). The business itself works from
+   *  Castelldefels: that is PLACE (components/site/place.ts), not this. */
   address: {
-    street: "",
-    postalCode: "",
-    city: "Castelldefels",
+    street: "Calle Còrsega, 270, entresuelo, puerta 4",
+    postalCode: "08008",
+    city: "Barcelona",
     region: "Barcelona",
     /** ISO 3166-1 alpha-2. */
     country: "ES",

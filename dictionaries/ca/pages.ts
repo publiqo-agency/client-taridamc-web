@@ -41,6 +41,5 @@ export const about: AboutDict = {
     title: "El nostre *lloc*",
     body: "Treballem des de Castelldefels, entre el mar i el massís del Garraf. Coneixem el seu mercat immobiliari perquè fa quaranta anys que en formem part.",
     imageAlt: "Platja de Castelldefels a la posta de sol, amb el massís del Garraf al fons",
-    sea: "Mar Mediterrània",
   },
 };
