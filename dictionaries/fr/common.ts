@@ -5,7 +5,7 @@ export const common: CommonDict = {
   meta: {
     defaultTitle: "Tarida MC",
     description:
-      "Tarida MC, entreprise familiale de Castelldefels forte de quarante ans d’expérience dans l’immobilier. Nous achetons des biens immobiliers et louons des locaux industriels et des logements.",
+      "Tarida MC, entreprise familiale forte de quarante ans d’expérience dans l’immobilier. Nous achetons partout en Espagne et louons entrepôts et logements.",
   },
   nav: {
     home: "Accueil",
@@ -80,7 +80,7 @@ export const common: CommonDict = {
   closing: {
     title: "Vous pensez à vendre\n*votre bien ?*",
     body: "Dites-nous de quel bien il s’agit. Nous l’étudierons avec attention et vous donnerons une réponse claire.",
-    imageAlt: "Balcon d’un immeuble de l’Eixample, à Barcelone",
+    imageAlt: "Balcon en fer forgé sur la façade d’un immeuble classique",
   },
   whatsapp: {
     aria: "Ouvrir WhatsApp",
@@ -89,7 +89,7 @@ export const common: CommonDict = {
     },
   },
   footer: {
-    tagline: "Entreprise familiale à Castelldefels. Quarante ans à acheter et louer des biens immobiliers.",
+    tagline: "Entreprise familiale : quarante ans à acheter et louer des biens immobiliers partout en Espagne.",
     navTitle: "Rubriques",
     servicesTitle: "Services",
     contactTitle: "Contact",

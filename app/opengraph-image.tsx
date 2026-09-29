@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 import { SITE } from "@/lib/site";
-import { PLACE } from "@/components/site/place";
 import {
   LOGO_HEIGHT,
   LOGO_SUBTITLE,
@@ -16,7 +15,7 @@ export const alt = SITE.name;
 /**
  * Default OG card, language-neutral. At the root of app/ it cascades to every
  * route. CLIENT-SKIN: the deep-sea navy of the site's dark bands, the logo in
- * salt white, one hairline and the town as a small annotation.
+ * salt white and one hairline. No town: Castelldefels is the base, not the market.
  */
 export default function OgImage() {
   const w = 620;
@@ -46,7 +45,9 @@ export default function OgImage() {
             color: "rgba(243,241,234,0.55)",
           }}
         >
-          <span>{PLACE}</span>
+          {/* Empty on purpose: the card names no town (the company buys across
+              Spain), and the row keeps the logo optically centred. */}
+          <span>{"\u00a0"}</span>
         </div>
         <svg
           width={w}

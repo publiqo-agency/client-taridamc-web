@@ -26,6 +26,7 @@ export async function generateMetadata(props: PageProps<"/[locale]/contacto">): 
     locale,
     paths: routePaths("contact"),
     title: dict.contact.meta.title,
+    seoTitle: dict.contact.meta.seoTitle,
     description: dict.contact.meta.description,
   });
 }

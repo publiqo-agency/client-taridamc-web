@@ -8,7 +8,7 @@ export const common: CommonDict = {
   meta: {
     defaultTitle: "Tarida MC",
     description:
-      "Tarida MC is a family business in Castelldefels with forty years in real estate. We buy properties and let industrial units and homes.",
+      "Tarida MC is a family business with forty years in real estate. We buy flats, houses and industrial units across Spain, and let our own units and homes.",
   },
   nav: {
     home: "Home",
@@ -83,7 +83,7 @@ export const common: CommonDict = {
   closing: {
     title: "Thinking of selling\n*your property?*",
     body: "Tell us about your property. We will study it carefully and give you a clear answer.",
-    imageAlt: "Balcony of an apartment building in Barcelona's Eixample",
+    imageAlt: "Wrought-iron balcony on the façade of a classic apartment building",
   },
   whatsapp: {
     aria: "Open WhatsApp",
@@ -92,7 +92,7 @@ export const common: CommonDict = {
     },
   },
   footer: {
-    tagline: "A family business in Castelldefels. Forty years buying and letting property.",
+    tagline: "A family business with forty years buying and letting property across Spain.",
     navTitle: "Sections",
     servicesTitle: "Services",
     contactTitle: "Contact",
