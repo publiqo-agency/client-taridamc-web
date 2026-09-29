@@ -69,7 +69,7 @@ export const services: ServicesDict = {
         "Industrial units and homes to let in Castelldefels for businesses and individuals. Properties from Tarida MC's own portfolio, dealt with directly.",
       intro:
         "We let industrial units and homes in Castelldefels to businesses and individuals. They are properties from our own portfolio: we know them well and you deal with us directly.",
-      imageAlt: "Open-plan industrial unit with brick pillars and tall windows",
+      imageAlt: "Whitewashed Mediterranean house among cypresses",
       includes: [],
       sections: [],
       whatsappMessage: "Hello, I would like information about your properties to let.",

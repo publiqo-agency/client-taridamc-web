@@ -10,7 +10,7 @@ These are provisional stock placeholders, to be replaced once the client deliver
 | `public/about/castelldefels.webp` | Robert Rodríguez Burillo | https://unsplash.com/photos/uzOczCHEw70 | Unsplash License |
 | `public/services/index.webp` | Nikola | https://unsplash.com/photos/fZMFMHilnRo | Unsplash License |
 | `public/services/purchase/hero.webp` | Bogomil Mihaylov | https://unsplash.com/photos/IhfRVflqS1s | Unsplash License |
-| `public/services/rental/hero.webp` | LISK OBE | https://unsplash.com/photos/rFz557LepB4 | Unsplash License |
+| `public/services/rental/hero.webp` | D Galifianakis | https://unsplash.com/photos/Hq21aKDISig | Unsplash License |
 | `public/contact/hero.webp` | Diana Rafira | https://unsplash.com/photos/456jRTTQNC0 | Unsplash License |
 | `public/cta/sell.webp` | Woody Kelly | https://unsplash.com/photos/x_8717lEnWM | Unsplash License |
 | `public/properties/nave-1.webp` | Wilhelm Gunkel | https://unsplash.com/photos/_rD1pJwWpbU | Unsplash License |

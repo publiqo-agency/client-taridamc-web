@@ -69,7 +69,7 @@ export const services: ServicesDict = {
         "Lloguer de naus industrials i habitatges a Castelldefels per a empreses i particulars. Immobles de la cartera pròpia de Tarida MC, amb tracte directe.",
       intro:
         "Lloguem naus industrials i habitatges a Castelldefels, a empreses i a particulars. Són immobles de la nostra pròpia cartera: els coneixem bé i l'atenem directament.",
-      imageAlt: "Nau industrial diàfana amb pilars de maó i grans finestrals",
+      imageAlt: "Casa mediterrània emblanquinada entre xiprers",
       includes: [],
       sections: [],
       whatsappMessage: "Hola, m'interessa informació sobre els seus immobles de lloguer.",

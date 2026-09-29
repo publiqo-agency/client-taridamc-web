@@ -69,7 +69,7 @@ export const services: ServicesDict = {
         "Location de locaux industriels et de logements à Castelldefels, pour les entreprises et les particuliers. Des biens du propre patrimoine de Tarida MC, avec un interlocuteur direct.",
       intro:
         "Nous louons des locaux industriels et des logements à Castelldefels, aux entreprises comme aux particuliers. Ces biens font partie de notre propre patrimoine : nous les connaissons bien et vous traitez directement avec nous.",
-      imageAlt: "Entrepôt industriel ouvert aux piliers de brique et aux hautes fenêtres",
+      imageAlt: "Maison méditerranéenne blanchie à la chaux parmi les cyprès",
       includes: [],
       sections: [],
       whatsappMessage: "Bonjour, je souhaiterais des informations sur vos biens à louer.",
