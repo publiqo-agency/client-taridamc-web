@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ViewTransition } from "react";
 import { DISPLAY, FRAME } from "@/lib/styles";
 import { Lines } from "./motion/split";
+import { MORPH_SHARE } from "./page-transition";
 import { Media } from "./media";
 import { Arrow } from "./pill-button";
 
@@ -31,7 +32,7 @@ export function ServicePanel({ id, kicker, title, teaser, specs, href, cta, curs
     <article className={`${tone === "dark" ? "band-dark" : "band-light"} grain relative bg-stock-2 text-ink`}>
       <div className="grid md:min-h-[92svh] md:grid-cols-2">
         <Link href={href} tabIndex={-1} aria-hidden className={`relative block aspect-[4/5] md:aspect-auto ${mirror ? "md:order-2" : ""}`}>
-          <ViewTransition name={`service-${id}`} share="morph" default="none">
+          <ViewTransition name={`service-${id}`} share={MORPH_SHARE} default="none">
             <Media src={image.src} alt={image.alt} className="absolute inset-0" parallax={7} cursor={cursor} sizes="(min-width: 768px) 50vw, 100vw" />
           </ViewTransition>
         </Link>
