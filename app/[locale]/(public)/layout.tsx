@@ -97,7 +97,6 @@ export default async function PublicLayout(props: LayoutProps<"/[locale]">) {
           contactTitle: footer.contactTitle,
           followTitle: footer.followTitle,
           localeAria: localeSwitcher.aria,
-          localTime: footer.localTime,
           cookieSettings: footer.cookieSettings,
           rights: footer.rights,
           credit: footer.credit,

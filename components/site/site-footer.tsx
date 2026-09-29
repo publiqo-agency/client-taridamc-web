@@ -5,8 +5,6 @@ import { MAILTO_HREF, ORG, SAME_AS, TEL_HREF, hasEmail, hasPhone, hasPostalAddre
 import { LocaleSwitcher } from "./locale-switcher";
 import { ConsentReopenButton } from "./consent-banner";
 import { PendingData } from "./pending";
-import { LocalTime } from "./local-time";
-import { PLACE } from "./place";
 import { Logo } from "./logo";
 
 type LinkItem = { href: string; label: string };
@@ -20,7 +18,6 @@ type Props = {
     contactTitle: string;
     followTitle: string;
     localeAria: string;
-    localTime: string;
     cookieSettings: string;
     rights: string;
     credit: string;
@@ -28,9 +25,9 @@ type Props = {
 };
 
 /**
- * Footer: a deep-sea band. Link columns on the plan grid, the local time in
- * Castelldefels, and the logo laid underneath everything across the full
- * width, faint like a watermark, drawing itself as the page ends. Contact data only renders when it exists
+ * Footer: a deep-sea band. Link columns on the plan grid, and the logo laid
+ * underneath everything across the full width, faint like a watermark,
+ * drawing itself as the page ends. Contact data only renders when it exists
  * (lib/site.ts); the consent reopen button is one click away on every page.
  */
 export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
@@ -110,11 +107,6 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
               </ul>
             </>
           )}
-          <p className="label tnum mt-10 text-ink-soft">
-            {PLACE}
-            <br />
-            {copy.localTime} <LocalTime className="text-ink" />
-          </p>
         </div>
       </div>
 
