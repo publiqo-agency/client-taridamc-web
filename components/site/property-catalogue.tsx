@@ -43,7 +43,7 @@ export function PropertyCatalogue({ aria, labels, types, cards }: Props) {
         </div>
       )}
 
-      <div key={filter} className="mt-12 grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+      <div key={filter} className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-3">
         {visible.map((card, i) => (
           <div key={card.key} className="catalogue-rise" style={{ animationDelay: `${Math.min(i, 5) * 70}ms` }}>
             {card.node}

@@ -33,7 +33,8 @@ export function ClosingBand({ title, body, image, children }: Props) {
             alt={image.alt}
             reveal="window"
             parallax={8}
-            className="aspect-[4/5] w-full"
+            // Full width until lg: a 4:5 plate there is taller than the screen.
+            className="aspect-[4/3] w-full lg:aspect-[4/5]"
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
         </div>

@@ -15,7 +15,7 @@ export function ProcessGrid({ steps }: { steps: Step[] }) {
       <span aria-hidden data-m="draw-x" data-origin="0% 50%" className="absolute inset-x-0 top-0 h-px bg-line" />
       <span aria-hidden data-m="draw-x" data-origin="100% 50%" data-delay="0.2" className="absolute inset-x-0 bottom-0 h-px bg-line" />
       {steps.map((step, i) => (
-        <li key={step.heading} className="group relative row-span-3 grid grid-rows-subgrid px-0 pt-10 pb-14 sm:px-8 lg:first:pl-0">
+        <li key={step.heading} className="group relative row-span-3 grid grid-rows-subgrid px-0 pt-8 pb-10 sm:px-8 sm:pt-10 sm:pb-14 lg:first:pl-0">
           {i > 0 && (
             <span
               aria-hidden
@@ -33,7 +33,7 @@ export function ProcessGrid({ steps }: { steps: Step[] }) {
           >
             {String(i + 1).padStart(2, "0")}
           </span>
-          <h3 data-m="fade" data-delay={String(0.12 * i)} className={`${DISPLAY_QUIET} mt-12 text-3xl md:text-[2.25rem] lg:mt-20`}>
+          <h3 data-m="fade" data-delay={String(0.12 * i)} className={`${DISPLAY_QUIET} mt-6 text-3xl sm:mt-12 md:text-[2.25rem] lg:mt-20`}>
             {step.heading}
           </h3>
           <div data-m="fade" data-delay={String(0.12 * i)}>

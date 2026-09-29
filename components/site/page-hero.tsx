@@ -49,10 +49,12 @@ export function PageHero({ eyebrow, title, intro, image, transitionName, compact
         ) : (
           picture
         ))}
+      {/* On a phone the headline and intro fill the lower half of the photo,
+          not just its foot, so the wash darkens from a third of the way down. */}
       {photo && (
         <div
           aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,26,42,0.55)_0%,rgba(6,26,42,0.15)_35%,rgba(6,26,42,0.35)_60%,rgba(6,26,42,0.88)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,26,42,0.55)_0%,rgba(6,26,42,0.2)_28%,rgba(6,26,42,0.62)_52%,rgba(6,26,42,0.9)_100%)] md:bg-[linear-gradient(180deg,rgba(6,26,42,0.55)_0%,rgba(6,26,42,0.15)_35%,rgba(6,26,42,0.35)_60%,rgba(6,26,42,0.88)_100%)]"
         />
       )}
 
