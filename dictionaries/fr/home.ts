@@ -30,7 +30,7 @@ export const home: HomeDict = {
     purchaseBody: "Nous achetons appartements, maisons et entrepôts partout en Espagne. Nous étudions chaque opération et, si elle convient, achetons directement.",
     rentalKicker: "Pour les entreprises et les particuliers",
     rentalTitle: "Entrepôts et logements\n*à louer*",
-    rentalBody: "Entrepôts et logements à Castelldefels, issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
+    rentalBody: "Entrepôts et logements partout en Espagne, issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
   },
   process: {
     title: "Un processus\n*clair et direct*",

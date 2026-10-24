@@ -216,7 +216,6 @@ export async function ServicePage({ kind, params }: { kind: ServiceKind; params:
             description: item.metaDescription,
             path: servicePaths(id)[locale],
             serviceType: item.shortTitle,
-            local: kind === "rental",
           }),
           faqSchema(item.faq),
           breadcrumbSchema([

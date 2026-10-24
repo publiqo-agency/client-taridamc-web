@@ -4,8 +4,8 @@ import type { ServicesDict } from "@/lib/i18n/types";
  * Service pages. Facts only from the brief and what the client confirmed on
  * 2026-09-29: Tarida MC buys flats, houses and industrial units (naves) from
  * their owners anywhere in Spain, also let, inherited, in need of renovation
- * or with a mortgage or charges; it lets naves and homes of its own portfolio
- * in Castelldefels. No timings, percentages or payment terms: none has been
+ * or with a mortgage or charges; it lets naves and homes of its own portfolio,
+ * also anywhere in Spain (confirmed 2026-10-24). No timings, percentages or payment terms: none has been
  * given. Every FAQ answer must stay true without one.
  */
 export const services: ServicesDict = {
@@ -30,15 +30,15 @@ export const services: ServicesDict = {
     },
     rental: {
       title: "Alquiler",
-      seoTitle: "Naves y viviendas en alquiler en Castelldefels | Tarida MC",
+      seoTitle: "Naves y viviendas en alquiler en toda España | Tarida MC",
       description:
-        "Naves industriales y viviendas en alquiler en Castelldefels, de nuestra propia cartera. Trato directo con la propiedad.",
+        "Naves industriales y viviendas en alquiler en toda España, de nuestra propia cartera. Trato directo con la propiedad.",
       eyebrow: "Alquiler",
       heroTitle: "Naves y viviendas\n*en alquiler*",
       imageAlt: "Casa mediterránea encalada entre cipreses",
       introLabel: "Nuestra cartera",
       intro:
-        "Alquilamos naves industriales y viviendas de nuestra propia cartera en Castelldefels. Le atiende directamente la propiedad, con la seriedad de cuarenta años en el sector.",
+        "Alquilamos naves industriales y viviendas de nuestra propia cartera en toda España. Le atiende directamente la propiedad, con la seriedad de cuarenta años en el sector.",
       closing: {
         title: "¿Busca una nave\n*o una vivienda?*",
         body: "Díganos qué busca —superficie aproximada y zona— y le informaremos de lo que tengamos disponible.",
@@ -265,12 +265,12 @@ export const services: ServicesDict = {
       shortTitle: "Alquilar una nave",
       kicker: "Para empresas",
       heroTitle: "Naves industriales\n*en alquiler*",
-      seoTitle: "Naves industriales en alquiler en Castelldefels | Tarida MC",
-      teaser: "Naves industriales en Castelldefels de nuestra propia cartera, con trato directo con la propiedad.",
+      seoTitle: "Naves industriales en alquiler en toda España | Tarida MC",
+      teaser: "Naves industriales en toda España de nuestra propia cartera, con trato directo con la propiedad.",
       metaDescription:
-        "Alquiler de naves industriales en Castelldefels, de la propia cartera de Tarida MC. Trato directo con la propiedad, sin intermediarios.",
+        "Alquiler de naves industriales en toda España, de la propia cartera de Tarida MC. Trato directo con la propiedad, sin intermediarios.",
       intro:
-        "Alquilamos naves industriales de nuestra propia cartera en Castelldefels. Las conocemos bien porque son nuestras: le informamos con claridad de lo que tenemos disponible y usted trata directamente con la propiedad, sin intermediarios.",
+        "Alquilamos naves industriales de nuestra propia cartera en toda España. Las conocemos bien porque son nuestras: le informamos con claridad de lo que tenemos disponible y usted trata directamente con la propiedad, sin intermediarios.",
       imageAlt: "Nave industrial diáfana y luminosa, con estructura metálica blanca",
       learnMore: "Ver naves en alquiler",
       includesTitle: "Qué ofrecemos",
@@ -310,7 +310,7 @@ export const services: ServicesDict = {
         {
           question: "¿Dónde están las naves?",
           answer:
-            "En Castelldefels. Si busca en otra zona, díganoslo igualmente y le informaremos de lo que tengamos.",
+            "En distintos puntos de España. Díganos en qué zona busca y le informaremos de lo que tengamos.",
         },
         {
           question: "¿Qué información necesitan para empezar?",
@@ -335,12 +335,12 @@ export const services: ServicesDict = {
       shortTitle: "Alquilar una vivienda",
       kicker: "Para particulares",
       heroTitle: "Pisos y casas\n*en alquiler*",
-      seoTitle: "Pisos y casas en alquiler en Castelldefels | Tarida MC",
-      teaser: "Pisos y casas en Castelldefels de nuestra propia cartera, con trato directo con la propiedad.",
+      seoTitle: "Pisos y casas en alquiler en toda España | Tarida MC",
+      teaser: "Pisos y casas en toda España de nuestra propia cartera, con trato directo con la propiedad.",
       metaDescription:
-        "Alquiler de pisos y casas en Castelldefels, de la propia cartera de Tarida MC. Trato directo con la propiedad, sin intermediarios.",
+        "Alquiler de pisos y casas en toda España, de la propia cartera de Tarida MC. Trato directo con la propiedad, sin intermediarios.",
       intro:
-        "Alquilamos pisos y casas de nuestra propia cartera en Castelldefels. Los conocemos bien porque son nuestros: le informamos con claridad de lo que tenemos disponible y usted trata directamente con la propiedad, sin intermediarios.",
+        "Alquilamos pisos y casas de nuestra propia cartera en toda España. Los conocemos bien porque son nuestros: le informamos con claridad de lo que tenemos disponible y usted trata directamente con la propiedad, sin intermediarios.",
       imageAlt: "Casa mediterránea encalada entre cipreses",
       learnMore: "Ver viviendas en alquiler",
       includesTitle: "Qué ofrecemos",
@@ -380,7 +380,7 @@ export const services: ServicesDict = {
         {
           question: "¿Dónde están las viviendas?",
           answer:
-            "En Castelldefels. Si busca en otra zona, díganoslo igualmente y le informaremos de lo que tengamos.",
+            "En distintos puntos de España. Díganos en qué zona busca y le informaremos de lo que tengamos.",
         },
         {
           question: "¿Qué información necesitan para empezar?",

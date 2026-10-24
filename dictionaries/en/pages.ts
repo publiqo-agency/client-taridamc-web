@@ -41,7 +41,7 @@ export const about: AboutDict = {
   place: {
     eyebrow: "Our base",
     title: "From Barcelona,\n*across Spain*",
-    body: "Our head office is in Barcelona. From here we buy flats, houses and industrial units anywhere in Spain, and we let industrial units and homes from our own portfolio in Castelldefels.",
+    body: "Our head office is in Barcelona. From here we buy and let flats, houses and industrial units across Spain.",
     imageAlt: "Modernista building with domed towers in Barcelona's Eixample, in the afternoon light",
   },
 };

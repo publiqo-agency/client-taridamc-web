@@ -33,7 +33,7 @@ export const common: CommonDict = {
   catalogue: {
     title: "Biens\n*à louer*",
     intro:
-      "Locaux industriels et logements à Castelldefels, issus de notre propre patrimoine. Vous traitez directement avec nous.",
+      "Locaux industriels et logements partout en Espagne, issus de notre propre patrimoine. Vous traitez directement avec nous.",
     filtersAria: "Filtrer par type de bien",
     filters: {
       all: "Tous",

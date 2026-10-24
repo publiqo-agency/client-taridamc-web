@@ -38,7 +38,7 @@ export const about = {
   place: {
     eyebrow: "Nuestra sede",
     title: "Desde Barcelona,\n*a toda España*",
-    body: "Tenemos la sede en Barcelona. Desde aquí compramos pisos, casas y naves industriales en toda España, y alquilamos naves y viviendas de nuestra propia cartera en Castelldefels.",
+    body: "Tenemos la sede en Barcelona. Desde aquí compramos y alquilamos pisos, casas y naves industriales en toda España.",
     imageAlt: "Edificio modernista con cúpulas en el Eixample de Barcelona, con la luz de la tarde",
   },
 };

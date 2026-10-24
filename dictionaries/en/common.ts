@@ -36,7 +36,7 @@ export const common: CommonDict = {
   catalogue: {
     title: "Properties\n*to let*",
     intro:
-      "Industrial units and homes in Castelldefels, from our own portfolio. You deal with us directly.",
+      "Industrial units and homes across Spain, from our own portfolio. You deal with us directly.",
     filtersAria: "Filter by property type",
     filters: {
       all: "All",

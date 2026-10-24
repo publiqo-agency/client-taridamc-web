@@ -30,7 +30,7 @@ export const home: HomeDict = {
     purchaseBody: "We buy flats, houses and industrial units anywhere in Spain. We study every transaction and, if it fits, buy directly from you.",
     rentalKicker: "For businesses and individuals",
     rentalTitle: "Units and homes\n*to let*",
-    rentalBody: "Industrial units and homes in Castelldefels, from our own portfolio and dealt with directly by the owner.",
+    rentalBody: "Industrial units and homes across Spain, from our own portfolio and dealt with directly by the owner.",
   },
   process: {
     title: "A process that is\n*clear and direct*",

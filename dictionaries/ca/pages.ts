@@ -41,7 +41,7 @@ export const about: AboutDict = {
   place: {
     eyebrow: "La nostra seu",
     title: "Des de Barcelona,\n*a tota Espanya*",
-    body: "Tenim la seu a Barcelona. Des d'aquí comprem pisos, cases i naus industrials a tota Espanya, i lloguem naus i habitatges de la nostra pròpia cartera a Castelldefels.",
+    body: "Tenim la seu a Barcelona. Des d'aquí comprem i lloguem pisos, cases i naus industrials a tota Espanya.",
     imageAlt: "Edifici modernista amb cúpules a l'Eixample de Barcelona, amb la llum de la tarda",
   },
 };

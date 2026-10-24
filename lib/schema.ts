@@ -1,6 +1,5 @@
 import { HTML_LANG, LOCALES, type Locale } from "./i18n/config";
 import { localeHref, type RouteKey } from "./routes";
-import { RENTAL_AREA } from "@/components/site/place";
 import {
   ORG,
   SAME_AS,
@@ -47,8 +46,7 @@ const contactFields = () => ({
           },
         }
       : {}),
-  // The whole country: they buy anywhere in Spain (the rental portfolio,
-  // local to Castelldefels, says so on its own Service node).
+  // The whole country: they buy and let anywhere in Spain.
   ...(ORG.areaServed ? { areaServed: { "@type": "Country", name: ORG.areaServed } } : {}),
   ...(SAME_AS.length ? { sameAs: SAME_AS } : {}),
 });
@@ -171,8 +169,6 @@ export function serviceSchema(
     description: string;
     path: string;
     serviceType?: string;
-    /** Served in the rental area only (the rental portfolio), not nationwide. */
-    local?: boolean;
   },
 ) {
   return {
@@ -183,11 +179,7 @@ export function serviceSchema(
     url: absoluteUrl(`/${locale}${opts.path}`),
     ...(opts.serviceType ? { serviceType: opts.serviceType } : {}),
     provider: { "@id": ORG_ID },
-    ...(opts.local
-      ? { areaServed: { "@type": "City", name: RENTAL_AREA } }
-      : ORG.areaServed
-        ? { areaServed: { "@type": "Country", name: ORG.areaServed } }
-        : {}),
+    ...(ORG.areaServed ? { areaServed: { "@type": "Country", name: ORG.areaServed } } : {}),
     inLanguage: HTML_LANG[locale],
   };
 }
