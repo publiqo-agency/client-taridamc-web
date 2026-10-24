@@ -20,6 +20,12 @@ export const SITE = {
   /** Registered company name and tax id, for the legal pages and JSON-LD. */
   legalName: "Tarida MC S.L.",
   taxId: "B67987420",
+  /**
+   * Registro Mercantil entry, which LSSI art. 10 requires of an S.L. on the
+   * legal notice, e.g. "Registro Mercantil de Barcelona, tomo X, folio Y,
+   * hoja B-Z". Empty = the client has not delivered it.
+   */
+  registry: "",
 
   /** E.164 digits only, no "+" — what wa.me expects. Empty = no WhatsApp CTAs. */
   whatsapp: "34659359776",
