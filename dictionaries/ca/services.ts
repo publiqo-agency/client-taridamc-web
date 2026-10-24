@@ -93,7 +93,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Què comprem",
         body: [
-          "Pisos, cases i naus industrials, a qualsevol punt d'Espanya. Tenim la seu a Castelldefels, però estudiem immobles a tot el país.",
+          "Pisos, cases i naus industrials, a qualsevol punt d'Espanya. Tenim la seu a Barcelona, però estudiem immobles a tot el país.",
           "També quan l'immoble està llogat, prové d'una herència, necessita una reforma o té hipoteca o càrregues: l'estudiem igual, i la seva situació es té en compte en la proposta.",
         ],
       },
@@ -118,7 +118,7 @@ export const services: ServicesDict = {
         {
           question: "En quines zones compren?",
           answer:
-            "A tota Espanya. La nostra seu és a Castelldefels, però estudiem immobles a qualsevol punt del país.",
+            "A tota Espanya. La nostra seu és a Barcelona, però estudiem immobles a qualsevol punt del país.",
         },
         {
           question: "Compren immobles llogats, heretats, per reformar o amb càrregues?",
@@ -205,7 +205,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Quines naus comprem",
         body: [
-          "Naus industrials a qualsevol punt d'Espanya, lliures o amb llogater. Tenim la seu a Castelldefels, però estudiem naus a tot el país.",
+          "Naus industrials a qualsevol punt d'Espanya, lliures o amb llogater. Tenim la seu a Barcelona, però estudiem naus a tot el país.",
           "També quan la nau necessita una reforma o té hipoteca o càrregues: la seva situació forma part de l'anàlisi i es té en compte en la proposta.",
         ],
       },
@@ -218,7 +218,7 @@ export const services: ServicesDict = {
         {
           question: "En quines zones compren naus?",
           answer:
-            "A tota Espanya. La nostra seu és a Castelldefels, però estudiem naus a qualsevol punt del país.",
+            "A tota Espanya. La nostra seu és a Barcelona, però estudiem naus a qualsevol punt del país.",
         },
         {
           question: "Què valoren d'una nau?",

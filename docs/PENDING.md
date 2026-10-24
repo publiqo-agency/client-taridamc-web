@@ -52,8 +52,8 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
 - Photos: every photo on the site is a **provisional** free-licence stock
   image (Unsplash), listed with its credit in `docs/PHOTO-CREDITS.md`.
   Replace them file by file, same path and aspect ratio, with the client's own
-  photography or renders. Only `about/castelldefels.webp` shows Castelldefels
-  itself; the rest are generic. One photo came with the brief (IMG_1421.JPG, in GoFeed).
+  photography or renders. Only `about/barcelona.webp` shows a real place
+  (the Eixample, for the head office); the rest are generic. One photo came with the brief (IMG_1421.JPG, in GoFeed).
   The rental hub's hero (`/alquiler`) reuses the homes panel photo
   (`services/rental/hero.webp`): it needs a photo of its own, ideally one of
   their naves or homes.
@@ -90,9 +90,11 @@ readable heading text, branded og:title. Still open:
   domain (taridamc.com answers Arsys's default page with a 403 today).
   Without it the site is noindex and llms.txt is a 404.
 - **Search Console** (domain property + sitemap) and the **IndexNow** key.
-- **Google Business Profile.** The registered office is in Barcelona; the
-  profile needs a real, verifiable Castelldefels address, or has to be set up
-  as a service-area business. Ask the client.
+- **Google Business Profile.** The head office is in Barcelona (confirmed
+  2026-10-24), as is the registered office (Còrsega 270). Ask the client
+  whether that is the address where they receive visitors: if so, the profile
+  uses it; if not, it needs another verifiable address or has to be set up as
+  a service-area business.
 - **Facts that would strengthen the copy**, to ask the client (never write
   them before they confirm): the founding year; whether they buy with their
   own funds / pay cash (the strongest differentiator against the "we buy your

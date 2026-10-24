@@ -2,7 +2,7 @@ import { DEFAULT_LOCALE, LOCALES, LOCALE_LABELS } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { NAV_KEYS, localeHref, serviceHref } from "@/lib/routes";
 import { SERVICE_IDS } from "@/lib/services";
-import { PLACE } from "@/components/site/place";
+import { PLACE, RENTAL_AREA } from "@/components/site/place";
 import { IS_INDEXABLE, ORG, SAME_AS, WHATSAPP_URL, absoluteUrl, hasEmail, hasPhone, hasPostalAddress, hasWhatsApp } from "@/lib/seo";
 
 /**
@@ -65,7 +65,7 @@ export async function GET() {
     hasPhone() && `- Phone: ${ORG.telephoneDisplay || ORG.telephone}`,
     hasEmail() && `- Email: ${ORG.email}`,
     hasPostalAddress() && `- Registered office: ${address.street}, ${address.postalCode} ${address.city}`,
-    `- Base: ${PLACE} (Barcelona). Buys property anywhere in ${ORG.areaServed}.`,
+    `- Head office: ${PLACE}. Buys property anywhere in ${ORG.areaServed}; lets its own portfolio in ${RENTAL_AREA}.`,
     ORG.legalName && ORG.taxId && `- Company: ${ORG.legalName}, NIF ${ORG.taxId}`,
     hasWhatsApp() && `- WhatsApp: ${WHATSAPP_URL}`,
     ...SAME_AS.map((href) => `- ${href}`),

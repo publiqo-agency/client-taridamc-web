@@ -93,7 +93,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Ce que nous achetons",
         body: [
-          "Appartements, maisons et entrepôts, partout en Espagne. Notre siège est à Castelldefels, mais nous étudions des biens dans tout le pays.",
+          "Appartements, maisons et entrepôts, partout en Espagne. Notre siège est à Barcelone, mais nous étudions des biens dans tout le pays.",
           "Y compris lorsque le bien est loué, issu d’une succession, à rénover ou grevé d’une hypothèque ou de charges : nous l’étudions de la même façon, et sa situation est prise en compte dans la proposition.",
         ],
       },
@@ -118,7 +118,7 @@ export const services: ServicesDict = {
         {
           question: "Dans quelles zones achetez-vous ?",
           answer:
-            "Partout en Espagne. Notre siège est à Castelldefels, mais nous étudions des biens dans tout le pays.",
+            "Partout en Espagne. Notre siège est à Barcelone, mais nous étudions des biens dans tout le pays.",
         },
         {
           question: "Achetez-vous des biens loués, hérités, à rénover ou grevés de charges ?",
@@ -205,7 +205,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Les entrepôts que nous achetons",
         body: [
-          "Entrepôts et bâtiments industriels partout en Espagne, libres ou loués. Notre siège est à Castelldefels, mais nous étudions des entrepôts dans tout le pays.",
+          "Entrepôts et bâtiments industriels partout en Espagne, libres ou loués. Notre siège est à Barcelone, mais nous étudions des entrepôts dans tout le pays.",
           "Y compris lorsque l’entrepôt est à rénover ou grevé d’une hypothèque ou de charges : sa situation fait partie de l’analyse et est prise en compte dans la proposition.",
         ],
       },
@@ -218,7 +218,7 @@ export const services: ServicesDict = {
         {
           question: "Dans quelles zones achetez-vous des entrepôts ?",
           answer:
-            "Partout en Espagne. Notre siège est à Castelldefels, mais nous étudions des entrepôts dans tout le pays.",
+            "Partout en Espagne. Notre siège est à Barcelone, mais nous étudions des entrepôts dans tout le pays.",
         },
         {
           question: "Qu’évaluez-vous dans un entrepôt ?",

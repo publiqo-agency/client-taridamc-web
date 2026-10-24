@@ -19,7 +19,6 @@ import { useEffect, useState } from "react";
 const PREFIX = "/photos-a";
 
 const PATHS = [
-  "/about/castelldefels.webp",
   "/about/interior.webp",
   "/about/story.webp",
   "/contact/hero.webp",

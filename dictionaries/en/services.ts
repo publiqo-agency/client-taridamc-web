@@ -93,7 +93,7 @@ export const services: ServicesDict = {
       scope: {
         title: "What we buy",
         body: [
-          "Flats, houses and industrial units, anywhere in Spain. Our head office is in Castelldefels, but we consider properties across the whole country.",
+          "Flats, houses and industrial units, anywhere in Spain. Our head office is in Barcelona, but we consider properties across the whole country.",
           "Also when the property is let, inherited, in need of renovation or carries a mortgage or charges: we study it all the same, and its situation is reflected in the offer.",
         ],
       },
@@ -118,7 +118,7 @@ export const services: ServicesDict = {
         {
           question: "Where do you buy?",
           answer:
-            "Anywhere in Spain. Our head office is in Castelldefels, but we consider properties across the whole country.",
+            "Anywhere in Spain. Our head office is in Barcelona, but we consider properties across the whole country.",
         },
         {
           question: "Do you buy let, inherited or run-down properties, or ones with charges?",
@@ -205,7 +205,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Which units we buy",
         body: [
-          "Industrial units anywhere in Spain, vacant or with a tenant. Our head office is in Castelldefels, but we consider units across the whole country.",
+          "Industrial units anywhere in Spain, vacant or with a tenant. Our head office is in Barcelona, but we consider units across the whole country.",
           "Also when the unit needs renovation or carries a mortgage or charges: its situation is part of the analysis and is reflected in the offer.",
         ],
       },
@@ -218,7 +218,7 @@ export const services: ServicesDict = {
         {
           question: "Where do you buy industrial units?",
           answer:
-            "Anywhere in Spain. Our head office is in Castelldefels, but we consider units across the whole country.",
+            "Anywhere in Spain. Our head office is in Barcelona, but we consider units across the whole country.",
         },
         {
           question: "What do you assess in an industrial unit?",

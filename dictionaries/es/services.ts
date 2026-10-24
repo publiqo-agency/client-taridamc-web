@@ -100,7 +100,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Qué compramos",
         body: [
-          "Pisos, casas y naves industriales, en cualquier punto de España. Tenemos la sede en Castelldefels, pero estudiamos inmuebles en todo el país.",
+          "Pisos, casas y naves industriales, en cualquier punto de España. Tenemos la sede en Barcelona, pero estudiamos inmuebles en todo el país.",
           "También cuando el inmueble está alquilado, procede de una herencia, necesita una reforma o tiene hipoteca o cargas: lo estudiamos igual, y su situación se tiene en cuenta en la propuesta.",
         ],
       },
@@ -125,7 +125,7 @@ export const services: ServicesDict = {
         {
           question: "¿En qué zonas compran?",
           answer:
-            "En toda España. Nuestra sede está en Castelldefels, pero estudiamos inmuebles en cualquier punto del país.",
+            "En toda España. Nuestra sede está en Barcelona, pero estudiamos inmuebles en cualquier punto del país.",
         },
         {
           question: "¿Compran inmuebles alquilados, heredados, para reformar o con cargas?",
@@ -212,7 +212,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Qué naves compramos",
         body: [
-          "Naves industriales en cualquier punto de España, libres o con inquilino. Tenemos la sede en Castelldefels, pero estudiamos naves en todo el país.",
+          "Naves industriales en cualquier punto de España, libres o con inquilino. Tenemos la sede en Barcelona, pero estudiamos naves en todo el país.",
           "También cuando la nave necesita una reforma o tiene hipoteca o cargas: su situación forma parte del análisis y se tiene en cuenta en la propuesta.",
         ],
       },
@@ -225,7 +225,7 @@ export const services: ServicesDict = {
         {
           question: "¿En qué zonas compran naves?",
           answer:
-            "En toda España. Nuestra sede está en Castelldefels, pero estudiamos naves en cualquier punto del país.",
+            "En toda España. Nuestra sede está en Barcelona, pero estudiamos naves en cualquier punto del país.",
         },
         {
           question: "¿Qué valoran de una nave?",
