@@ -7,7 +7,7 @@ const format = () =>
   new Intl.DateTimeFormat("es-ES", { hour: "2-digit", minute: "2-digit", timeZone: TIME_ZONE }).format(new Date());
 
 /**
- * Local time in Castelldefels. Rendered only after mount (the server's clock
+ * Local time at the head office. Rendered only after mount (the server's clock
  * would be a hydration mismatch and a lie cached at build time).
  */
 export function LocalTime({ className = "" }: { className?: string }) {

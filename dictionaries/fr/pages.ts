@@ -6,13 +6,13 @@ export const about: AboutDict = {
     title: "À propos",
     seoTitle: "À propos : 40 ans d’immobilier en famille | Tarida MC",
     description:
-      "Entreprise familiale dirigée par Ramon Seva, Tarida MC a quarante ans d’expérience dans l’immobilier. Basée à Castelldefels, elle achète en Espagne.",
+      "Entreprise familiale dirigée par Ramon Seva, Tarida MC a quarante ans d’expérience dans l’immobilier. Basée à Barcelone, elle achète en Espagne.",
   },
   hero: {
     eyebrow: "À propos",
     title: "Une entreprise familiale,\n*quarante ans après*",
     intro:
-      "Basés à Castelldefels, nous achetons des biens partout en Espagne et louons les nôtres, avec la même façon de travailler qu’à nos débuts : sérieux, honnêteté et transparence.",
+      "Basés à Barcelone, nous achetons des biens partout en Espagne et louons les nôtres, avec la même façon de travailler qu’à nos débuts : sérieux, honnêteté et transparence.",
     imageAlt: "Enfilade d’arcs blanchis à la chaux menant à une vieille porte en bois",
   },
   sections: [
@@ -40,8 +40,8 @@ export const about: AboutDict = {
   },
   place: {
     eyebrow: "Notre siège",
-    title: "De Castelldefels,\n*à toute l’Espagne*",
-    body: "Notre siège est à Castelldefels, entre la mer et le massif du Garraf, où se trouve aussi notre patrimoine locatif. D’ici, nous achetons appartements, maisons et entrepôts partout en Espagne.",
-    imageAlt: "Plage de Castelldefels au coucher du soleil, avec le massif du Garraf au loin",
+    title: "De Barcelone,\n*à toute l’Espagne*",
+    body: "Notre siège est à Barcelone. D’ici, nous achetons appartements, maisons et entrepôts partout en Espagne, et louons des entrepôts et des logements de notre propre patrimoine à Castelldefels.",
+    imageAlt: "Immeuble moderniste à coupoles dans l’Eixample de Barcelone, dans la lumière de l’après-midi",
   },
 };

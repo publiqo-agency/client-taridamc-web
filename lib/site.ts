@@ -27,10 +27,10 @@ export const SITE = {
   telephone: "+34659359776",
   /** Human-formatted phone, e.g. "+34 600 000 000". */
   telephoneDisplay: "+34 659 35 97 76",
-  email: "rs@taridamc.com",
+  email: "admin@taridamc.com",
 
-  /** Registered office (Barcelona). The business itself works from
-   *  Castelldefels: that is PLACE (components/site/place.ts), not this. */
+  /** Registered office. The head office is in Barcelona too (PLACE,
+   *  components/site/place.ts); that it is this same address is not confirmed. */
   address: {
     street: "Calle Còrsega, 270, entresuelo, puerta 4",
     postalCode: "08008",
