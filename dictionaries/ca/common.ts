@@ -36,7 +36,7 @@ export const common: CommonDict = {
   catalogue: {
     title: "Immobles\n*de lloguer*",
     intro:
-      "Naus industrials i habitatges a Castelldefels, de la nostra pròpia cartera. L'atenem directament.",
+      "Naus industrials i habitatges a tota Espanya, de la nostra pròpia cartera. L'atenem directament.",
     filtersAria: "Filtrar per tipus d'immoble",
     filters: {
       all: "Tots",

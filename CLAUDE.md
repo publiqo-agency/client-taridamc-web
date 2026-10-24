@@ -32,10 +32,10 @@ ca. The brief lives in GoFeed (see `docs/PENDING.md`).
 
 Scope, confirmed 2026-09-29: they buy **flats, houses and industrial units
 (naves) anywhere in Spain**, also let, inherited, in need of renovation or
-with a mortgage or charges. They let naves and homes of their own portfolio
-in Castelldefels. Barcelona is the base, not the market: copy, titles and
-schema lead with Spain; Barcelona appears as the head office and Castelldefels
-only as the place of the rental portfolio. They buy selectively
+with a mortgage or charges. They let naves and homes of their own portfolio,
+also **anywhere in Spain** (confirmed 2026-10-24: never tie the portfolio to
+Castelldefels or any one town). Barcelona is the base, not the market: copy,
+titles and schema lead with Spain; Barcelona appears only as the head office. They buy selectively
 (opportunities) but the site never says "chollos", and it never promises timings, percentages, cash or
 "sin comisiones" (none has been confirmed). Always "Tarida MC", never
 "Tarida" alone (Cala Tarida and another "Tarida" firm in Ibiza own that word).

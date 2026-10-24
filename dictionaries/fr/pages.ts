@@ -41,7 +41,7 @@ export const about: AboutDict = {
   place: {
     eyebrow: "Notre siège",
     title: "De Barcelone,\n*à toute l’Espagne*",
-    body: "Notre siège est à Barcelone. D’ici, nous achetons appartements, maisons et entrepôts partout en Espagne, et louons des entrepôts et des logements de notre propre patrimoine à Castelldefels.",
+    body: "Notre siège est à Barcelone. D’ici, nous achetons et louons appartements, maisons et entrepôts partout en Espagne.",
     imageAlt: "Immeuble moderniste à coupoles dans l’Eixample de Barcelone, dans la lumière de l’après-midi",
   },
 };
