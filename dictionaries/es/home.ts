@@ -28,6 +28,7 @@ export const home = {
     rentalKicker: "Para empresas y particulares",
     rentalTitle: "Naves y viviendas\n*en alquiler*",
     rentalBody: "Naves industriales y viviendas en toda España, de nuestra propia cartera y con trato directo con la propiedad.",
+    rentalImageAlt: "Nave industrial diáfana y luminosa",
   },
   process: {
     title: "Un proceso\n*claro y directo*",

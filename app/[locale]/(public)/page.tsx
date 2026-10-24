@@ -35,6 +35,8 @@ export async function generateMetadata(props: PageProps<"/[locale]">): Promise<M
 
 const HERO_IMAGE = "/hero/home.webp";
 const CLOSING_IMAGE = "/cta/sell.webp";
+/** The home rental panel has its own photo (a nave); the rental pages keep theirs. */
+const RENTAL_IMAGE = "/home/rental.webp";
 
 export default async function HomePage(props: PageProps<"/[locale]">) {
   const { locale: raw } = await props.params;
@@ -106,7 +108,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
               href: serviceHref(locale, "rental-homes"),
               label: services.items["rental-homes"].learnMore,
             },
-            image: { src: SERVICE_IMAGES["rental-homes"], alt: services.items["rental-homes"].imageAlt },
+            image: { src: RENTAL_IMAGE, alt: home.lines.rentalImageAlt },
             tone: "dark",
           },
         ]}
