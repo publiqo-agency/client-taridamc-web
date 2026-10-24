@@ -31,6 +31,7 @@ export const home: HomeDict = {
     rentalKicker: "For businesses and individuals",
     rentalTitle: "Units and homes\n*to let*",
     rentalBody: "Industrial units and homes across Spain, from our own portfolio and dealt with directly by the owner.",
+    rentalImageAlt: "Bright, open-plan industrial unit",
   },
   process: {
     title: "A process that is\n*clear and direct*",

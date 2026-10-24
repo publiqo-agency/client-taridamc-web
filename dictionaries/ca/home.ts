@@ -31,6 +31,7 @@ export const home: HomeDict = {
     rentalKicker: "Per a empreses i particulars",
     rentalTitle: "Naus i habitatges\n*de lloguer*",
     rentalBody: "Naus industrials i habitatges a tota Espanya, de la nostra pròpia cartera i amb tracte directe amb la propietat.",
+    rentalImageAlt: "Nau industrial diàfana i lluminosa",
   },
   process: {
     title: "Un procés\n*clar i directe*",

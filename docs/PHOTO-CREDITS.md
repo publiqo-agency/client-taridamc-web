@@ -2,6 +2,8 @@
 
 These are provisional stock placeholders, to be replaced once the client delivers its own photography or renders.
 
+The client chose this set on 2026-10-24 (set B of the preview A/B switch, now removed), except for the home's rental panel, which keeps the earlier set's nave photo (`home/rental.webp`). The rental pages use `services/rental/hero.webp`.
+
 | File | Photographer | Source | License |
 | --- | --- | --- | --- |
 | `public/hero/home.webp` | Karim Ben Van | https://unsplash.com/photos/_zLwFIN6dP0 | Unsplash License |
@@ -10,6 +12,7 @@ These are provisional stock placeholders, to be replaced once the client deliver
 | `public/about/barcelona.webp` | Grafi Jeremiah | https://unsplash.com/photos/tv-W5Y8QaF8 | Unsplash License |
 | `public/services/index.webp` | Nikola | https://unsplash.com/photos/fZMFMHilnRo | Unsplash License |
 | `public/services/purchase/hero.webp` | Bogomil Mihaylov | https://unsplash.com/photos/IhfRVflqS1s | Unsplash License |
+| `public/home/rental.webp` | Craftsman Concrete Floors | https://unsplash.com/photos/NADTQRbS0s4 | Unsplash License |
 | `public/services/rental/hero.webp` | D Galifianakis | https://unsplash.com/photos/Hq21aKDISig | Unsplash License |
 | `public/contact/hero.webp` | Diana Rafira | https://unsplash.com/photos/456jRTTQNC0 | Unsplash License |
 | `public/cta/sell.webp` | Ramiro Pianarosa | https://unsplash.com/photos/7AjfNltjt4w | Unsplash License |

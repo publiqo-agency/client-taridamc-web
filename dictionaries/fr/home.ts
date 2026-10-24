@@ -31,6 +31,7 @@ export const home: HomeDict = {
     rentalKicker: "Pour les entreprises et les particuliers",
     rentalTitle: "Entrepôts et logements\n*à louer*",
     rentalBody: "Entrepôts et logements partout en Espagne, issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
+    rentalImageAlt: "Entrepôt industriel ouvert et lumineux",
   },
   process: {
     title: "Un processus\n*clair et direct*",
