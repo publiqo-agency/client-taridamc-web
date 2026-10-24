@@ -27,7 +27,7 @@ export const SITE = {
   telephone: "+34659359776",
   /** Human-formatted phone, e.g. "+34 600 000 000". */
   telephoneDisplay: "+34 659 35 97 76",
-  email: "rs@taridamc.com",
+  email: "admin@taridamc.com",
 
   /** Registered office. The head office is in Barcelona too (PLACE,
    *  components/site/place.ts); that it is this same address is not confirmed. */

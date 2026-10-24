@@ -21,7 +21,7 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
    `lib/site.ts`). Still missing: the Registro Mercantil entry (volume, folio,
    sheet), which the LSSI requires of an S.L.; ask the client. The lawyer
    still reviews the legal copy.
-4. **Contact data.** Done: email `rs@taridamc.com`; phone +34 659 35 97 76,
+4. **Contact data.** Done: email `admin@taridamc.com` (was `rs@`, changed 2026-10-24); phone +34 659 35 97 76,
    the same number as WhatsApp (confirmed by the agency, 2026-09-29).
 5. **Resend key** (`RESEND_API_KEY`, send-only, scoped to `web.publiqo.es`) and
    `CONTACT_EMAIL` in Vercel Production. Without them the form errors in production.
