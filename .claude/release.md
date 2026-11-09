@@ -37,11 +37,10 @@ None: no database.
 
   From a git checkout the CLI sends the commit author in the deployment's
   metadata, and Vercel blocks it exactly like a push (see Traps).
-- Production URL until the domain is connected: https://client-taridamc-web.vercel.app
-- No environment variables set yet: without `NEXT_PUBLIC_SITE_URL` the site is
-  `noindex` and shows preview-only pending chips and sample listings. Set it
-  (and `NEXT_PUBLIC_GTM_ID`, `RESEND_API_KEY`, `CONTACT_EMAIL`) only when
-  www.taridamc.com is live.
+- Production URL: https://www.taridamc.com (apex `taridamc.com` 308s to it).
+- Production environment (since 2026-11-09): `NEXT_PUBLIC_SITE_URL`,
+  `NEXT_PUBLIC_GTM_ID`, `RESEND_API_KEY` (sensitive), `RESEND_FROM`,
+  `CONTACT_EMAIL`. They are read at build time: changing one needs a redeploy.
 
 ## Traps
 
