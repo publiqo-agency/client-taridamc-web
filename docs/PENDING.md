@@ -6,15 +6,23 @@ not done. Keep it current: it is the list Martí reads before every call.
 Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
 (https://app.gofeedapp.com/w/publiqo/briefs/cmsn23mo6002w04i9sl8nt4wy).
 
-## Blocks launch
+## Open since launch
+
+The site went live on **2026-11-09** at https://www.taridamc.com (indexable,
+measured, form wired), at the agency's request. The items below were launch
+blockers and are still open: they are now fixes to a live site, so treat them
+first.
 
 1. **Copy approval.** Every page is designed and written (es, with en, fr and
    ca translated from it) using only facts from the brief. The client signs
    it off, in particular: the home headline ("Inmuebles con criterio"), the
    three values and their lines, the purchase process (four steps) and the
    line under Ramon Seva's name.
-2. **Domain and DNS.** Production domain `www.taridamc.com` (canonical host
-   `www`). Who manages the domain and hosting is not stated in the brief.
+2. **Domain and DNS.** Done 2026-11-09: `www.taridamc.com` is the canonical
+   host on Vercel and `taridamc.com` 308s to it. The zone sits at Arsys
+   (`servidoresdns.net`); its A records already pointed at Vercel. We have no
+   access to it: MX and SPF (`serviciodecorreo.es`) are the client's email and
+   must not be touched.
 3. **Legal data.** Done: `Tarida MC S.L.`, NIF B67987420, registered office
    Calle Còrsega 270, entresuelo, puerta 4, 08008 Barcelona (GoFeed client
    record). The three legal pages show them (read from `lib/site.ts`); the
@@ -25,8 +33,10 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
    still reviews the legal copy.
 4. **Contact data.** Done: email `admin@taridamc.com` (was `rs@`, changed 2026-10-24); phone +34 659 35 97 76,
    the same number as WhatsApp (confirmed by the agency, 2026-09-29).
-5. **Resend key** (`RESEND_API_KEY`, send-only, scoped to `web.publiqo.es`) and
-   `CONTACT_EMAIL` in Vercel Production. Without them the form errors in production.
+5. **Resend key.** Done 2026-11-09: key "taridamc-web (contact form, prod)",
+   send-only, scoped to `web.publiqo.es`; `RESEND_API_KEY`, `RESEND_FROM` and
+   `CONTACT_EMAIL=admin@taridamc.com` in Vercel Production. Not yet tested
+   with a real submission.
 6. **Translations reviewed.** `dictionaries/fr` and `dictionaries/ca` are
    machine-drafted from the Spanish; a native speaker signs them off before launch.
 7. **Legal review (rewritten 2026-10-24).** Legal notice (LSSI art. 10:
@@ -102,10 +112,10 @@ direct sale vs. agency, documents), national titles and descriptions in four
 languages, RealEstateAgent + Person + AboutPage JSON-LD, a factual llms.txt,
 readable heading text, branded og:title. Still open:
 
-- **Go live:** set `NEXT_PUBLIC_SITE_URL` in Vercel Production and point the
-  domain (taridamc.com answers Arsys's default page with a 403 today).
-  Without it the site is noindex and llms.txt is a 404.
-- **Search Console** (domain property + sitemap) and the **IndexNow** key.
+- **Go live:** done 2026-11-09 (`NEXT_PUBLIC_SITE_URL=https://www.taridamc.com`).
+- **Search Console:** URL-prefix property `https://www.taridamc.com/` (no DNS
+  access for a domain property), verified by `public/googled2699488c98cc953.html`.
+  Sitemap and the GA4 link: see `MEASUREMENT.md`. **IndexNow** key still open.
 - **Google Business Profile.** The head office is in Barcelona (confirmed
   2026-10-24), as is the registered office (Còrsega 270). Ask the client
   whether that is the address where they receive visitors: if so, the profile
@@ -128,8 +138,7 @@ readable heading text, branded og:title. Still open:
 
 ## Measurement
 
-- GTM container and GA4 property: run the `google-setup` skill once the domain
-  is live; it fills `MEASUREMENT.md`.
+- GTM container and GA4 property: done 2026-11-09, see `MEASUREMENT.md`.
 - IndexNow key: generate, publish `public/<KEY>.txt`, add `INDEXNOW_KEY` locally.
 
 ## Decided, not done
