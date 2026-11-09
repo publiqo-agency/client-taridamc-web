@@ -72,10 +72,8 @@ GA4 custom dimension: `placement`, `method`, `service`, `form`, `site_language`.
 
 ## Pending
 
-- **Search Console → GA4 link** (GA4 Admin → Product links → Search Console
-  links), once the property is verified.
-- **Submit the sitemap** `https://www.taridamc.com/sitemap.xml` in Search
-  Console (re-check after a day: "Couldn't fetch" in the first hour is normal).
+- **Re-check the sitemap** in Search Console on 2026-11-10: it was submitted
+  on 2026-11-09 and "Couldn't fetch" in the first hours is normal.
 - **First real data**: nothing is confirmed as arriving yet. Check GA4
   Realtime after accepting the banner on www.taridamc.com and clicking a
   WhatsApp link (`contact_click`) and sending the form (`generate_lead`).
@@ -97,3 +95,5 @@ GA4 custom dimension: `placement`, `method`, `service`, `form`, `site_language`.
 - 2026-11-09 — GA4 property, GTM container (v2 live) and custom
   dimensions created; `NEXT_PUBLIC_GTM_ID` set in Vercel Production and
   deployed before the container was published.
+- 2026-11-09 — Search Console URL-prefix property verified (HTML file),
+  sitemap submitted, and linked to GA4 stream 16303757938.
