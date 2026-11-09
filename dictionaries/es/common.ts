@@ -5,10 +5,10 @@
  * Copy conventions shared by every dictionary: "\n" is a line break the
  * design relies on (headlines rise line by line) and *asterisks* mark the
  * italic serif accent phrase. Facts only from the brief: a family business
- * based in Castelldefels, forty years in the sector, run by Ramon Seva; they
+ * based in Barcelona, forty years in the sector, run by Ramon Seva; they
  * buy flats, houses and naves anywhere in Spain after analysing them, and let
- * naves and homes of their own in Castelldefels. The copy leads with Spain,
- * not with the town: Castelldefels is the base, not the market.
+ * naves and homes of their own anywhere in Spain. The copy leads with Spain,
+ * not with the city: Barcelona is the base, not the market.
  */
 export const common = {
   meta: {
@@ -42,7 +42,7 @@ export const common = {
   catalogue: {
     title: "Inmuebles\n*en alquiler*",
     intro:
-      "Naves industriales y viviendas en Castelldefels, de nuestra propia cartera. Le atendemos directamente.",
+      "Naves industriales y viviendas en toda España, de nuestra propia cartera. Le atendemos directamente.",
     filtersAria: "Filtrar por tipo de inmueble",
     filters: {
       all: "Todos",

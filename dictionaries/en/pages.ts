@@ -6,13 +6,13 @@ export const about: AboutDict = {
     title: "About us",
     seoTitle: "About us: a family firm, 40 years in real estate | Tarida MC",
     description:
-      "Tarida MC is a family business with forty years in real estate, led by Ramon Seva. Based in Castelldefels, it buys property anywhere in Spain.",
+      "Tarida MC is a family business with forty years in real estate, led by Ramon Seva. Based in Barcelona, it buys property anywhere in Spain.",
   },
   hero: {
     eyebrow: "About us",
     title: "A family business,\n*forty years on*",
     intro:
-      "Based in Castelldefels, we buy property anywhere in Spain and let our own, the way we always have: with integrity, honesty and transparency.",
+      "Based in Barcelona, we buy property anywhere in Spain and let our own, the way we always have: with integrity, honesty and transparency.",
     imageAlt: "A run of whitewashed arches leading to an old wooden door",
   },
   sections: [
@@ -40,8 +40,8 @@ export const about: AboutDict = {
   },
   place: {
     eyebrow: "Our base",
-    title: "From Castelldefels,\n*across Spain*",
-    body: "Our head office is in Castelldefels, between the sea and the Garraf massif, where our rental portfolio also sits. From here we buy flats, houses and industrial units anywhere in Spain.",
-    imageAlt: "Castelldefels beach at sunset, with the Garraf massif beyond",
+    title: "From Barcelona,\n*across Spain*",
+    body: "Our head office is in Barcelona. From here we buy and let flats, houses and industrial units across Spain.",
+    imageAlt: "Modernista building with domed towers in Barcelona's Eixample, in the afternoon light",
   },
 };

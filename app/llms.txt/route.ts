@@ -65,7 +65,7 @@ export async function GET() {
     hasPhone() && `- Phone: ${ORG.telephoneDisplay || ORG.telephone}`,
     hasEmail() && `- Email: ${ORG.email}`,
     hasPostalAddress() && `- Registered office: ${address.street}, ${address.postalCode} ${address.city}`,
-    `- Base: ${PLACE} (Barcelona). Buys property anywhere in ${ORG.areaServed}.`,
+    `- Head office: ${PLACE}. Buys property and lets its own portfolio anywhere in ${ORG.areaServed}.`,
     ORG.legalName && ORG.taxId && `- Company: ${ORG.legalName}, NIF ${ORG.taxId}`,
     hasWhatsApp() && `- WhatsApp: ${WHATSAPP_URL}`,
     ...SAME_AS.map((href) => `- ${href}`),

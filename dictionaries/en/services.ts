@@ -23,15 +23,15 @@ export const services: ServicesDict = {
     },
     rental: {
       title: "To let",
-      seoTitle: "Units and homes to let in Castelldefels | Tarida MC",
+      seoTitle: "Units and homes to let across Spain | Tarida MC",
       description:
-        "Industrial units and homes to let in Castelldefels, from our own portfolio. Dealt with directly by the owner.",
+        "Industrial units and homes to let across Spain, from our own portfolio. Dealt with directly by the owner.",
       eyebrow: "To let",
       heroTitle: "Industrial units\n*and homes to let*",
       imageAlt: "Whitewashed Mediterranean house among cypresses",
       introLabel: "Our portfolio",
       intro:
-        "We let industrial units and homes from our own portfolio in Castelldefels. You deal directly with the owner, with the seriousness of forty years in the sector.",
+        "We let industrial units and homes from our own portfolio across Spain. You deal directly with the owner, with the seriousness of forty years in the sector.",
       closing: {
         title: "Looking for a unit\n*or a home?*",
         body: "Tell us what you are looking for — approximate size and area — and we will let you know what we have available.",
@@ -93,7 +93,7 @@ export const services: ServicesDict = {
       scope: {
         title: "What we buy",
         body: [
-          "Flats, houses and industrial units, anywhere in Spain. Our head office is in Castelldefels, but we consider properties across the whole country.",
+          "Flats, houses and industrial units, anywhere in Spain. Our head office is in Barcelona, but we consider properties across the whole country.",
           "Also when the property is let, inherited, in need of renovation or carries a mortgage or charges: we study it all the same, and its situation is reflected in the offer.",
         ],
       },
@@ -118,7 +118,7 @@ export const services: ServicesDict = {
         {
           question: "Where do you buy?",
           answer:
-            "Anywhere in Spain. Our head office is in Castelldefels, but we consider properties across the whole country.",
+            "Anywhere in Spain. Our head office is in Barcelona, but we consider properties across the whole country.",
         },
         {
           question: "Do you buy let, inherited or run-down properties, or ones with charges?",
@@ -205,7 +205,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Which units we buy",
         body: [
-          "Industrial units anywhere in Spain, vacant or with a tenant. Our head office is in Castelldefels, but we consider units across the whole country.",
+          "Industrial units anywhere in Spain, vacant or with a tenant. Our head office is in Barcelona, but we consider units across the whole country.",
           "Also when the unit needs renovation or carries a mortgage or charges: its situation is part of the analysis and is reflected in the offer.",
         ],
       },
@@ -218,7 +218,7 @@ export const services: ServicesDict = {
         {
           question: "Where do you buy industrial units?",
           answer:
-            "Anywhere in Spain. Our head office is in Castelldefels, but we consider units across the whole country.",
+            "Anywhere in Spain. Our head office is in Barcelona, but we consider units across the whole country.",
         },
         {
           question: "What do you assess in an industrial unit?",
@@ -258,12 +258,12 @@ export const services: ServicesDict = {
       shortTitle: "Rent an industrial unit",
       kicker: "For businesses",
       heroTitle: "Industrial units\n*to let*",
-      seoTitle: "Industrial units to let in Castelldefels | Tarida MC",
-      teaser: "Industrial units in Castelldefels from our own portfolio, dealt with directly by the owner.",
+      seoTitle: "Industrial units to let across Spain | Tarida MC",
+      teaser: "Industrial units across Spain from our own portfolio, dealt with directly by the owner.",
       metaDescription:
-        "Industrial units to let in Castelldefels, from Tarida MC's own portfolio. Deal directly with the owner, with no intermediaries.",
+        "Industrial units to let across Spain, from Tarida MC's own portfolio. Deal directly with the owner, with no intermediaries.",
       intro:
-        "We let industrial units from our own portfolio in Castelldefels. We know them well because they are ours: we tell you clearly what is available and you deal directly with the owner, with no intermediaries.",
+        "We let industrial units from our own portfolio across Spain. We know them well because they are ours: we tell you clearly what is available and you deal directly with the owner, with no intermediaries.",
       imageAlt: "Bright, open-plan industrial unit with a white steel frame",
       learnMore: "See units to let",
       includesTitle: "What we offer",
@@ -302,7 +302,7 @@ export const services: ServicesDict = {
         },
         {
           question: "Where are the units?",
-          answer: "In Castelldefels. If you are looking in another area, tell us anyway and we will let you know what we have.",
+          answer: "In different parts of Spain. Tell us which area you are looking in and we will let you know what we have.",
         },
         {
           question: "What information do you need to start?",
@@ -327,12 +327,12 @@ export const services: ServicesDict = {
       shortTitle: "Rent a home",
       kicker: "For individuals",
       heroTitle: "Flats and houses\n*to let*",
-      seoTitle: "Flats and houses to let in Castelldefels | Tarida MC",
-      teaser: "Flats and houses in Castelldefels from our own portfolio, dealt with directly by the owner.",
+      seoTitle: "Flats and houses to let across Spain | Tarida MC",
+      teaser: "Flats and houses across Spain from our own portfolio, dealt with directly by the owner.",
       metaDescription:
-        "Flats and houses to let in Castelldefels, from Tarida MC's own portfolio. Deal directly with the owner, with no intermediaries.",
+        "Flats and houses to let across Spain, from Tarida MC's own portfolio. Deal directly with the owner, with no intermediaries.",
       intro:
-        "We let flats and houses from our own portfolio in Castelldefels. We know them well because they are ours: we tell you clearly what is available and you deal directly with the owner, with no intermediaries.",
+        "We let flats and houses from our own portfolio across Spain. We know them well because they are ours: we tell you clearly what is available and you deal directly with the owner, with no intermediaries.",
       imageAlt: "Whitewashed Mediterranean house among cypresses",
       learnMore: "See homes to let",
       includesTitle: "What we offer",
@@ -371,7 +371,7 @@ export const services: ServicesDict = {
         },
         {
           question: "Where are the homes?",
-          answer: "In Castelldefels. If you are looking in another area, tell us anyway and we will let you know what we have.",
+          answer: "In different parts of Spain. Tell us which area you are looking in and we will let you know what we have.",
         },
         {
           question: "What information do you need to start?",

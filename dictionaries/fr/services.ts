@@ -23,15 +23,15 @@ export const services: ServicesDict = {
     },
     rental: {
       title: "Location",
-      seoTitle: "Entrepôts et logements à louer à Castelldefels | Tarida MC",
+      seoTitle: "Entrepôts et logements à louer partout en Espagne | Tarida MC",
       description:
-        "Entrepôts et logements à louer à Castelldefels, issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
+        "Entrepôts et logements à louer partout en Espagne, issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
       eyebrow: "Location",
       heroTitle: "Entrepôts et logements\n*à louer*",
       imageAlt: "Maison méditerranéenne blanchie à la chaux parmi les cyprès",
       introLabel: "Notre patrimoine",
       intro:
-        "Nous louons des entrepôts et des logements de notre propre patrimoine à Castelldefels. Vous traitez directement avec le propriétaire, avec le sérieux de quarante ans dans le secteur.",
+        "Nous louons des entrepôts et des logements de notre propre patrimoine partout en Espagne. Vous traitez directement avec le propriétaire, avec le sérieux de quarante ans dans le secteur.",
       closing: {
         title: "Vous cherchez un entrepôt\n*ou un logement ?*",
         body: "Dites-nous ce que vous recherchez — surface approximative et secteur — et nous vous informerons des biens disponibles.",
@@ -93,7 +93,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Ce que nous achetons",
         body: [
-          "Appartements, maisons et entrepôts, partout en Espagne. Notre siège est à Castelldefels, mais nous étudions des biens dans tout le pays.",
+          "Appartements, maisons et entrepôts, partout en Espagne. Notre siège est à Barcelone, mais nous étudions des biens dans tout le pays.",
           "Y compris lorsque le bien est loué, issu d’une succession, à rénover ou grevé d’une hypothèque ou de charges : nous l’étudions de la même façon, et sa situation est prise en compte dans la proposition.",
         ],
       },
@@ -118,7 +118,7 @@ export const services: ServicesDict = {
         {
           question: "Dans quelles zones achetez-vous ?",
           answer:
-            "Partout en Espagne. Notre siège est à Castelldefels, mais nous étudions des biens dans tout le pays.",
+            "Partout en Espagne. Notre siège est à Barcelone, mais nous étudions des biens dans tout le pays.",
         },
         {
           question: "Achetez-vous des biens loués, hérités, à rénover ou grevés de charges ?",
@@ -205,7 +205,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Les entrepôts que nous achetons",
         body: [
-          "Entrepôts et bâtiments industriels partout en Espagne, libres ou loués. Notre siège est à Castelldefels, mais nous étudions des entrepôts dans tout le pays.",
+          "Entrepôts et bâtiments industriels partout en Espagne, libres ou loués. Notre siège est à Barcelone, mais nous étudions des entrepôts dans tout le pays.",
           "Y compris lorsque l’entrepôt est à rénover ou grevé d’une hypothèque ou de charges : sa situation fait partie de l’analyse et est prise en compte dans la proposition.",
         ],
       },
@@ -218,7 +218,7 @@ export const services: ServicesDict = {
         {
           question: "Dans quelles zones achetez-vous des entrepôts ?",
           answer:
-            "Partout en Espagne. Notre siège est à Castelldefels, mais nous étudions des entrepôts dans tout le pays.",
+            "Partout en Espagne. Notre siège est à Barcelone, mais nous étudions des entrepôts dans tout le pays.",
         },
         {
           question: "Qu’évaluez-vous dans un entrepôt ?",
@@ -258,12 +258,12 @@ export const services: ServicesDict = {
       shortTitle: "Louer un entrepôt",
       kicker: "Pour les entreprises",
       heroTitle: "Entrepôts\n*à louer*",
-      seoTitle: "Entrepôts à louer à Castelldefels | Tarida MC",
-      teaser: "Entrepôts à Castelldefels issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
+      seoTitle: "Entrepôts à louer partout en Espagne | Tarida MC",
+      teaser: "Entrepôts partout en Espagne issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
       metaDescription:
-        "Location d’entrepôts à Castelldefels, issus du patrimoine de Tarida MC. Vous traitez directement avec le propriétaire, sans intermédiaire.",
+        "Location d’entrepôts partout en Espagne, issus du patrimoine de Tarida MC. Vous traitez directement avec le propriétaire, sans intermédiaire.",
       intro:
-        "Nous louons des entrepôts de notre propre patrimoine à Castelldefels. Nous les connaissons bien, car ils sont à nous : nous vous indiquons clairement ce qui est disponible et vous traitez directement avec le propriétaire, sans intermédiaire.",
+        "Nous louons des entrepôts de notre propre patrimoine partout en Espagne. Nous les connaissons bien, car ils sont à nous : nous vous indiquons clairement ce qui est disponible et vous traitez directement avec le propriétaire, sans intermédiaire.",
       imageAlt: "Entrepôt lumineux et dégagé, à structure métallique blanche",
       learnMore: "Voir les entrepôts à louer",
       includesTitle: "Ce que nous proposons",
@@ -303,7 +303,7 @@ export const services: ServicesDict = {
         {
           question: "Où se trouvent les entrepôts ?",
           answer:
-            "À Castelldefels. Si vous cherchez dans une autre zone, dites-le-nous quand même et nous vous indiquerons ce que nous avons.",
+            "Dans différentes régions d’Espagne. Dites-nous dans quelle zone vous cherchez et nous vous indiquerons ce que nous avons.",
         },
         {
           question: "De quelles informations avez-vous besoin pour commencer ?",
@@ -328,12 +328,12 @@ export const services: ServicesDict = {
       shortTitle: "Louer un logement",
       kicker: "Pour les particuliers",
       heroTitle: "Appartements et maisons\n*à louer*",
-      seoTitle: "Appartements et maisons à louer à Castelldefels | Tarida MC",
-      teaser: "Appartements et maisons à Castelldefels issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
+      seoTitle: "Appartements et maisons à louer partout en Espagne | Tarida MC",
+      teaser: "Appartements et maisons partout en Espagne issus de notre propre patrimoine, avec le propriétaire pour interlocuteur direct.",
       metaDescription:
-        "Location d’appartements et de maisons à Castelldefels, issus du patrimoine de Tarida MC. Vous traitez directement avec le propriétaire.",
+        "Location d’appartements et de maisons partout en Espagne, issus du patrimoine de Tarida MC. Vous traitez directement avec le propriétaire.",
       intro:
-        "Nous louons des appartements et des maisons de notre propre patrimoine à Castelldefels. Nous les connaissons bien, car ils sont à nous : nous vous indiquons clairement ce qui est disponible et vous traitez directement avec le propriétaire, sans intermédiaire.",
+        "Nous louons des appartements et des maisons de notre propre patrimoine partout en Espagne. Nous les connaissons bien, car ils sont à nous : nous vous indiquons clairement ce qui est disponible et vous traitez directement avec le propriétaire, sans intermédiaire.",
       imageAlt: "Maison méditerranéenne blanchie à la chaux parmi les cyprès",
       learnMore: "Voir les logements à louer",
       includesTitle: "Ce que nous proposons",
@@ -373,7 +373,7 @@ export const services: ServicesDict = {
         {
           question: "Où se trouvent les logements ?",
           answer:
-            "À Castelldefels. Si vous cherchez dans une autre zone, dites-le-nous quand même et nous vous indiquerons ce que nous avons.",
+            "Dans différentes régions d’Espagne. Dites-nous dans quelle zone vous cherchez et nous vous indiquerons ce que nous avons.",
         },
         {
           question: "De quelles informations avez-vous besoin pour commencer ?",

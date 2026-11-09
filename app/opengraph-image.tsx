@@ -15,7 +15,7 @@ export const alt = SITE.name;
 /**
  * Default OG card, language-neutral. At the root of app/ it cascades to every
  * route. CLIENT-SKIN: the deep-sea navy of the site's dark bands, the logo in
- * salt white and one hairline. No town: Castelldefels is the base, not the market.
+ * salt white and one hairline. No town: Barcelona is the base, not the market.
  */
 export default function OgImage() {
   const w = 620;

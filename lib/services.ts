@@ -21,7 +21,7 @@ export const isServiceId = (value: string): value is ServiceId =>
 
 /**
  * Two kinds of page share the template: buying from owners (the seller lead,
- * national) and letting from the own portfolio (Castelldefels).
+ * national) and letting from the own portfolio (also national).
  */
 export type ServiceKind = "purchase" | "rental";
 

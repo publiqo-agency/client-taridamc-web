@@ -138,12 +138,12 @@ export default async function AboutPage(props: PageProps<"/[locale]/nosotros">) 
         </div>
       </section>
 
-      {/* Castelldefels: the signature sundial reveal. */}
+      {/* The head office: the signature sundial reveal. */}
       <section className={`${SECTION} overflow-hidden`}>
         <div className={FRAME}>
           <div className="grid grid-cols-12 items-center gap-x-5 gap-y-24 md:gap-x-8">
             <div className="col-span-12 md:col-span-6 md:pr-8">
-              <Sundial src="/about/castelldefels.webp" alt={about.place.imageAlt} />
+              <Sundial src="/about/barcelona.webp" alt={about.place.imageAlt} />
             </div>
             <div className="col-span-12 md:col-span-5 md:col-start-8">
               <p className="label text-ink-soft" data-m="fade">

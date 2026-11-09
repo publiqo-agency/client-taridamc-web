@@ -2,7 +2,7 @@ import Image from "next/image";
 import { hasPublicImage } from "@/lib/images";
 
 /**
- * The page's one signature moment: a circular photo of the coast revealed
+ * The page's one signature moment: a circular photo of the head office's city revealed
  * by a single conic sweep, like the shadow of a sundial turning once, while
  * a hairline hand travels with it. Without motion it is simply the photo
  * and the hand at rest.

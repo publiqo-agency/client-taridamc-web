@@ -17,22 +17,35 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
    `www`). Who manages the domain and hosting is not stated in the brief.
 3. **Legal data.** Done: `Tarida MC S.L.`, NIF B67987420, registered office
    Calle Còrsega 270, entresuelo, puerta 4, 08008 Barcelona (GoFeed client
-   record). The footer and the three legal pages show them (read from
-   `lib/site.ts`). Still missing: the Registro Mercantil entry (volume, folio,
-   sheet), which the LSSI requires of an S.L.; ask the client. The lawyer
+   record). The three legal pages show them (read from `lib/site.ts`); the
+   footer shows only the company name since 2026-10-24, the NIF lives on the
+   legal notice. Still missing: the Registro Mercantil entry (volume, folio,
+   sheet), which the LSSI requires of an S.L.; ask the client and fill
+   `registry` in `lib/site.ts` (previews show a chip until then). The lawyer
    still reviews the legal copy.
-4. **Contact data.** Done: email `rs@taridamc.com`; phone +34 659 35 97 76,
+4. **Contact data.** Done: email `admin@taridamc.com` (was `rs@`, changed 2026-10-24); phone +34 659 35 97 76,
    the same number as WhatsApp (confirmed by the agency, 2026-09-29).
 5. **Resend key** (`RESEND_API_KEY`, send-only, scoped to `web.publiqo.es`) and
    `CONTACT_EMAIL` in Vercel Production. Without them the form errors in production.
 6. **Translations reviewed.** `dictionaries/fr` and `dictionaries/ca` are
    machine-drafted from the Spanish; a native speaker signs them off before launch.
-7. **Legal review (2026-09-29).** Legal notice, privacy and cookie policies
-   now carry the owner's data, recipients (Vercel, Resend, Google, WhatsApp),
-   international transfers, retention, withdrawal of consent, the cookie list
-   with durations, and applicable law; the contact form has the first-layer
-   data notice. Still open:
+7. **Legal review (rewritten 2026-10-24).** Legal notice (LSSI art. 10:
+   owner, purpose, terms of use, property information is non-binding, IP,
+   links, liability, law), privacy policy (GDPR art. 13: purposes with their
+   legal bases, required data, retention per case, recipients and processors,
+   WhatsApp, transfers, rights and how to exercise them, AEPD, minors) and
+   cookie policy (table of cookies, Consent Mode disclosure, how to withdraw,
+   browser links), in es, en, fr and ca. The contact form keeps the
+   first-layer notice and its consent checkbox. No other legal page is
+   required for this site (no online sales: no terms of sale; accessibility
+   statement and whistleblowing channel do not apply to a business this
+   size). Still open, to confirm with the client:
    - Registro Mercantil entry (see 3).
+   - Retention for enquiries that lead nowhere: the policy commits to **one
+     year from the last contact**. The client has to actually delete them.
+   - The privacy policy says no data protection officer was appointed.
+   - Their email provider (the policy lists it as a processor without a name;
+     add it once known).
    - Ask the client whether Tarida MC ever acts as an intermediary for third
      parties. If so, Catalan law requires registration in the Registre
      d'Agents Immobiliaris de Catalunya (AICAT) and the number on the site.
@@ -52,8 +65,8 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
 - Photos: every photo on the site is a **provisional** free-licence stock
   image (Unsplash), listed with its credit in `docs/PHOTO-CREDITS.md`.
   Replace them file by file, same path and aspect ratio, with the client's own
-  photography or renders. Only `about/castelldefels.webp` shows Castelldefels
-  itself; the rest are generic. One photo came with the brief (IMG_1421.JPG, in GoFeed).
+  photography or renders. Only `about/barcelona.webp` shows a real place
+  (the Eixample, for the head office); the rest are generic. One photo came with the brief (IMG_1421.JPG, in GoFeed).
   The rental hub's hero (`/alquiler`) reuses the homes panel photo
   (`services/rental/hero.webp`): it needs a photo of its own, ideally one of
   their naves or homes.
@@ -68,7 +81,10 @@ Source: GoFeed brief "Briefing de web" for Tarida MC S.L.
   fed by `lib/properties.ts`. `PROPERTIES` is empty, so production shows an
   "ask for availability" block; previews show six SAMPLE listings with a chip.
   Needs from the client per listing: reference, type (industrial unit or
-  home), m², zone and one photo. Naves show on the naves rental page, homes on
+  home), m², zone and one photo. Before any home or unit is advertised for
+  rent, its energy efficiency rating (the label of the energy performance
+  certificate, RD 390/2021) has to appear in the listing: add a field for it
+  when the first real listing arrives. Naves show on the naves rental page, homes on
   the homes rental page. The "local comercial" type was removed on 2026-09-29
   (the brief lets naves and homes only); if they let premises, it comes back
   with its own page. This is archetype A (the agency edits
@@ -90,9 +106,11 @@ readable heading text, branded og:title. Still open:
   domain (taridamc.com answers Arsys's default page with a 403 today).
   Without it the site is noindex and llms.txt is a 404.
 - **Search Console** (domain property + sitemap) and the **IndexNow** key.
-- **Google Business Profile.** The registered office is in Barcelona; the
-  profile needs a real, verifiable Castelldefels address, or has to be set up
-  as a service-area business. Ask the client.
+- **Google Business Profile.** The head office is in Barcelona (confirmed
+  2026-10-24), as is the registered office (Còrsega 270). Ask the client
+  whether that is the address where they receive visitors: if so, the profile
+  uses it; if not, it needs another verifiable address or has to be set up as
+  a service-area business.
 - **Facts that would strengthen the copy**, to ask the client (never write
   them before they confirm): the founding year; whether they buy with their
   own funds / pay cash (the strongest differentiator against the "we buy your

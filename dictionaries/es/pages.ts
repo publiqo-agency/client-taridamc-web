@@ -3,13 +3,13 @@ export const about = {
     title: "Nosotros",
     seoTitle: "Nosotros: empresa familiar, 40 años en el sector | Tarida MC",
     description:
-      "Tarida MC es una empresa familiar con cuarenta años en el sector inmobiliario, dirigida por Ramon Seva. Con sede en Castelldefels, compra en toda España.",
+      "Tarida MC es una empresa familiar con cuarenta años en el sector inmobiliario, dirigida por Ramon Seva. Con sede en Barcelona, compra en toda España.",
   },
   hero: {
     eyebrow: "Nosotros",
     title: "Una empresa familiar,\n*cuarenta años después*",
     intro:
-      "Con sede en Castelldefels, compramos inmuebles en toda España y alquilamos los de nuestra propia cartera, con la misma forma de trabajar de siempre: seriedad, honestidad y transparencia.",
+      "Con sede en Barcelona, compramos inmuebles en toda España y alquilamos los de nuestra propia cartera, con la misma forma de trabajar de siempre: seriedad, honestidad y transparencia.",
     imageAlt: "Sucesión de arcos encalados que conducen a una antigua puerta de madera",
   },
   sections: [
@@ -37,8 +37,8 @@ export const about = {
   },
   place: {
     eyebrow: "Nuestra sede",
-    title: "Desde Castelldefels,\n*a toda España*",
-    body: "Tenemos la sede en Castelldefels, entre el mar y el macizo del Garraf, donde también está nuestra cartera de alquiler. Desde aquí compramos pisos, casas y naves industriales en toda España.",
-    imageAlt: "Playa de Castelldefels al atardecer, con el macizo del Garraf al fondo",
+    title: "Desde Barcelona,\n*a toda España*",
+    body: "Tenemos la sede en Barcelona. Desde aquí compramos y alquilamos pisos, casas y naves industriales en toda España.",
+    imageAlt: "Edificio modernista con cúpulas en el Eixample de Barcelona, con la luz de la tarde",
   },
 };

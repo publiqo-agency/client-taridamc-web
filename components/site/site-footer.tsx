@@ -32,6 +32,8 @@ type Props = {
  */
 export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
   const year = new Date().getFullYear();
+  // The NIF lives on the legal notice, not here (decided 2026-10-24).
+  const owner = ORG.legalName || ORG.name;
   const hasContact = hasPhone() || hasEmail() || hasPostalAddress();
   const linkClass = "link-line text-ink/85 transition-colors hover:text-ink";
 
@@ -115,8 +117,9 @@ export function SiteFooter({ locale, columns, legalLinks, copy }: Props) {
       <div className={`${FRAME} relative z-[1] flex flex-col gap-4 border-t border-line pt-6 pb-24 text-sm text-ink-soft md:flex-row md:items-center md:justify-between md:pb-6`}>
         <div className="flex flex-wrap gap-x-6 gap-y-1">
           <p>
-            © {year} {ORG.legalName || ORG.name}
-            {ORG.taxId && ` · NIF ${ORG.taxId}`}. {copy.rights}
+            © {year} {owner}
+            {owner.endsWith(".") ? " " : ". "}
+            {copy.rights}
           </p>
           {/* Agency credit. A followed link (no `nofollow`): it is the backlink
               the agency gets from every site it builds. Brand anchor only;

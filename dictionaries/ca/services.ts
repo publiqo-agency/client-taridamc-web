@@ -23,15 +23,15 @@ export const services: ServicesDict = {
     },
     rental: {
       title: "Lloguer",
-      seoTitle: "Naus i habitatges de lloguer a Castelldefels | Tarida MC",
+      seoTitle: "Naus i habitatges de lloguer a tota Espanya | Tarida MC",
       description:
-        "Naus industrials i habitatges de lloguer a Castelldefels, de la nostra pròpia cartera. Tracte directe amb la propietat.",
+        "Naus industrials i habitatges de lloguer a tota Espanya, de la nostra pròpia cartera. Tracte directe amb la propietat.",
       eyebrow: "Lloguer",
       heroTitle: "Naus i habitatges\n*de lloguer*",
       imageAlt: "Casa mediterrània emblanquinada entre xiprers",
       introLabel: "La nostra cartera",
       intro:
-        "Lloguem naus industrials i habitatges de la nostra pròpia cartera a Castelldefels. L'atén directament la propietat, amb la serietat de quaranta anys al sector.",
+        "Lloguem naus industrials i habitatges de la nostra pròpia cartera a tota Espanya. L'atén directament la propietat, amb la serietat de quaranta anys al sector.",
       closing: {
         title: "Busca una nau\n*o un habitatge?*",
         body: "Digui'ns què busca —superfície aproximada i zona— i l'informarem del que tinguem disponible.",
@@ -93,7 +93,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Què comprem",
         body: [
-          "Pisos, cases i naus industrials, a qualsevol punt d'Espanya. Tenim la seu a Castelldefels, però estudiem immobles a tot el país.",
+          "Pisos, cases i naus industrials, a qualsevol punt d'Espanya. Tenim la seu a Barcelona, però estudiem immobles a tot el país.",
           "També quan l'immoble està llogat, prové d'una herència, necessita una reforma o té hipoteca o càrregues: l'estudiem igual, i la seva situació es té en compte en la proposta.",
         ],
       },
@@ -118,7 +118,7 @@ export const services: ServicesDict = {
         {
           question: "En quines zones compren?",
           answer:
-            "A tota Espanya. La nostra seu és a Castelldefels, però estudiem immobles a qualsevol punt del país.",
+            "A tota Espanya. La nostra seu és a Barcelona, però estudiem immobles a qualsevol punt del país.",
         },
         {
           question: "Compren immobles llogats, heretats, per reformar o amb càrregues?",
@@ -205,7 +205,7 @@ export const services: ServicesDict = {
       scope: {
         title: "Quines naus comprem",
         body: [
-          "Naus industrials a qualsevol punt d'Espanya, lliures o amb llogater. Tenim la seu a Castelldefels, però estudiem naus a tot el país.",
+          "Naus industrials a qualsevol punt d'Espanya, lliures o amb llogater. Tenim la seu a Barcelona, però estudiem naus a tot el país.",
           "També quan la nau necessita una reforma o té hipoteca o càrregues: la seva situació forma part de l'anàlisi i es té en compte en la proposta.",
         ],
       },
@@ -218,7 +218,7 @@ export const services: ServicesDict = {
         {
           question: "En quines zones compren naus?",
           answer:
-            "A tota Espanya. La nostra seu és a Castelldefels, però estudiem naus a qualsevol punt del país.",
+            "A tota Espanya. La nostra seu és a Barcelona, però estudiem naus a qualsevol punt del país.",
         },
         {
           question: "Què valoren d'una nau?",
@@ -258,12 +258,12 @@ export const services: ServicesDict = {
       shortTitle: "Llogar una nau",
       kicker: "Per a empreses",
       heroTitle: "Naus industrials\n*de lloguer*",
-      seoTitle: "Lloguer de naus industrials a Castelldefels | Tarida MC",
-      teaser: "Naus industrials a Castelldefels de la nostra pròpia cartera, amb tracte directe amb la propietat.",
+      seoTitle: "Lloguer de naus industrials a tota Espanya | Tarida MC",
+      teaser: "Naus industrials a tota Espanya de la nostra pròpia cartera, amb tracte directe amb la propietat.",
       metaDescription:
-        "Lloguer de naus industrials a Castelldefels, de la cartera pròpia de Tarida MC. Tracte directe amb la propietat, sense intermediaris.",
+        "Lloguer de naus industrials a tota Espanya, de la cartera pròpia de Tarida MC. Tracte directe amb la propietat, sense intermediaris.",
       intro:
-        "Lloguem naus industrials de la nostra pròpia cartera a Castelldefels. Les coneixem bé perquè són nostres: l'informem amb claredat del que tenim disponible i vostè tracta directament amb la propietat, sense intermediaris.",
+        "Lloguem naus industrials de la nostra pròpia cartera a tota Espanya. Les coneixem bé perquè són nostres: l'informem amb claredat del que tenim disponible i vostè tracta directament amb la propietat, sense intermediaris.",
       imageAlt: "Nau industrial diàfana i lluminosa, amb estructura metàl·lica blanca",
       learnMore: "Veure naus de lloguer",
       includesTitle: "Què oferim",
@@ -302,7 +302,7 @@ export const services: ServicesDict = {
         },
         {
           question: "On són les naus?",
-          answer: "A Castelldefels. Si busca en una altra zona, digui-ho igualment i l'informarem del que tinguem.",
+          answer: "En diversos punts d'Espanya. Digui'ns en quina zona busca i l'informarem del que tinguem.",
         },
         {
           question: "Quina informació necessiten per començar?",
@@ -327,12 +327,12 @@ export const services: ServicesDict = {
       shortTitle: "Llogar un habitatge",
       kicker: "Per a particulars",
       heroTitle: "Pisos i cases\n*de lloguer*",
-      seoTitle: "Lloguer de pisos i cases a Castelldefels | Tarida MC",
-      teaser: "Pisos i cases a Castelldefels de la nostra pròpia cartera, amb tracte directe amb la propietat.",
+      seoTitle: "Lloguer de pisos i cases a tota Espanya | Tarida MC",
+      teaser: "Pisos i cases a tota Espanya de la nostra pròpia cartera, amb tracte directe amb la propietat.",
       metaDescription:
-        "Lloguer de pisos i cases a Castelldefels, de la cartera pròpia de Tarida MC. Tracte directe amb la propietat, sense intermediaris.",
+        "Lloguer de pisos i cases a tota Espanya, de la cartera pròpia de Tarida MC. Tracte directe amb la propietat, sense intermediaris.",
       intro:
-        "Lloguem pisos i cases de la nostra pròpia cartera a Castelldefels. Els coneixem bé perquè són nostres: l'informem amb claredat del que tenim disponible i vostè tracta directament amb la propietat, sense intermediaris.",
+        "Lloguem pisos i cases de la nostra pròpia cartera a tota Espanya. Els coneixem bé perquè són nostres: l'informem amb claredat del que tenim disponible i vostè tracta directament amb la propietat, sense intermediaris.",
       imageAlt: "Casa mediterrània emblanquinada entre xiprers",
       learnMore: "Veure habitatges de lloguer",
       includesTitle: "Què oferim",
@@ -371,7 +371,7 @@ export const services: ServicesDict = {
         },
         {
           question: "On són els habitatges?",
-          answer: "A Castelldefels. Si busca en una altra zona, digui-ho igualment i l'informarem del que tinguem.",
+          answer: "En diversos punts d'Espanya. Digui'ns en quina zona busca i l'informarem del que tinguem.",
         },
         {
           question: "Quina informació necessiten per començar?",

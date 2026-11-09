@@ -34,11 +34,11 @@ export const PROPERTIES: Property[] = [];
  * never show them.
  */
 const SAMPLE_PROPERTIES: Property[] = [
-  { ref: "EJ-01", type: "warehouse", area: 850, zone: "Castelldefels", image: "/properties/nave-1.webp" },
-  { ref: "EJ-02", type: "home", area: 210, zone: "Castelldefels", image: "/properties/vivienda-1.webp" },
-  { ref: "EJ-03", type: "warehouse", area: 1400, zone: "Castelldefels", image: "/properties/nave-2.webp" },
-  { ref: "EJ-04", type: "home", area: 95, zone: "Castelldefels", image: "/properties/vivienda-2.webp" },
-  { ref: "EJ-06", type: "home", area: 180, zone: "Castelldefels", image: "/properties/vivienda-3.webp" },
+  { ref: "EJ-01", type: "warehouse", area: 850, zone: "Barcelona", image: "/properties/nave-1.webp" },
+  { ref: "EJ-02", type: "home", area: 210, zone: "Madrid", image: "/properties/vivienda-1.webp" },
+  { ref: "EJ-03", type: "warehouse", area: 1400, zone: "Valencia", image: "/properties/nave-2.webp" },
+  { ref: "EJ-04", type: "home", area: 95, zone: "Málaga", image: "/properties/vivienda-2.webp" },
+  { ref: "EJ-06", type: "home", area: 180, zone: "Girona", image: "/properties/vivienda-3.webp" },
 ];
 
 /** What the catalogue renders, and whether it is the preview sample. */
